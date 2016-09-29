@@ -5,27 +5,31 @@
 
     <script>
       angular.module('questionaire', [])
-        .controller('QuestionController', ['$scope', function($scope) {
+        .controller('QuestionController', ['$scope', '$http', function($scope, $http) {
           $scope.data = {
             q1: null,
             q2a: null,
             q2b: null
           };
+
+          $http.get('/data').then(function(result) {
+            angular.extend($scope.data, result.data);
+          });
       }]);
     </script>
   </head>
   <body ng-app="questionaire">
     <div ng-controller="QuestionController">
-      <form action="submit">
+      <form action="form" method="post">
         <label for="q1">Have you ever gone to the counseling center?</label>
-        <select name="q1" ng-model="data.q1">
+        <select name="q1" ng-model="data.q1" required="">
           <option value="Y">Yes</option>
           <option value="N">No</option>
         </select>
 
         <div ng-show="data.q1 === 'Y'">
           <label for="q2a">If yes, how many times per semester?</label>
-          <select name="q2a" ng-model="data.q2">
+          <select name="q2a" ng-model="data.q2a">
             <option value="1">1 time</option>
             <option value="2">2-5 times</option>
             <option value="6">6-10 times</option>
@@ -35,9 +39,11 @@
 
         <div ng-show="data.q1 === 'N'">
           <label for="q2b">If no, is there a reason as to why you haven’t gone to the counseling center?</label>
-          <textarea name="q2b" rows="4" cols="50">
+          <textarea name="q2b" ng-model="data.q2b" rows="4" cols="50">
           </textarea>
         </div>
+
+        <input type="submit" id="submit" value="Submit" />
       </form>
     </div>
   <body>

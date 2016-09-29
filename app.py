@@ -1,11 +1,11 @@
 from functools import wraps
-from flask import Flask, session, redirect, url_for, request
+from flask import Flask, session, redirect, url_for, request, jsonify
 from flask_cas import CAS, login_required, login, logout
 
 import hashlib
 
 app = Flask(__name__)
-cas = CAS(app, '/cas')
+cas = CAS(app)
 app.config['CAS_SERVER'] = 'https://cas-auth.rpi.edu/cas/'
 app.config['CAS_AFTER_LOGIN'] = 'hashing'
 
@@ -23,17 +23,18 @@ def hashing():
     session['hashed'] = hashlib.md5(cas.username.encode()).hexdigest()
     return redirect(url_for('form'))
 
-@app.route('/logout')
-@login_required
-def logoutRoute():
-    return logout()
+@app.route("/data")
+@hash_login_required
+def data():
+    return jsonify({'q2b': 'test'}), 200
 
 @app.route('/form', methods=['GET', 'POST'])
 @hash_login_required
 def form():
     if request.method == 'POST':
-        print(session.hashed)
+        print(session['hashed'])
         print(request.form)
+        return 'OK'
     else:
         return app.send_static_file('form.html')
 
