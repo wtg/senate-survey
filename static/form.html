@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+    <script>
+      angular.module('questionaire', [])
+        .controller('QuestionController', ['$scope', function($scope) {
+          $scope.data = {
+            q1: null,
+            q2a: null,
+            q2b: null
+          };
+      }]);
+    </script>
+  </head>
+  <body ng-app="questionaire">
+    <div ng-controller="QuestionController">
+      <form action="submit">
+        <label for="q1">Have you ever gone to the counseling center?</label>
+        <select name="q1" ng-model="data.q1">
+          <option value="Y">Yes</option>
+          <option value="N">No</option>
+        </select>
+
+        <div ng-show="data.q1 === 'Y'">
+          <label for="q2a">If yes, how many times per semester?</label>
+          <select name="q2a" ng-model="data.q2">
+            <option value="1">1 time</option>
+            <option value="2">2-5 times</option>
+            <option value="6">6-10 times</option>
+            <option value="10">Over 10 times</option>
+          </select>
+        </div>
+
+        <div ng-show="data.q1 === 'N'">
+          <label for="q2b">If no, is there a reason as to why you haven’t gone to the counseling center?</label>
+          <textarea name="q2b" rows="4" cols="50">
+          </textarea>
+        </div>
+      </form>
+    </div>
+  <body>
+</html>
