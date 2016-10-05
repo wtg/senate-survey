@@ -1,2 +1,2 @@
 flask
-Flask-CAS
+git+git://github.com/cameronbwhite/Flask-CAS@master#Flask-CAS
