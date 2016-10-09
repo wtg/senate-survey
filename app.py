@@ -1,5 +1,5 @@
 from functools import wraps
-from flask import Flask, session, redirect, url_for, request, jsonify
+from flask import Flask, session, redirect, url_for, request, jsonify, render_template
 from flask_cas import CAS, login_required, login, logout
 
 import hashlib
@@ -73,7 +73,9 @@ def form():
         if len((models.UserHash
                 .select()
                 .where(models.UserHash.hash == session['hashed']))) != 0:
-            return "You've already submitted a response to this survey."
+            return render_template('message.html',
+                                   message="You've already responded to this survey.",
+                                   title='Already responded')
 
         # Insert into database if UserHash is new
         if request.method == 'POST':
@@ -85,14 +87,19 @@ def form():
             form_json = json.dumps(request.form)
             models.Submission().create(form=form_json)
 
-            return 'Your submission has been recorded.'
+            return render_template('message.html',
+                                   message='Your submission has been recorded.',
+                                   title='Submission recorded')
 
         else:
-            return app.send_static_file('form.html')
+            return render_template('form.html',
+                                   title='Take survey')
 
 
 def not_configured():
-    return 'Counseling Center Survey not configured.'
+    return render_template('message.html',
+                           title='Not configured',
+                           message='Counseling Center Survey not configured.')
 
 # set the secret key.  keep this really secret:
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'

@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+    <head>
+        {% block head %}
+        <title>{% block title %}{% endblock %} &mdash; Counseling Center survey</title>
+        {% endblock %}
+    </head>
+    <body>
+        <h1>Counseling Center survey</h1>
+        <h2>{{ self.title() }}</h2>
+        {% block content %}{% endblock %}
+    </body>
+</html>
