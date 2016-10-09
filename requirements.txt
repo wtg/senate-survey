@@ -1,2 +1,3 @@
 flask
 git+git://github.com/cameronbwhite/Flask-CAS@master#Flask-CAS
+peewee==2.8.5

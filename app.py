@@ -3,7 +3,10 @@ from flask import Flask, session, redirect, url_for, request, jsonify
 from flask_cas import CAS, login_required, login, logout
 
 import hashlib
+import json
 import os
+
+import models
 
 
 def get_pepper():
@@ -62,12 +65,30 @@ def data():
 @check_pepper
 @hash_login_required
 def form():
-    if request.method == 'POST':
-        print(session['hashed'])
-        print(request.form)
-        return 'OK'
-    else:
-        return app.send_static_file('form.html')
+    with models.db.atomic():
+        # Check if a submission from this user has already been received.
+        # This and inserting new submissions should be done atomically to avoid
+        # race conditions with multiple submissions from the same user at the
+        # same time.
+        if len((models.UserHash
+                .select()
+                .where(models.UserHash.hash == session['hashed']))) != 0:
+            return "You've already submitted a response to this survey."
+
+        # Insert into database if UserHash is new
+        if request.method == 'POST':
+
+            # No previous submission; record this one.
+            models.UserHash().create(hash=session['hashed'])
+
+            # Dump form to JSON
+            form_json = json.dumps(request.form)
+            models.Submission().create(form=form_json)
+
+            return 'Your submission has been recorded.'
+
+        else:
+            return app.send_static_file('form.html')
 
 
 def not_configured():
