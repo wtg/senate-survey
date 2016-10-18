@@ -3,11 +3,15 @@
     <head>
         {% block head %}
         <title>{% block title %}{% endblock %} &mdash; Counseling Center survey</title>
+        <link rel="stylesheet" href="/static/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/style.css">
         {% endblock %}
     </head>
     <body>
-        <h1>Counseling Center survey</h1>
-        <h2>{{ self.title() }}</h2>
-        {% block content %}{% endblock %}
+        <div class="container">
+            <h1>Counseling Center survey</h1>
+            <h2>{{ self.title() }}</h2>
+            {% block content %}{% endblock %}
+        </div>
     </body>
 </html>
