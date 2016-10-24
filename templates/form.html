@@ -28,6 +28,16 @@ angular.module('questionaire', [])
 		q17: null
 	};
 
+    // pagination
+    $scope.page = 1;
+    $scope.last_page = 3;
+    $scope.next_page = function() {
+        if ($scope.page != $scope.last_page) $scope.page++;
+    }
+    $scope.previous_page = function() {
+        if ($scope.page != 1) $scope.page--;
+    }
+
 	$http.get('/data').then(function(result) {
 		angular.extend($scope.data, result.data);
 	});
@@ -37,133 +47,175 @@ angular.module('questionaire', [])
 <div ng-app="questionaire">
 	<div ng-controller="QuestionController">
 		<form action="form" method="post" id="form">
-			<div class="form-group">
-				<label for="q1">Have you ever gone to the counseling center?</label>
-				<select class="form-control" name="q1" ng-model="data.q1" required="">
-					<option value="Y">Yes</option>
-					<option value="N">No</option>
-				</select>
-			</div>
+            <div id="form-page-1" ng-show="page === 1">
+    			<div class="form-group">
+    				<label for="q1" class="control-label">Have you ever gone to the counseling center?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" ng-model="data.q1" value="Y">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q1" ng-model="data.q1" value="N">No
+                        </label>
+                    </div>
+    			</div>
 
-			<div class="form-group" ng-show="data.q1 === 'Y'">
-				<label for="q2a">If yes, how many times per semester?</label>
-				<select class="form-control" name="q2a" ng-model="data.q2a">
-					<option value="1">1 time</option>
-					<option value="2">2-5 times</option>
-					<option value="6">6-10 times</option>
-					<option value="10">Over 10 times</option>
-				</select>
-			</div>
+    			<div class="form-group" ng-show="data.q1 === 'Y'">
+    				<label for="q2a">If yes, how many times per semester?</label>
+    				<select class="form-control" name="q2a" ng-model="data.q2a">
+    					<option value="1">1 time</option>
+    					<option value="2">2-5 times</option>
+    					<option value="6">6-10 times</option>
+    					<option value="10">Over 10 times</option>
+    				</select>
+    			</div>
 
-			<div class="form-group" ng-show="data.q1 === 'N'">
-				<label for="q2b">If no, is there a reason as to why you haven’t gone to the counseling center?</label>
-				<textarea class="form-control" name="q2b" ng-model="data.q2b" rows="4" cols="50">
-				</textarea>
-			</div>
+    			<div class="form-group" ng-show="data.q1 === 'N'">
+    				<label for="q2b">If no, is there a reason as to why you haven’t gone to the counseling center?</label>
+    				<textarea class="form-control" name="q2b" ng-model="data.q2b" rows="4" cols="50">
+    				</textarea>
+    			</div>
 
-			<div class="form-group">
-				<label for="q3">On a scale from 1-10, how would you rank your overall satisfaction?</label>
-				<input class="form-control" name="q3" ng-model="data.q3" type="range" min="1" max="10">
-			</div>
+    			<div class="form-group">
+    				<label for="q3">On a scale from 1-10, how would you rank your overall satisfaction?</label>
+    				<input class="form-control" name="q3" ng-model="data.q3" type="range" min="1" max="10">
+    			</div>
 
-			<div class="form-group">
-				<label for="q4">On a scale from 1-10, how would you rank your satisfaction with provider(s) seen?</label>
-				<input class="form-control" name="q4" ng-model="data.q4" type="range" min="1" max="10">
-			</div>
+    			<div class="form-group">
+    				<label for="q4">On a scale from 1-10, how would you rank your satisfaction with provider(s) seen?</label>
+    				<input class="form-control" name="q4" ng-model="data.q4" type="range" min="1" max="10">
+    			</div>
 
-			<div class="form-group">
-				<label for="q5">On a scale from 1-10, how would you rank your satisfaction with clerical staff?</label>
-				<input class="form-control" name="q5" ng-model="data.q5" type="range" min="1" max="10">
-			</div>
+    			<div class="form-group">
+    				<label for="q5">On a scale from 1-10, how would you rank your satisfaction with clerical staff?</label>
+    				<input class="form-control" name="q5" ng-model="data.q5" type="range" min="1" max="10">
+    			</div>
 
-			<div class="form-group">
-				<label for="q6">On a scale from 1-10, how would you rank the friendliness of clerical staff?</label>
-				<input class="form-control" name="q6" ng-model="data.q6" type="range" min="1" max="10">
-			</div>
+    			<div class="form-group">
+    				<label for="q6">On a scale from 1-10, how would you rank the friendliness of clerical staff?</label>
+    				<input class="form-control" name="q6" ng-model="data.q6" type="range" min="1" max="10">
+    			</div>
 
-			<div class="form-group">
-				<label for="q7">On a scale from 1-10, how satisfied were you with the wait time prior to your appointment?</label>
-				<input class="form-control" name="q7" ng-model="data.q7" type="range" min="1" max="10">
-			</div>
+    			<div class="form-group">
+    				<label for="q7">On a scale from 1-10, how satisfied were you with the wait time prior to your appointment?</label>
+    				<input class="form-control" name="q7" ng-model="data.q7" type="range" min="1" max="10">
+    			</div>
 
-			<div class="form-group">
-				<label for="q8">On a scale from 1-10, how satisfied are you with the counseling center website?</label>
-				<input class="form-control" name="q8" ng-model="data.q8" type="range" min="1" max="10">
-			</div>
+    			<div class="form-group">
+    				<label for="q8">On a scale from 1-10, how satisfied are you with the counseling center website?</label>
+    				<input class="form-control" name="q8" ng-model="data.q8" type="range" min="1" max="10">
+    			</div>
+            </div>
+            <div id="form-page-2" ng-show="page === 2">
 
-			<div class="form-group">
-				<label for="q9">Have you received counseling outside of the RPI Counseling Center?</label>
-				<select class="form-control" name="q9" ng-model="data.q9" required="">
-					<option value="Y">Yes</option>
-					<option value="N">No</option>
-				</select>
-			</div>
+    			<div class="form-group">
+                    <label for="q9" class="control-label">Have you received counseling outside of the RPI Counseling Center?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q9" ng-model="data.q9" value="Y">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q9" ng-model="data.q9" value="N">No
+                        </label>
+                    </div>
+    			</div>
 
-			<div class="form-group">
-				<label for="q10">Would you have any interest in scheduling future appointments online?</label>
-				<select class="form-control" name="q10" ng-model="data.q10" required="">
-					<option value="Y">Yes</option>
-					<option value="N">No</option>
-				</select>
-			</div>
+    			<div class="form-group">
+                    <label for="q10" class="control-label">Would you have any interest in scheduling future appointments online?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q10" ng-model="data.q10" value="Y">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q10" ng-model="data.q10" value="N">No
+                        </label>
+                    </div>
+    			</div>
 
-			<div class="form-group">
-				<label for="q11">Would you want to receive an appointment reminder?</label>
-				<select class="form-control" name="q11" ng-model="data.q11" required="">
-					<option value="Y">Yes</option>
-					<option value="N">No</option>
-				</select>
-			</div>
+    			<div class="form-group">
+                    <label for="q11" class="control-label">Would you want to receive an appointment reminder?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q11" ng-model="data.q11" value="Y">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q11" ng-model="data.q11" value="N">No
+                        </label>
+                    </div>
+    			</div>
 
-			<div class="form-group">
-				<label for="q12">Have you ever wanted to make an appointment but didn’t because you didn’t want to call the Counseling Center?</label>
-				<select class="form-control" name="q12" ng-model="data.q12" required="">
-					<option value="Y">Yes</option>
-					<option value="N">No</option>
-				</select>
-			</div>
+    			<div class="form-group">
+                    <label for="q12" class="control-label">Have you ever wanted to make an appointment but didn’t because you didn’t want to call the Counseling Center?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q12" ng-model="data.q12" value="Y">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q12" ng-model="data.q12" value="N">No
+                        </label>
+                    </div>
+    			</div>
 
-			<div class="form-group">
-				<label for="q13">Before this, have you ever been asked to give feedback about the Counseling Center?</label>
-				<select class="form-control" name="q13" ng-model="data.q13" required="">
-					<option value="Y">Yes</option>
-					<option value="N">No</option>
-				</select>
-			</div>
+    			<div class="form-group">
+                    <label for="q13" class="control-label">Before this, have you ever been asked to give feedback about the Counseling Center?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q13" ng-model="data.q13" value="Y">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q13" ng-model="data.q13" value="N">No
+                        </label>
+                    </div>
+    			</div>
 
-			<div class="form-group">
-				<label for="q14">Do you feel you would benefit from a LGBTQ+ specialized walk-in hours counselor?</label>
-				<select class="form-control" name="q14" ng-model="data.q14" required="">
-					<option value="Y">Yes</option>
-					<option value="N">No</option>
-				</select>
-			</div>
+    			<div class="form-group">
+                    <label for="q14" class="control-label">Do you feel you would benefit from a LGBTQ+ specialized walk-in hours counselor?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q14" ng-model="data.q14" value="Y">Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q14" ng-model="data.q14" value="N">No
+                        </label>
+                    </div>
+    			</div>
+            </div>
+            <div id="form-page-3" ng-show="page === 3">
 
-			<div class="form-group">
-				<label for="q15">Do you feel like your concerns were addressed during their experience?</label>
-				<textarea class="form-control" name="q15" ng-model="data.q15" rows="4" cols="50">
-				</textarea>
-			</div>
+    			<div class="form-group">
+    				<label for="q15">Do you feel like your concerns were addressed during your experience?</label>
+    				<textarea class="form-control" name="q15" ng-model="data.q15" rows="4" cols="50">
+    				</textarea>
+    			</div>
 
-			<div class="form-group">
-				<label for="q15">What do you feel the Counseling Center is missing?</label>
-				<textarea class="form-control" name="q15" ng-model="data.q15" rows="4" cols="50">
-				</textarea>
-			</div>
+    			<div class="form-group">
+    				<label for="q15">What do you feel the Counseling Center is missing?</label>
+    				<textarea class="form-control" name="q15" ng-model="data.q15" rows="4" cols="50">
+    				</textarea>
+    			</div>
 
-			<div class="form-group">
-				<label for="q16">What could the counseling center do to improve student accessibility?</label>
-				<textarea class="form-control" name="q16" ng-model="data.q16" rows="4" cols="50">
-				</textarea>
-			</div>
+    			<div class="form-group">
+    				<label for="q16">What could the counseling center do to improve student accessibility?</label>
+    				<textarea class="form-control" name="q16" ng-model="data.q16" rows="4" cols="50">
+    				</textarea>
+    			</div>
 
-			<div class="form-group">
-				<label for="q17">Have you ever missed an appointment at the Counseling Center? If so, why?</label>
-				<textarea class="form-control" name="q17" ng-model="data.q17" rows="4" cols="50">
-				</textarea>
-			</div>
+    			<div class="form-group">
+    				<label for="q17">Have you ever missed an appointment at the Counseling Center? If so, why?</label>
+    				<textarea class="form-control" name="q17" ng-model="data.q17" rows="4" cols="50">
+    				</textarea>
+    			</div>
 
-			<input class="form-control" type="submit" id="submit" value="Submit" />
+            <input class="form-control" type="submit" id="submit" value="Submit" />
+            </div>
+
+            <nav>
+                <ul class="pager">
+                    <li ng-class="{'disabled': page === 1}" ng-click="previous_page()"><a href="#">Previous</a></li>
+                    <li ng-class="{'disabled': page === last_page}" ng-click="next_page()"><a href="#">Next</a></li>
+                </ul>
+            </nav>
+
 		</form>
 	</div>
 </div>
