@@ -145,4 +145,4 @@ def not_configured():
                            message='Counseling Center Survey not configured.')
 
 # set the secret key.  keep this really secret:
-app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+app.secret_key = os.environ['SECRET_KEY']
