@@ -87,9 +87,47 @@ def form():
             form_json = json.dumps(request.form)
             models.Submission().create(form=form_json)
 
+            return render_template('message.html', message="""Your submission has
+                been recorded. Thank you for your participation in the survey
+                and your contribution to improving the student experience at
+                Rensselaer.""", title='Submission recorded')
+
+        else:
+            return render_template('form.html',
+                                   title='Take survey')
+
+
+@app.route('/form/<auth_key>', methods=['GET', 'POST'])
+@check_pepper
+def form_auth_key(auth_key):
+    with models.db.atomic():
+        # Check if this is a valid survey authorization key.
+        # This and inserting new submissions should be done atomically to avoid
+        # race conditions with multiple submissions with the same key at the
+        # same time.
+        key_models = (models.AuthorizationKey
+                      .select()
+                      .where(models.AuthorizationKey.key == auth_key))
+        if len(key_models) != 1:
             return render_template('message.html',
-                                   message='Your submission has been recorded.',
-                                   title='Submission recorded')
+                                   message="Invalid authorization key.",
+                                   title='Not authorized')
+
+        # Insert into database if UserHash is new
+        if request.method == 'POST':
+
+            # Delete this authorization key. We can assume len == 0 because of
+            # the check a few lines above.
+            key_models[0].delete_instance()
+
+            # Dump form to JSON
+            form_json = json.dumps(request.form)
+            models.Submission().create(form=form_json)
+
+            return render_template('message.html', message="""Your submission has
+                been recorded. Thank you for your participation in the survey
+                and your contribution to improving the student experience at
+                Rensselaer.""", title='Submission recorded')
 
         else:
             return render_template('form.html',

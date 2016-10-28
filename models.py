@@ -26,4 +26,10 @@ class UserHash(BaseModel):
     """User hash model."""
     hash = peewee.TextField(primary_key=True)
 
-db.create_tables([Submission, UserHash], safe=True)
+
+class AuthorizationKey(BaseModel):
+    """Can be created to allow users without RCS IDs to take the survey."""
+    key = peewee.TextField(primary_key=True)
+
+
+db.create_tables([Submission, UserHash, AuthorizationKey], safe=True)
