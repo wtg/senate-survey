@@ -1,9 +1,11 @@
 import datetime
 import uuid
+import os
 
 import peewee
+import playhouse.db_url
 
-db = peewee.SqliteDatabase('cc-survey.db')
+db = playhouse.db_url.connect(os.environ.get('DATABASE') or 'sqlite:///cc-survey.db')
 
 
 class BaseModel(peewee.Model):
