@@ -77,33 +77,219 @@ angular.module('questionaire', [])
     			</div>
 
     			<div class="form-group">
-    				<label for="q3">On a scale from 1-10, how would you rank your overall satisfaction?</label>
-    				<input class="form-control" name="q3" ng-model="data.q3" type="range" min="1" max="10">
+    				<label for="q3" class="control-label">On a scale from 1-10, how would you rank your overall satisfaction?</label>
+    				<div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" ng-model="data.q3" value="1">1
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" ng-model="data.q3" value="2">2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" ng-model="data.q3" value="3">3
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" ng-model="data.q3" value="4">4
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" ng-model="data.q3" value="5">5
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" ng-model="data.q3" value="6">6
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" ng-model="data.q3" value="7">7
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" ng-model="data.q3" value="8">8
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" ng-model="data.q3" value="9">9
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q3" ng-model="data.q3" value="10">10
+                        </label>
+                    </div>
     			</div>
 
     			<div class="form-group">
-    				<label for="q4">On a scale from 1-10, how would you rank your satisfaction with provider(s) seen?</label>
-    				<input class="form-control" name="q4" ng-model="data.q4" type="range" min="1" max="10">
+    				<label for="q4" class="control-label">On a scale from 1-10, how would you rank your satisfaction with provider(s) seen?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" ng-model="data.q4" value="1">1
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" ng-model="data.q4" value="2">2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" ng-model="data.q4" value="3">3
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" ng-model="data.q4" value="4">4
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" ng-model="data.q4" value="5">5
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" ng-model="data.q4" value="6">6
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" ng-model="data.q4" value="7">7
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" ng-model="data.q4" value="8">8
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" ng-model="data.q4" value="9">9
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q4" ng-model="data.q4" value="10">10
+                        </label>
+                    </div>
     			</div>
 
     			<div class="form-group">
-    				<label for="q5">On a scale from 1-10, how would you rank your satisfaction with clerical staff?</label>
-    				<input class="form-control" name="q5" ng-model="data.q5" type="range" min="1" max="10">
+    				<label for="q5" class="control-label">On a scale from 1-10, how would you rank your satisfaction with clerical staff?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q5" ng-model="data.q5" value="1">1
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q5" ng-model="data.q5" value="2">2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q5" ng-model="data.q5" value="3">3
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q5" ng-model="data.q5" value="4">4
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q5" ng-model="data.q5" value="5">5
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q5" ng-model="data.q5" value="6">6
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q5" ng-model="data.q5" value="7">7
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q5" ng-model="data.q5" value="8">8
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q5" ng-model="data.q5" value="9">9
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q5" ng-model="data.q5" value="10">10
+                        </label>
+                    </div>
     			</div>
 
     			<div class="form-group">
-    				<label for="q6">On a scale from 1-10, how would you rank the friendliness of clerical staff?</label>
-    				<input class="form-control" name="q6" ng-model="data.q6" type="range" min="1" max="10">
+    				<label for="q6" class="control-label">On a scale from 1-10, how would you rank the friendliness of clerical staff?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q6" ng-model="data.q6" value="1">1
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q6" ng-model="data.q6" value="2">2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q6" ng-model="data.q6" value="3">3
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q6" ng-model="data.q6" value="4">4
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q6" ng-model="data.q6" value="5">5
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q6" ng-model="data.q6" value="6">6
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q6" ng-model="data.q6" value="7">7
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q6" ng-model="data.q6" value="8">8
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q6" ng-model="data.q6" value="9">9
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q6" ng-model="data.q6" value="10">10
+                        </label>
+                    </div>
     			</div>
 
     			<div class="form-group">
-    				<label for="q7">On a scale from 1-10, how satisfied were you with the wait time prior to your appointment?</label>
-    				<input class="form-control" name="q7" ng-model="data.q7" type="range" min="1" max="10">
+    				<label for="q7" class="control-label">On a scale from 1-10, how satisfied were you with the wait time prior to your appointment?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q7" ng-model="data.q7" value="1">1
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q7" ng-model="data.q7" value="2">2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q7" ng-model="data.q7" value="3">3
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q7" ng-model="data.q7" value="4">4
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q7" ng-model="data.q7" value="5">5
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q7" ng-model="data.q7" value="6">6
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q7" ng-model="data.q7" value="7">7
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q7" ng-model="data.q7" value="8">8
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q7" ng-model="data.q7" value="9">9
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q7" ng-model="data.q7" value="10">10
+                        </label>
+                    </div>
     			</div>
 
     			<div class="form-group">
-    				<label for="q8">On a scale from 1-10, how satisfied are you with the counseling center website?</label>
-    				<input class="form-control" name="q8" ng-model="data.q8" type="range" min="1" max="10">
+    				<label for="q8" class="control-label">On a scale from 1-10, how satisfied are you with the counseling center website?</label>
+                    <div class="controls">
+                        <label class="radio-inline">
+                            <input type="radio" name="q8" ng-model="data.q8" value="1">1
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q8" ng-model="data.q8" value="2">2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q8" ng-model="data.q8" value="3">3
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q8" ng-model="data.q8" value="4">4
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q8" ng-model="data.q8" value="5">5
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q8" ng-model="data.q8" value="6">6
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q8" ng-model="data.q8" value="7">7
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q8" ng-model="data.q8" value="8">8
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q8" ng-model="data.q8" value="9">9
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="q8" ng-model="data.q8" value="10">10
+                        </label>
+                    </div>
     			</div>
             </div>
             <div id="form-page-2" ng-show="page === 2">
@@ -190,19 +376,19 @@ angular.module('questionaire', [])
 
     			<div class="form-group">
     				<label for="q15">What do you feel the Counseling Center is missing?</label>
-    				<textarea class="form-control" name="q15" ng-model="data.q15" rows="4" cols="50">
-    				</textarea>
-    			</div>
-
-    			<div class="form-group">
-    				<label for="q16">What could the counseling center do to improve student accessibility?</label>
     				<textarea class="form-control" name="q16" ng-model="data.q16" rows="4" cols="50">
     				</textarea>
     			</div>
 
     			<div class="form-group">
-    				<label for="q17">Have you ever missed an appointment at the Counseling Center? If so, why?</label>
+    				<label for="q16">What could the counseling center do to improve student accessibility?</label>
     				<textarea class="form-control" name="q17" ng-model="data.q17" rows="4" cols="50">
+    				</textarea>
+    			</div>
+
+    			<div class="form-group">
+    				<label for="q17">Have you ever missed an appointment at the Counseling Center? If so, why?</label>
+    				<textarea class="form-control" name="q18" ng-model="data.q18" rows="4" cols="50">
     				</textarea>
     			</div>
 
