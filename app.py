@@ -134,6 +134,11 @@ def form_auth_key(auth_key):
                                    title='Take survey')
 
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
 def not_configured():
     return render_template('message.html',
                            title='Not configured',

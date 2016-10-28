@@ -37,16 +37,16 @@ angular.module('questionaire', [])
     $scope.previous_page = function() {
         if ($scope.page != 1) $scope.page--;
     }
-
-	$http.get('/data').then(function(result) {
-		angular.extend($scope.data, result.data);
-	});
 }]);
 </script>
 
-<div ng-app="questionaire">
+<div class="masthead">
+    <h3 class="text-muted">Counseling Center Survey</h3>
+</div>
+
+<div class="form" ng-app="questionaire">
 	<div ng-controller="QuestionController">
-		<form action="form" method="post" id="form">
+		<form action="" method="post" id="form">
             <div id="form-page-1" ng-show="page === 1">
     			<div class="form-group">
     				<label for="q1" class="control-label">Have you ever gone to the counseling center?</label>
@@ -64,9 +64,9 @@ angular.module('questionaire', [])
     				<label for="q2a">If yes, how many times per semester?</label>
     				<select class="form-control" name="q2a" ng-model="data.q2a">
     					<option value="1">1 time</option>
-    					<option value="2">2-5 times</option>
-    					<option value="6">6-10 times</option>
-    					<option value="10">Over 10 times</option>
+    					<option value="2-5">2-5 times</option>
+    					<option value="6-10">6-10 times</option>
+    					<option value="10+">Over 10 times</option>
     				</select>
     			</div>
 
@@ -206,7 +206,7 @@ angular.module('questionaire', [])
     				</textarea>
     			</div>
 
-            <input class="form-control" type="submit" id="submit" value="Submit" />
+            <input class="form-control btn btn-success" type="submit" id="submit" value="Submit" />
             </div>
 
             <nav>
