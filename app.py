@@ -18,16 +18,15 @@ def get_pepper():
 app = Flask(__name__)
 cas = CAS(app)
 app.config['CAS_SERVER'] = 'https://cas-auth.rpi.edu/cas/'
-app.config['CAS_AFTER_LOGIN'] = 'hashing'
+app.config['CAS_AFTER_LOGIN'] = 'form'
 SURVEY_VERSION = 2
 
 
-def hash_login_required(f):
+def hash_request(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if 'hashed' in session:
-            return f(*args, **kwargs)
-        return login()
+        session['hash'] = hash()
+        return f(*args, **kwargs)
     return decorated_function
 
 
@@ -40,9 +39,7 @@ def check_pepper(f):
     return func
 
 
-@app.route('/hashing')
-@login_required
-def hashing():
+def hash():
     """Generate a hash of the user's RCS ID.
 
     Appends a pepper from the environment. This makes it harder to brute-force
@@ -54,19 +51,19 @@ def hashing():
     if pepper is None:
         return not_configured()
     to_hash = cas.username + pepper + str(SURVEY_VERSION)
-    session['hashed'] = hashlib.md5(to_hash.encode()).hexdigest()
-    return redirect(url_for('form'))
+    return hashlib.md5(to_hash.encode()).hexdigest()
 
 
 @app.route("/data")
-@hash_login_required
+@login_required
 def data():
     return jsonify({'q2b': 'test'}), 200
 
 
 @app.route('/form', methods=['GET', 'POST'])
 @check_pepper
-@hash_login_required
+@login_required
+@hash_request
 def form():
     with models.db.atomic():
         # Check if a submission from this user has already been received.
@@ -75,7 +72,7 @@ def form():
         # same time.
         if len((models.UserHash
                 .select()
-                .where(models.UserHash.hash == session['hashed']))) != 0:
+                .where(models.UserHash.hash == session['hash']))) != 0:
             return render_template('message.html',
                                    message="You've already responded to this survey.",
                                    title='Already responded')
@@ -84,7 +81,7 @@ def form():
         if request.method == 'POST':
 
             # No previous submission; record this one.
-            models.UserHash().create(hash=session['hashed'])
+            models.UserHash().create(hash=session['hash'])
 
             # Dump form to JSON
             form_json = json.dumps(request.form)
