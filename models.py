@@ -22,6 +22,7 @@ class Submission(BaseModel):
     id = peewee.UUIDField(default=uuid.uuid4)
     form = peewee.TextField()
     time = peewee.DateTimeField(default=datetime.datetime.now)
+    version = peewee.IntegerField()
 
 
 class UserHash(BaseModel):

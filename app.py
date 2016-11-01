@@ -19,6 +19,7 @@ app = Flask(__name__)
 cas = CAS(app)
 app.config['CAS_SERVER'] = 'https://cas-auth.rpi.edu/cas/'
 app.config['CAS_AFTER_LOGIN'] = 'hashing'
+SURVEY_VERSION = 2
 
 
 def hash_login_required(f):
@@ -46,11 +47,13 @@ def hashing():
 
     Appends a pepper from the environment. This makes it harder to brute-force
     RCS IDs to reverse these hashes, assuming that the pepper is kept secret.
+    The survey version is also included in the hash so that a new version of
+    the survey can be taken by someone who has taken a previous version.
     """
     pepper = get_pepper()
     if pepper is None:
         return not_configured()
-    to_hash = cas.username + pepper
+    to_hash = cas.username + pepper + str(SURVEY_VERSION)
     session['hashed'] = hashlib.md5(to_hash.encode()).hexdigest()
     return redirect(url_for('form'))
 
@@ -85,7 +88,7 @@ def form():
 
             # Dump form to JSON
             form_json = json.dumps(request.form)
-            models.Submission().create(form=form_json)
+            models.Submission().create(form=form_json, version=SURVEY_VERSION)
 
             return render_template('message.html', message="""Your submission has
                 been recorded. Thank you for your participation in the survey
@@ -122,7 +125,7 @@ def form_auth_key(auth_key):
 
             # Dump form to JSON
             form_json = json.dumps(request.form)
-            models.Submission().create(form=form_json)
+            models.Submission().create(form=form_json, version=SURVEY_VERSION)
 
             return render_template('message.html', message="""Your submission has
                 been recorded. Thank you for your participation in the survey
