@@ -19,7 +19,7 @@ class Submission(BaseModel):
 
     Uses a UUID for the ID instead of an integer sequence so that survey
     submissions cannot be linked to user hashes."""
-    id = peewee.UUIDField(default=uuid.uuid4)
+    id = peewee.UUIDField(default=uuid.uuid4, primary_key=True)
     form = peewee.TextField()
     time = peewee.DateTimeField(default=datetime.datetime.now)
     version = peewee.IntegerField()
