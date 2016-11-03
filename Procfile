@@ -1,1 +1,1 @@
-web: gunicorn app:app --reload -k gevent
+web: gunicorn app:app -k gevent
