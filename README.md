@@ -28,3 +28,19 @@ difficult to map user IDs to hashes. This must not change or it will be possible
 for people to retake the survey.
 - **DATABASE_URL** — Database connection URL.
 - **SECRET_KEY** — Used to sign session cookies.
+
+## Development
+
+First, ensure that the above environment variables are defined. Then:
+
+```
+pip install -r requirements.txt
+gunicorn app:app --reload -k gevent
+```
+
+It is a good idea to do this inside of a virtual environment.
+
+## Deployment
+
+Counseling Center Survey can be pushed to Dokku or Heroku. It has been tested
+with SQLite and Postgres databases.
