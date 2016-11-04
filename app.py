@@ -23,6 +23,8 @@ app.config['CAS_SERVER'] = 'https://cas-auth.rpi.edu/cas/'
 app.config['CAS_AFTER_LOGIN'] = 'form'
 SURVEY_VERSION = 2
 
+CC_SURVEY_ADMINS = set(os.getenv('CC_SURVEY_ADMINS', '').split(','))
+
 
 def hash_request(f):
     @wraps(f)
@@ -139,10 +141,8 @@ def form_auth_key(auth_key):
 @app.route('/export')
 @login_required
 def export():
-
-    # this should be an environment variable!
-    # e.g. CC_SURVEY_ADMINS = KOCHMS,ETZINJ
-    if cas.username != 'KOCHMS':
+    # see if this user is in CC_SURVEY_ADMINS
+    if cas.username not in CC_SURVEY_ADMINS:
         abort(403)
 
     # loop through all submissions and make a dict for each, then append to list

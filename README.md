@@ -23,6 +23,8 @@ response.
 
 The following environment variables must be defined:
 
+- **CC_SURVEY_ADMINS** — Comma-separated list of RCS IDs that are permitted to
+download submissions from `/export` (e.g. `KOCHMS,ETZINJ`).
 - **CC_SURVEY_PEPPER** — Appended to user ID before hashing. This makes it more
 difficult to map user IDs to hashes. This must not change or it will be possible
 for people to retake the survey.
