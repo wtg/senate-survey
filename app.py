@@ -1,8 +1,10 @@
 from functools import wraps
-from flask import Flask, session, redirect, url_for, request, jsonify, render_template
+from flask import Flask, session, redirect, url_for, request, jsonify, render_template, abort, send_file
 from flask_cas import CAS, login_required, login, logout
 
+import csv
 import hashlib
+import io
 import json
 import os
 
@@ -132,6 +134,52 @@ def form_auth_key(auth_key):
         else:
             return render_template('form.html',
                                    title='Take survey')
+
+
+@app.route('/export')
+@login_required
+def export():
+
+    # this should be an environment variable!
+    # e.g. CC_SURVEY_ADMINS = KOCHMS,ETZINJ
+    if cas.username != 'KOCHMS':
+        abort(403)
+
+    # loop through all submissions and make a dict for each, then append to list
+    submissions = models.Submission.select().order_by(models.Submission.time.desc())
+
+    # make sure we have empty question responses in header
+    header = ['id', 'time', 'version']
+    for i in range(1, 25):
+        header.append('q' + str(i))
+        if i == 4 or i == 5:
+            header.append('q' + str(i) + 'other')
+
+    exp = []
+    for submission in submissions:
+        sub = {}
+        sub['id'] = submission.id
+        sub['time'] = submission.time
+        sub['version'] = submission.version
+
+        # form is stored as JSON, so extract responses
+        form_js = json.loads(submission.form)
+        for q, r in form_js.items():
+            sub[q] = r
+
+        exp.append(sub)
+
+    # output CSV
+    f = io.StringIO()
+    w = csv.DictWriter(f, header)
+    w.writeheader()
+    w.writerows(exp)
+
+    # there must be a better way to do this than StringIO -> str -> BytesIO
+    return send_file(io.BytesIO(f.getvalue().encode('utf-8')),
+                     as_attachment=True,
+                     attachment_filename='ccsurvey.csv',
+                     mimetype='text/csv')
 
 
 @app.route('/')
