@@ -88,7 +88,7 @@ def form():
             models.Submission().create(form=form_json, version=SURVEY_VERSION)
 
             return render_template('message.html', message="""Your submission has
-                been recorded. Thank you for your participation in the survey
+                been recorded anonymously. Thank you for your participation in the survey
                 and your contribution to improving the student experience at
                 Rensselaer.""", title='Submission recorded')
 
@@ -125,7 +125,7 @@ def form_auth_key(auth_key):
             models.Submission().create(form=form_json, version=SURVEY_VERSION)
 
             return render_template('message.html', message="""Your submission has
-                been recorded. Thank you for your participation in the survey
+                been recorded anonymously. Thank you for your participation in the survey
                 and your contribution to improving the student experience at
                 Rensselaer.""", title='Submission recorded')
 
