@@ -1,6 +1,6 @@
 # Counseling Center Survey
 
-This survey aims to gather the student opinion on the quality of care and the ease of access of counseling at RPI. It is online at https://ccsurvey.union.rpi.edu.
+This survey aims to gather student opinion on the quality of care and the ease of access of counseling at RPI. It is online at https://ccsurvey.union.rpi.edu.
 
 ## Anonymity
 
