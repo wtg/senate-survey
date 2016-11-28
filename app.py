@@ -24,6 +24,7 @@ app.config['CAS_AFTER_LOGIN'] = 'form'
 SURVEY_VERSION = 2
 
 CC_SURVEY_ADMINS = set(os.getenv('CC_SURVEY_ADMINS', '').split(','))
+CLOSED = bool(os.getenv('CC_SURVEY_CLOSED', False))
 
 
 def hash_request(f):
@@ -58,10 +59,11 @@ def hash():
     return hashlib.md5(to_hash.encode()).hexdigest()
 
 
-@app.route("/data")
-@login_required
-def data():
-    return jsonify({'q2b': 'test'}), 200
+@app.before_request
+def check_closed():
+    if CLOSED and request.path.startswith('/form'):
+        # Redirect all /form paths to / if survey is closed
+        return redirect('/')
 
 
 @app.route('/form', methods=['GET', 'POST'])
@@ -184,6 +186,9 @@ def export():
 
 @app.route('/')
 def index():
+    if CLOSED:
+        # Return closed survey template if applicable
+        return render_template('closed.html')
     return render_template('index.html')
 
 

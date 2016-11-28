@@ -30,6 +30,8 @@ difficult to map user IDs to hashes. This must not change or it will be possible
 for people to retake the survey.
 - **DATABASE_URL** — Database connection URL.
 - **SECRET_KEY** — Used to sign session cookies.
+- **CC_SURVEY_CLOSED** – If set, disables the survey and returns the closed
+survey template.
 
 ## Development
 
