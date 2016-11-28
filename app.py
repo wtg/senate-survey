@@ -215,13 +215,13 @@ def export_json():
 
         # form is stored as JSON, so extract responses
         form_js = json.loads(submission.form)
-        sub['responses'] = form_js
+        sub['survey'] = form_js
 
         exp.append(sub)
 
     # output JSON
     f = io.StringIO()
-    json.dump(exp, f, default=json_serializer)
+    json.dump({'responses': exp}, f, default=json_serializer)
 
     # there must be a better way to do this than StringIO -> str -> BytesIO
     return send_file(io.BytesIO(f.getvalue().encode('utf-8')),
