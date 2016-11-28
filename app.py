@@ -3,10 +3,12 @@ from flask import Flask, session, redirect, url_for, request, jsonify, render_te
 from flask_cas import CAS, login_required, login, logout
 
 import csv
+import datetime
 import hashlib
 import io
 import json
 import os
+import uuid
 
 import models
 
@@ -16,6 +18,15 @@ def get_pepper():
         return os.environ['CC_SURVEY_PEPPER']
     except:
         return None
+
+
+def json_serializer(obj):
+    if isinstance(obj, datetime.datetime):
+        return obj.isoformat()
+    if isinstance(obj, uuid.UUID):
+        return str(obj)
+    raise TypeError('{} is not JSON serializable'.format(type(obj)))
+
 
 app = Flask(__name__)
 cas = CAS(app)
@@ -141,8 +152,9 @@ def form_auth_key(auth_key):
 
 
 @app.route('/export')
+@app.route('/export.csv')
 @login_required
-def export():
+def export_csv():
     # see if this user is in CC_SURVEY_ADMINS
     if cas.username not in CC_SURVEY_ADMINS:
         abort(403)
@@ -182,6 +194,38 @@ def export():
                      as_attachment=True,
                      attachment_filename='ccsurvey.csv',
                      mimetype='text/csv')
+
+
+@app.route('/export.json')
+@login_required
+def export_json():
+    # see if this user is in CC_SURVEY_ADMINS
+    if cas.username not in CC_SURVEY_ADMINS:
+        abort(403)
+
+    # loop through all submissions and make a dict for each, then append to list
+    submissions = models.Submission.select().order_by(models.Submission.time.desc())
+
+    exp = []
+    for submission in submissions:
+        sub = {}
+        sub['id'] = submission.id
+        sub['time'] = submission.time
+        sub['version'] = submission.version
+
+        # form is stored as JSON, so extract responses
+        form_js = json.loads(submission.form)
+        sub['responses'] = form_js
+
+        exp.append(sub)
+
+    # output JSON
+    f = io.StringIO()
+    json.dump(exp, f, default=json_serializer)
+
+    # there must be a better way to do this than StringIO -> str -> BytesIO
+    return send_file(io.BytesIO(f.getvalue().encode('utf-8')),
+                     mimetype='application/json')
 
 
 @app.route('/')
