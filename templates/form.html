@@ -8,10 +8,17 @@
 <script>
 angular.module('questionaire', [])
 .controller('QuestionController', ['$scope', '$http', '$interpolate', function($scope, $http, $interpolate) {
-	$scope.survey = [
+    $scope.survey = [
         [
+
+
+            /******************************************/
+            /* DEMOGRAPHICS                           */
+            /******************************************/
+
+
             {
-                "id": "q1",
+                "id": "demographic1",
                 "question": "Which class are you a part of?",
                 "type": "select",
                 "options": [
@@ -25,204 +32,1092 @@ angular.module('questionaire', [])
                 ]
             },
             {
-                "id": "q2",
-                "question": "Have you ever gone to the Counseling Center?",
+                "id": "demographic2",
+                "question": "Are you a member of a Greek-affiliated organization",
                 "type": "radio",
                 "options": [
-                    "Yes",
+                    "Yes, Panhellenic Council",
+                    "Yes, Interfraternity Council",
                     "No"
                 ]
             },
             {
-                "id": "q3",
-                "question": "If you currently use the Counseling Center, how many times per semester do you go?",
+                "id": "demographic3",
+                "question": "As of the Fall 2016 semester, where do you currently live?",
+                "type": "radio",
+                "options": [
+                    "On-campus residence hall or apartment",
+                    "Greek housing",
+                    "Off-campus"
+                ]
+            },
+
+
+            /******************************************/
+            /* RESIDENCE LIFE                         */
+            /******************************************/
+
+
+            {
+                "id": "reslife1",
+                "question": "In which residence hall do you live?",
                 "type": "select",
                 "options": [
-                    "1 time",
-                    "2-5 times",
-                    "6-10 times",
-                    "Over 10 times"
+                    "BARH",
+                    "Barton Hall",
+                    "Blitman Residence Commons",
+                    "Bray Hall",
+                    "Bryckwyck",
+                    "Cary Hall",
+                    "City Station West",
+                    "Colonie Apartments",
+                    "Crockett Hall",
+                    "Davison Hall",
+                    "E-Complex",
+                    "Hall Hall",
+                    "Nason Hall",
+                    "North Hall",
+                    "Nugent Hall",
+                    "Polytechnic Residence Commons",
+                    "Quadrangle",
+                    "RAHP A",
+                    "RAHP B",
+                    "Sharp Hall",
+                    "Stacwyck Apartments",
+                    "Warren Hall"
                 ],
-                "show_if_id": "q2",
-                "show_if_value": "Yes"
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
             },
             {
-                "id": "q4",
-                "question": "If you no longer use the Counseling Center, why did you stop attending appointments?",
-                "type": "select",
+                "id": "reslife2",
+                "question": "Which of the following reasons motivated you to live on-campus?",
+                "type": "checkbox",
                 "options": [
-                    "Not Applicable: I currently use the Counseling Center",
-                    "Use a counselor at home and/or off-campus",
-                    "My condition improved; I will return for services in the future if needed",
-                    "Bad experience at the Counseling Center",
-                    "Heard about a bad experience another student had at the Counseling Center",
-                    "Had difficulty scheduling an appointment",
+                    "Sense of community",
+                    "Location",
+                    "Safety",
+                    "Cleanliness",
+                    "Cost",
+                    "Utilities",
+                    "Privacy",
+                    "Space",
+                    "Convenience (FIXX, cleaning staff, study rooms, etc.)",
+                    "Required to"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife3",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the toilets in your residence halls?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife4",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the sinks in your residence halls?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife5",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the bathroom countertops in your residence halls?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife6",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the showers in your residence halls?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife7",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the dispensers in your residence halls?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife8",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with your residence hall's printer(s)?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife9",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with your residence hall's study rooms?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife10",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with your residence hall's kitchen?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife11",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with your residence hall's communal furniture?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife12",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with you residence hall’s timeliness of FIXX responses (how long it takes for your issue to be resolved)?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife13",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with you residence hall’s Wi-Fi connection?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife14",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with you residence hall’s bedroom furniture?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife15",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with you residence hall’s air conditioning (if applicable)?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife16",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with you residence hall’s heating?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife17",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with your hall's programs and activities?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife18",
+                "question": "If you chose 3 or less for any of the scaled questions about the state of your on-campus housing, please elaborate here.",
+                "type": "text",
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife19",
+                "question": "Have you ever felt unsafe near the entrance to your building (due to stalkers, loitering, etc)?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife20",
+                "question": "Would you feel more safe to have multiple entrances to your building that are not alarmed?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife21",
+                "question": "Have you been educated on what to do in emergency situations in your building (such as an active shooter, weather disaster, fire, etc.)?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife22",
+                "question": "Which of the following Department of Public Safety's services have you used (such as rides when you feel unsafe, blue light system, etc.)?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife23",
+                "question": "Which of the following statements best match your beliefs with respect to access to other residence halls?",
+                "type": "radio",
+                "options": [
+                    "Residents should only have access to their own residence hall",
+                    "On-campus residents should have access to neighboring residence halls, but only during daylight hours",
+                    "On-campus residents should have access to neighboring residence halls",
+                    "On-campus residents should have access to all residence halls, but only during daylight hours",
+                    "On-campus residents should have access to all residence halls",
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife24",
+                "question": "On a scale from 1-10, ten being the highest, how important is the presence of food at a program to your willingness to attend?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife25",
+                "question": "Are you aware of, or familiar with, the Guest Policy?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+            {
+                "id": "reslife26",
+                "question": "If you have any other comments about the state of your on-campus housing, please share them here.",
+                "type": "text",
+                "show_if_id": "demographic3",
+                "show_if_value": "On-campus residence hall or apartment"
+            },
+
+            /******************************************/
+            /* GREEK HOUSING                          */
+            /******************************************/
+
+            {
+                "id": "greekHousing1",
+                "question": "As of the Fall 2016 semester, how long have you lived in Greek housing?",
+                "type": "radio",
+                "options": [
+                    "1-2 semesters",
+                    "3-4 semesters",
+                    "5 or more semesters"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing2",
+                "question": "How many semesters did you live on-campus before moving into your Greek house?",
+                "type": "radio",
+                "options": [
+                    "Did not live on-campus",
+                    "1-2 semesters",
+                    "3-4 semesters",
+                    "5 or more semesters"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing3",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the cost of living in your Greek house in comparison to other options?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing4",
+                "question": "If you were to have participated in the Summer Arch program, or if you plan to, would you have preferred to live in your Greek house for the summer semester?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing5",
+                "question": "What was your primary motivation for living in a Greek House?",
+                "type": "radio",
+                "options": [
+                    "Sophomore who didn’t want to live in on-campus",
+                    "Cost",
+                    "It’s required by my chapter",
                     "Other (please specify below)"
                 ],
-                "show_if_id": "q2",
-                "show_if_value": "Yes"
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
             },
             {
-                "id": "q4other",
-                "question": "Why did you stop attending appointments?",
+                "id": "greekHousing5other",
+                "question": "What was your primary motivation for living in a Greek House?",
                 "type": "text",
-                "show_if_id": "q4",
+                "show_if_id": "greekHousing5",
                 "show_if_value": "Other (please specify below)"
             },
             {
-                "id": "q5",
-                "question": "Please select the main reason from the choices below to describe why you have never used this service.",
-                "type": "select",
-                "options": [
-                    "Not Applicable: I currently use the Counseling Center",
-                    "Didn’t know about it/that it existed",
-                    "Have a counselor at home and/or off-campus",
-                    "Have never needed psychological counseling services",
-                    "Heard about a bad experience another student had at the Counseling Center",
-                    "Had difficulty scheduling an appointment",
-                    "Other (please specify below)"
-                ],
-                "show_if_id": "q2",
-                "show_if_value": "No"
-            },
-            {
-                "id": "q5other",
-                "question": "Why you have never used the Counseling Center?",
-                "type": "text",
-                "show_if_id": "q5",
-                "show_if_value": "Other (please specify below)"
-            },
-            {
-                "id": "q6",
-                "question": "Would you have any interest in scheduling appointments online if you were to schedule an appointment?",
+                "id": "greekHousing6",
+                "question": "Are you planning on continuing to live in your Greek House for the 2017-2018 Academic Year?",
                 "type": "radio",
                 "options": [
                     "Yes",
-                    "No"
+                    "No, graduating",
+                    "No, not planning to"
                 ],
-                "show_if_id": "q2",
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing7",
+                "question": "Do you have an RPI shuttle stop that stops near your house?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing8",
+                "question": "Do you use the shuttle stop near your house to commute between your house and campus?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "greekHousing7",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "greekHousing9",
+                "question": "If there was a shuttle stop near your house, would you use it to commute between your house and campus?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "greekHousing7",
                 "show_if_value": "No"
+            },
+            {
+                "id": "greekHousing10",
+                "question": "Do you feel safe in the area where your Greek house is?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing11",
+                "question": "Have you ever had an incident occur off-campus in which you felt unsafe?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing12",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the presence of Public Safety and/or Troy Police in your neighborhood?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing13",
+                "question": "Do you have a Blue Light Station near your Greek house?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing14",
+                "question": "If you do not have a Blue Light Station near your Greek house, would you feel more safe if there was one?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "greekHousing13",
+                "show_if_value": "No"
+            },
+            {
+                "id": "greekHousing15",
+                "question": "In case of an incident, who would you be most comfortable calling?",
+                "type": "radio",
+                "options": [
+                    "Department of Public Safety",
+                    "Troy Police Department",
+                    "Other (please specify below)"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing15other",
+                "question": "In case of an incident, who would you be most comfortable calling?",
+                "type": "text",
+                "show_if_id": "greekHousing15",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "greekHousing16",
+                "question": "Approximately how far away is your Greek House from campus?",
+                "type": "radio",
+                "options": [
+                    "0 - 0.5 miles",
+                    "0.5 - 2 miles",
+                    "2 - 5 miles",
+                    "5+ miles"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing17",
+                "question": "How do you primarily commute to campus?",
+                "type": "radio",
+                "options": [
+                    "Walking",
+                    "Driving",
+                    "Biking, skateboarding, etc.",
+                    "Shuttle",
+                    "Public Transportation",
+                    "Other (please specify below)"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing17other",
+                "question": "How do you primarily commute to campus?",
+                "type": "text",
+                "show_if_id": "greekHousing17",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "greekHousing18",
+                "question": "Do you have a parking pass?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing19",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the availability of parking passes?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "greekHousing18",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "greekHousing20",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the availability of parking spaces on campus?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "greekHousing18",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "greekHousing21",
+                "question": "What was your motivation to live on campus when you did?",
+                "type": "radio",
+                "options": [
+                    "Sense of community",
+                    "Location",
+                    "Safety",
+                    "Cleanliness",
+                    "Cost",
+                    "Utilities",
+                    "Privacy",
+                    "Space",
+                    "Convenience (FIXX, cleaning staff, study rooms, etc.)",
+                    "Required to",
+                    "Did not live on campus"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing22",
+                "question": "Approximately how long does it take you to get to class?",
+                "type": "radio",
+                "options": [
+                    "Less than 5 minutes",
+                    "5-10 minutes",
+                    "10-15 minutes",
+                    "15-20 minutes",
+                    "20+ minutes"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+            {
+                "id": "greekHousing23",
+                "question": "If you have any other comments about your experiences with Greek Housing, please share them here.",
+                "type": "text",
+                "show_if_id": "demographic3",
+                "show_if_value": "Greek housing"
+            },
+
+            /******************************************/
+            /* OFF-CAMPUS HOUSING                     */
+            /******************************************/
+
+            {
+                "id": "offcampus1",
+                "question": "How did you find out about your off-campus housing?",
+                "type": "radio",
+                "options": [
+                    "Jump Off Campus",
+                    "Friend",
+                    "Craigslist",
+                    "Zillow",
+                    "Facebook groups associated with RPI and/or Troy (Free & For Sale, etc)",
+                    "Other (please specify below)"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus1other",
+                "question": "How did you find out about your off-campus housing?",
+                "type": "text",
+                "show_if_id": "offcampus1",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "offcampus2",
+                "question": "Approximately how far away do you live from campus?",
+                "type": "radio",
+                "options": [
+                    "0 - 0.5 miles",
+                    "0.5 - 2 miles",
+                    "2 - 5 miles",
+                    "5+ miles"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus3",
+                "question": "How do you primarily commute to campus?",
+                "type": "radio",
+                "options": [
+                    "Walking",
+                    "Driving",
+                    "Biking, skateboarding, etc.",
+                    "Shuttle",
+                    "Public Transportation",
+                    "Other (please specify below)"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus3other",
+                "question": "How do you primarily commute to campus?",
+                "type": "text",
+                "show_if_id": "offcampus3",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "offcampus4",
+                "question": "Approximately how long does it take you to get to class?",
+                "type": "radio",
+                "options": [
+                    "Less than 5 minutes",
+                    "5-10 minutes",
+                    "10-15 minutes",
+                    "15-20 minutes",
+                    "20+ minutes"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus5",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the overall quality of your off-campus housing and amenities?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus6",
+                "question": "Do you have a parking pass?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus7",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the availability of parking passes?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "offcampus6",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "offcampus8",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the availability of parking spaces on campus?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "offcampus6",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "offcampus9",
+                "question": "Do you feel safe around the area where you live?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus10",
+                "question": "Have you ever had an incident occur in which you felt unsafe?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus11",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the presence of Public Safety and/or Troy Police in your neighborhood?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus12",
+                "question": "Do have a Blue Light Station near where you live?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus13",
+                "question": "If you do not have a Blue Light Station near where you live, would you feel more safe if there was one?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "offcampus12",
+                "show_if_value": "No"
+            },
+            {
+                "id": "offcampus14",
+                "question": "In case of an incident, who would you be most comfortable calling?",
+                "type": "radio",
+                "options": [
+                    "Department of Public Safety",
+                    "Troy Police Department",
+                    "Other (please specify below)"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus14other",
+                "question": "In case of an incident, who would you be most comfortable calling?",
+                "type": "text",
+                "show_if_id": "offcampus14",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "offcampus15",
+                "question": "What was your motivation to live off campus?",
+                "type": "radio",
+                "options": [
+                    "Cost",
+                    "Less regulations",
+                    "Privacy",
+                    "Ability to not be on a meal plan",
+                    "Location",
+                    "Cleanliness",
+                    "More Freedom",
+                    "Better Utilities (Internet, etc)",
+                    "Living at home / with family",
+                    "Space",
+                    "Other (please specify below)"
+                ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus15other",
+                "question": "What was your motivation to live off campus?",
+                "type": "text",
+                "show_if_id": "offcampus15",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "offcampus16",
+                "question": "Though living off-campus, do you still feel connected to the campus community?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus17",
+                "question": "Did you live on-campus before moving off campus?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus18",
+                "question": "How many semesters did you live on-campus before moving off campus?",
+                "type": "radio",
+                "options": [
+                    "1-2 semesters",
+                    "3-4 semesters",
+                    "5 or more semesters"
+                ],
+                "show_if_id": "offcampus17",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "offcampus19",
+                "question": "How many semesters did you live on-campus before moving off campus?",
+                "type": "radio",
+                "options": [
+                    "Sense of community",
+                    "Location",
+                    "Safety",
+                    "Cleanliness",
+                    "Cost",
+                    "Utilities",
+                    "Privacy",
+                    "Space",
+                    "Convenience (FIXX, cleaning staff, study rooms, etc.)",
+                    "Required to"
+                ],
+                "show_if_id": "offcampus17",
+                "show_if_value": "Off-campus"
+            },
+            {
+                "id": "offcampus20",
+                "question": "If you have any other comments about your experiences with off-campus living, please share them here.",
+                "type": "text",
+                "show_if_id": "demographic3",
+                "show_if_value": "Off-campus"
             }
         ],
         [
+            /******************************************/
+            /* SUMMER PROGRAMS                        */
+            /******************************************/
+
             {
-                "id": "q7",
-                "question": "On a scale from 1-10, ten being the highest, how would you rank your overall satisfaction?",
+                "id": "summerPrograms1",
+                "question": "Have you lived in the Troy area over the summer before?",
+                "type": "radio",
+                "options": [ "Yes", "No" ]
+            },
+            {
+                "id": "summerPrograms2",
+                "question": "On a scale from 1-10, ten being the highest, how satisfied were you with availability of options for activities on campus and in the local area?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ],
+                "show_if_id": "summerPrograms1",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "summerPrograms3",
+                "question": "If any, what suggestions do you have for activities for students living near campus in the summer?",
+                "type": "text"
+            },
+
+            /******************************************/
+            /* SUMMER PROGRAMS                        */
+            /******************************************/
+
+            {
+                "id": "rights1",
+                "question": "On a scale from 1-10, ten being the highest, how familiar are you with the Rensselaer Handbook of Rights and Responsibilities (commonly referred to as the Student Handbook)?",
                 "type": "radio",
                 "options": [
                     1, 2, 3, 4, 5, 6, 7, 8, 9, 10
                 ]
             },
             {
-                "id": "q8",
-                "question": "On a scale from 1-10, ten being the highest, how would you rank your satisfaction with provider(s) seen?",
+                "id": "rights2",
+                "question": "On a scale from 1-10, ten being the highest, how familiar are you with the Good Samaritan Policy?",
                 "type": "radio",
                 "options": [
                     1, 2, 3, 4, 5, 6, 7, 8, 9, 10
                 ]
             },
             {
-                "id": "q9",
-                "question": "On a scale from 1-10, how would you rank your satisfaction with clerical staff?",
+                "id": "rights3",
+                "question": "Do you have any concerns or issues with any student-related policies?",
                 "type": "radio",
-                "options": [
-                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-                ]
+                "options": [ "Yes", "No" ]
             },
             {
-                "id": "q10",
-                "question": "On a scale from 1-10, how would you rank the friendliness of clerical staff?",
-                "type": "radio",
-                "options": [
-                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-                ]
+                "id": "rights4",
+                "question": "If yes, what concerns or issues do you have?",
+                "type": "text",
+                "show_if_id": "rights3",
+                "show_if_value": "Yes"
             },
             {
-                "id": "q11",
-                "question": "On a scale from 1-10, how satisfied were you with the wait time prior to your appointment?",
-                "type": "radio",
-                "options": [
-                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-                ]
-            },
-            {
-                "id": "q12",
-                "question": "On a scale from 1-10, how satisfied are you with the counseling center website?",
-                "type": "radio",
-                "options": [
-                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-                ]
+                "id": "rights5",
+                "question": "If you have any other comments about student rights and/or policies, please share them here.",
+                "type": "text"
             }
+
+            /******************************************/
+            /* ON-CAMPUS PHARMACY                     */
+            /******************************************/
+
+            {
+                "id": "pharmacy1",
+                "question": "Do you regularly take prescription medication?",
+                "type": "radio",
+                "options": [ "Yes", "No" ]
+            },
+            {
+                "id": "pharmacy2",
+                "question": "How often do you pick up prescriptions?",
+                "type": "radio",
+                "options": [
+                    "Weekly",
+                    "Monthly",
+                    "Every 3 months",
+                    "Once per year"
+                ],
+                "show_if_id": "pharmacy1",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "pharmacy3",
+                "question": "Would you be interested in having prescriptions mailed to you on campus instead of picking them up at a pharmacy?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "pharmacy1",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "pharmacy4",
+                "question": "Do you already have prescriptions mailed to you?",
+                "type": "radio",
+                "options": [ "Yes", "No" ],
+                "show_if_id": "pharmacy1",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "pharmacy5",
+                "question": "What company do you use to have prescriptions mailed to you?",
+                "type": "text",
+                "show_if_id": "pharmacy4",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "pharmacy6",
+                "question": "How often do you need urgent, short-term prescriptions filled (like antibiotics)?",
+                "type": "radio",
+                "options": [
+                    "Very Often",
+                    "Somewhat Often",
+                    "Rarely Often",
+                    "Almost Never"
+                ]
+            },
+            {
+                "id": "pharmacy7",
+                "question": "Would it be more convenient for you to pick up an urgent prescription at an on-campus pharmacy in the case that you needed one?",
+                "type": "radio",
+                "options": [ "Yes", "No" ]
+            },
+            {
+                "id": "pharmacy8",
+                "question": "Would you support the addition of a pharmacy to campus?",
+                "type": "radio",
+                "options": [ "Yes", "No" ]
+            },
+            {
+                "id": "pharmacy9",
+                "question": "If there was a pharmacy on campus, would you use the pharmacy to fill your prescription medicine?",
+                "type": "radio",
+                "options": [ "Yes", "No" ]
+            },
+            {
+                "id": "pharmacy10",
+                "question": "If there was a pharmacy on campus, would you use the pharmacy to obtain any needed over-the-counter medications?",
+                "type": "radio",
+                "options": [ "Yes", "No" ]
+            },
+            {
+                "id": "pharmacy11",
+                "question": "If you have any other comments about prescription medication or pharmacies, please share them here.",
+                "type": "text"
+            },
+
+            /******************************************/
+            /* STUDY SPACES                           */
+            /******************************************/
+
+            {
+                "id": "study1",
+                "question": "What locations on campus have you used to study?",
+                "type": "text"
+            },
+            {
+                "id": "study2",
+                "question": "Which of the following issues have you found to be most common with study spaces?",
+                "type": "radio",
+                "options": [
+                    "Too crowded",
+                    "Too noisy",
+                    "I did not know about this location",
+                    "Too far away from where I live"
+                ]
+            },
+            {
+                "id": "study3",
+                "question": "On a scale from 1-10, ten being the highest, how regularly do you use the '87 Gym?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ]
+            },
+            {
+                "id": "study4",
+                "question": "If the spaces were renovated, equipped, and prepared, would you consider using the ‘87 Gym for meetings for clubs and study rooms?",
+                "type": "radio",
+                "options": [ "Yes", "No" ]
+            },
+            {
+                "id": "study5",
+                "question": "If you have any other comments about on-campus study spaces, please share them here.",
+                "type": "text"
+            },
+
+            /******************************************/
+            /* FOOD DIVERSITY                         */
+            /******************************************/
+
+            {
+                "id": "foods1",
+                "question": "On a scale from 1-10, how satisfied are you with the level of diversity of foods offered on campus?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ]
+            },
+            {
+                "id": "foods2",
+                "question": "On a scale from 1-10, how satisfied are you with the level of diversity of foods offered specifically in the Union?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ]
+            },
+            {
+                "id": "foods3",
+                "question": "What types of cuisine would you like to see that you don’t currently see on campus?",
+                "type": "text"
+            },
+            {
+                "id": "foods4",
+                "question": "What types of cuisine would you like to see that you don’t currently see on campus?",
+                "type": "radio",
+                "options": [
+                    "Mexican: Rice Bowls, burritos, Quesadillas, Enchiladas",
+                    "Western Mediterranean: Pastas, Greek Spinach Strudel, Paella",
+                    "Eastern Mediterranean: Lentil Stew, Hummus Wrap, Pilaf, Chickpea Couscous Burger",
+                    "Asia: Rice Noodles, Fried Noodles, Stir fry",
+                    "North Africa: Vegetable Stew, Moroccan Couscous, Chickpea Soup, Pita Bread",
+                    "Central & South Africa: African vegetable curry,Ethiopian Vegetable Stew, Vegan Potato, Peanut & Vegetable Curry",
+                    "Other (please specify below)"
+                ]
+            },
+            {
+                "id": "foods4other",
+                "question": "",
+                "type": "text",
+                "show_if_id": "foods4",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "foods5",
+                "question": "How frequently do you patronize restaurants in downtown Troy?",
+                "type": "radio",
+                "options": [
+                    "Never",
+                    "A few times per year",
+                    "Once per month",
+                    "Once per week",
+                    "Multiple times per week"
+                ]
+            },
         ],
         [
             {
-                "id": "q13",
-                "question": "Have you received counseling outside of the RPI Counseling Center?",
-                "type": "radio",
-                "options": ["Yes", "No"]
-            },
-            {
-                "id": "q14",
-                "question": "Would you have any interest in scheduling future appointments online?",
-                "type": "radio",
-                "options": ["Yes", "No"]
-            },
-            {
-                "id": "q15",
-                "question": "Would you want to receive an appointment reminder?",
-                "type": "radio",
-                "options": ["Yes", "No"]
-            },
-            {
-                "id": "q16",
-                "question": "Have you ever wanted to make an appointment but didn’t because you didn’t want to call the Counseling Center?",
-                "type": "radio",
-                "options": ["Yes", "No"]
-            },
-            {
-                "id": "q17",
-                "question": "Before this, have you ever been asked to give feedback about the Counseling Center?",
-                "type": "radio",
-                "options": ["Yes", "No"]
-            },
-            {
-                "id": "q18",
-                "question": "Do you feel you would benefit from specialized walk-in hours counselor?",
-                "type": "radio",
-                "options": ["Yes", "No"]
-            },
-            {
-                "id": "q19",
-                "question": "Do you think it would be helpful to have a gender specialist available to students?",
-                "type": "radio",
-                "options": ["Yes", "No"]
-            },
-            {
-                "id": "q20",
-                "question": "If there was a gender specialist available, do you think it would be helpful to have walk-in hours for the specialist?",
-                "type": "radio",
-                "options": ["Yes", "No"]
-            }
-        ],
-        [
-            {
-                "id": "q21",
-                "question": "Do you feel like your concerns were addressed during your experience?",
-                "type": "text"
-            },
-            {
-                "id": "q22",
-                "question": "What do you feel the Counseling Center is missing?",
-                "type": "text"
-            },
-            {
-                "id": "q23",
-                "question": "What could the Counseling Center do to improve student accessibility?",
-                "type": "text"
-            },
-            {
-                "id": "q24",
-                "question": "If you have ever missed an appointment at the Counseling Center, why?",
+                "id": "other1",
+                "question": "If you have any feedbace, please share it here.",
                 "type": "text"
             }
         ]
