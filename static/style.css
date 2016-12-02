@@ -2,6 +2,14 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+.radio-line:first-child {
+    margin-top: 10px;
+}
+
+.radio-line {
+    margin-bottom: 10px;
+}
+
 .logo-img {
     width: 120px;
     margin-right: 10px;
