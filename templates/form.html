@@ -8,15 +8,15 @@
 <script>
 angular.module('questionaire', [])
 .controller('QuestionController', ['$scope', '$http', '$interpolate', function($scope, $http, $interpolate) {
+    $scope.headers = {
+        "demographic1": "Demographics",
+        "reslife1": "On-Campus Living",
+        "greekHousing1": "Greek Housing",
+        "offcampus1": "Off-Campus Living"
+    };
+
     $scope.survey = [
         [
-
-
-            /******************************************/
-            /* DEMOGRAPHICS                           */
-            /******************************************/
-
-
             {
                 "id": "demographic1",
                 "question": "Which class are you a part of?",
@@ -29,12 +29,13 @@ angular.module('questionaire', [])
                     "Co-terminal",
                     "Masters",
                     "Doctorate"
-                ]
+                ],
+                "required": true
             },
             {
                 "id": "demographic2",
                 "question": "Are you a member of a Greek-affiliated organization",
-                "type": "radio",
+                "type": "select",
                 "options": [
                     "Yes, Panhellenic Council",
                     "Yes, Interfraternity Council",
@@ -44,7 +45,7 @@ angular.module('questionaire', [])
             {
                 "id": "demographic3",
                 "question": "As of the Fall 2016 semester, where do you currently live?",
-                "type": "radio",
+                "type": "select",
                 "options": [
                     "On-campus residence hall or apartment",
                     "Greek housing",
@@ -300,13 +301,13 @@ angular.module('questionaire', [])
             {
                 "id": "reslife23",
                 "question": "Which of the following statements best match your beliefs with respect to access to other residence halls?",
-                "type": "radio",
+                "type": "select",
                 "options": [
                     "Residents should only have access to their own residence hall",
                     "On-campus residents should have access to neighboring residence halls, but only during daylight hours",
                     "On-campus residents should have access to neighboring residence halls",
                     "On-campus residents should have access to all residence halls, but only during daylight hours",
-                    "On-campus residents should have access to all residence halls",
+                    "On-campus residents should have access to all residence halls"
                 ],
                 "show_if_id": "demographic3",
                 "show_if_value": "On-campus residence hall or apartment"
@@ -926,7 +927,7 @@ angular.module('questionaire', [])
                 "id": "rights5",
                 "question": "If you have any other comments about student rights and/or policies, please share them here.",
                 "type": "text"
-            }
+            },
 
             /******************************************/
             /* ON-CAMPUS PHARMACY                     */
@@ -1112,16 +1113,25 @@ angular.module('questionaire', [])
                     "Once per week",
                     "Multiple times per week"
                 ]
-            },
+            }
         ],
         [
             {
                 "id": "other1",
-                "question": "If you have any feedbace, please share it here.",
+                "question": "If you have any other feedback, please share it here.",
                 "type": "text"
             }
         ]
 	];
+
+    $scope.canProceed = function () {
+        for (var q of $scope.survey[$scope.page - 1]) {
+            if((q.value == undefined || q.value.length == 0) && q.required) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     // should show question
     $scope.should_show_question = function(q) {
@@ -1141,6 +1151,24 @@ angular.module('questionaire', [])
         return true;
     };
 
+    $scope.toggleCheckboxSelection = function (qIndex, option) {
+        if($scope.survey[$scope.page - 1][qIndex].type != 'checkbox') {
+            return;
+        } else if(!$scope.survey[$scope.page - 1][qIndex].value) {
+            $scope.survey[$scope.page - 1][qIndex].value = [];
+        }
+
+        var idx = $scope.survey[$scope.page - 1][qIndex].value.indexOf(option);
+
+        if (idx > -1) {
+            $scope.survey[$scope.page - 1][qIndex].value.splice(idx, 1);
+        } else {
+            $scope.survey[$scope.page - 1][qIndex].value.push(option);
+        }
+
+        console.log(idx, $scope.survey[$scope.page - 1][qIndex].value);
+ };
+
     // pagination
     $scope.page = 1;
     $scope.last_page = $scope.survey.length;
@@ -1154,7 +1182,7 @@ angular.module('questionaire', [])
 </script>
 
 <div class="masthead">
-    <h3 class="text-muted">Counseling Center Survey</h3>
+    <h3 class="text-muted">Fall 2016 Student Senate Survey</h3>
 </div>
 
 <div class="form" ng-app="questionaire">
@@ -1162,7 +1190,8 @@ angular.module('questionaire', [])
 		<form action="" method="post" id="form">
             <div id="form-page" ng-show="$index + 1 === page" ng-repeat="question_page in survey">
     			<div class="form-group" ng-repeat="q in question_page" ng-show="should_show_question(q)">
-    				<label for="{{q.id}}">{{ q.question }}</label>
+                    <h3 class="page-header" ng-if="headers[q.id] !== undefined" ng-bind="headers[q.id]"></h3>
+    				<label for="{{q.id}}">{{ q.question }} <span ng-if="q.required" class="text-danger">*</span></label>
 
     				<select class="form-control" name="{{q.id}}" ng-model="q.value" ng-if="q.type === 'select'">
                         <option value=""></option>
@@ -1176,15 +1205,22 @@ angular.module('questionaire', [])
                             <input type="radio" name="{{q.id}}" value="{{option}}" ng-model="q.value">{{option}}
                         </label>
                     </div>
+                    <div class="controls" ng-if="q.type === 'checkbox'">
+                        <label class="radio-inline" ng-repeat="option in q.options">
+                            <input type="checkbox" name="{{q.id}}" value="{{option}}"
+                                   ng-checked="q.value && q.value.indexOf(option) > -1"
+                                   ng-click="toggleCheckboxSelection($parent.$index, option)"> {{option}}
+                        </label><br />
+                    </div>
     			</div>
 
-            <input class="form-control btn btn-success" type="submit" id="submit" value="Submit" ng-if="$index + 1 === survey.length" />
+            <input class="form-control btn btn-success" type="submit" id="submit" value="Submit" ng-if="$index + 1 === survey.length" ng-disabled="!canProceed()" />
             </div>
 
             <nav ng-if="survey.length > 1">
                 <ul class="pager">
                     <li ng-class="{'disabled': page === 1}" ng-click="previous_page()"><a href="#">Previous</a></li>
-                    <li ng-class="{'disabled': page === last_page}" ng-click="next_page()"><a href="#">Next</a></li>
+                    <li ng-class="{'disabled': page === last_page || !canProceed()}" ng-click="next_page()"><a href="#">Next</a></li>
                 </ul>
             </nav>
 
