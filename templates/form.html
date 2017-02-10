@@ -12,7 +12,8 @@ angular.module('questionaire', [])
         "demographic1": "Demographics",
         "reslife1": "On-Campus Living",
         "greekHousing1": "Greek Housing",
-        "offcampus1": "Off-Campus Living"
+        "offcampus1": "Off-Campus Living",
+        "empac1": "EMPAC"
     };
 
     $scope.survey = [
@@ -296,9 +297,8 @@ angular.module('questionaire', [])
             },
             {
                 "id": "reslife22",
-                "question": "Which of the following Department of Public Safety's services have you used (such as rides when you feel unsafe, blue light system, etc.)?",
-                "type": "radio",
-                "options": ["Yes", "No"],
+                "question": "What Department of Public Safety services have you used (such as rides when you feel unsafe, blue light system, etc.)?",
+                "type": "text",
                 "show_if_id": "demographic3",
                 "show_if_value": "On-campus residence hall or apartment"
             },
@@ -999,7 +999,7 @@ angular.module('questionaire', [])
                 "options": [
                     "Very Often",
                     "Somewhat Often",
-                    "Rarely Often",
+                    "Rarely",
                     "Almost Never"
                 ],
                 "inline": false
@@ -1134,6 +1134,280 @@ angular.module('questionaire', [])
                     "Multiple times per week"
                 ],
                 "inline": false
+            },
+            {
+                "id": "empac1",
+                "question": "How often do you attend shows at EMPAC?",
+                "type": "radio",
+                "options": [
+                    "Never",
+                    "One to two times a semester",
+                    "Three to four times a semester",
+                    "More than five"
+                ],
+                "inline": false
+            },
+            {
+                "id": "empac2",
+                "question": "What kind of performances have you attended?",
+                "type": "checkbox",
+                "options": [
+                    "Performance",
+                    "Talk",
+                    "Music/Sound",
+                    "Film/Video",
+                    "Town Hall Meetings",
+                    "Union Speaker Forum",
+                    "Student Club Performance"
+                ],
+                "inline": false
+            },
+            {
+                "id": "empac3",
+                "question": "What motivated you to go to the performance?",
+                "type": "radio",
+                "options": [
+                    "Mandatory",
+                    "Personal Interest",
+                    "Went with a friend",
+                    "Other (please specify below)"
+                ],
+                "inline": false
+            },
+            {
+                "id": "empac3other",
+                "question": "",
+                "type": "text",
+                "show_if_id": "empac3",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "empac4",
+                "question": "How did you hear about the performances?",
+                "type": "radio",
+                "options": [
+                    "Morning Mail",
+                    "Concerto",
+                    "Email",
+                    "Friends",
+                    "Posters",
+                    "EMPAC Catalog",
+                    "Professor's Recommendation"
+                ],
+                "inline": false
+            },
+            {
+                "id": "empac5",
+                "question": "Are you satisfied with the types of performances that EMPAC currently offers?",
+                "type": "radio",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "empac6",
+                "question": "Which of the following shows would you be willing to see if offered at EMPAC?",
+                "type": "checkbox",
+                "options": [
+                    "Movie Night",
+                    "Talks from Industry Leaders/Researchers",
+                    "TEDx (unaffiliated TED Talks)",
+                    "Club Affiliated Events (RPI Players, Orchestra, etc.)",
+                    "GM Week Activities",
+                    "Other (please specify below)"
+                ]
+            },
+            {
+                "id": "empac6other",
+                "question": "",
+                "type": "text",
+                "show_if_id": "empac6",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "empac7",
+                "question": "Have you ever eaten in EMPAC?",
+                "type": "radio",
+                "options": [
+                    "Yes, at Evelyn's",
+                    "Yes, at Terra Cafe",
+                    "Yes, at both",
+                    "No"
+                ],
+                "inline": false
+            },
+            {
+                "id": "empac8",
+                "question": "Have you heard of EMPAC+?",
+                "type": "radio",
+                "options": [
+                    "Yes, and I'm a member",
+                    "Yes, but I'm not a member",
+                    "No"
+                ],
+                "inline": false
+            }
+        ],
+        [
+            {
+                "id": "aac1",
+                "question": "Have you ever seen someone cheating on a test/quiz?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "inline": true
+            },
+            {
+                "id": "aac2",
+                "question": "How were they cheating?",
+                "type": "checkbox",
+                "options": [
+                    "Laptop",
+                    "Cell phone",
+                    "Notes or crib sheets",
+                    "Other (please specify below)"
+                ],
+                "show_if_id": "aac1",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "aac2other",
+                "question": "",
+                "type": "text",
+                "show_if_id": "aac2",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "aac3",
+                "question": "Did your TA or professor notice the incident?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "inline": true,
+                "show_if_id": "aac1",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "aac4",
+                "question": "Did they do anything about it on the scene?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "inline": true,
+                "show_if_id": "aac3",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "aac5",
+                "question": "In general, do your TAs walk around during exams and check for cheating?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "inline": true
+            },
+            {
+                "id": "aac6",
+                "question": "Have you ever reported someone for cheating?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "inline": true
+            },
+            {
+                "id": "aac7",
+                "question": "Do you feel that those who are not cheating are being taken advantage of?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "inline": true
+            },
+            {
+                "id": "aac8",
+                "question": "Do you feel RPI degrees are blemished by the amount of cheating within classes?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "inline": true
+            },
+            {
+                "id": "aac9",
+                "question": "How bad of a problem do you think cheating is at RPI?",
+                "type": "radio",
+                "options": [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                ]
+            },
+            {
+                "id": "aac10",
+                "question": "Would you support removing an academic holiday (Columbus Day) so that there would be no classes on the date of the Career Fair?",
+                "type": "radio",
+                "options": ["Yes", "No"]
+            }
+        ],
+        [
+            {
+                "id": "comm1",
+                "question": "How do you hear about Student Government Projects and Events?",
+                "type": "checkbox",
+                "options": [
+                    "Facebook RPI: Get Informed Page",
+                    "Student Government Twitter",
+                    "RPI Reddit",
+                    "Posters",
+                    "Tabling Info Sessions on Campus",
+                    "The Polytechnic (Newspaper)",
+                    "Open Student Government Meetings",
+                    "Word of Mouth",
+                    "Other (please specify below)"
+                ]
+            },
+            {
+                "id": "comm1other",
+                "question": "",
+                "type": "text",
+                "show_if_id": "comm1",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "comm2",
+                "question": "What is the best way to be notified about Student Government Projects and Events?",
+                "type": "radio",
+                "options": [
+                    "Facebook RPI: Get Informed Page",
+                    "Student Government Twitter",
+                    "RPI Reddit",
+                    "Posters",
+                    "Tabling Info Sessions on Campus",
+                    "The Polytechnic (Newspaper)",
+                    "Open Student Government Meetings",
+                    "Word of Mouth",
+                    "Other (please specify below)"
+                ],
+                "inline": false
+            },
+            {
+                "id": "comm2other",
+                "question": "",
+                "type": "text",
+                "show_if_id": "comm2",
+                "show_if_value": "Other (please specify below)"
+            },
+            {
+                "id": "comm3",
+                "question": "How many Student Government projects and events have you heard of in the last year?",
+                "type": "radio",
+                "options": [
+                    0, 1, 2, 3, 4, "5+"
+                ]
+            },
+            {
+                "id": "comm3other",
+                "question": "What projects have you heard of?",
+                "type": "text",
+                "show_if_id": "comm3",
+                "show_if_value_not": "0"
+            },
+            {
+                "id": "comm4",
+                "question": "Would you like to see monthly write-ups about Student Government projects and events?",
+                "type": "radio",
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "comm5",
+                "question": "In what way could your Student Officials be in better contact with you?",
+                "type": "text"
             }
         ],
         [
@@ -1156,19 +1430,45 @@ angular.module('questionaire', [])
 
     // should show question
     $scope.should_show_question = function(q) {
-        if (!('show_if_id' in q && 'show_if_value' in q)) return true;
-        for (var page of $scope.survey) {
-            for (var other_q of page) {
-                if (other_q.id === q.show_if_id) {
-                    if (other_q.value === q.show_if_value) {
-                        // make sure that the question we depend on is also visible
-                        return $scope.should_show_question(other_q);
-                    } else {
-                        return false;
+        if (!('show_if_id' in q)) return true;
+        if ('show_if_value' in q) {
+            for (var page of $scope.survey) {
+                for (var other_q of page) {
+                    if (other_q.id === q.show_if_id) {
+                        if (other_q.value === q.show_if_value) {
+                            // make sure that the question we depend on is also visible
+                            return $scope.should_show_question(other_q);
+                        } else if (other_q.value instanceof Array
+                                    && other_q.value.indexOf(q.show_if_value) != -1){
+                            // if value is an array (for checkboxes)
+                            // make sure that the question we depend on is also visible
+                            return $scope.should_show_question(other_q);
+                        } else {
+                            return false;
+                        }
                     }
                 }
             }
+            return true;
+        } else if ('show_if_value_not' in q) {
+            for (var page of $scope.survey) {
+                for (var other_q of page) {
+                    if (other_q.id === q.show_if_id) {
+                        if (other_q.value == null) {
+                            // other question hasn't been answered yet
+                            return false;
+                        } else if (other_q.value !== q.show_if_value_not) {
+                            // make sure that the question we depend on is also visible
+                            return $scope.should_show_question(other_q);
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
         }
+
         return true;
     };
 
@@ -1186,8 +1486,6 @@ angular.module('questionaire', [])
         } else {
             $scope.survey[$scope.page - 1][qIndex].value.push(option);
         }
-
-        console.log(idx, $scope.survey[$scope.page - 1][qIndex].value);
  };
 
     // pagination
@@ -1204,7 +1502,7 @@ angular.module('questionaire', [])
 </script>
 
 <div class="masthead">
-    <h3 class="text-muted">Fall 2016 Student Senate Survey</h3>
+    <h3 class="text-muted">Spring 2017 Student Senate Survey</h3>
 </div>
 
 <div class="form" ng-app="questionaire">
@@ -1231,7 +1529,7 @@ angular.module('questionaire', [])
                     </div>
                     <div class="controls" ng-if="q.type === 'checkbox'">
                         <label class="radio" ng-repeat="option in q.options">
-                            <input type="checkbox" name="{{q.id}}" value="{{option}}"
+                            <input type="checkbox" name="{{q.id}}[]" value="{{option}}"
                                    ng-checked="q.value && q.value.indexOf(option) > -1"
                                    ng-click="toggleCheckboxSelection($parent.$index, option)"> {{option}}
                         </label>

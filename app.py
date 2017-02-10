@@ -15,7 +15,7 @@ import models
 
 def get_pepper():
     try:
-        return os.environ['CC_SURVEY_PEPPER']
+        return os.environ['SURVEY_PEPPER']
     except:
         return None
 
@@ -32,10 +32,10 @@ app = Flask(__name__)
 cas = CAS(app)
 app.config['CAS_SERVER'] = 'https://cas-auth.rpi.edu/cas/'
 app.config['CAS_AFTER_LOGIN'] = 'form'
-SURVEY_VERSION = 2
+SURVEY_VERSION = 1
 
-CC_SURVEY_ADMINS = set(os.getenv('CC_SURVEY_ADMINS', '').split(','))
-CLOSED = bool(os.getenv('CC_SURVEY_CLOSED', False))
+CC_SURVEY_ADMINS = set(os.getenv('SURVEY_ADMINS', '').split(','))
+CLOSED = bool(os.getenv('SURVEY_CLOSED', False))
 
 
 def hash_request(f):
@@ -101,7 +101,19 @@ def form():
             models.UserHash().create(hash=session['hash'])
 
             # Dump form to JSON
-            form_json = json.dumps(request.form)
+            form = {}
+            for key in request.form.keys():
+                lst = request.form.getlist(key)
+                if key.endswith('[]'):
+                    form[key] = lst
+                else:
+                    assert(len(lst) == 1)
+                    val = lst[0]
+                    if val == '':
+                        continue
+                    form[key] = val
+            form_json = json.dumps(form)
+
             models.Submission().create(form=form_json, version=SURVEY_VERSION)
 
             return render_template('message.html', message="""Your submission has
@@ -240,6 +252,7 @@ def not_configured():
     return render_template('message.html',
                            title='Not configured',
                            message='Counseling Center Survey not configured.')
+
 
 # set the secret key.  keep this really secret:
 app.secret_key = os.environ['SECRET_KEY']
