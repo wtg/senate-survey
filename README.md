@@ -1,6 +1,6 @@
-# Counseling Center Survey
+# Student Senate Survey
 
-This survey aims to gather student opinions on the quality of care and the ease of access of counseling at RPI. It is online at https://ccsurvey.union.rpi.edu.
+This survey aims to gather student opinions on various aspects of RPI. It is online at https://surveys.union.rpi.edu.
 
 ## Anonymity
 
@@ -23,14 +23,14 @@ response.
 
 The following environment variables must be defined:
 
-- **CC_SURVEY_ADMINS** — Comma-separated list of RCS IDs that are permitted to
+- **SURVEY_ADMINS** — Comma-separated list of RCS IDs that are permitted to
 download submissions from `/export` (e.g. `KOCHMS,ETZINJ,DORERN`).
-- **CC_SURVEY_PEPPER** — Appended to user ID before hashing. This makes it more
+- **SURVEY_PEPPER** — Appended to user ID before hashing. This makes it more
 difficult to map user IDs to hashes. This must not change or it will be possible
 for people to retake the survey.
 - **DATABASE_URL** — Database connection URL.
 - **SECRET_KEY** — Used to sign session cookies.
-- **CC_SURVEY_CLOSED** – If set, disables the survey and returns the closed
+- **SURVEY_CLOSED** – If set, disables the survey and returns the closed
 survey template.
 
 ## Development
@@ -39,7 +39,7 @@ First, ensure that the above environment variables are defined. Then:
 
 ```
 pip install -r requirements.txt
-gunicorn app:app --reload -k gevent
+gunicorn app:app --reload
 ```
 
 It is a good idea to do this inside of a virtual environment.
