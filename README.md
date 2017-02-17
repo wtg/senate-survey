@@ -46,5 +46,4 @@ It is a good idea to do this inside of a virtual environment.
 
 ## Deployment
 
-Counseling Center Survey can be pushed to Dokku or Heroku. It has been tested
-with SQLite and Postgres databases.
+This survey can be pushed to Dokku or Heroku. It has been tested with SQLite and Postgres databases.
