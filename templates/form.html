@@ -1415,6 +1415,11 @@ angular.module('questionaire', [])
                 "id": "other1",
                 "question": "If you have any other feedback, please share it here.",
                 "type": "text"
+            },
+            {
+                "id": "raffle1",
+                "question": "If you would like to be entered in a raffle for a gift card to the Collegiate Store, please enter your email address below.",
+                "type": "email"
             }
         ]
 	];
@@ -1519,6 +1524,8 @@ angular.module('questionaire', [])
     				</select>
 
                     <textarea class="form-control" name="{{q.id}}" ng-if="q.type === 'text'" ng-model="q.value" rows="4"></textarea>
+
+                    <input class="form-control" name="{{q.id}}" ng-if="q.type === 'email'" ng-model="q.value">
 
                     <div class="controls" ng-if="q.type === 'radio'">
                         <span ng-repeat-start="option in q.options" ng-if="$index > 0 && (q.inline === undefined || q.inline)">&#160;</span>
