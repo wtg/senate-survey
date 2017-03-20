@@ -1,5 +1,5 @@
 from functools import wraps
-from flask import Flask, session, redirect, url_for, request, jsonify, render_template, abort, send_file, request
+from flask import Flask, session, redirect, url_for, request, jsonify, render_template, abort, send_file, request, Response
 from flask_cas import CAS, login_required, login, logout
 
 import csv
@@ -1628,51 +1628,54 @@ def export():
 @app.route('/export.csv')
 @login_required
 def export_csv():
+    def generate():
+        # loop through all submissions and make a dict for each, then append to list
+        submissions = models.Submission.select().order_by(models.Submission.time.desc())
+
+        exp = []
+        header = ['id', 'time', 'version'] # CSV header containing all questions/keys
+        for submission in submissions:
+            sub = {}
+            sub['id'] = submission.id
+            sub['time'] = submission.time
+            sub['version'] = submission.version
+
+            # form is stored as JSON, so extract responses
+            form_js = json.loads(submission.form)
+
+            # if we only want responses to some questions, include only those
+            for key, value in form_js.items():
+                if question_prefix is None or key.startswith(question_prefix):
+                    question = get_question_for_key(key)
+                    sub[question] = value
+                    header.append(question)
+
+            exp.append(sub)
+
+        # output CSV
+        line = io.StringIO()
+        w = csv.DictWriter(line, header)
+        w.writeheader()
+        for csv_line in exp:
+            w.writerows(exp)
+            line.seek(0)
+            yield line.read()
+            line.truncate(0)
+
     # see if this user is in CC_SURVEY_ADMINS
     if cas.username not in CC_SURVEY_ADMINS:
         abort(403)
 
-    # loop through all submissions and make a dict for each, then append to list
-    submissions = models.Submission.select().order_by(models.Submission.time.desc())
-
-    exp = []
-    header = ['id', 'time', 'version'] # CSV header containing all questions/keys
-    for submission in submissions:
-        sub = {}
-        sub['id'] = submission.id
-        sub['time'] = submission.time
-        sub['version'] = submission.version
-
-        # form is stored as JSON, so extract responses
-        form_js = json.loads(submission.form)
-
-        # if we only want responses to some questions, include only those
-        question_prefix = request.args.get('question_prefix')
-        for key, value in form_js.items():
-            if question_prefix is None or key.startswith(question_prefix):
-                question = get_question_for_key(key)
-                sub[question] = value
-                header.append(question)
-
-        exp.append(sub)
-
-    # output CSV
-    f = io.StringIO()
-    w = csv.DictWriter(f, header)
-    w.writeheader()
-    w.writerows(exp)
-
+    question_prefix = request.args.get('question_prefix')
     # attachment filename
     if question_prefix is None:
         filename = 'senate-survey.csv'
     else:
         filename = 'senate-survey-{}.csv'.format(question_prefix)
 
-    # there must be a better way to do this than StringIO -> str -> BytesIO
-    return send_file(io.BytesIO(f.getvalue().encode('utf-8')),
-                     as_attachment=True,
-                     attachment_filename=filename,
-                     mimetype='text/csv')
+    response = Response(generate(), mimetype='text/csv')
+    response.headers['Content-Disposition'] = 'attachment; filename=' + filename
+    return response
 
 
 @app.route('/export.json')
