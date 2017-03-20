@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Export{% endblock %}
+{% block content %}
+{% raw %}
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+<script>
+angular.module('export', [])
+.controller('ExportController', ['$scope', '$http', '$interpolate', function($scope, $http, $interpolate) {
+
+    $scope.export_items = [
+        {name: 'All', question_prefix: null},
+        {name: 'Demographic', question_prefix: 'demographic'},
+        {name: 'Residence life', question_prefix: 'reslife'},
+        {name: 'Greek housing', question_prefix: 'greekHousing'},
+        {name: 'Off-campus housing', question_prefix: 'offcampus'},
+        {name: 'Summer programs', question_prefix: 'summerPrograms'},
+        {name: 'Greek housing', question_prefix: 'greekHousing'},
+        {name: 'Student rights', question_prefix: 'rights'},
+        {name: 'Pharmacy', question_prefix: 'pharmacy'},
+        {name: 'Study spaces', question_prefix: 'study'},
+        {name: 'Food diversity', question_prefix: 'foods'},
+        {name: 'Greek housing', question_prefix: 'greekHousing'},
+        {name: 'EMPAC', question_prefix: 'empac'},
+        {name: 'AAC', question_prefix: 'aac'},
+        {name: 'SGCC', question_prefix: 'comm'},
+        {name: 'Other (final free-response question)', question_prefix: 'other'},
+        {name: 'Raffle', question_prefix: 'raffle'},
+    ];
+
+    $scope.export_url = function(file_type, question_prefix) {
+        if (question_prefix === null) {
+            return 'export.' + file_type;
+        }
+        return 'export.' + file_type + '?question_prefix=' + question_prefix;
+    };
+
+}]);
+</script>
+
+<div class="masthead">
+    <h3 class="text-muted">Export</h3>
+</div>
+
+<div ng-app="export">
+	<div ng-controller="ExportController">
+        <table class="table table-striped">
+            <tr>
+                <th>Question category</th>
+                <th>Download responses</th>
+            </tr>
+            <tr ng-repeat="item in export_items">
+                <td>{{ item.name }}</td>
+                <td>
+                    <a href="{{ export_url('csv', item.question_prefix) }}" class="btn btn-default">CSV</a>
+                    <a href="{{ export_url('json', item.question_prefix) }}" class="btn btn-default">JSON</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endraw %}
+{% endblock %}
