@@ -1647,7 +1647,7 @@ def export_csv():
 
         # output CSV
         line = io.StringIO()
-        w = csv.DictWriter(line, header)
+        w = csv.DictWriter(line, header, quoting=csv.QUOTE_ALL)
         w.writeheader()
 
         # loop through submissions again and stream output to client
