@@ -1,6 +1,7 @@
 from functools import wraps
 from flask import Flask, session, redirect, url_for, request, jsonify, render_template, abort, send_file, request, Response
 from flask_cas import CAS, login_required, login, logout
+import xlsxwriter
 
 import csv
 import datetime
@@ -1629,7 +1630,7 @@ def export():
 @login_required
 def export_csv():
     def generate():
-        # loop through all submissions and make a dict for each, then append to list
+        # loop through all submissions
         submissions = models.Submission.select().order_by(models.Submission.time.desc())
 
         # build header. have to loop through everything because CSV
@@ -1647,7 +1648,7 @@ def export_csv():
 
         # output CSV
         line = io.StringIO()
-        w = csv.DictWriter(line, header, quoting=csv.QUOTE_ALL)
+        w = csv.DictWriter(line, header)
         w.writeheader()
 
         # loop through submissions again and stream output to client
@@ -1666,6 +1667,7 @@ def export_csv():
                     question = get_question_for_key(key)
                     sub[question] = value
 
+            # write CSV row
             w.writerow(sub)
             line.seek(0)
             yield line.read()
@@ -1684,6 +1686,90 @@ def export_csv():
         filename = 'senate-survey-{}.csv'.format(question_prefix)
 
     response = Response(generate(), mimetype='text/csv')
+    response.headers['Content-Disposition'] = 'attachment; filename=' + filename
+    return response
+
+
+@app.route('/export.xlsx')
+@login_required
+def export_xlsx():
+
+    # see if this user is in CC_SURVEY_ADMINS
+    if cas.username not in CC_SURVEY_ADMINS:
+        abort(403)
+
+    question_prefix = request.args.get('question_prefix')
+    # attachment filename
+    if question_prefix is None:
+        filename = 'senate-survey.xlsx'
+    else:
+        filename = 'senate-survey-{}.xlsx'.format(question_prefix)
+
+    # loop through all submissions
+    submissions = models.Submission.select().order_by(models.Submission.time.desc())
+
+    # build header. have to loop through everything first
+    header = ['id', 'time', 'version'] # header containing all questions/keys
+    for submission in submissions:
+        # form is stored as JSON, so extract responses
+        form_js = json.loads(submission.form)
+
+        # if we only want responses to some questions, include only those
+        for key, value in form_js.items():
+            if question_prefix is None or key.startswith(question_prefix):
+                question = get_question_for_key(key)
+                if question not in header:
+                    header.append(question)
+
+    # output Excel file
+    output = io.BytesIO()
+    workbook = xlsxwriter.Workbook(output, {'constant_memory': True,
+                                            'strings_to_numbers': True})
+    worksheet = workbook.add_worksheet()
+
+    # write header
+    row, col = 0, 0
+    for field in header:
+        worksheet.write(row, col, field)
+        col += 1
+    row += 1
+
+    # loop through submissions again and stream output to client
+    for submission in submissions:
+        sub = {}
+        sub['id'] = submission.id
+        sub['time'] = submission.time
+        sub['version'] = submission.version
+
+        # form is stored as JSON, so extract responses
+        form_js = json.loads(submission.form)
+
+        # if we only want responses to some questions, include only those
+        for key, value in form_js.items():
+            if question_prefix is None or key.startswith(question_prefix):
+                question = get_question_for_key(key)
+                sub[question] = value
+
+        # write CSV row
+        for field, value in sub.items():
+            for i in range(len(header)):
+                h_field = header[i]
+                if h_field == field:
+                    worksheet.write(row, i, str(value))
+                    break
+
+        row += 1
+
+            # yield output.read()
+
+        # w.writerow(sub)
+        # line.seek(0)
+        # yield line.read()
+        # line.truncate(0)
+    workbook.close()
+
+    response = Response(output.getvalue(),
+                        mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     response.headers['Content-Disposition'] = 'attachment; filename=' + filename
     return response
 

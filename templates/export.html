@@ -52,6 +52,7 @@ angular.module('export', [])
             <tr ng-repeat="item in export_items">
                 <td>{{ item.name }}</td>
                 <td>
+                    <a href="{{ export_url('xlsx', item.question_prefix) }}" class="btn btn-success">Excel</a>
                     <a href="{{ export_url('csv', item.question_prefix) }}" class="btn btn-default">CSV</a>
                     <a href="{{ export_url('json', item.question_prefix) }}" class="btn btn-default">JSON</a>
                 </td>
