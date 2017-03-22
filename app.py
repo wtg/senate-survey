@@ -1632,8 +1632,25 @@ def export_csv():
         # loop through all submissions and make a dict for each, then append to list
         submissions = models.Submission.select().order_by(models.Submission.time.desc())
 
-        exp = []
+        # build header. have to loop through everything because CSV
         header = ['id', 'time', 'version'] # CSV header containing all questions/keys
+        for submission in submissions:
+            # form is stored as JSON, so extract responses
+            form_js = json.loads(submission.form)
+
+            # if we only want responses to some questions, include only those
+            for key, value in form_js.items():
+                if question_prefix is None or key.startswith(question_prefix):
+                    question = get_question_for_key(key)
+                    if question not in header:
+                        header.append(question)
+
+        # output CSV
+        line = io.StringIO()
+        w = csv.DictWriter(line, header)
+        w.writeheader()
+
+        # loop through submissions again and stream output to client
         for submission in submissions:
             sub = {}
             sub['id'] = submission.id
@@ -1648,20 +1665,12 @@ def export_csv():
                 if question_prefix is None or key.startswith(question_prefix):
                     question = get_question_for_key(key)
                     sub[question] = value
-                    if question not in header:
-                        header.append(question)
 
-            exp.append(sub)
-
-        # output CSV
-        line = io.StringIO()
-        w = csv.DictWriter(line, header)
-        w.writeheader()
-        for csv_line in exp:
-            w.writerows(exp)
+            w.writerow(sub)
             line.seek(0)
             yield line.read()
             line.truncate(0)
+
 
     # see if this user is in CC_SURVEY_ADMINS
     if cas.username not in CC_SURVEY_ADMINS:
