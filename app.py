@@ -1648,7 +1648,8 @@ def export_csv():
                 if question_prefix is None or key.startswith(question_prefix):
                     question = get_question_for_key(key)
                     sub[question] = value
-                    header.append(question)
+                    if question not in header:
+                        header.append(question)
 
             exp.append(sub)
 
