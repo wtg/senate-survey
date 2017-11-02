@@ -1,7 +1,7 @@
-flask==0.11.1
+flask==0.12.2
 git+https://github.com/cameronbwhite/Flask-CAS@10ee70466ac9e71cec3602c1cd46f0566618f67e#egg=Flask-CAS
-peewee==2.8.5
-gunicorn==19.6.0
-gevent==1.1.2
-psycopg2==2.6.2
-XlsxWriter==0.9.6
+peewee==2.10.2
+gunicorn==19.7.1
+gevent==1.2.2
+psycopg2==2.7.3.2
+XlsxWriter==1.0.2
