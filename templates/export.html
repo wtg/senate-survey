@@ -24,7 +24,6 @@ angular.module('export', [])
         {name: 'AAC', question_prefix: 'aac'},
         {name: 'SGCC', question_prefix: 'comm'},
         {name: 'Other (final free-response question)', question_prefix: 'other'},
-        {name: 'Raffle', question_prefix: 'raffle'},
     ];
 
     $scope.export_url = function(file_type, question_prefix) {
@@ -44,8 +43,7 @@ angular.module('export', [])
 <div ng-app="export">
 	<div ng-controller="ExportController">
         <div class="alert alert-info">
-            <p><strong>Note:</strong> Due to someone submitting the Bee Movie script as part of her response, the CSV file formatting is a little sus. Please use the Excel files instead, or JSON if you want to programatically access the survey data.</p>
-            <p>—Sid</p>
+            <p><strong>Note:</strong> please use the Excel files. JSON is available if you know what you're doing.</p>
         </div>
         <table class="table table-striped">
             <tr>
