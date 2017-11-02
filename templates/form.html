@@ -947,6 +947,70 @@ angular.module('questionaire', [])
         ],
         [
             {
+                "id": "aac1",
+                "question": "Are you still interested in a potential holiday on the day of the career fair?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "inline": true,
+            },
+            {
+                "id": "aac2",
+                "question": "Which holiday would you be willing to remove/move in order to have the holiday?",
+                "type": "text",
+                "show_if_id": "aac1",
+                "show_if_value": "Yes",
+            },
+            {
+                "id": "aac3",
+                "question": "What academic resource do you use most often?",
+                "type": "text",
+            },
+            {
+                "id": "aac4",
+                "question": "Is there anything about this resource that needs improvement? If so what?",
+                "type": "text",
+            },
+            {
+                "id": "aac5",
+                "question": "How satisfied are you with the student government's projects on improving student academics? Fully Satisfied (6), We have a committee for that? (1)",
+                "type": "radio",
+                "options": [1, 2, 3, 4, 5, 6],
+                "inline": true
+            },
+            {
+                "id": "aac6",
+                "question": "Which of these projects do you think would be most important for improving your educational experience at RPI?",
+                "type": "radio",
+                "options": [
+                    "Organized tutoring sessions with underclassmen in freshman Hill",
+                    "Larger Research Symposium at RPI",
+                    "Making student evaluations of professors public",
+                    "Set up a recorded lecture system",
+                    "Website for undergraduate students with everything to bring/complete before arriving to RPI",
+                ]
+            },
+            {
+                "id": "aac7",
+                "question": "Do you think there is a need for an RPI forum to anonymously present problems to the academic affairs committee? Necessity (4), No need (1)",
+                "type": "radio",
+                "options": [1, 2, 3, 4],
+                "inline": true
+            },
+            {
+                "id": "aac8",
+                "question": "Are there any problems concerning academics that you think that student government should address immediately? If so please explain.",
+                "type": "text",
+            },
+            {
+                "id": "aac9",
+                "question": "How interested would you be in drop-in online tutoring led by ALAC TAs? (1-No interest, 4- Very interested)",
+                "type": "radio",
+                "options": [1, 2, 3, 4],
+                "inline": true
+            }
+        ],
+        [
+            {
                 "id": "hsac1",
                 "question": "What is one thing you'd like to see added to dining halls?",
                 "type": "text",
