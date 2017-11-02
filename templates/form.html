@@ -15,6 +15,7 @@ angular.module('questionaire', [])
         "offcampus1": "Off-Campus Living",
         "empac1": "EMPAC",
         "comm1": "Communications",
+        "crc1": "Community relations",
     };
 
     $scope.survey = [
@@ -1477,6 +1478,51 @@ angular.module('questionaire', [])
                 "question": "Do you follow Student Government on social media? If so, which forms?",
                 "type": "text"
             }
+        ],
+        [
+            {
+                "id": "crc1",
+                "question": "What causes do you care about?",
+                "type": "text"
+            },
+            {
+                "id": "crc2",
+                "question": "How do you wish RPI students were more involved in Troy?",
+                "type": "text"
+            },
+            {
+                "id": "crc3",
+                "question": "Do you wish there was a calendar that centralizes all club activities?",
+                "type": "radio",
+                "inline": true,
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "crc4",
+                "question": "How do you currently get information about volunteering opportunities?",
+                "type": "text"
+            },
+            {
+                "id": "crc5",
+                "question": "Are you required to do community service?",
+                "type": "radio",
+                "inline": true,
+                "options": ["Yes", "No"]
+            },
+            {
+                "id": "crc5other",
+                "question": "Please list the group(s) that requires it.",
+                "type": "text",
+                "show_if_id": "crc5",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "crc6",
+                "question": "Are you aware of the Troy 100 Forums?",
+                "type": "radio",
+                "inline": true,
+                "options": ["Yes", "No"]
+            },
         ],
         [
             {
