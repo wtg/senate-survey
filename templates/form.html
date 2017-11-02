@@ -13,7 +13,8 @@ angular.module('questionaire', [])
         "reslife1": "On-Campus Living",
         "greekHousing1": "Greek Housing",
         "offcampus1": "Off-Campus Living",
-        "empac1": "EMPAC"
+        "empac1": "EMPAC",
+        "comm1": "Communications",
     };
 
     $scope.survey = [
@@ -35,7 +36,7 @@ angular.module('questionaire', [])
             },
             {
                 "id": "demographic2",
-                "question": "Are you a member of a Greek-affiliated organization",
+                "question": "Are you a member of a Greek-affiliated organization?",
                 "type": "radio",
                 "options": [
                     "Yes, Panhellenic Council",
@@ -1405,75 +1406,75 @@ angular.module('questionaire', [])
         [
             {
                 "id": "comm1",
-                "question": "How do you hear about Student Government Projects and Events?",
-                "type": "checkbox",
+                "question": "What form of social media do you use most frequently?",
+                "type": "radio",
                 "options": [
-                    "Facebook RPI: Get Informed Page",
-                    "Student Government Twitter",
-                    "RPI Reddit",
-                    "Posters",
-                    "Tabling Info Sessions on Campus",
-                    "The Polytechnic (Newspaper)",
-                    "Open Student Government Meetings",
-                    "Word of Mouth",
-                    "Other (please specify below)"
+                    "Twitter",
+                    "Reddit",
+                    "Snapchat",
+                    "Instagram",
+                    "Facebook",
+                    "LinkedIn",
+                    "Other",
                 ]
-            },
-            {
-                "id": "comm1other",
-                "question": "",
-                "type": "text",
-                "show_if_id": "comm1",
-                "show_if_value": "Other (please specify below)"
             },
             {
                 "id": "comm2",
-                "question": "What is the best way to be notified about Student Government Projects and Events?",
+                "question": "What form of social media would you say you use the second most frequently?",
                 "type": "radio",
                 "options": [
-                    "Facebook RPI: Get Informed Page",
-                    "Student Government Twitter",
-                    "RPI Reddit",
-                    "Posters",
-                    "Tabling Info Sessions on Campus",
-                    "The Polytechnic (Newspaper)",
-                    "Open Student Government Meetings",
-                    "Word of Mouth",
-                    "Other (please specify below)"
+                    "Twitter",
+                    "Reddit",
+                    "Snapchat",
+                    "Instagram",
+                    "Facebook",
+                    "LinkedIn",
+                    "Other",
                 ],
-                "inline": false
-            },
-            {
-                "id": "comm2other",
-                "question": "",
-                "type": "text",
-                "show_if_id": "comm2",
-                "show_if_value": "Other (please specify below)"
+                "inline": false,
             },
             {
                 "id": "comm3",
-                "question": "How many Student Government projects and events have you heard of in the last year?",
+                "question": "What form of social media would you say you use the third most frequently?",
                 "type": "radio",
                 "options": [
-                    0, 1, 2, 3, 4, "5+"
-                ]
-            },
-            {
-                "id": "comm3other",
-                "question": "What projects have you heard of?",
-                "type": "text",
-                "show_if_id": "comm3",
-                "show_if_value_not": "0"
+                    "Twitter",
+                    "Reddit",
+                    "Snapchat",
+                    "Instagram",
+                    "Facebook",
+                    "LinkedIn",
+                    "Other",
+                ],
+                "inline": false,
             },
             {
                 "id": "comm4",
-                "question": "Would you like to see monthly write-ups about Student Government projects and events?",
+                "question": "How easy do you find it to contact / reach out to Student Government?",
                 "type": "radio",
-                "options": ["Yes", "No"]
+                "options": [1, 2, 3, 4, 5],
+                "inline": true
             },
             {
                 "id": "comm5",
-                "question": "In what way could your Student Officials be in better contact with you?",
+                "question": "How well do you believe that Student Governent is distributing information?",
+                "type": "radio",
+                "options": [1, 2, 3, 4, 5],
+                "inline": true
+            },
+            {
+                "id": "comm6",
+                "question": "What would you like to see more of from the Student Government communication-wise?",
+                "type": "text",
+            },
+            {
+                "id": "comm7",
+                "question": "Do you feel well informed about the resources you have within the Student Union?",
+                "type": "text",
+            },
+            {
+                "id": "comm8",
+                "question": "Do you follow Student Government on social media? If so, which forms?",
                 "type": "text"
             }
         ],
@@ -1497,7 +1498,6 @@ angular.module('questionaire', [])
         return true;
     }
 
-    // should show question
     $scope.should_show_question = function(q) {
         if (!('show_if_id' in q)) return true;
         if ('show_if_value' in q) {
@@ -1508,7 +1508,7 @@ angular.module('questionaire', [])
                             // make sure that the question we depend on is also visible
                             return $scope.should_show_question(other_q);
                         } else if (other_q.value instanceof Array
-                                    && other_q.value.indexOf(q.show_if_value) != -1){
+                                    && other_q.value.indexOf(q.show_if_value) != -1) {
                             // if value is an array (for checkboxes)
                             // make sure that the question we depend on is also visible
                             return $scope.should_show_question(other_q);
