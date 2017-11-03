@@ -1,7 +1,7 @@
 [
 [
     {
-        "id": "demographic1",
+        "id": "demographics1",
         "question": "Which class are you a part of?",
         "type": "select",
         "options": [
@@ -16,7 +16,7 @@
         "required": true
     },
     {
-        "id": "demographic2",
+        "id": "demographics2",
         "question": "What is your gender?",
         "type": "select",
         "options": [
@@ -26,14 +26,14 @@
         ]
     },
     {
-        "id": "demographic2other",
+        "id": "demographics2other",
         "question": "You may specify your gender below.",
         "type": "text",
         "show_if_id": "demographic2",
         "show_if_value": "Other"
     },
     {
-        "id": "demographic3",
+        "id": "demographics3",
         "question": "Are you a member of a Greek-affiliated organization?",
         "type": "radio",
         "options": [
@@ -45,7 +45,7 @@
         "required": true
     },
     {
-        "id": "demographic4",
+        "id": "demographics4",
         "question": "As of the Fall 2016 semester, where do you currently live?",
         "type": "radio",
         "options": [

@@ -8,21 +8,18 @@
 angular.module('export', [])
 .controller('ExportController', ['$scope', '$http', '$interpolate', function($scope, $http, $interpolate) {
 
+    // These need to match the prefixes of question IDs
     $scope.export_items = [
         {name: 'All', question_prefix: null},
-        {name: 'Demographic', question_prefix: 'demographic'},
-        {name: 'Residence life', question_prefix: 'reslife'},
-        {name: 'Greek housing', question_prefix: 'greekHousing'},
-        {name: 'Off-campus housing', question_prefix: 'offcampus'},
-        {name: 'Summer programs', question_prefix: 'summerPrograms'},
-        {name: 'Greek housing', question_prefix: 'greekHousing'},
-        {name: 'Student rights', question_prefix: 'rights'},
-        {name: 'Pharmacy', question_prefix: 'pharmacy'},
-        {name: 'Study spaces', question_prefix: 'study'},
-        {name: 'Food diversity', question_prefix: 'foods'},
-        {name: 'EMPAC', question_prefix: 'empac'},
-        {name: 'AAC', question_prefix: 'aac'},
-        {name: 'SGCC', question_prefix: 'comm'},
+        {name: 'Demographics', question_prefix: 'demographics'},
+        {name: 'Student Life', question_prefix: 'slc'},
+        {name: 'Facilities & Services', question_prefix: 'fsc'},
+        {name: 'Academic Affairs', question_prefix: 'aac'},
+        {name: 'Hospitality Services', question_prefix: 'hsac'},
+        {name: 'Web Technologies', question_prefix: 'wtg'},
+        {name: 'Student Government Communications', question_prefix: 'comm'},
+        {name: 'Community Relations', question_prefix: 'crc'},
+        {name: 'Rules & Elections', question_prefix: 'rne'},
         {name: 'Other (final free-response question)', question_prefix: 'other'},
     ];
 
