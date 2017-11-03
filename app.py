@@ -10,6 +10,7 @@ from flask import (
     session,
 )
 from flask_cas import CAS, login_required
+import requests
 import xlsxwriter
 
 import csv
@@ -51,6 +52,7 @@ SURVEY_VERSION = 1
 
 CC_SURVEY_ADMINS = set(os.getenv('SURVEY_ADMINS', '').split(','))
 CLOSED = bool(os.getenv('SURVEY_CLOSED', False))
+CMS_API_KEY = os.getenv('CMS_API_KEY', '')
 
 
 def hash_request(f):
@@ -117,6 +119,17 @@ def check_closed():
 @login_required
 @hash_request
 def form():
+    # Check if this user is a student according to CMS
+    rcs_id = cas.username.lower()
+    headers = {'Authorization': f'Token {CMS_API_KEY}'}
+    print(rcs_id)
+    r = requests.get(f'https://cms.union.rpi.edu/api/users/view_rcs/{rcs_id}/',
+                     headers=headers)
+    user_type = r.json()['user_type']
+    if user_type != 'Student':
+        return render_template('message.html', message="""This survey is only
+            available to students.""", title='Survey not available')
+
     with models.db.atomic():
         # Check if a submission from this user has already been received.
         # This and inserting new submissions should be done atomically to avoid
