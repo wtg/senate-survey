@@ -13,7 +13,7 @@ angular.module('questionaire', [])
         "reslife1": "On-Campus Living",
         "greekHousing1": "Greek Housing",
         "offcampus1": "Off-Campus Living",
-        "empac1": "EMPAC",
+        "aac1": "Academic Affairs",
         "comm1": "Communications",
         "crc1": "Community Relations",
         "rne1": "Rules and Elections"
@@ -943,6 +943,70 @@ angular.module('questionaire', [])
                 "type": "text",
                 "show_if_id": "demographic3",
                 "show_if_value": "Off-campus"
+            }
+        ],
+        [
+            {
+                "id": "slc1",
+                "question": "Are there any changes you'd like to see in the health services provided on campus? If so, explain.",
+                "type": "text"
+            },
+            {
+                "id": "slc2",
+                "question": "If you've used the Counseling Center services, are there any improvements you would recommend? If so, explain.",
+                "type": "text"
+            },
+            {
+                "id": "slc3",
+                "question": "Are you familiar with the Social Event Manual (SEM) for RPI Organizations?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "inline": true,
+            },
+            {
+                "id": "slc4",
+                "question": "If yes, are there any changes you would like to see in that Manual?",
+                "type": "text",
+                "show_if_id": "slc3",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "slc5",
+                "question": "Did you participate in \"the Arch\"?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "inline": true,
+            },
+            {
+                "id": "slc6",
+                "question": "If yes, are there any improvements you'd recommend for future summers?",
+                "type": "text",
+                "show_if_id": "slc5",
+                "show_if_value": "Yes"
+            },
+            {
+                "id": "slc7",
+                "question": "Please rate the Health Center (1 - \"It was awful and I will never return\", 6 - \"I would use the health center over anything\")",
+                "type": "radio",
+                "options": [1, 2, 3, 4, 5, 6],
+                "inline": true
+            },
+            {
+                "id": "slc8",
+                "question": "Please rate the Counseling Center (1 - \"It was awful and I will never return\", 6 - \"I would use the counseling center over anything\")",
+                "type": "radio",
+                "options": [1, 2, 3, 4, 5, 6],
+                "inline": true
+            },
+            {
+                "id": "slc9",
+                "question": "Do you have an grievances with the Student Handbook? If so, explain.",
+                "type": "text"
+            },
+            {
+                "id": "slc10",
+                "question": "Do you have any ideas to improve student life on campus? If so, explain.",
+                "type": "text"
             }
         ],
         [
