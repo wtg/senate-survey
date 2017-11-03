@@ -30,6 +30,11 @@ def get_pepper():
         return None
 
 
+def get_survey():
+    with open('survey.json', 'r') as f:
+        return json.load(f)
+
+
 def json_serializer(obj):
     if isinstance(obj, datetime.datetime):
         return obj.isoformat()
@@ -90,7 +95,8 @@ def get_question_for_key(key):
     # strip other to get original q
     if key.endswith('other'):
         key = key[:-5]
-    for question in [item for sublist in SURVEY for item in sublist]:
+    survey = get_survey()
+    for question in [item for sublist in survey for item in sublist]:
         if question['id'] == key:
             return question['question'] + ' ({})'.format(orig_key)
             if other:
@@ -151,8 +157,10 @@ def form():
                 Rensselaer.""", title='Submission recorded')
 
         else:
+            survey = get_survey()
             return render_template('form.html',
-                                   title='Take survey')
+                                   title='Take survey',
+                                   survey=survey)
 
 
 @app.route('/form/<auth_key>', methods=['GET', 'POST'])
