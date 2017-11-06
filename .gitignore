@@ -90,3 +90,6 @@ ENV/
 
 # SQLite database
 cc-survey.db
+
+# IntelliJ settings
+.idea

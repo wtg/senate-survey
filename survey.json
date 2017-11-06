@@ -8,6 +8,7 @@
                 "Sophomore",
                 "Junior",
                 "Senior",
+                "Fifth Year (Architecture)",
                 "Co-terminal",
                 "Masters",
                 "Doctorate"
@@ -16,6 +17,20 @@
         },
         {
             "id": "demographics2",
+            "question": "Which school are you a part of? (For multiple schools, please select the one you identify most with.)",
+            "type": "select",
+            "options": [
+                "Information Technology and Web Science",
+                "Lally School of Management",
+                "School of Architecture",
+                "School of Engineering",
+                "School of Humanities, Arts, and Social Sciences",
+                "School of Science"
+            ],
+            "required": true
+        },
+        {
+            "id": "demographics3",
             "question": "Are you a member of a Greek-affiliated organization",
             "type": "radio",
             "options": [
@@ -27,7 +42,7 @@
             "required": true
         },
         {
-            "id": "demographics3",
+            "id": "demographics4",
             "question": "As of the Fall 2016 semester, where do you currently live?",
             "type": "radio",
             "options": [
@@ -66,7 +81,7 @@
                 "Stacwyck Apartments",
                 "Warren Hall"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -86,7 +101,7 @@
                 "Convenience (FIXX, cleaning staff, study rooms, etc.)",
                 "Required to"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -97,7 +112,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -108,7 +123,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -119,7 +134,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -130,7 +145,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -141,7 +156,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -152,7 +167,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -163,7 +178,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -174,7 +189,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -185,7 +200,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -196,7 +211,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -207,7 +222,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -218,7 +233,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -229,7 +244,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -240,7 +255,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -251,7 +266,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -259,7 +274,7 @@
             "id": "reslife18",
             "question": "If you chose 3 or less for any of the scaled questions about the state of your on-campus housing, please elaborate here.",
             "type": "text",
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment"
         },
         {
@@ -267,7 +282,7 @@
             "question": "Have you ever felt unsafe near the entrance to your building (due to stalkers, loitering, etc)?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -276,7 +291,7 @@
             "question": "Would you feel more safe to have multiple entrances to your building that are not alarmed?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -285,7 +300,7 @@
             "question": "Have you been educated on what to do in emergency situations in your building (such as an active shooter, weather disaster, fire, etc.)?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -293,7 +308,7 @@
             "id": "reslife22",
             "question": "What Department of Public Safety services have you used (such as rides when you feel unsafe, blue light system, etc.)?",
             "type": "text",
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment"
         },
         {
@@ -307,7 +322,7 @@
                 "On-campus residents should have access to all residence halls, but only during daylight hours",
                 "On-campus residents should have access to all residence halls"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -318,7 +333,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -327,7 +342,7 @@
             "question": "Are you aware of, or familiar with, the Guest Policy?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
@@ -335,7 +350,7 @@
             "id": "reslife26",
             "question": "If you have any other comments about the state of your on-campus housing, please share them here.",
             "type": "text",
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "On-campus residence hall or apartment"
         },
         {
@@ -347,7 +362,7 @@
                 "3-4 semesters",
                 "5 or more semesters"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "inline": false,
             "required": true
@@ -362,7 +377,7 @@
                 "3-4 semesters",
                 "5 or more semesters"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "inline": false,
             "required": true
@@ -374,7 +389,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "required": true
         },
@@ -383,7 +398,7 @@
             "question": "If you were to have participated in the Summer Arch program, or if you plan to, would you have preferred to live in your Greek house for the summer semester?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "required": true
         },
@@ -397,7 +412,7 @@
                 "It’s required by my chapter",
                 "Other (please specify below)"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "inline": false,
             "required": true
@@ -418,7 +433,7 @@
                 "No, graduating",
                 "No, not planning to"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "required": true
         },
@@ -427,7 +442,7 @@
             "question": "Do you have an RPI shuttle stop that stops near your house?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "required": true
         },
@@ -454,7 +469,7 @@
             "question": "Do you feel safe in the area where your Greek house is?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "required": true
         },
@@ -463,7 +478,7 @@
             "question": "Have you ever had an incident occur off-campus in which you felt unsafe?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "required": true
         },
@@ -474,7 +489,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "required": true
         },
@@ -483,7 +498,7 @@
             "question": "Do you have a Blue Light Station near your Greek house?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "required": true
         },
@@ -504,7 +519,7 @@
                 "Troy Police Department",
                 "Other (please specify below)"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "inline": false,
             "required": true
@@ -526,7 +541,7 @@
                 "2 - 5 miles",
                 "5+ miles"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "required": true
         },
@@ -542,7 +557,7 @@
                 "Public Transportation",
                 "Other (please specify below)"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "inline": false,
             "required": true
@@ -559,7 +574,7 @@
             "question": "Do you have a parking pass?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "required": true
         },
@@ -602,7 +617,7 @@
                 "Required to",
                 "Did not live on campus"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "inline": false,
             "required": true
@@ -618,7 +633,7 @@
                 "15-20 minutes",
                 "20+ minutes"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing",
             "inline": false,
             "required": true
@@ -627,7 +642,7 @@
             "id": "greekHousing23",
             "question": "If you have any other comments about your experiences with Greek Housing, please share them here.",
             "type": "text",
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Greek housing"
         },
         {
@@ -642,7 +657,7 @@
                 "Facebook groups associated with RPI and/or Troy (Free & For Sale, etc)",
                 "Other (please specify below)"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "inline": false,
             "required": true
@@ -664,7 +679,7 @@
                 "2 - 5 miles",
                 "5+ miles"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "required": true
         },
@@ -680,7 +695,7 @@
                 "Public Transportation",
                 "Other (please specify below)"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "inline": false,
             "required": true
@@ -703,7 +718,7 @@
                 "15-20 minutes",
                 "20+ minutes"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "inline": false,
             "required": true
@@ -715,7 +730,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "required": true
         },
@@ -724,7 +739,7 @@
             "question": "Do you have a parking pass?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "required": true
         },
@@ -755,7 +770,7 @@
             "question": "Do you feel safe around the area where you live?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "required": true
         },
@@ -764,7 +779,7 @@
             "question": "Have you ever had an incident occur in which you felt unsafe?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "required": true
         },
@@ -775,7 +790,7 @@
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "required": true
         },
@@ -784,7 +799,7 @@
             "question": "Do have a Blue Light Station near where you live?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "required": true
         },
@@ -806,7 +821,7 @@
                 "Troy Police Department",
                 "Other (please specify below)"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "inline": false,
             "required": true
@@ -835,7 +850,7 @@
                 "Space",
                 "Other (please specify below)"
             ],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "inline": false,
             "required": true
@@ -852,7 +867,7 @@
             "question": "Though living off-campus, do you still feel connected to the campus community?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "required": true
         },
@@ -861,7 +876,7 @@
             "question": "Did you live on-campus before moving off campus?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus",
             "required": true
         },
@@ -902,7 +917,7 @@
             "id": "offcampus20",
             "question": "If you have any other comments about your experiences with off-campus living, please share them here.",
             "type": "text",
-            "show_if_id": "demographics3",
+            "show_if_id": "demographics4",
             "show_if_value": "Off-campus"
         }
     ],
@@ -921,7 +936,8 @@
             "question": "Are you familiar with the Social Event Manual (SEM) for RPI Organizations?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "inline": true
+            "inline": true,
+            "required": true
         },
         {
             "id": "slc4",
@@ -935,7 +951,8 @@
             "question": "Did you participate in \"the Arch\"?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "inline": true
+            "inline": true,
+            "required": true
         },
         {
             "id": "slc6",
@@ -946,21 +963,23 @@
         },
         {
             "id": "slc7",
-            "question": "Please rate the Health Center (1 - \"It was awful and I will never return\", 6 - \"I would use the health center over anything\")",
+            "question": "Please rate your satisfaction with Student Health Services (1 - \"Extremely Dissatisfied\", 6 - \"Extremely Satisfied\")",
             "type": "radio",
             "options": [1, 2, 3, 4, 5, 6],
-            "inline": true
+            "inline": true,
+            "required": true
         },
         {
             "id": "slc8",
-            "question": "Please rate the Counseling Center (1 - \"It was awful and I will never return\", 6 - \"I would use the counseling center over anything\")",
+            "question": "Please rate the Counseling Center (1 - \"Extremely Dissatisfied\", 6 - \"Extremely Satisfied\")",
             "type": "radio",
             "options": [1, 2, 3, 4, 5, 6],
-            "inline": true
+            "inline": true,
+            "required": true
         },
         {
             "id": "slc9",
-            "question": "Do you have any grievances with the Student Handbook? If so, explain.",
+            "question": "Do you have any comments, suggestions, concerns, or ideas on the Student Handbook? If so, explain.",
             "type": "text"
         },
         {
@@ -973,15 +992,17 @@
             "id": "fsc1",
             "question": "Would you be interested in shuttles that had metro-style seating (such as on a subway) that had special access for handicapped riders?",
             "type": "radio",
-            "options": ["Yes", "No"],
-            "inline": true
+            "options": ["Yes", "No", "No preference"],
+            "inline": true,
+            "required": true
         },
         {
             "id": "fsc2",
             "question": "Have you ever used the express shuttle?",
             "type": "radio",
-            "options": ["Yes", "No", "What is the express shuttle?"],
-            "inline": true
+            "options": ["Yes", "No", "Don't know what that is"],
+            "inline": true,
+            "required": true
         },
         {
             "id": "fsc3",
@@ -992,8 +1013,9 @@
             "id": "fsc4",
             "question": "If available, would you consider using open classrooms at night for study spaces?",
             "type": "radio",
-            "options": ["Yes", "No", "Maybe if they were convenient"],
-            "inline": true
+            "options": ["Yes", "No", "Maybe, depending on the location"],
+            "inline": true,
+            "required": true
         },
         {
             "id": "fsc5",
@@ -1009,18 +1031,30 @@
         },
         {
             "id": "fsc6",
-            "question": "Would you find it beneficial to be able to access an application that indicateed the availability of library study rooms?",
+            "question": "Would you find it beneficial to be able to access an application that indicated the availability of library study rooms?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "inline": true
+            "inline": true,
+            "required": true
         },
         {
             "id": "fsc7",
             "question": "If Public Safety were to join social media, what forms of social media would you most likely follow them on?",
             "type": "checkbox",
             "options": [
-                "Facebook", "Twitter", "Snapchat", "Instagram"
+                "Facebook",
+                "Twitter",
+                "Snapchat",
+                "Instagram",
+                "Other"
             ]
+        },
+        {
+            "id": "fsc7other",
+            "question": "If other, what forms of scoial media would you most likely follow them on?",
+            "type": "text",
+            "show_if_id": "fsc7",
+            "show_if_value": "Other"
         },
         {
             "id": "fsc8",
@@ -1036,12 +1070,20 @@
             ]
         },
         {
+            "id": "fsc8other",
+            "question": "If other, what would you want to see posted on those social media pages?",
+            "type": "text",
+            "show_if_id": "fsc8",
+            "show_if_value": "Other"
+        },
+        {
             "id": "fsc9",
             "question": "Have you ever used a water bottle filling station on campus? If so, which ones?",
             "type": "checkbox",
             "options": [
-                "Library", "DCC", "Sage", "Armory", "Union", "never used one"
-            ]
+                "Library", "DCC", "Sage", "Armory", "Union", "Never used one"
+            ],
+            "required": true
         },
         {
             "id": "fsc10",
@@ -1049,19 +1091,22 @@
             "type": "text"
         }
     ],
-    [{
+    [
+        {
             "id": "aac1",
             "question": "Are you still interested in a potential holiday on the day of the career fair?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "inline": true
+            "inline": true,
+            "required": true
         },
         {
             "id": "aac2",
-            "question": "Which holiday would you be willing to remove/move in order to have the holiday?",
+            "question": "What holidays would you be willing to remove/move to have no classes on the day of the career fair?",
             "type": "text",
             "show_if_id": "aac1",
-            "show_if_value": "Yes"
+            "show_if_value": "Yes",
+            "required": true
         },
         {
             "id": "aac3",
@@ -1075,10 +1120,11 @@
         },
         {
             "id": "aac5",
-            "question": "How satisfied are you with the student government's projects on improving student academics? Fully Satisfied (6), We have a committee for that? (1)",
+            "question": "How satisfied are you with the student government's projects on improving student academics? (1 - \"Extremely Dissatisfied\", 6 - \"Extremely Satisfied\")",
             "type": "radio",
             "options": [1, 2, 3, 4, 5, 6],
-            "inline": true
+            "inline": true,
+            "required": true
         },
         {
             "id": "aac6",
@@ -1090,14 +1136,16 @@
                 "Making student evaluations of professors public",
                 "Set up a recorded lecture system",
                 "Website for undergraduate students with everything to bring/complete before arriving to RPI"
-            ]
+            ],
+            "required": true
         },
         {
             "id": "aac7",
-            "question": "Do you think there is a need for an RPI forum to anonymously present problems to the academic affairs committee? Necessity (4), No need (1)",
+            "question": "Do you think there is a need for a forum to anonymously present suggestions, ideas, and concerns with academics to student government? (1 - \"Not Necessary\", 6 - \"Extremely Necessary\")",
             "type": "radio",
-            "options": [1, 2, 3, 4],
-            "inline": true
+            "options": [1, 2, 3, 4, 5, 6],
+            "inline": true,
+            "required": true
         },
         {
             "id": "aac8",
@@ -1106,13 +1154,15 @@
         },
         {
             "id": "aac9",
-            "question": "How interested would you be in drop-in online tutoring led by ALAC TAs? (1-No interest, 4- Very interested)",
+            "question": "How interested would you be in drop-in online tutoring led by ALAC TAs? (1 - \"Not Interested\", 6 - \"Extremely Interested\")",
             "type": "radio",
-            "options": [1, 2, 3, 4],
-            "inline": true
+            "options": [1, 2, 3, 4, 5, 6],
+            "inline": true,
+            "required": true
         }
     ],
-    [{
+    [
+        {
             "id": "hsac1",
             "question": "What is one thing you'd like to see added to dining halls?",
             "type": "text"
@@ -1133,26 +1183,30 @@
             "type": "text"
         }
     ],
-    [{
+    [
+        {
             "id": "wtg1",
             "question": "Do you use the Shuttle Tracker (https://shuttles.rpi.edu)?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "inline": true
+            "inline": true,
+            "required": true
         },
         {
             "id": "wtg2",
             "question": "Do you use the Shuttle Tracker iPhone app?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "inline": true
+            "inline": true,
+            "required": true
         },
         {
             "id": "wtg3",
             "question": "Do you use the Shuttle Tracker Android app?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "inline": true
+            "inline": true,
+            "required": true
         },
         {
             "id": "wtg4",
@@ -1165,7 +1219,8 @@
             "type": "text"
         }
     ],
-    [{
+    [
+        {
             "id": "sgcc1",
             "question": "What form of social media do you use most frequently?",
             "type": "radio",
@@ -1178,7 +1233,8 @@
                 "LinkedIn",
                 "Other"
             ],
-            "inline": false
+            "inline": false,
+            "required": true
         },
         {
             "id": "sgcc2",
@@ -1193,7 +1249,8 @@
                 "LinkedIn",
                 "Other"
             ],
-            "inline": false
+            "inline": false,
+            "required": true
         },
         {
             "id": "sgcc3",
@@ -1208,21 +1265,24 @@
                 "LinkedIn",
                 "Other"
             ],
-            "inline": false
+            "inline": false,
+            "required": true
         },
         {
             "id": "sgcc4",
-            "question": "How easy do you find it to contact / reach out to Student Government?",
+            "question": "How easy do you find it to contact / reach out to Student Government? (1 - \"Not Easy\", 6 - \"Extremely Easy\")",
             "type": "radio",
-            "options": [1, 2, 3, 4, 5],
-            "inline": true
+            "options": [1, 2, 3, 4, 5, 6],
+            "inline": true,
+            "required": true
         },
         {
             "id": "sgcc5",
-            "question": "How well do you believe that Student Governent is distributing information?",
+            "question": "How well do you believe that Student Governent is distributing information?  (1 - \"Not Well\", 6 - \"Extremely Well\")",
             "type": "radio",
-            "options": [1, 2, 3, 4, 5],
-            "inline": true
+            "options": [1, 2, 3, 4, 5, 6],
+            "inline": true,
+            "required": true
         },
         {
             "id": "sgcc6",
@@ -1238,9 +1298,39 @@
             "id": "sgcc8",
             "question": "Do you follow Student Government on social media? If so, which forms?",
             "type": "text"
+        },
+        {
+            "id": "sgcc9",
+            "question": "Have you seen any of the new monthly updates on student government this year?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "inline": true,
+            "required": true
+        },
+        {
+            "id": "sgcc10",
+            "question": "If so, do you have any suggestions to improve them?",
+            "type": "text",
+            "show_if_id": "sgcc9",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "sgcc11",
+            "question": "How often should student government keep the student body updated on happenings and projects?",
+            "type": "radio",
+            "options": [
+                "More than weekly",
+                "Weekly",
+                "Monthly",
+                "A few times per semester",
+                "Only when very necessary"
+            ],
+            "inline": false,
+            "required": true
         }
     ],
-    [{
+    [
+        {
             "id": "crc1",
             "question": "What causes do you care about?",
             "type": "text"
@@ -1284,7 +1374,8 @@
             "options": ["Yes", "No"]
         }
     ],
-    [{
+    [
+        {
             "id": "rne1",
             "question": "What would make the voting process easier?",
             "type": "text"
@@ -1313,6 +1404,22 @@
             "id": "rne6",
             "question": "Do you have any suggestions for the Rules and Elections Committee as a whole? If so, please describe them below.",
             "type": "text"
+        }
+    ],
+    [
+        {
+            "id": "union1",
+            "question": "Following the recent developments with the Union and the resolution from the Board of Trustees, do you believe the Union is student-run in its current form?",
+            "type": "radio",
+            "inline": true,
+            "options": ["Yes", "No"]
+        },
+        {
+            "id": "union2",
+            "question": "Do you believe the student representatives should continue to be able to approve the hiring of Union administrative staff?",
+            "type": "radio",
+            "inline": true,
+            "options": ["Yes", "No"]
         }
     ],
     [{
