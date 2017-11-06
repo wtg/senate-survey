@@ -125,7 +125,6 @@ def form():
     # Check if this user is a student according to CMS
     rcs_id = cas.username.lower()
     headers = {'Authorization': f'Token {CMS_API_KEY}'}
-    print(rcs_id)
     r = requests.get(f'https://cms.union.rpi.edu/api/users/view_rcs/{rcs_id}/',
                      headers=headers)
     user_type = r.json()['user_type']
