@@ -107,18 +107,21 @@ def get_question_for_key(key):
     return key
 
 
-@app.before_request
-def check_closed():
-    if CLOSED and request.path.startswith('/form'):
-        # Redirect all /form paths to / if survey is closed
-        return redirect('/')
-
-
 @app.route('/form', methods=['GET', 'POST'])
 @check_pepper
 @login_required
 @hash_request
 def form():
+    if CLOSED:
+        # see if this user is in CC_SURVEY_ADMINS
+        if request.method == 'GET' and cas.username in CC_SURVEY_ADMINS:
+            # allow admins to see the form, but not submit
+            pass
+        else:
+            # Redirect all /form paths to / if survey is closed
+            return redirect('/')
+
+
     # Check if this user is a student according to CMS
     rcs_id = cas.username.lower()
     headers = {'Authorization': f'Token {CMS_API_KEY}'}
