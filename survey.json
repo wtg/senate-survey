@@ -1426,5 +1426,10 @@
         "id": "other1",
         "question": "If you have any other feedback, please share it here.",
         "type": "text"
+    },
+    {
+	"id": "raffle1",
+	"question": "If you would like to be entered into a raffle, please enter your email address.",
+	"type": "email"
     }]
 ]
