@@ -48,7 +48,7 @@ app = Flask(__name__)
 cas = CAS(app)
 app.config['CAS_SERVER'] = 'https://cas-auth.rpi.edu/cas/'
 app.config['CAS_AFTER_LOGIN'] = 'form'
-SURVEY_VERSION = 1
+SURVEY_VERSION = 2
 
 CC_SURVEY_ADMINS = set(os.getenv('SURVEY_ADMINS', '').split(','))
 CLOSED = bool(os.getenv('SURVEY_CLOSED', False))
@@ -392,10 +392,11 @@ def export_json():
         # form is stored as JSON, so extract responses
         form_js = json.loads(submission.form)
 
-        # if we only want responses to some questions, include only those
+        # if we only want responses to some questions, include only those, but exclude raffle
         question_prefix = request.args.get('question_prefix')
         for key, value in form_js.items():
-            if question_prefix is None or key.startswith(question_prefix):
+            if (question_prefix is None and not key.startswith('raffle')) \
+                    or (question_prefix is not None and key.startswith(question_prefix)):
                 question = get_question_for_key(key)
                 sub[question] = value
 

@@ -1429,7 +1429,7 @@
     },
     {
 	"id": "raffle1",
-	"question": "If you would like to be entered into a raffle, please enter your email address.",
+	"question": "If you would like to be entered into a raffle, please enter your email address. It will not be directly associated with your responses.",
 	"type": "email"
     }]
 ]
