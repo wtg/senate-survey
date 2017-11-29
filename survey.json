@@ -43,7 +43,7 @@
         },
         {
             "id": "demographics4",
-            "question": "As of the Fall 2016 semester, where do you currently live?",
+            "question": "As of the Fall 2017 semester, where do you currently live?",
             "type": "radio",
             "options": [
                 "On-campus residence hall or apartment",
@@ -355,7 +355,7 @@
         },
         {
             "id": "greekHousing1",
-            "question": "As of the Fall 2016 semester, how long have you lived in Greek housing?",
+            "question": "As of the Fall 2017 semester, how long have you lived in Greek housing?",
             "type": "radio",
             "options": [
                 "1-2 semesters",
