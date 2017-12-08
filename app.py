@@ -273,6 +273,7 @@ def export_csv():
             w.writerow(sub)
             line.seek(0)
             yield line.read()
+            line.seek(0)
             line.truncate(0)
 
 
