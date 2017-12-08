@@ -241,7 +241,8 @@ def export_csv():
 
             # if we only want responses to some questions, include only those
             for key, value in form_js.items():
-                if question_prefix is None or key.startswith(question_prefix):
+                if (question_prefix is None and not key.startswith('raffle')) \
+                        or (question_prefix is not None and key.startswith(question_prefix)):
                     question = get_question_for_key(key)
                     if question not in header:
                         header.append(question)
@@ -263,7 +264,8 @@ def export_csv():
 
             # if we only want responses to some questions, include only those
             for key, value in form_js.items():
-                if question_prefix is None or key.startswith(question_prefix):
+                if (question_prefix is None and not key.startswith('raffle')) \
+                        or (question_prefix is not None and key.startswith(question_prefix)):
                     question = get_question_for_key(key)
                     sub[question] = value
 
@@ -315,7 +317,8 @@ def export_xlsx():
 
         # if we only want responses to some questions, include only those
         for key, value in form_js.items():
-            if question_prefix is None or key.startswith(question_prefix):
+            if (question_prefix is None and not key.startswith('raffle')) \
+                    or (question_prefix is not None and key.startswith(question_prefix)):
                 question = get_question_for_key(key)
                 if question not in header:
                     header.append(question)
@@ -345,7 +348,8 @@ def export_xlsx():
 
         # if we only want responses to some questions, include only those
         for key, value in form_js.items():
-            if question_prefix is None or key.startswith(question_prefix):
+            if (question_prefix is None and not key.startswith('raffle')) \
+                    or (question_prefix is not None and key.startswith(question_prefix)):
                 question = get_question_for_key(key)
                 sub[question] = value
 
