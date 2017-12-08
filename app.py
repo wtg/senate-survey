@@ -15,6 +15,7 @@ import xlsxwriter
 
 import csv
 import datetime
+import functools
 import hashlib
 import io
 import json
@@ -31,6 +32,7 @@ def get_pepper():
         return None
 
 
+@functools.lru_cache(maxsize=1)
 def get_survey():
     with open('survey.json', 'r') as f:
         return json.load(f)
@@ -291,7 +293,6 @@ def export_csv():
 @app.route('/export.xlsx')
 @login_required
 def export_xlsx():
-
     # see if this user is in CC_SURVEY_ADMINS
     if cas.username not in CC_SURVEY_ADMINS:
         abort(403)
