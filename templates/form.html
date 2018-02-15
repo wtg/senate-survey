@@ -106,18 +106,18 @@ angular.module('questionaire', [])
 <div class="form" ng-app="questionaire">
 	<div ng-controller="QuestionController">
 		<form action="" method="post" id="form">
-            <div class="row">
+            <div class="row" style="margin-bottom: 25px;">
                 <div class="col-md-6">
-                    <img src="/static/logoOption1.png" class="img-responsive" />
+                    <img src="/static/logoOption1.png" class="img-responsive" style="margin-top: 10px;" />
                 </div>
                 <div class="col-md-6">
-                    <img src="/static/logoOption2.png" class="img-responsive" />
+                    <img src="/static/logoOption2.png" class="img-responsive" style="margin-top: 10px;" />
                 </div>
                 <div class="col-md-6">
-                    <img src="/static/logoOption3.png" class="img-responsive" />
+                    <img src="/static/logoOption3.png" class="img-responsive" style="margin-top: 10px;" />
                 </div>
                 <div class="col-md-6">
-                    <img src="/static/logoOption4.png" class="img-responsive" />
+                    <img src="/static/logoOption4.png" class="img-responsive" style="margin-top: 10px;" />
                 </div>
             </div>
             <div id="form-page" ng-show="$index + 1 === page" ng-repeat="question_page in survey">
