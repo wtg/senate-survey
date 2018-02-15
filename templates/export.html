@@ -11,21 +11,8 @@ angular.module('export', [])
     // These need to match the prefixes of question IDs
     $scope.export_items = [
         {name: 'All', question_prefix: null},
-        {name: 'Demographics', question_prefix: 'demographics'},
-        {name: 'Residence Life', question_prefix: 'reslife'},
-        {name: 'Greek Housing', question_prefix: 'greekHousing'},
-        {name: 'Off-Campus Housing', question_prefix: 'offcampus'},
-        {name: 'Student Life', question_prefix: 'slc'},
-        {name: 'Facilities & Services', question_prefix: 'fsc'},
-        {name: 'Academic Affairs', question_prefix: 'aac'},
-        {name: 'Hospitality Services', question_prefix: 'hsac'},
-        {name: 'Web Technologies', question_prefix: 'wtg'},
-        {name: 'Student Government Communications', question_prefix: 'comm'},
-        {name: 'Community Relations', question_prefix: 'crc'},
-        {name: 'Rules & Elections', question_prefix: 'rne'},
-        {name: 'Recent Union Developments', question_prefix: 'union'},
-        {name: 'Other (final free-response question)', question_prefix: 'other'},
-        {name: 'Raffle', question_prefix: 'raffle'},
+        {name: 'Choices', question_prefix: 'choice'},
+        {name: 'Feedback', question_prefix: 'feedback'}
     ];
 
     $scope.export_url = function(file_type, question_prefix) {
