@@ -15,9 +15,7 @@
 angular.module('questionaire', [])
 .controller('QuestionController', ['$scope', '$http', '$interpolate', function($scope, $http, $interpolate) {
     // These need to match IDs in survey.json to show a header before a question.
-    $scope.headers = {
-        "familiarity1": "ERTF Survey"
-    };
+    $scope.headers = {};
 
     $scope.survey = survey;
 
