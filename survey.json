@@ -19,7 +19,7 @@
         },
         {
             "id": "experience1",
-            "question": "Do you beleive the elections results were tampered with?",
+            "question": "Do you believe the elections results were tampered with?",
             "type": "select",
             "options": [
                 "Yes",
@@ -29,7 +29,7 @@
         },
         {
             "id": "experience2",
-            "question": "On a scale from 1-10, ten being very well, How well did the Elections Commission handle the recent election?",
+            "question": "On a scale from 1-10, ten being very well, how well did the Elections Commission handle the recent election?",
             "type": "radio",
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
@@ -126,7 +126,7 @@
         },
         {
             "id": "response5",
-            "question": "On a scale from 1-10, ten being most sufficient, Do you feel that the communication by the Elections Commission has been sufficient as it pertains to recent issues?",
+            "question": "On a scale from 1-10, ten being most sufficient, do you feel that the communication by the Elections Commission has been sufficient as it pertains to recent issues?",
             "type": "radio",
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
