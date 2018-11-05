@@ -95,8 +95,8 @@
                 "Warren Hall"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife2",
@@ -115,8 +115,8 @@
                 "Required to"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife3",
@@ -126,8 +126,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife4",
@@ -137,8 +137,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife5",
@@ -148,8 +148,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife6",
@@ -159,8 +159,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife7",
@@ -170,8 +170,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife8",
@@ -181,8 +181,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife9",
@@ -192,8 +192,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+        
         },
         {
             "id": "reslife10",
@@ -203,8 +203,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife11",
@@ -214,8 +214,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife12",
@@ -225,8 +225,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife13",
@@ -236,8 +236,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife14",
@@ -247,8 +247,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife15",
@@ -258,8 +258,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife16",
@@ -269,8 +269,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife17",
@@ -280,8 +280,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife18",
@@ -296,8 +296,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife20",
@@ -305,8 +305,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife21",
@@ -314,8 +314,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife22",
@@ -336,8 +336,8 @@
                 "On-campus residents should have access to all residence halls"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife24",
@@ -347,8 +347,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife25",
@@ -356,8 +356,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "On-campus residence hall or apartment",
-            "required": true
+            "show_if_value": "On-campus residence hall or apartment"
+            
         },
         {
             "id": "reslife26",
@@ -377,8 +377,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Greek housing",
-            "inline": false,
-            "required": true
+            "inline": false
+            
         },
         {
             "id": "greekHousing2",
@@ -392,8 +392,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Greek housing",
-            "inline": false,
-            "required": true
+            "inline": false
+            
         },
         {
             "id": "greekHousing3",
@@ -403,8 +403,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "Greek housing",
-            "required": true
+            "show_if_value": "Greek housing"
+            
         },
         {
             "id": "greekHousing4",
@@ -412,8 +412,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Greek housing",
-            "required": true
+            "show_if_value": "Greek housing"
+            
         },
         {
             "id": "greekHousing5",
@@ -427,8 +427,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Greek housing",
-            "inline": false,
-            "required": true
+            "inline": false
+            
         },
         {
             "id": "greekHousing5other",
@@ -447,8 +447,8 @@
                 "No, not planning to"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "Greek housing",
-            "required": true
+            "show_if_value": "Greek housing"
+            
         },
         {
             "id": "greekHousing7",
@@ -456,8 +456,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Greek housing",
-            "required": true
+            "show_if_value": "Greek housing"
+            
         },
         {
             "id": "greekHousing8",
@@ -465,8 +465,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "greekHousing7",
-            "show_if_value": "Yes",
-            "required": true
+            "show_if_value": "Yes"
+            
         },
         {
             "id": "greekHousing9",
@@ -474,8 +474,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "greekHousing7",
-            "show_if_value": "No",
-            "required": true
+            "show_if_value": "No"
+            
         },
         {
             "id": "greekHousing10",
@@ -483,8 +483,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Greek housing",
-            "required": true
+            "show_if_value": "Greek housing"
+            
         },
         {
             "id": "greekHousing11",
@@ -492,8 +492,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Greek housing",
-            "required": true
+            "show_if_value": "Greek housing"
+            
         },
         {
             "id": "greekHousing12",
@@ -503,8 +503,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "Greek housing",
-            "required": true
+            "show_if_value": "Greek housing"
+            
         },
         {
             "id": "greekHousing13",
@@ -512,8 +512,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Greek housing",
-            "required": true
+            "show_if_value": "Greek housing"
+            
         },
         {
             "id": "greekHousing14",
@@ -534,8 +534,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Greek housing",
-            "inline": false,
-            "required": true
+            "inline": false
+            
         },
         {
             "id": "greekHousing15other",
@@ -555,8 +555,8 @@
                 "5+ miles"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "Greek housing",
-            "required": true
+            "show_if_value": "Greek housing"
+            
         },
         {
             "id": "greekHousing17",
@@ -572,8 +572,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Greek housing",
-            "inline": false,
-            "required": true
+            "inline": false
+            
         },
         {
             "id": "greekHousing17other",
@@ -588,8 +588,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Greek housing",
-            "required": true
+            "show_if_value": "Greek housing"
+            
         },
         {
             "id": "greekHousing19",
@@ -599,8 +599,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "greekHousing18",
-            "show_if_value": "Yes",
-            "required": true
+            "show_if_value": "Yes"
+            
         },
         {
             "id": "greekHousing20",
@@ -610,8 +610,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "greekHousing18",
-            "show_if_value": "Yes",
-            "required": true
+            "show_if_value": "Yes"
+            
         },
         {
             "id": "greekHousing21",
@@ -632,8 +632,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Greek housing",
-            "inline": false,
-            "required": true
+            "inline": false
+            
         },
         {
             "id": "greekHousing22",
@@ -648,8 +648,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Greek housing",
-            "inline": false,
-            "required": true
+            "inline": false
+            
         },
         {
             "id": "greekHousing23",
@@ -672,8 +672,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Off-campus",
-            "inline": false,
-            "required": true
+            "inline": false
+            
         },
         {
             "id": "offcampus1other",
@@ -693,8 +693,8 @@
                 "5+ miles"
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "Off-campus",
-            "required": true
+            "show_if_value": "Off-campus"
+            
         },
         {
             "id": "offcampus3",
@@ -710,8 +710,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Off-campus",
-            "inline": false,
-            "required": true
+            "inline": false
+            
         },
         {
             "id": "offcampus3other",
@@ -733,8 +733,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Off-campus",
-            "inline": false,
-            "required": true
+            "inline": false
+        
         },
         {
             "id": "offcampus5",
@@ -744,8 +744,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "Off-campus",
-            "required": true
+            "show_if_value": "Off-campus"
+            
         },
         {
             "id": "offcampus6",
@@ -753,8 +753,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Off-campus",
-            "required": true
+            "show_if_value": "Off-campus"
+            
         },
         {
             "id": "offcampus7",
@@ -764,8 +764,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "offcampus6",
-            "show_if_value": "Yes",
-            "required": true
+            "show_if_value": "Yes"
+            
         },
         {
             "id": "offcampus8",
@@ -775,8 +775,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
             ],
             "show_if_id": "offcampus6",
-            "show_if_value": "Yes",
-            "required": true
+            "show_if_value": "Yes"
+            
         },
         {
             "id": "offcampus9",
@@ -784,8 +784,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Off-campus",
-            "required": true
+            "show_if_value": "Off-campus"
+            
         },
         {
             "id": "offcampus10",
@@ -793,8 +793,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Off-campus",
-            "required": true
+            "show_if_value": "Off-campus"
+            
         },
         {
             "id": "offcampus11",
@@ -804,8 +804,8 @@
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
             "show_if_id": "demographics5",
-            "show_if_value": "Off-campus",
-            "required": true
+            "show_if_value": "Off-campus"
+            
         },
         {
             "id": "offcampus12",
@@ -813,8 +813,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Off-campus",
-            "required": true
+            "show_if_value": "Off-campus"
+            
         },
         {
             "id": "offcampus13",
@@ -822,8 +822,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "offcampus12",
-            "show_if_value": "No",
-            "required": true
+            "show_if_value": "No"
+            
         },
         {
             "id": "offcampus14",
@@ -836,8 +836,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Off-campus",
-            "inline": false,
-            "required": true
+            "inline": false
+            
         },
         {
             "id": "offcampus14other",
@@ -865,8 +865,8 @@
             ],
             "show_if_id": "demographics5",
             "show_if_value": "Off-campus",
-            "inline": false,
-            "required": true
+            "inline": false
+            
         },
         {
             "id": "offcampus15other",
@@ -881,8 +881,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Off-campus",
-            "required": true
+            "show_if_value": "Off-campus"
+            
         },
         {
             "id": "offcampus17",
@@ -890,8 +890,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics5",
-            "show_if_value": "Off-campus",
-            "required": true
+            "show_if_value": "Off-campus"
+            
         },
         {
             "id": "offcampus18",
@@ -903,8 +903,8 @@
                 "5 or more semesters"
             ],
             "show_if_id": "offcampus17",
-            "show_if_value": "Yes",
-            "required": true
+            "show_if_value": "Yes"
+            
         },
         {
             "id": "offcampus19",
@@ -923,8 +923,8 @@
                 "Required to"
             ],
             "show_if_id": "offcampus17",
-            "show_if_value": "Off-campus",
-            "required": true
+            "show_if_value": "Off-campus"
+            
         },
         {
             "id": "offcampus20",
@@ -945,8 +945,8 @@
                 "Co-terminal"
             ],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc2",
@@ -962,8 +962,8 @@
                 "7th"
             ],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc3",
@@ -978,8 +978,8 @@
                 "RPI Shuttle"
             ],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc4",
@@ -992,24 +992,24 @@
                 "Self-supported"
             ],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc5",
             "question": "How many hours a week do you spend working for your TA assignment?",
             "type": "text", 
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc6",
             "question": "How many hours a week do you spend working on your research?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc7",
@@ -1017,16 +1017,16 @@
             "type": "radio",
             "options": [ "Yes", "No" ],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc8",
             "question": "If not, please tell us why.",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc9",
@@ -1040,8 +1040,8 @@
                 "Union Pub and related activities (dinner, painting, trivia, etc)", "Legal Services"
             ],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+        
         },
         {
             "id": "gc10",
@@ -1062,24 +1062,24 @@
                 "Field Day"
             ],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc12",
             "question": "What new events should the Graduate Council try to have?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc13",
             "question": "What new events should the Union or Mueller Center try to have?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
 
         },
         {
@@ -1087,16 +1087,16 @@
             "question": "What do you believe should be the top priority of the Graduate Council?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc15",
             "question": "Are there any graduate-related issues that the Graduate Council should advocate for to the administration?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc16",
@@ -1104,8 +1104,8 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc17",
@@ -1127,8 +1127,8 @@
                 "Not Applicable"
             ],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc19",
@@ -1136,16 +1136,16 @@
             "type": "radio",
             "options": ["Yes", "No"],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc20",
             "question": "What are barriers to your progress?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc21",
@@ -1160,8 +1160,8 @@
                 "I've never used the CCPD"
             ],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc22",
@@ -1177,8 +1177,8 @@
                 "None"
             ],
             "show_if_id": "demographics1",
-            "show_if_value": "Graduate",
-            "required": true
+            "show_if_value": "Graduate"
+            
         },
         {
             "id": "gc23",
@@ -1192,22 +1192,22 @@
         {
             "id": "slc1",
             "question": "Are there any changes you'd like to see in the health services provided on campus? If so, explain.",
-            "type": "text",
-            "required": true
+            "type": "text"
+            
         },
         {
             "id": "slc2",
             "question": "If you've used the Counseling Center services, are there any improvements you would recommend? If so, explain.",
-            "type": "text",
-            "required": true
+            "type": "text"
+            
         },
         {
             "id": "slc3",
             "question": "Do you have any comments, suggestions, concerns, or ideas on the Student Handbook? If so, explain.",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
 
         },
         {
@@ -1215,8 +1215,8 @@
             "question": "What is your general impression of Greek Life on RPI's campus?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
 
         },
         {
@@ -1224,24 +1224,24 @@
             "question": "What's one area where you think Greek Life organizations on campus could improve?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "slc6",
             "question": "FOR TRANSFER STUDENTS ONLY: Are there any specific parts of the transfer student process that you believe can be improved?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "slc7",
             "question": "Do you have any ideas to improve student life on campus? If so, explain.",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         }
     ],
     [
@@ -1256,8 +1256,8 @@
                 "Don't care", 
                 "Other"
             ],
-            "inline": true,
-            "required": true
+            "inline": true
+            
         },
         {
             "id": "fsc2",
@@ -1270,8 +1270,8 @@
                 "I have no interest in composting",
                 "What is composting"
             ],
-            "inline": true,
-            "required": true
+            "inline": true
+            
         },
         {
             "id": "fsc3",
@@ -1286,8 +1286,8 @@
                 "I cannot afford a bike",
                 "Other"
             ],
-            "inline": true,
-            "required": true
+            "inline": true
+        
         },
         {
             "id": "fsc4",
@@ -1296,8 +1296,8 @@
             "options": ["Yes", "No", "What is EMPAC"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "fsc5",
@@ -1312,8 +1312,8 @@
             ],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "fsc6",
@@ -1329,8 +1329,8 @@
 
             ],
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "fsc7",
@@ -1339,16 +1339,15 @@
             "options": ["Very much", "Slightly", "Neutral", "Not very much", "Not at all"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "fsc8",
             "question": "Describe an experience that makes you feel that way OR give a general comment.",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": false
+            "show_if_value": "Undergraduate"
         }
     ],
     [
@@ -1359,16 +1358,16 @@
             "options": ["Yes", "No"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "aac2",
             "question": "If not, what is your major?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "aac3",
@@ -1377,8 +1376,8 @@
             "options": [1, 2, 3, 4, 5],
             "show_if_id": "demographics1",
             "show_if_value": "Undergraduate",
-            "inline": true,
-            "required": true
+            "inline": true
+            
         },
         {
             "id": "aac4",
@@ -1387,8 +1386,8 @@
             "options": ["Yes", "No"],
             "show_if_id": "demographics1",
             "show_if_value": "Undergraduate",
-            "inline": true,
-            "required": true
+            "inline": true
+            
         },
         {
             "id": "aac5",
@@ -1397,16 +1396,16 @@
             "options": ["Yes", "No"],
             "show_if_id": "demographics1",
             "show_if_value": "Undergraduate",
-            "inline": true,
-            "required": true
+            "inline": true
+            
         },
         {
             "id": "aac6",
             "question": "In what areas do you feel the academic experience can improve at RPI?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         }
     ],
     [   
@@ -1415,14 +1414,14 @@
             "question": "Is there a food category/concept/cuisine that you’d like to see on campus?",
             "type": "checkbox",
             "options": ["Asian", "Vegan/Healthy", "Sandwiches/Deli", "Breakfast all day", "Desserts/Sweets"],
-            "inline": true,
-            "required": true
+            "inline": true
+            
         },
         {
             "id": "hsac2",
             "question": "Are there any product categories you’d like to see at Father’s?",
-            "type": "text",
-            "required": true
+            "type": "text"
+            
         },
         {
             "id": "hsac3",
@@ -1431,8 +1430,8 @@
             "options": ["Meats", "Vegan Proteins", "Vegetables", "Drinks", "Fruits", "Starches", "Grains"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "hsac4",
@@ -1441,8 +1440,8 @@
             "options": ["1-3 days a week", "3-5 days a week", "5-7 days a week"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "hsac5",
@@ -1451,8 +1450,8 @@
             "options": ["$6", "$7", "$8", "$9"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+        
         }
     ],
     [
@@ -1461,22 +1460,22 @@
             "question": "Do you use the Shuttle Tracker (https://shuttles.rpi.edu)?",
             "type": "radio",
             "options": ["Yes", "No"],
-            "inline": true,
-            "required": true
+            "inline": true
+            
         },
         {
             "id": "wtg2",
             "question": "What would you like to see changed about the Shuttle Tracker?",
-            "type": "text",
-            "required": true
+            "type": "text"
+            
         },
         {
             "id": "wtg3",
             "question": "What would you like to see changed about the Petitions website (https://petitions.union.rpi.edu)?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "wtg4",
@@ -1485,8 +1484,8 @@
             "options": ["Yes", "No"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "wtg5",
@@ -1495,8 +1494,8 @@
             "options": ["Yes", "No", "I do not buy/rent textbooks for courses."],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         }
 
     ],
@@ -1515,8 +1514,8 @@
             ],
             "inline": false,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "sgcc2",
@@ -1530,8 +1529,8 @@
             ],
             "inline": false,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "sgcc3",
@@ -1540,8 +1539,8 @@
             "options": [1, 2, 3, 4, 5],
             "inline": false,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "sgcc4",
@@ -1550,24 +1549,24 @@
             "options": ["Yes", "No"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "sgcc5",
             "question": "How often should student government keep the student body updated on happenings and projects?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "sgcc6",
             "question": "What would you like to see more of from the Student Government communication-wise?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         }
     ],
     [
@@ -1578,8 +1577,8 @@
             "inline": true,
             "options": [1, 2, 3, 4, 5],
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "crc2",
@@ -1588,22 +1587,22 @@
             "inline": true,
             "options": [1, 2, 3, 4, 5],
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         }
     ],
     [
         {
             "id": "ec1",
             "question": "If there were to be an additional voting location, where would you like it to be located?",
-            "type": "text",
-            "required": true
+            "type": "text"
+            
         },
         {
             "id": "ec2",
             "question": "Do you have any suggestions about how the ballot format can be improved?",
-            "type": "text",
-            "required": true
+            "type": "text"
+            
 
         }
     ],
@@ -1613,14 +1612,13 @@
             "question": "How well do you feel cultural organizations get exposure on campus?",
             "type": "radio",
             "inline": true,
-            "options": [1, 2, 3, 4, 5],
-            "required": true
+            "options": [1, 2, 3, 4, 5]
+            
         },
         {
             "id": "dic2",
             "question": "Is there a situation where you feel unsupported culturally, religiously, or racially? If so, explain what you’d like to see.",
-            "type": "text",
-            "required":true
+            "type": "text"
         }
     ],
     [
@@ -1629,8 +1627,8 @@
             "question": "What activities are you involved in that would be affected by the Arch program?",
             "type": "text",
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "atf2",
@@ -1639,8 +1637,8 @@
             "options": ["Yes", "No"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "atf3",
@@ -1649,8 +1647,8 @@
             "options": ["Yes", "No"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         },
         {
             "id": "atf4",
@@ -1659,8 +1657,8 @@
             "options": ["Yes", "No"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+        
         },
         {
             "id": "atf5",
@@ -1669,8 +1667,8 @@
             "options": ["Yes", "No"],
             "inline": true,
             "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
+            "show_if_value": "Undergraduate"
+            
         }
 
     ],
