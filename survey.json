@@ -1,165 +1,1701 @@
 [
-    [{
-            "id": "familiarity1",
-            "question": "On a scale from 1-10, ten being the highest, how familiar are you with the elections process?",
+    [
+        {
+            "id": "demographics1",
+            "question": "Are you an undergraduate or a graduate student?",
             "type": "radio",
             "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                "Undergraduate",
+                "Graduate"
             ],
-           "required": true
+            "inline": false,
+            "required": true
         },
         {
-            "id": "familiarity2",
-            "question": "On a scale from 1-10, ten being the best experience, how would you rate your experience with the voting software?",
+            "id": "demographics2",
+            "question": "Which class are you a part of?",
             "type": "radio",
             "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                "Freshman",
+                "Sophomore",
+                "Junior",
+                "Senior",
+                "Fifth Year (Architecture)"
             ],
-           "required": true
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "inline": false,
+            "required": true
         },
         {
-            "id": "experience1",
-            "question": "Do you believe the elections results were tampered with?",
-            "type": "select",
-            "options": [
-                "Yes",
-                "No" 
-            ],
-          "required": true
-        },
-        {
-            "id": "experience2",
-            "question": "On a scale from 1-10, ten being very well, how well did the Elections Commission handle the recent election?",
+            "id": "demographics3",
+            "question": "Which school are you a part of? (For multiple schools, please select the one you identify most with.)",
             "type": "radio",
             "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                "Information Technology and Web Science",
+                "Lally School of Management",
+                "School of Architecture",
+                "School of Engineering",
+                "School of Humanities, Arts, and Social Sciences",
+                "School of Science"
             ],
+            "inline": false,
             "required": true
         },
         {
-            "id": "experience3",
-            "question": "Do you think candidates should be prohibited from serving on the Elections Commission?",
-            "type": "select",
+            "id": "demographics4",
+            "question": "Are you a member of a Greek-affiliated organization",
+            "type": "radio",
             "options": [
-                "Yes",
-                "No",
-                "No Opinion"
-            ],
-            "required": true
-        },
-        {
-            "id": "familiarity3",
-            "question": "Are you familiar with the Judicial Board decision as it pertains to elections?",
-            "type": "select",
-            "options": [
-                "Yes",
+                "Yes, Panhellenic Council",
+                "Yes, Interfraternity Council",
                 "No"
             ],
-           "required": true
-        },
-        {
-            "id": "familiarity4",
-            "question": "Do you agree with the Judicial Board decision?",
-            "type": "select",
-            "options": [
-                "Yes",
-                "No"
-            ],
-            "show_if_id": "familiarity3",
-            "show_if_value": "Yes",
+            "inline": false,
             "required": true
         },
         {
-            "id": "familiarity5",
-            "question": "Are you familiar with the Elections Commission's public response to the case?",
-            "type": "select",
+            "id": "demographics5",
+            "question": "As of the Fall 2018 semester, where do you currently live?",
+            "type": "radio",
             "options": [
-                "Yes",
-                "No"
+                "On-campus residence hall or apartment",
+                "Greek housing",
+                "Off-campus"
             ],
+            "inline": false,
             "required": true
         },
         {
-            "id": "familiarity6",
-            "question": "Do you agree with the Elections Commission's public response to the case?",
+            "id": "reslife1",
+            "question": "In which residence hall do you live?",
             "type": "select",
             "options": [
-                "Yes",
-                "No"
+                "BARH",
+                "Barton Hall",
+                "Blitman Residence Commons",
+                "Bray Hall",
+                "Bryckwyck",
+                "Cary Hall",
+                "City Station West",
+                "Colonie Apartments",
+                "Crockett Hall",
+                "Davison Hall",
+                "E-Complex",
+                "Hall Hall",
+                "Nason Hall",
+                "North Hall",
+                "Nugent Hall",
+                "Polytechnic Residence Commons",
+                "Quadrangle",
+                "RAHP A",
+                "RAHP B",
+                "Sharp Hall",
+                "Stacwyck Apartments",
+                "Warren Hall"
             ],
-            "show_if_id": "familiarity5",
-            "show_if_value": "Yes",
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
         {
-            "id": "response1",
-            "question": "What changes would you like to see in future years?",
-            "type": "text",
-            "required": false
-        },
-        {
-            "id": "response2",
-            "question": "How would you feel if Rensselaer were to engage an external auditor?",
-            "type": "text",
-            "required": false
-        },
-        {
-            "id": "response3",
-            "question": "If an audit or review was conducted, which group do you feel is the most appropriate to conduct it?",
+            "id": "reslife2",
+            "question": "Which of the following reasons motivated you to live on-campus?",
             "type": "checkbox",
             "options": [
-                "An on campus club or organization",
-                "Student volunteers uninvolved in the process",
-                "Alumni volunteers",
-                "Institute sanctioned external auditor",
-                "Other"
+                "Sense of community",
+                "Location",
+                "Safety",
+                "Cleanliness",
+                "Cost",
+                "Utilities",
+                "Privacy",
+                "Space",
+                "Convenience (FIXX, cleaning staff, study rooms, etc.)",
+                "Required to"
             ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
         {
-            "id": "response4",
-            "question": "Who would you like to see review the elections process?",
+            "id": "reslife3",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the toilets in your residence halls?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife4",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the sinks in your residence halls?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife5",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the bathroom countertops in your residence halls?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife6",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the showers in your residence halls?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife7",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the dispensers in your residence halls?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife8",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with your residence hall's printer(s)?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife9",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with your residence hall's study rooms?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife10",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with your residence hall's kitchen?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife11",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with your residence hall's communal furniture?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife12",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with you residence hall’s timeliness of FIXX responses (how long it takes for your issue to be resolved)?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife13",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with you residence hall’s Wi-Fi connection?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife14",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with you residence hall’s bedroom furniture?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife15",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with you residence hall’s air conditioning (if applicable)?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife16",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with you residence hall’s heating?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife17",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with your hall's programs and activities?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife18",
+            "question": "If you chose 3 or less for any of the scaled questions about the state of your on-campus housing, please elaborate here.",
             "type": "text",
-            "show_if_id": "response3",
-            "show_if_value": "Other",
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment"
+        },
+        {
+            "id": "reslife19",
+            "question": "Have you ever felt unsafe near the entrance to your building (due to stalkers, loitering, etc)?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
         {
-            "id": "response5",
-            "question": "On a scale from 1-10, ten being most sufficient, do you feel that the communication by the Elections Commission has been sufficient as it pertains to recent issues?",
+            "id": "reslife20",
+            "question": "Would you feel more safe to have multiple entrances to your building that are not alarmed?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife21",
+            "question": "Have you been educated on what to do in emergency situations in your building (such as an active shooter, weather disaster, fire, etc.)?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife22",
+            "question": "What Department of Public Safety services have you used (such as rides when you feel unsafe, blue light system, etc.)?",
+            "type": "text",
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment"
+        },
+        {
+            "id": "reslife23",
+            "question": "Which of the following statements best match your beliefs with respect to access to other residence halls?",
+            "type": "select",
+            "options": [
+                "Residents should only have access to their own residence hall",
+                "On-campus residents should have access to neighboring residence halls, but only during daylight hours",
+                "On-campus residents should have access to neighboring residence halls",
+                "On-campus residents should have access to all residence halls, but only during daylight hours",
+                "On-campus residents should have access to all residence halls"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife24",
+            "question": "On a scale from 1-10, ten being the highest, how important is the presence of food at a program to your willingness to attend?",
             "type": "radio",
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
             "required": true
         },
         {
-            "id": "response6",
-            "question": "How would you feel about instant runoff elections (ranked voting)?",
-            "type": "select",
+            "id": "reslife25",
+            "question": "Are you aware of, or familiar with, the Guest Policy?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment",
+            "required": true
+        },
+        {
+            "id": "reslife26",
+            "question": "If you have any other comments about the state of your on-campus housing, please share them here.",
+            "type": "text",
+            "show_if_id": "demographics5",
+            "show_if_value": "On-campus residence hall or apartment"
+        },
+        {
+            "id": "greekHousing1",
+            "question": "As of the Fall 2018 semester, how long have you lived in Greek housing?",
+            "type": "radio",
             "options": [
-                "In favor",
-                "Not in favor",
-                "No Opinion"
+                "1-2 semesters",
+                "3-4 semesters",
+                "5 or more semesters"
             ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "inline": false,
             "required": true
         },
         {
-            "id": "response7",
-            "question": "Would you like to see pictures of candidates on the ballot?",
-            "type": "select",
+            "id": "greekHousing2",
+            "question": "How many semesters did you live on-campus before moving into your Greek house?",
+            "type": "radio",
+            "options": [
+                "Did not live on-campus",
+                "1-2 semesters",
+                "3-4 semesters",
+                "5 or more semesters"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "inline": false,
+            "required": true
+        },
+        {
+            "id": "greekHousing3",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the cost of living in your Greek house in comparison to other options?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "required": true
+        },
+        {
+            "id": "greekHousing4",
+            "question": "If you were to have participated in the Summer Arch program, or if you plan to, would you have preferred to live in your Greek house for the summer semester?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "required": true
+        },
+        {
+            "id": "greekHousing5",
+            "question": "What was your primary motivation for living in a Greek House?",
+            "type": "radio",
+            "options": [
+                "Sophomore who didn’t want to live in on-campus",
+                "Cost",
+                "It’s required by my chapter",
+                "Other (please specify below)"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "inline": false,
+            "required": true
+        },
+        {
+            "id": "greekHousing5other",
+            "question": "What was your primary motivation for living in a Greek House?",
+            "type": "text",
+            "show_if_id": "greekHousing5",
+            "show_if_value": "Other (please specify below)"
+        },
+        {
+            "id": "greekHousing6",
+            "question": "Are you planning on continuing to live in your Greek House for the 2018-2019 Academic Year?",
+            "type": "radio",
             "options": [
                 "Yes",
-                "No",
-                "No Opinion"
+                "No, graduating",
+                "No, not planning to"
             ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
             "required": true
         },
         {
-            "id": "response8",
-            "question": "Do you have any ideas for how to improve the current elections system?",
+            "id": "greekHousing7",
+            "question": "Do you have an RPI shuttle stop that stops near your house?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "required": true
+        },
+        {
+            "id": "greekHousing8",
+            "question": "Do you use the shuttle stop near your house to commute between your house and campus?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "greekHousing7",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "greekHousing9",
+            "question": "If there was a shuttle stop near your house, would you use it to commute between your house and campus?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "greekHousing7",
+            "show_if_value": "No",
+            "required": true
+        },
+        {
+            "id": "greekHousing10",
+            "question": "Do you feel safe in the area where your Greek house is?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "required": true
+        },
+        {
+            "id": "greekHousing11",
+            "question": "Have you ever had an incident occur off-campus in which you felt unsafe?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "required": true
+        },
+        {
+            "id": "greekHousing12",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the presence of Public Safety and/or Troy Police in your neighborhood?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "required": true
+        },
+        {
+            "id": "greekHousing13",
+            "question": "Do you have a Blue Light Station near your Greek house?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "required": true
+        },
+        {
+            "id": "greekHousing14",
+            "question": "If you do not have a Blue Light Station near your Greek house, would you feel more safe if there was one?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "greekHousing13",
+            "show_if_value": "No"
+        },
+        {
+            "id": "greekHousing15",
+            "question": "In case of an incident, who would you be most comfortable calling?",
+            "type": "radio",
+            "options": [
+                "Department of Public Safety",
+                "Troy Police Department",
+                "Other (please specify below)"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "inline": false,
+            "required": true
+        },
+        {
+            "id": "greekHousing15other",
+            "question": "In case of an incident, who would you be most comfortable calling?",
+            "type": "text",
+            "show_if_id": "greekHousing15",
+            "show_if_value": "Other (please specify below)"
+        },
+        {
+            "id": "greekHousing16",
+            "question": "Approximately how far away is your Greek House from campus?",
+            "type": "radio",
+            "options": [
+                "0 - 0.5 miles",
+                "0.5 - 2 miles",
+                "2 - 5 miles",
+                "5+ miles"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "required": true
+        },
+        {
+            "id": "greekHousing17",
+            "question": "How do you primarily commute to campus?",
+            "type": "radio",
+            "options": [
+                "Walking",
+                "Driving",
+                "Biking, skateboarding, etc.",
+                "Shuttle",
+                "Public Transportation",
+                "Other (please specify below)"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "inline": false,
+            "required": true
+        },
+        {
+            "id": "greekHousing17other",
+            "question": "How do you primarily commute to campus?",
+            "type": "text",
+            "show_if_id": "greekHousing17",
+            "show_if_value": "Other (please specify below)"
+        },
+        {
+            "id": "greekHousing18",
+            "question": "Do you have a parking pass?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "required": true
+        },
+        {
+            "id": "greekHousing19",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the availability of parking passes?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "greekHousing18",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "greekHousing20",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the availability of parking spaces on campus?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "greekHousing18",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "greekHousing21",
+            "question": "What was your motivation to live on campus when you did?",
+            "type": "checkbox",
+            "options": [
+                "Sense of community",
+                "Location",
+                "Safety",
+                "Cleanliness",
+                "Cost",
+                "Utilities",
+                "Privacy",
+                "Space",
+                "Convenience (FIXX, cleaning staff, study rooms, etc.)",
+                "Required to",
+                "Did not live on campus"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "inline": false,
+            "required": true
+        },
+        {
+            "id": "greekHousing22",
+            "question": "Approximately how long does it take you to get to class?",
+            "type": "radio",
+            "options": [
+                "Less than 5 minutes",
+                "5-10 minutes",
+                "10-15 minutes",
+                "15-20 minutes",
+                "20+ minutes"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing",
+            "inline": false,
+            "required": true
+        },
+        {
+            "id": "greekHousing23",
+            "question": "If you have any other comments about your experiences with Greek Housing, please share them here.",
+            "type": "text",
+            "show_if_id": "demographics5",
+            "show_if_value": "Greek housing"
+        },
+        {
+            "id": "offcampus1",
+            "question": "How did you find out about your off-campus housing?",
+            "type": "radio",
+            "options": [
+                "Jump Off Campus",
+                "Friend",
+                "Craigslist",
+                "Zillow",
+                "Facebook groups associated with RPI and/or Troy (Free & For Sale, etc)",
+                "Other (please specify below)"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "inline": false,
+            "required": true
+        },
+        {
+            "id": "offcampus1other",
+            "question": "How did you find out about your off-campus housing?",
+            "type": "text",
+            "show_if_id": "offcampus1",
+            "show_if_value": "Other (please specify below)"
+        },
+        {
+            "id": "offcampus2",
+            "question": "Approximately how far away do you live from campus?",
+            "type": "radio",
+            "options": [
+                "0 - 0.5 miles",
+                "0.5 - 2 miles",
+                "2 - 5 miles",
+                "5+ miles"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "required": true
+        },
+        {
+            "id": "offcampus3",
+            "question": "How do you primarily commute to campus?",
+            "type": "radio",
+            "options": [
+                "Walking",
+                "Driving",
+                "Biking, skateboarding, etc.",
+                "Shuttle",
+                "Public Transportation",
+                "Other (please specify below)"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "inline": false,
+            "required": true
+        },
+        {
+            "id": "offcampus3other",
+            "question": "How do you primarily commute to campus?",
+            "type": "text",
+            "show_if_id": "offcampus3",
+            "show_if_value": "Other (please specify below)"
+        },
+        {
+            "id": "offcampus4",
+            "question": "Approximately how long does it take you to get to class?",
+            "type": "radio",
+            "options": [
+                "Less than 5 minutes",
+                "5-10 minutes",
+                "10-15 minutes",
+                "15-20 minutes",
+                "20+ minutes"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "inline": false,
+            "required": true
+        },
+        {
+            "id": "offcampus5",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the overall quality of your off-campus housing and amenities?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "required": true
+        },
+        {
+            "id": "offcampus6",
+            "question": "Do you have a parking pass?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "required": true
+        },
+        {
+            "id": "offcampus7",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the availability of parking passes?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "offcampus6",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "offcampus8",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the availability of parking spaces on campus?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "N/A"
+            ],
+            "show_if_id": "offcampus6",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "offcampus9",
+            "question": "Do you feel safe around the area where you live?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "required": true
+        },
+        {
+            "id": "offcampus10",
+            "question": "Have you ever had an incident occur in which you felt unsafe?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "required": true
+        },
+        {
+            "id": "offcampus11",
+            "question": "On a scale from 1-10, ten being the highest, how satisfied are you with the presence of Public Safety and/or Troy Police in your neighborhood?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "required": true
+        },
+        {
+            "id": "offcampus12",
+            "question": "Do have a Blue Light Station near where you live?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "required": true
+        },
+        {
+            "id": "offcampus13",
+            "question": "If you do not have a Blue Light Station near where you live, would you feel more safe if there was one?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "offcampus12",
+            "show_if_value": "No",
+            "required": true
+        },
+        {
+            "id": "offcampus14",
+            "question": "In case of an incident, who would you be most comfortable calling?",
+            "type": "radio",
+            "options": [
+                "Department of Public Safety",
+                "Troy Police Department",
+                "Other (please specify below)"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "inline": false,
+            "required": true
+        },
+        {
+            "id": "offcampus14other",
+            "question": "In case of an incident, who would you be most comfortable calling?",
+            "type": "text",
+            "show_if_id": "offcampus14",
+            "show_if_value": "Other (please specify below)"
+        },
+        {
+            "id": "offcampus15",
+            "question": "What was your motivation to live off campus?",
+            "type": "checkbox",
+            "options": [
+                "Cost",
+                "Less regulations",
+                "Privacy",
+                "Ability to not be on a meal plan",
+                "Location",
+                "Cleanliness",
+                "More Freedom",
+                "Better Utilities (Internet, etc)",
+                "Living at home / with family",
+                "Space",
+                "Other (please specify below)"
+            ],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "inline": false,
+            "required": true
+        },
+        {
+            "id": "offcampus15other",
+            "question": "What was your motivation to live off campus?",
+            "type": "text",
+            "show_if_id": "offcampus15",
+            "show_if_value": "Other (please specify below)"
+        },
+        {
+            "id": "offcampus16",
+            "question": "Though living off-campus, do you still feel connected to the campus community?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "required": true
+        },
+        {
+            "id": "offcampus17",
+            "question": "Did you live on-campus before moving off campus?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus",
+            "required": true
+        },
+        {
+            "id": "offcampus18",
+            "question": "How many semesters did you live on-campus before moving off campus?",
+            "type": "radio",
+            "options": [
+                "1-2 semesters",
+                "3-4 semesters",
+                "5 or more semesters"
+            ],
+            "show_if_id": "offcampus17",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "offcampus19",
+            "question": "How many semesters did you live on-campus before moving off campus?",
+            "type": "radio",
+            "options": [
+                "Sense of community",
+                "Location",
+                "Safety",
+                "Cleanliness",
+                "Cost",
+                "Utilities",
+                "Privacy",
+                "Space",
+                "Convenience (FIXX, cleaning staff, study rooms, etc.)",
+                "Required to"
+            ],
+            "show_if_id": "offcampus17",
+            "show_if_value": "Off-campus",
+            "required": true
+        },
+        {
+            "id": "offcampus20",
+            "question": "If you have any other comments about your experiences with off-campus living, please share them here.",
+            "type": "text",
+            "show_if_id": "demographics5",
+            "show_if_value": "Off-campus"
+        }
+    ],
+    [
+        {
+            "id": "gc1",
+            "question": "What type of graduate student are you?",
+            "type": "radio",
+            "options": [
+                "PhD",
+                "Masters",
+                "Co-terminal"
+            ],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc2",
+            "question": "What year is this of your graduate studies?",
+            "type": "radio",
+            "options": [
+                "1st",
+                "2nd",
+                "3rd",
+                "4th",
+                "5th",
+                "6th",
+                "7th"
+            ],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc3",
+            "question": "How do you get to campus?",
+            "type": "checkbox",
+            "options": [
+                "Walk", 
+                "Drive", 
+                "Bike", 
+                "Carpool", 
+                "Bus", 
+                "RPI Shuttle"
+            ],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc4",
+            "question": "What is your funding source?",
+            "type": "radio",
+            "options": [
+                "Teaching Assistant", 
+                "Research Assistant",
+                "Fellowship (Internal or External)", 
+                "Self-supported"
+            ],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc5",
+            "question": "How many hours a week do you spend working for your TA assignment?",
+            "type": "text", 
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc6",
+            "question": "How many hours a week do you spend working on your research?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc7",
+            "question": "Do you participate in any Union clubs?",
+            "type": "radio",
+            "options": [ "Yes", "No" ],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc8",
+            "question": "If not, please tell us why.",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc9",
+            "question": "What other Union resources do you use?",
+            "type": "checkbox",
+            "options": [
+                "Mueller Center equipment",
+                "Mueller Center classes", 
+                "Graduate Outdoor Recreation Program (GORP)", 
+                "Intramural sports", 
+                "Union Pub and related activities (dinner, painting, trivia, etc)", "Legal Services"
+            ],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc10",
+            "question": "If there are any resources you use that weren't listed here, please let us know which:",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate"
+        },
+        {
+            "id": "gc11",
+            "question": "What events should the Graduate Council continue organizing?",
+            "type": "checkbox",
+            "options": [
+                "Pub Night", 
+                "Troy Kitchen Takeover", 
+                "Professional Development", 
+                "Hockey Night", 
+                "Field Day"
+            ],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc12",
+            "question": "What new events should the Graduate Council try to have?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc13",
+            "question": "What new events should the Union or Mueller Center try to have?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+
+        },
+        {
+            "id": "gc14",
+            "question": "What do you believe should be the top priority of the Graduate Council?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc15",
+            "question": "Are there any graduate-related issues that the Graduate Council should advocate for to the administration?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc16",
+            "question": "Do you feel like you have a community of support at RPI?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc17",
+            "question": "Please feel free to elaborate:",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate"
+        },
+        {
+            "id": "gc18",
+            "question": "How is your relationship with your advisor?",
+            "type": "radio",
+            "options": [
+                "Very Positive", 
+                "Positive", 
+                "Neutral", 
+                "Negative", 
+                "Very Negative", 
+                "Not Applicable"
+            ],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc19",
+            "question": "Do you feel like you are on track for completing your degree?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc20",
+            "question": "What are barriers to your progress?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc21",
+            "question": "How effective has the Center for Career and Professional Development (CCPD) been for you?",
+            "type": "radio",
+            "options": [
+                "Very Effective", 
+                "Effective", 
+                "Neutral", 
+                "Ineffective", 
+                "Very Ineffective", 
+                "I've never used the CCPD"
+            ],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc22",
+            "question": "Which of these resources have helped you prepare for your career?",
+            "type": "checkbox",
+            "options": [
+                "Your advisor", 
+                "Your department", 
+                "Center for Career and Professional Development (CCPD)", 
+                "A professional association in your field", 
+                "Alumni connections", 
+                "International Student and Support Services (ISSS)", 
+                "None"
+            ],
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate",
+            "required": true
+        },
+        {
+            "id": "gc23",
+            "question": "Any additional thoughts you'd like to share? It can be about one of the topics above, or anything else. The Graduate Council really appreciates your input!",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Graduate"
+        }
+    ],
+    [{
+            "id": "slc1",
+            "question": "Are there any changes you'd like to see in the health services provided on campus? If so, explain.",
             "type": "text",
             "required": true
+        },
+        {
+            "id": "slc2",
+            "question": "If you've used the Counseling Center services, are there any improvements you would recommend? If so, explain.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "slc3",
+            "question": "Do you have any comments, suggestions, concerns, or ideas on the Student Handbook? If so, explain.",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+
+        },
+        {
+            "id": "slc4",
+            "question": "What is your general impression of Greek Life on RPI's campus?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+
+        },
+        {
+            "id": "slc5",
+            "question": "What's one area where you think Greek Life organizations on campus could improve?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "slc6",
+            "question": "FOR TRANSFER STUDENTS ONLY: Are there any specific parts of the transfer student process that you believe can be improved?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "slc7",
+            "question": "Do you have any ideas to improve student life on campus? If so, explain.",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
         }
-    ]
+    ],
+    [{
+            "id": "fsc1",
+            "question": "How much do you like Public Safety?",
+            "type": "radio",
+            "options": ["Very much", "Slightly", "Neutral", "Not very much", "Not at all"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "fsc2",
+            "question": "Describe an experience that makes you feel that way OR give a general comment.",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": false
+        },
+        {
+            "id": "fsc3",
+            "question": "What prevents you from recycling?",
+            "type": "checkbox",
+            "options": [
+                "I recylce everything I can", 
+                "Don't know how to recyle", 
+                "Too far", 
+                "Don't care", 
+                "Other"
+            ],
+            "inline": true,
+            "required": true
+        },
+        {
+            "id": "fsc4",
+            "question": "What do you know about composting?",
+            "type": "checkbox",
+            "options": [
+                "I drop off my compost at the farmer’s market", 
+                "I compost back at home, but would want to compost at RPI",
+                "I don’t compost but I would if it was easier",
+                "I have no interest in composting",
+                "What is composting"
+            ],
+            "inline": true,
+            "required": true
+        },
+        {
+            "id": "fsc5",
+            "question": "What prevents you from biking to/around campus?",
+            "type": "checkbox",
+            "options": [
+                "I ride my bike all the time",
+                "Too far",
+                "Terrain",
+                "Not enough place to lock bikes on campus",
+                "Not enough bike lanes",
+                "I cannot afford a bike",
+                "Other"
+            ],
+            "inline": true,
+            "required": true
+        },
+        {
+            "id": "fsc6",
+            "question": "Would you like more access to EMPAC?",
+            "type": "radio",
+            "options": ["Yes", "No", "What is EMPAC"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "fsc7",
+            "question": "What could be done to improve the physical environment on campus?",
+            "type": "checkbox",
+            "options": [
+                "More Study Space",
+                "Improvement of roads/sidewalks/staircases",
+                "Outdoor trash cans",
+                "More greenery/ improved landscaping",
+                "Other"
+            ],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "fsc8",
+            "question": "What is the biggest issue you have faced with the shuttle system?",
+            "type": "radio",
+            "options": [
+                "Late/early shuttles", 
+                "Too full", 
+                "Absent shuttles (just don’t show up)",
+                "Rude/unsatisfactory bus drivers",
+                "Inconvenient route times", 
+                "Other" 
+
+            ],
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        }
+    ],
+    [
+        {
+            "id": "aac1",
+            "question": "Do you think there are enough companies looking to hire students from your major at the Fall and Spring career fairs, representative of the student population of your major? (applies to both Fall and Spring Career fairs)?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "aac2",
+            "question": "If not, what is your major?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "aac3",
+            "question": "How difficult is it to learn more about research opportunites at RPI via the established websites that summarize research projects of RPI professors graduate students?",
+            "type": "radio",
+            "options": [1, 2, 3, 4, 5],
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "inline": true,
+            "required": true
+        },
+        {
+            "id": "aac4",
+            "question": "To find research, do you think you would use an online resource on which professors can post about research openings/opportunities?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "inline": true,
+            "required": true
+        },
+        {
+            "id": "aac5",
+            "question": "Regardless of what major you are, would you like to have the opportunity to present your research, project, prototype, etc. at a showcasing/symposium-type conference/competition at RPI?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "inline": true,
+            "required": true
+        },
+        {
+            "id": "aac6",
+            "question": "In what areas do you feel the academic experience can improve at RPI?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        }
+    ],
+    [
+        {
+            "id": "hsac1",
+            "question": "What food groups do you want to see more of in dining halls?",
+            "type": "checkbox",
+            "options": ["Meats", "Vegan Proteins", "Vegetables", "Drinks", "Fruits", "Starches", "Grains"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "hsac2",
+            "question": "Is there a food category/concept/cuisine that you’d like to see on campus?",
+            "type": "checkbox",
+            "options": ["Asian", "Vegan/Healthy", "Sandwiches/Deli", "Breakfast all day", "Desserts/Sweets"],
+            "inline": true,
+            "required": true
+        },
+        {
+            "id": "hsac3",
+            "question": "Are there any product categories you’d like to see at Father’s?",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "hsac4",
+            "question": "We are planning to introduce a new program called Fresh Pantry. Through this program, we will offer pre-portioned ingredients that allow you to cook a meal. You would pick up one protein, one grain, a few vegetables, and some sides. We will be offering vegan options as well.  How often do you cook?",
+            "type": "radio",
+            "options": ["1-3 days a week", "3-5 days a week", "5-7 days a week"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "hsac5",
+            "question": "What would you be willing to pay?",
+            "type": "radio",
+            "options": ["$6", "$7", "$8", "$9"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        }
+    ],
+    [
+        {
+            "id": "wtg1",
+            "question": "Do you use the Shuttle Tracker (https://shuttles.rpi.edu)?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "inline": true,
+            "required": true
+        },
+        {
+            "id": "wtg2",
+            "question": "What would you like to see changed about the Shuttle Tracker?",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "wtg3",
+            "question": "What would you like to see changed about the Petitions website (https://petitions.union.rpi.edu)?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "wtg4",
+            "question": "Do you buy/rent textbooks for courses?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "wtg5",
+            "question": "If you answered yes to the above question, do you buy/rent textbooks from the Union bookstore?",
+            "type": "radio",
+            "options": ["Yes", "No", "I do not buy/rent textbooks for courses."],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        }
+
+    ],
+    [
+        {
+            "id": "sgcc1",
+            "question": "What form(s) of social media do you use?",
+            "type": "checkbox",
+            "options": [
+                "Facebook",
+                "Twitter",
+                "Instagram",
+                "Reddit",
+                "None",
+                "Other"
+            ],
+            "inline": false,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "sgcc2",
+            "question": "Do you follow Student Government on Social Media?  If so, which ones?",
+            "type": "checkbox",
+            "options": [
+                "Facebook",
+                "Twitter",
+                "Reddit (r/rpi in general)",
+                "None"
+            ],
+            "inline": false,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "sgcc3",
+            "question": "How well do you believe that Student Government is distributing information? (1 - \"Poorly\", 6 - \"Greatly\")",
+            "type": "radio",
+            "options": [1, 2, 3, 4, 5],
+            "inline": false,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "sgcc4",
+            "question": "Do you know what the Student Senate and its committees do for the student body?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "sgcc5",
+            "question": "How often should student government keep the student body updated on happenings and projects?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "sgcc6",
+            "question": "What would you like to see more of from the Student Government communication-wise?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        }
+    ],
+    [
+        {
+            "id": "crc1",
+            "question": "How well do you feel you are informed of events happening in Troy?",
+            "type": "radio",
+            "inline": true,
+            "options": [1, 2, 3, 4, 5],
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "crc2",
+            "question": "How well do you feel you are connected to the general Troy community?",
+            "type": "radio",
+            "inline": true,
+            "options": [1, 2, 3, 4, 5],
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        }
+    ],
+    [
+        {
+            "id": "ec1",
+            "question": "If there were to be an additional voting location, where would you like it to be located?",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "ec2",
+            "question": "Do you have any suggestions about how the ballot format can be improved?",
+            "type": "text",
+            "required": true
+
+        }
+    ],
+    [
+        {
+            "id": "dic1",
+            "question": "How well do you feel cultural organizations get exposure on campus?",
+            "type": "radio",
+            "inline": true,
+            "options": [1, 2, 3, 4, 5],
+            "required": true
+        },
+        {
+            "id": "dic2",
+            "question": "Is there a situation where you feel unsupported culturally, religiously, or racially? If so, explain what you’d like to see.",
+            "type": "text",
+            "required":true
+        }
+    ],
+    [
+        {
+            "id": "atf1",
+            "question": "What activities are you involved in that would be affected by the Arch program?",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "atf2",
+            "question": "Would you participate in the Arch if you had the option?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "atf3",
+            "question": "Would you participate in the Arch a year early (after your freshman year) if you had the option?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "atf4",
+            "question": "If given the option, would you choose to live on campus during the summer semester of the Arch program?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "atf5",
+            "question": "Would you feel more comfortable with the Arch if there were more active resources available to help you find an internship/co-op?",
+            "type": "radio",
+            "options": ["Yes", "No"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        }
+
+    ],
+    [
+        {
+            "id": "union1",
+            "question": "Following the recent developments with the Union and the resolution from the Board of Trustees, do you believe the Union is student-run in its current form?",
+            "type": "radio",
+            "inline": true,
+            "options": ["Yes", "No"]
+        },
+        {
+            "id": "union2",
+            "question": "Do you believe the student representatives should continue to be able to approve the hiring of Union administrative staff?",
+            "type": "radio",
+            "inline": true,
+            "options": ["Yes", "No"]
+        }
+    ], 
+    [{
+        "id": "other1",
+        "question": "If you have any other feedback, please share it here.",
+        "type": "text"
+    },
+    {
+	"id": "raffle1",
+	"question": "If you would like to be entered into a raffle, please enter your email address. It will not be directly associated with your responses.",
+	"type": "email"
+    }]
 ]
