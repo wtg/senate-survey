@@ -1188,7 +1188,8 @@
             "show_if_value": "Graduate"
         }
     ],
-    [{
+    [
+        {
             "id": "slc1",
             "question": "Are there any changes you'd like to see in the health services provided on campus? If so, explain.",
             "type": "text",
@@ -1243,26 +1244,9 @@
             "required": true
         }
     ],
-    [{
+    [
+        {
             "id": "fsc1",
-            "question": "How much do you like Public Safety?",
-            "type": "radio",
-            "options": ["Very much", "Slightly", "Neutral", "Not very much", "Not at all"],
-            "inline": true,
-            "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
-        },
-        {
-            "id": "fsc2",
-            "question": "Describe an experience that makes you feel that way OR give a general comment.",
-            "type": "text",
-            "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": false
-        },
-        {
-            "id": "fsc3",
             "question": "What prevents you from recycling?",
             "type": "checkbox",
             "options": [
@@ -1276,7 +1260,7 @@
             "required": true
         },
         {
-            "id": "fsc4",
+            "id": "fsc2",
             "question": "What do you know about composting?",
             "type": "checkbox",
             "options": [
@@ -1290,7 +1274,7 @@
             "required": true
         },
         {
-            "id": "fsc5",
+            "id": "fsc3",
             "question": "What prevents you from biking to/around campus?",
             "type": "checkbox",
             "options": [
@@ -1306,7 +1290,7 @@
             "required": true
         },
         {
-            "id": "fsc6",
+            "id": "fsc4",
             "question": "Would you like more access to EMPAC?",
             "type": "radio",
             "options": ["Yes", "No", "What is EMPAC"],
@@ -1316,7 +1300,7 @@
             "required": true
         },
         {
-            "id": "fsc7",
+            "id": "fsc5",
             "question": "What could be done to improve the physical environment on campus?",
             "type": "checkbox",
             "options": [
@@ -1332,7 +1316,7 @@
             "required": true
         },
         {
-            "id": "fsc8",
+            "id": "fsc6",
             "question": "What is the biggest issue you have faced with the shuttle system?",
             "type": "radio",
             "options": [
@@ -1347,6 +1331,24 @@
             "show_if_id": "demographics1",
             "show_if_value": "Undergraduate",
             "required": true
+        },
+        {
+            "id": "fsc7",
+            "question": "How much do you like Public Safety?",
+            "type": "radio",
+            "options": ["Very much", "Slightly", "Neutral", "Not very much", "Not at all"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": true
+        },
+        {
+            "id": "fsc8",
+            "question": "Describe an experience that makes you feel that way OR give a general comment.",
+            "type": "text",
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
+            "required": false
         }
     ],
     [
@@ -1407,19 +1409,9 @@
             "required": true
         }
     ],
-    [
+    [   
         {
             "id": "hsac1",
-            "question": "What food groups do you want to see more of in dining halls?",
-            "type": "checkbox",
-            "options": ["Meats", "Vegan Proteins", "Vegetables", "Drinks", "Fruits", "Starches", "Grains"],
-            "inline": true,
-            "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate",
-            "required": true
-        },
-        {
-            "id": "hsac2",
             "question": "Is there a food category/concept/cuisine that you’d like to see on campus?",
             "type": "checkbox",
             "options": ["Asian", "Vegan/Healthy", "Sandwiches/Deli", "Breakfast all day", "Desserts/Sweets"],
@@ -1427,9 +1419,19 @@
             "required": true
         },
         {
-            "id": "hsac3",
+            "id": "hsac2",
             "question": "Are there any product categories you’d like to see at Father’s?",
             "type": "text",
+            "required": true
+        },
+        {
+            "id": "hsac3",
+            "question": "What food groups do you want to see more of in dining halls?",
+            "type": "checkbox",
+            "options": ["Meats", "Vegan Proteins", "Vegetables", "Drinks", "Fruits", "Starches", "Grains"],
+            "inline": true,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
             "required": true
         },
         {
