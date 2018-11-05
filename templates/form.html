@@ -48,7 +48,7 @@ angular.module('questionaire', [])
         return true;
     }
 
-    $scope.should_show_question = function(q) {
+    $scope.should_show_question = function(q) {  
         if (!('show_if_id' in q)) return true;
         if ('show_if_value' in q) {
             for (var page of $scope.survey) {
@@ -113,9 +113,29 @@ angular.module('questionaire', [])
     $scope.next_page = function() {
         if ($scope.page != $scope.last_page && $scope.canProceed())
             $scope.page++;
+        
+        var sum_questions = 0;
+        for (var q of $scope.survey[$scope.page - 1]) {
+            if($scope.should_show_question(q)){
+                sum_questions += 1;
+            }
+        }
+        
+        if (sum_questions === 0)
+            $scope.next_page();
     };
     $scope.previous_page = function() {
         if ($scope.page != 1) $scope.page--;
+
+        var sum_questions = 0;
+        for (var q of $scope.survey[$scope.page - 1]) {
+            if($scope.should_show_question(q)){
+                sum_questions += 1;
+            }
+        }
+        
+        if (sum_questions === 0)
+            $scope.previous_page();
     };
 }]);
 </script>
