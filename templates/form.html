@@ -15,7 +15,25 @@
 angular.module('questionaire', [])
 .controller('QuestionController', ['$scope', '$http', '$interpolate', function($scope, $http, $interpolate) {
     // These need to match IDs in survey.json to show a header before a question.
-    $scope.headers = {};
+    $scope.headers = {
+        "demographics1": "Demographics",
+        "reslife1": "Residence Life",
+        "greekHousing1": "Greek Housing",
+        "offcampus1": "Off-Campus Housing",
+        "gc1": "Graduate Students",
+        "slc1": "Student Life",
+        "fsc1": "The Campus",
+        "aac1": "Academics",
+        "hsac1": "Hospitality Services & Sodexo",
+        "wtg1": "Student Government Web Services",
+        "sgcc1": "Communication",
+        "crc1": "Community Relations",
+        "ec1": "Student Government Elections",
+        "dic1": "Diversity and Inclusion",
+        "atf1": "The Arch",
+        "union1": "Recent Union Developments",
+	    "raffle1": "Raffle"
+    };
 
     $scope.survey = survey;
 
