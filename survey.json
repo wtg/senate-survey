@@ -52,6 +52,8 @@
                 "No"
             ],
             "inline": false,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
             "required": true
         },
         {
@@ -64,6 +66,8 @@
                 "Off-campus"
             ],
             "inline": false,
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate",
             "required": true
         },
         {
@@ -1229,14 +1233,23 @@
         },
         {
             "id": "slc6",
-            "question": "FOR TRANSFER STUDENTS ONLY: Are there any specific parts of the transfer student process that you believe can be improved?",
-            "type": "text",
+            "question": "Are you a transfer student?",
+            "type": "radio",
+            "options": ["Yes", "No"],
             "show_if_id": "demographics1",
             "show_if_value": "Undergraduate"
             
         },
         {
             "id": "slc7",
+            "question": "Are there any specific parts of the transfer student process that you believe can be improved?",
+            "type": "text",
+            "show_if_id": "slc6",
+            "show_if_value": "Yes"
+            
+        },
+        {
+            "id": "slc8",
             "question": "Do you have any ideas to improve student life on campus? If so, explain.",
             "type": "text",
             "show_if_id": "demographics1",
@@ -1250,8 +1263,8 @@
             "question": "What prevents you from recycling?",
             "type": "checkbox",
             "options": [
-                "I recylce everything I can", 
-                "Don't know how to recyle", 
+                "I recycle everything I can", 
+                "Don't know how to recycle", 
                 "Too far", 
                 "Don't care", 
                 "Other"
@@ -1363,10 +1376,10 @@
         },
         {
             "id": "aac2",
-            "question": "If not, what is your major?",
+            "question": "What is your major?",
             "type": "text",
-            "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate"
+            "show_if_id": "aac1",
+            "show_if_value": "No"
             
         },
         {
@@ -1489,12 +1502,12 @@
         },
         {
             "id": "wtg5",
-            "question": "If you answered yes to the above question, do you buy/rent textbooks from the Union bookstore?",
+            "question": "Do you buy/rent textbooks from the Union bookstore?",
             "type": "radio",
-            "options": ["Yes", "No", "I do not buy/rent textbooks for courses."],
+            "options": ["Yes", "No"],
             "inline": true,
-            "show_if_id": "demographics1",
-            "show_if_value": "Undergraduate"
+            "show_if_id": "wtg4",
+            "show_if_value": "Yes"
             
         }
 
@@ -1678,14 +1691,18 @@
             "question": "Following the recent developments with the Union and the resolution from the Board of Trustees, do you believe the Union is student-run in its current form?",
             "type": "radio",
             "inline": true,
-            "options": ["Yes", "No"]
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate"
         },
         {
             "id": "union2",
             "question": "Do you believe the student representatives should continue to be able to approve the hiring of Union administrative staff?",
             "type": "radio",
             "inline": true,
-            "options": ["Yes", "No"]
+            "options": ["Yes", "No"],
+            "show_if_id": "demographics1",
+            "show_if_value": "Undergraduate"
         }
     ], 
     [{
