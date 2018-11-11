@@ -1687,20 +1687,16 @@
     ],
     [
         {
-            "id": "union1",
-            "question": "Following the recent developments with the Union and the resolution from the Board of Trustees, do you believe the Union is student-run in its current form?",
-            "type": "radio",
-            "inline": true,
-            "options": ["Yes", "No"],
+            "id": "general1",
+            "question": "In general, what would you like to see improved at RPI?",
+            "type": "text",
             "show_if_id": "demographics1",
             "show_if_value": "Undergraduate"
         },
         {
-            "id": "union2",
-            "question": "Do you believe the student representatives should continue to be able to approve the hiring of Union administrative staff?",
-            "type": "radio",
-            "inline": true,
-            "options": ["Yes", "No"],
+            "id": "general2",
+            "question": "Do you have any suggestions as to how the Student Senate can better represent the student body?",
+            "type": "text",
             "show_if_id": "demographics1",
             "show_if_value": "Undergraduate"
         }
