@@ -15,7 +15,25 @@
 angular.module('questionaire', [])
 .controller('QuestionController', ['$scope', '$http', '$interpolate', function($scope, $http, $interpolate) {
     // These need to match IDs in survey.json to show a header before a question.
-    $scope.headers = {};
+    $scope.headers = {
+        "demographics1": "Demographics",
+        "reslife1": "Residence Life",
+        "greekHousing1": "Greek Housing",
+        "offcampus1": "Off-Campus Housing",
+        "gc1": "Graduate Students",
+        "slc1": "Student Life",
+        "fsc1": "The Campus",
+        "aac1": "Academics",
+        "hsac1": "Hospitality Services & Sodexo",
+        "wtg1": "Student Government Web Services",
+        "sgcc1": "Communication",
+        "crc1": "Community Relations",
+        "ec1": "Student Government Elections",
+        "dic1": "Diversity and Inclusion",
+        "atf1": "The Arch",
+        "general1": "Serving the Student Body",
+	    "raffle1": "Raffle"
+    };
 
     $scope.survey = survey;
 
@@ -30,7 +48,7 @@ angular.module('questionaire', [])
         return true;
     }
 
-    $scope.should_show_question = function(q) {
+    $scope.should_show_question = function(q) {  
         if (!('show_if_id' in q)) return true;
         if ('show_if_value' in q) {
             for (var page of $scope.survey) {
@@ -95,15 +113,35 @@ angular.module('questionaire', [])
     $scope.next_page = function() {
         if ($scope.page != $scope.last_page && $scope.canProceed())
             $scope.page++;
+        
+        var sum_questions = 0;
+        for (var q of $scope.survey[$scope.page - 1]) {
+            if($scope.should_show_question(q)){
+                sum_questions += 1;
+            }
+        }
+        
+        if (sum_questions === 0)
+            $scope.next_page();
     };
     $scope.previous_page = function() {
         if ($scope.page != 1) $scope.page--;
+
+        var sum_questions = 0;
+        for (var q of $scope.survey[$scope.page - 1]) {
+            if($scope.should_show_question(q)){
+                sum_questions += 1;
+            }
+        }
+        
+        if (sum_questions === 0)
+            $scope.previous_page();
     };
 }]);
 </script>
 
 <div class="masthead">
-    <h3 class="text-muted">Elections Reform Survey</h3>
+    <h3 class="text-muted">RPI Student Senate Survey</h3>
 </div>
 
 <div class="form" ng-app="questionaire">
