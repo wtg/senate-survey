@@ -7,7 +7,6 @@ import playhouse.db_url
 
 db = playhouse.db_url.connect(os.environ.get('DATABASE_URL') or 'sqlite:///cc-survey.db')
 
-
 class BaseModel(peewee.Model):
 
     class Meta:
