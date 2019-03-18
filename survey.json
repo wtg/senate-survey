@@ -1,164 +1,256 @@
 [
     [{
-            "id": "familiarity1",
-            "question": "On a scale from 1-10, ten being the highest, how familiar are you with the elections process?",
-            "type": "radio",
+            "id": "class1",
+            "question": "What class are you a part of?",
+            "type": "select",
             "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+                "Freshman",
+                "Sophomore",
+                "Junior",
+                "Senior",
+                "Graduate"
             ],
            "required": true
         },
         {
-            "id": "familiarity2",
-            "question": "On a scale from 1-10, ten being the best experience, how would you rate your experience with the voting software?",
-            "type": "radio",
-            "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-            ],
-           "required": true
-        },
-        {
-            "id": "experience1",
-            "question": "Do you believe the elections results were tampered with?",
-            "type": "select",
-            "options": [
-                "Yes",
-                "No" 
-            ],
-          "required": true
-        },
-        {
-            "id": "experience2",
-            "question": "On a scale from 1-10, ten being very well, how well did the Elections Commission handle the recent election?",
-            "type": "radio",
-            "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-            ],
-            "required": true
-        },
-        {
-            "id": "experience3",
-            "question": "Do you think candidates should be prohibited from serving on the Elections Commission?",
-            "type": "select",
-            "options": [
-                "Yes",
-                "No",
-                "No Opinion"
-            ],
-            "required": true
-        },
-        {
-            "id": "familiarity3",
-            "question": "Are you familiar with the Judicial Board decision as it pertains to elections?",
+            "id": "usage1",
+            "question": "Have you ever gone to the Counseling Center?",
             "type": "select",
             "options": [
                 "Yes",
                 "No"
             ],
-           "required": true
-        },
-        {
-            "id": "familiarity4",
-            "question": "Do you agree with the Judicial Board decision?",
-            "type": "select",
-            "options": [
-                "Yes",
-                "No"
-            ],
-            "show_if_id": "familiarity3",
-            "show_if_value": "Yes",
+
             "required": true
         },
         {
-            "id": "familiarity5",
-            "question": "Are you familiar with the Elections Commission's public response to the case?",
+            "id": "usage2",
+            "question": "Please select the main reason from the choices below to describe why you have never used this service.",
             "type": "select",
             "options": [
-                "Yes",
-                "No"
-            ],
-            "required": true
-        },
-        {
-            "id": "familiarity6",
-            "question": "Do you agree with the Elections Commission's public response to the case?",
-            "type": "select",
-            "options": [
-                "Yes",
-                "No"
-            ],
-            "show_if_id": "familiarity5",
-            "show_if_value": "Yes",
-            "required": true
-        },
-        {
-            "id": "response1",
-            "question": "What changes would you like to see in future years?",
-            "type": "text",
-            "required": false
-        },
-        {
-            "id": "response2",
-            "question": "How would you feel if Rensselaer were to engage an external auditor?",
-            "type": "text",
-            "required": false
-        },
-        {
-            "id": "response3",
-            "question": "If an audit or review was conducted, which group do you feel is the most appropriate to conduct it?",
-            "type": "checkbox",
-            "options": [
-                "An on campus club or organization",
-                "Student volunteers uninvolved in the process",
-                "Alumni volunteers",
-                "Institute sanctioned external auditor",
+                "Have never needed psychological counseling services",
+                "Have a counselor at home and/or off-campus",
+                "Didn’t know about it/that it existed",
+                "Heard about another’s unsatisfactory experience",
+                "Had difficulty scheduling an appointment",
                 "Other"
             ],
+            "show_if_id": "usage1",
+            "show_if_value": "No",
             "required": true
         },
         {
-            "id": "response4",
-            "question": "Who would you like to see review the elections process?",
+            "id": "usage3",
+            "question": "Please specify",
             "type": "text",
-            "show_if_id": "response3",
+            "show_if_id": "usage2",
             "show_if_value": "Other",
             "required": true
         },
         {
-            "id": "response5",
-            "question": "On a scale from 1-10, ten being most sufficient, do you feel that the communication by the Elections Commission has been sufficient as it pertains to recent issues?",
+            "id": "usage4",
+            "question": "How many times in the past semester have you gone to the Counseling Center?",
+            "type": "select",
+            "options":[
+                "I have not gone to the Counseling Center",
+                "1 time",
+                "2-5 times",
+                "6-10 times",
+                "Over 10 times"
+            ],
+            "show_if_id": "usage1",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "usage5",
+            "question": "If you no longer use the Counseling Center, why did you stop attending appointments?",
+            "type": "checkbox",
+            "options":[
+                "Not Applicable: I currently use the Counseling Center",
+                "Use a counselor at home and/or off-campus",
+                "I no longer feel the need to utilize the Counseling Center’s services",
+                "My condition improved; I will return for services in the future if needed",
+                "Unsatisfactory experience at the Counseling Center",
+                "Heard about another’s unsatisfactory experience",
+                "Had difficulty scheduling an appointment",
+                "Other (please specify below)"
+            ],
+            "show_if_id": "usage1",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "usage6",
+            "question": "Please specify",
+            "type": "text",
+            "show_if_id": "usage5",
+            "show_if_value": "Other (please specify below)",
+            "required": true
+        },
+        {
+            "id": "usage7",
+            "question": "Which of the following categories does your unsatisfactory experience primarily fall under?",
+            "type": "checkbox",
+            "options":[
+                "Diagnoses",
+                "Privacy / Confidentiality",
+                "Interactions with staff",
+                "Interactions with counselors",
+                "Quality of care from staff",
+                "Quality of care from counselors",
+                "Other (please specify below)"
+            ],
+            "show_if_id": "usage1",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "usage8",
+            "question": "Please specify",
+            "type": "text",
+            "show_if_id": "usage7",
+            "show_if_value": "Other (please specify below)",
+            "required": true
+        },
+        {
+            "id": "usage9",
+            "question": "You can make your first counseling appointment online. Would you schedule follow-up appointments online too if given the option?",
+            "type": "select",
+            "options": [
+                "Yes",
+                "No"
+            ],
+           "required": true
+        },
+        {
+            "id": "usage10",
+            "question": "On a scale from 1-10, ten being most completely satisfied, how would you rank your satisfaction with counseling provider(s) seen?",
             "type": "radio",
             "options": [
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
+            "show_if_id": "usage1",
+            "show_if_value": "Yes",
             "required": true
         },
         {
-            "id": "response6",
-            "question": "How would you feel about instant runoff elections (ranked voting)?",
-            "type": "select",
+            "id": "usage11",
+            "question": "On a scale from 1-10, ten being most completely satisfied, how satisfied were you with the appointment availability?",
+            "type": "radio",
             "options": [
-                "In favor",
-                "Not in favor",
-                "No Opinion"
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
             ],
+            "show_if_id": "usage1",
+            "show_if_value": "Yes",
             "required": true
         },
         {
-            "id": "response7",
-            "question": "Would you like to see pictures of candidates on the ballot?",
+            "id": "usage12",
+            "question": "On a scale from 1-10, ten being most completely satisfied, how satisfied were you with the time spent in the waiting room prior to your appointment?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+            ],
+            "show_if_id": "usage1",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "usage13",
+            "question": "On average, how soon were you seen after scheduling an appointment?",
+            "type": "select",
+            "options":[
+                "Same day",
+                "1 day",
+                "Within 1 week",
+                "Within 2 weeks",
+                "Longer than 2 weeks"
+            ],
+            "show_if_id": "usage1",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "usage14",
+            "question": "How soon were you seen relative to the time of your appointment?",
+            "type": "select",
+            "options":[
+                "Admitted early",
+                "On time",
+                "0-5 min wait",
+                "5-10 min wait",
+                "10-20 min wait",
+                "20+ min wait"
+            ],
+            "show_if_id": "usage1",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "usage15",
+            "question": "Have you used the counseling website?",
             "type": "select",
             "options": [
                 "Yes",
-                "No",
-                "No Opinion"
+                "No"
             ],
             "required": true
         },
         {
-            "id": "response8",
-            "question": "Do you have any ideas for how to improve the current elections system?",
+            "id": "usage16",
+            "question": "On a scale from 1-10, ten being most completely satisfied, how satisfied are you with the counseling center website?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+            ],
+            "show_if_id": "usage15",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "usage17",
+            "question": "On a scale from 1-10, ten being most completely satisfied, how satisfied were you with how your concerns were addressed during your experience?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+            ],
+            "show_if_id": "usage1",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
+            "id": "usage18",
+            "question": "Are there any services you would like to see at the counseling center?",
             "type": "text",
+            "required": true
+        },
+        {
+            "id": "usage19",
+            "question": "What could the Counseling Center do to improve student accessibility?",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "usage20",
+            "question": "Where would you like to see another drop in counselling area?",
+            "type": "checkbox",
+            "options":[
+                "Mueller Center",
+                "Library",
+                "Union",
+                "Commons",
+                "Ecav",
+                "Other (please specify below)"
+            ],
+            "required": true
+        },
+        {
+            "id": "usage21",
+            "question": "Please specify",
+            "type": "text",
+            "show_if_id": "usage20",
+            "show_if_value": "Other (please specify below)",
             "required": true
         }
     ]
