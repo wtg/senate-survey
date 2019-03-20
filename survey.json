@@ -124,6 +124,27 @@
            "required": true
         },
         {
+            "id": "usage15",
+            "question": "Have you used the counseling website?",
+            "type": "select",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "required": true
+        },
+        {
+            "id": "usage16",
+            "question": "On a scale from 1-10, ten being most completely satisfied, how satisfied are you with the counseling center website?",
+            "type": "radio",
+            "options": [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+            ],
+            "show_if_id": "usage15",
+            "show_if_value": "Yes",
+            "required": true
+        },
+        {
             "id": "usage10",
             "question": "On a scale from 1-10, ten being most completely satisfied, how would you rank your satisfaction with counseling provider(s) seen?",
             "type": "radio",
@@ -184,27 +205,6 @@
                 "20+ min wait"
             ],
             "show_if_id": "usage1",
-            "show_if_value": "Yes",
-            "required": true
-        },
-        {
-            "id": "usage15",
-            "question": "Have you used the counseling website?",
-            "type": "select",
-            "options": [
-                "Yes",
-                "No"
-            ],
-            "required": true
-        },
-        {
-            "id": "usage16",
-            "question": "On a scale from 1-10, ten being most completely satisfied, how satisfied are you with the counseling center website?",
-            "type": "radio",
-            "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-            ],
-            "show_if_id": "usage15",
             "show_if_value": "Yes",
             "required": true
         },
