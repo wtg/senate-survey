@@ -12,94 +12,97 @@
 <script src="/static/angular.min.js"></script>
 
 <script>
-angular.module('questionaire', [])
-.controller('QuestionController', ['$scope', '$http', '$interpolate', function($scope, $http, $interpolate) {
-    // These need to match IDs in survey.json to show a header before a question.
-    $scope.headers = {};
+    angular.module('questionaire', [])
+        .controller('QuestionController', ['$scope', '$http', '$interpolate', function ($scope, $http, $interpolate) {
+            // These need to match IDs in survey.json to show a header before a question.
+            $scope.headers = {};
 
-    $scope.survey = survey;
+            $scope.survey = survey;
 
-    $scope.canProceed = function () {
-        for (var q of $scope.survey[$scope.page - 1]) {
-            if((q.value == undefined || q.value.length == 0)
-                && $scope.should_show_question(q)
-                && q.required) {
-                return false;
+            $scope.canProceed = function () {
+                for (var q of $scope.survey[$scope.page - 1]) {
+                    if ((q.value == undefined || q.value.length == 0)
+                        && $scope.should_show_question(q)
+                        && q.required) {
+                        return false;
+                    }
+                }
+                return true;
             }
-        }
-        return true;
-    }
 
-    $scope.should_show_question = function(q) {
-        if (!('show_if_id' in q)) return true;
-        if ('show_if_value' in q) {
-            for (var page of $scope.survey) {
-                for (var other_q of page) {
-                    if (other_q.id === q.show_if_id) {
-                        if (other_q.value === q.show_if_value) {
-                            // make sure that the question we depend on is also visible
-                            return $scope.should_show_question(other_q);
-                        } else if (other_q.value instanceof Array
+            $scope.should_show_question = function (q) {
+                if (!('show_if_id' in q)) return true;
+                if ('show_if_value' in q) {
+                    for (var page of $scope.survey) {
+                        for (var other_q of page) {
+                            if (other_q.id === q.show_if_id) {
+                                if (other_q.value === q.show_if_value) {
+                                    // make sure that the question we depend on is also visible
+                                    return $scope.should_show_question(other_q);
+                                } else if (other_q.value instanceof Array
                                     && other_q.value.indexOf(q.show_if_value) != -1) {
-                            // if value is an array (for checkboxes)
-                            // make sure that the question we depend on is also visible
-                            return $scope.should_show_question(other_q);
-                        } else {
-                            return false;
+                                    // if value is an array (for checkboxes)
+                                    // make sure that the question we depend on is also visible
+                                    return $scope.should_show_question(other_q);
+                                } else {
+                                    return false;
+                                }
+                            }
                         }
                     }
-                }
-            }
-            return true;
-        } else if ('show_if_value_not' in q) {
-            for (var page of $scope.survey) {
-                for (var other_q of page) {
-                    if (other_q.id === q.show_if_id) {
-                        if (other_q.value == null) {
-                            // other question hasn't been answered yet
-                            return false;
-                        } else if (other_q.value !== q.show_if_value_not) {
-                            // make sure that the question we depend on is also visible
-                            return $scope.should_show_question(other_q);
-                        } else {
-                            return false;
+                    return true;
+                } else if ('show_if_value_not' in q) {
+                    for (var page of $scope.survey) {
+                        for (var other_q of page) {
+
+                            if (other_q.id === q.show_if_id) {
+                                if (other_q.value == null) {
+                                    // other question hasn't been answered yet
+                                    return false;
+                                } else if ((!(other_q.value instanceof Array) && other_q.value !== q.show_if_value_not) ||
+                                    (other_q.value instanceof Array
+                                        && other_q.value.indexOf(q.show_if_value_not) == -1)) {
+                                    // make sure that the question we depend on is also visible
+                                    return $scope.should_show_question(other_q);
+                                } else {
+                                    return false;
+                                }
+                            }
                         }
                     }
+                    return true;
                 }
-            }
-            return true;
-        }
 
-        return true;
-    };
+                return true;
+            };
 
-    $scope.toggleCheckboxSelection = function (qIndex, option) {
-        if($scope.survey[$scope.page - 1][qIndex].type != 'checkbox') {
-            return;
-        } else if(!$scope.survey[$scope.page - 1][qIndex].value) {
-            $scope.survey[$scope.page - 1][qIndex].value = [];
-        }
+            $scope.toggleCheckboxSelection = function (qIndex, option) {
+                if ($scope.survey[$scope.page - 1][qIndex].type != 'checkbox') {
+                    return;
+                } else if (!$scope.survey[$scope.page - 1][qIndex].value) {
+                    $scope.survey[$scope.page - 1][qIndex].value = [];
+                }
 
-        var idx = $scope.survey[$scope.page - 1][qIndex].value.indexOf(option);
+                var idx = $scope.survey[$scope.page - 1][qIndex].value.indexOf(option);
 
-        if (idx > -1) {
-            $scope.survey[$scope.page - 1][qIndex].value.splice(idx, 1);
-        } else {
-            $scope.survey[$scope.page - 1][qIndex].value.push(option);
-        }
- };
+                if (idx > -1) {
+                    $scope.survey[$scope.page - 1][qIndex].value.splice(idx, 1);
+                } else {
+                    $scope.survey[$scope.page - 1][qIndex].value.push(option);
+                }
+            };
 
-    // pagination
-    $scope.page = 1;
-    $scope.last_page = $scope.survey.length;
-    $scope.next_page = function() {
-        if ($scope.page != $scope.last_page && $scope.canProceed())
-            $scope.page++;
-    };
-    $scope.previous_page = function() {
-        if ($scope.page != 1) $scope.page--;
-    };
-}]);
+            // pagination
+            $scope.page = 1;
+            $scope.last_page = $scope.survey.length;
+            $scope.next_page = function () {
+                if ($scope.page != $scope.last_page && $scope.canProceed())
+                    $scope.page++;
+            };
+            $scope.previous_page = function () {
+                if ($scope.page != 1) $scope.page--;
+            };
+        }]);
 </script>
 
 <div class="masthead">
@@ -107,24 +110,26 @@ angular.module('questionaire', [])
 </div>
 
 <div class="form" ng-app="questionaire">
-	<div ng-controller="QuestionController">
-		<form action="" method="post" id="form">
+    <div ng-controller="QuestionController">
+        <form action="" method="post" id="form">
             <div id="form-page" ng-show="$index + 1 === page" ng-repeat="question_page in survey">
-    			<div class="form-group" ng-repeat="q in question_page" ng-show="should_show_question(q)">
+                <div class="form-group" ng-repeat="q in question_page" ng-show="should_show_question(q)">
                     <h3 class="page-header" ng-if="headers[q.id] !== undefined" ng-bind="headers[q.id]"></h3>
-    				<label for="{{q.id}}">{{ q.question }} <span ng-if="q.required" class="text-danger">*</span></label>
+                    <label for="{{q.id}}">{{ q.question }} <span ng-if="q.required" class="text-danger">*</span></label>
 
-    				<select class="form-control" name="{{q.id}}" ng-model="q.value" ng-if="q.type === 'select'">
+                    <select class="form-control" name="{{q.id}}" ng-model="q.value" ng-if="q.type === 'select'">
                         <option value=""></option>
                         <option value="{{option}}" ng-repeat="option in q.options">{{ option }}</option>
-    				</select>
+                    </select>
 
-                    <textarea class="form-control" name="{{q.id}}" ng-if="q.type === 'text'" ng-model="q.value" rows="4"></textarea>
+                    <textarea class="form-control" name="{{q.id}}" ng-if="q.type === 'text'" ng-model="q.value"
+                        rows="4"></textarea>
 
                     <input class="form-control" name="{{q.id}}" ng-if="q.type === 'email'" ng-model="q.value">
 
                     <div class="controls" ng-if="q.type === 'radio'">
-                        <span ng-repeat-start="option in q.options" ng-if="$index > 0 && (q.inline === undefined || q.inline)">&#160;</span>
+                        <span ng-repeat-start="option in q.options"
+                            ng-if="$index > 0 && (q.inline === undefined || q.inline)">&#160;</span>
                         <label class="radio-inline" ng-class="{'radio-line': q.inline !== undefined && !q.inline}">
                             <input type="radio" name="{{q.id}}" value="{{option}}" ng-model="q.value"> {{option}}
                         </label>
@@ -133,24 +138,26 @@ angular.module('questionaire', [])
                     <div class="controls" ng-if="q.type === 'checkbox'">
                         <label class="radio" ng-repeat="option in q.options">
                             <input type="checkbox" name="{{q.id}}[]" value="{{option}}"
-                                   ng-checked="q.value && q.value.indexOf(option) > -1"
-                                   ng-click="toggleCheckboxSelection($parent.$index, option)"> {{option}}
+                                ng-checked="q.value && q.value.indexOf(option) > -1"
+                                ng-click="toggleCheckboxSelection($parent.$index, option)"> {{option}}
                         </label>
                     </div>
-    			</div>
+                </div>
 
-            <input class="form-control btn btn-success" type="submit" id="submit" value="Submit" ng-if="$index + 1 === survey.length" ng-disabled="!canProceed()" />
+                <input class="form-control btn btn-success" type="submit" id="submit" value="Submit"
+                    ng-if="$index + 1 === survey.length" ng-disabled="!canProceed()" />
             </div>
 
             <nav ng-if="survey.length > 1">
                 <ul class="pager">
                     <li ng-class="{'disabled': page === 1}" ng-click="previous_page()"><a href="#">Previous</a></li>
-                    <li ng-class="{'disabled': page === last_page || !canProceed()}" ng-click="next_page()"><a href="#">Next</a></li>
+                    <li ng-class="{'disabled': page === last_page || !canProceed()}" ng-click="next_page()"><a
+                            href="#">Next</a></li>
                 </ul>
             </nav>
 
-		</form>
-	</div>
+        </form>
+    </div>
 </div>
 {% endraw %}
 {% endblock %}

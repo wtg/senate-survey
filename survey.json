@@ -101,8 +101,8 @@
                 "Quality of care from counselors",
                 "Other (please specify below)"
             ],
-            "show_if_id": "usage1",
-            "show_if_value": "Yes",
+            "show_if_id": "usage5",
+            "show_if_value_not": "Not Applicable: I currently use the Counseling Center",
             "required": true
         },
         {
