@@ -223,13 +223,13 @@
             "id": "usage18",
             "question": "Are there any services you would like to see at the counseling center?",
             "type": "text",
-            "required": true
+            "required": false
         },
         {
             "id": "usage19",
             "question": "What could the Counseling Center do to improve student accessibility?",
             "type": "text",
-            "required": true
+            "required": false
         },
         {
             "id": "usage20",
