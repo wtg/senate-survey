@@ -126,7 +126,6 @@ def form():
 
     # Check if this user is a student according to CMS
     rcs_id = cas.username.lower()
-    rcs_id = "apgart"
     headers = {'Authorization': f'Token {CMS_API_KEY}'}
     r = requests.get(f'https://cms.union.rpi.edu/api/users/view_rcs/{rcs_id}/',
                      headers=headers)
