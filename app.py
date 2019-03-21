@@ -126,14 +126,19 @@ def form():
 
     # Check if this user is a student according to CMS
     rcs_id = cas.username.lower()
+    rcs_id = "apgart"
     headers = {'Authorization': f'Token {CMS_API_KEY}'}
     r = requests.get(f'https://cms.union.rpi.edu/api/users/view_rcs/{rcs_id}/',
                      headers=headers)
     user_type = r.json()['user_type']
     if user_type != 'Student':
-        return render_template('message.html', message="""This survey is only
-            available to students.""", title='Survey not available')
-
+        if not cas.username in CC_SURVEY_ADMINS and request.method == 'GET':
+            return render_template('message.html', message="""This survey is only
+                available to students.""", title='Survey not available')
+        if request.method == 'POST':
+            return render_template('message.html', message="""This survey is only
+                available to students. Admins may only view.""", title='Survey not available')
+   
     with models.db.atomic():
         # Check if a submission from this user has already been received.
         # This and inserting new submissions should be done atomically to avoid
