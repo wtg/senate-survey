@@ -102,7 +102,7 @@
                 "Other (please specify below)"
             ],
             "show_if_id": "usage5",
-            "show_if_value_not": "Not Applicable: I currently use the Counseling Center",
+            "show_if_value": "Unsatisfactory experience at the Counseling Center",
             "required": true
         },
         {
