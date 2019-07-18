@@ -1,5 +1,14 @@
 [
     [{
+        "id": "question0",
+        "question": "Are you currently doing the Arch?",
+        "type": "radio",
+        "options": [
+            "Yes", "No"
+        ],
+        "required": true
+      },
+      {
         "id": "question1",
         "question": "On a scale from 1-5, five being most satisfied, please rate your satisfaction during Arch",
         "type": "radio",
@@ -30,7 +39,7 @@
         "id": "question4",
         "question": "Do you have any other comments about Arch activies?",
         "type": "text",
-        "required": true
+        "required": false
       },
       {
         "id": "question5",
@@ -56,9 +65,10 @@
         "type": "radio",
         "options": [
             "12 week",
-            "6 week"
+            "6 week",
+            "Indifferent"
             ],
-        "required": false
+        "required": true
       },
       {
         "id": "question7",
@@ -153,7 +163,7 @@
         "id": "question18",
         "question": "Why?",
         "type": "text",
-        "required": true,
+        "required": false,
         "show_if_id": "question17",
         "show_if_value": "Yes"
       },
