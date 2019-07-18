@@ -1,257 +1,336 @@
 [
     [{
-            "id": "class1",
-            "question": "What class are you a part of?",
-            "type": "select",
-            "options": [
-                "Freshman",
-                "Sophomore",
-                "Junior",
-                "Senior",
-                "Graduate"
+        "id": "question1",
+        "question": "On a scale from 1-5, five being most satisfied, please rate your satisfaction during Arch",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question2",
+        "question": "On a scale from 1-5, five being most satisfied, please rate your satisfaction with housing during Arch",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question3",
+        "question": "On a scale from 1-5, five being most satisfied, please rate your satisfaction with campus activities during Arch",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question4",
+        "question": "Do you have any other comments about Arch activies?",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "question5",
+        "question": "On a scale from 1-5, five being most satisfied, please rate your satisfaction with the variety of courses during Arch",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question5",
+        "question": "On a scale from 1-5, five being most satisfied, please rate your satisfaction with the intensity of your course load during Arch",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question6",
+        "question": "Would you prefer to take mostly 12 week or 6 week courses during Arch?",
+        "type": "radio",
+        "options": [
+            "12 week",
+            "6 week"
             ],
-           "required": true
-        },
-        {
-            "id": "usage1",
-            "question": "Have you ever gone to the Counseling Center?",
-            "type": "select",
-            "options": [
-                "Yes",
-                "No"
-            ],
-
-            "required": true
-        },
-        {
-            "id": "usage2",
-            "question": "Please select the main reason from the choices below to describe why you have never used this service.",
-            "type": "select",
-            "options": [
-                "Have never needed psychological counseling services",
-                "Have a counselor at home and/or off-campus",
-                "Didn’t know about it/that it existed",
-                "Heard about another’s unsatisfactory experience",
-                "Had difficulty scheduling an appointment",
-                "Other"
-            ],
-            "show_if_id": "usage1",
-            "show_if_value": "No",
-            "required": true
-        },
-        {
-            "id": "usage3",
-            "question": "Please specify",
-            "type": "text",
-            "show_if_id": "usage2",
-            "show_if_value": "Other",
-            "required": true
-        },
-        {
-            "id": "usage4",
-            "question": "How many times in the past semester have you gone to the Counseling Center?",
-            "type": "select",
-            "options":[
-                "I have not gone to the Counseling Center",
-                "1 time",
-                "2-5 times",
-                "6-10 times",
-                "Over 10 times"
-            ],
-            "show_if_id": "usage1",
-            "show_if_value": "Yes",
-            "required": true
-        },
-        {
-            "id": "usage5",
-            "question": "If you no longer use the Counseling Center, why did you stop attending appointments?",
-            "type": "checkbox",
-            "options":[
-                "Not Applicable: I currently use the Counseling Center",
-                "Use a counselor at home and/or off-campus",
-                "I no longer feel the need to utilize the Counseling Center’s services",
-                "My condition improved; I will return for services in the future if needed",
-                "Unsatisfactory experience at the Counseling Center",
-                "Heard about another’s unsatisfactory experience",
-                "Had difficulty scheduling an appointment",
-                "Other (please specify below)"
-            ],
-            "show_if_id": "usage1",
-            "show_if_value": "Yes",
-            "required": true
-        },
-        {
-            "id": "usage6",
-            "question": "Please specify",
-            "type": "text",
-            "show_if_id": "usage5",
-            "show_if_value": "Other (please specify below)",
-            "required": true
-        },
-        {
-            "id": "usage7",
-            "question": "Which of the following categories does your unsatisfactory experience primarily fall under?",
-            "type": "checkbox",
-            "options":[
-                "Diagnoses",
-                "Privacy / Confidentiality",
-                "Interactions with staff",
-                "Interactions with counselors",
-                "Quality of care from staff",
-                "Quality of care from counselors",
-                "Other (please specify below)"
-            ],
-            "show_if_id": "usage5",
-            "show_if_value": "Unsatisfactory experience at the Counseling Center",
-            "required": true
-        },
-        {
-            "id": "usage8",
-            "question": "Please specify",
-            "type": "text",
-            "show_if_id": "usage7",
-            "show_if_value": "Other (please specify below)",
-            "required": true
-        },
-        {
-            "id": "usage9",
-            "question": "You can make your first counseling appointment online. Would you schedule follow-up appointments online too if given the option?",
-            "type": "select",
-            "options": [
-                "Yes",
-                "No"
-            ],
-           "required": true
-        },
-        {
-            "id": "usage15",
-            "question": "Have you used the counseling website?",
-            "type": "select",
-            "options": [
-                "Yes",
-                "No"
-            ],
-            "required": true
-        },
-        {
-            "id": "usage16",
-            "question": "On a scale from 1-10, ten being most completely satisfied, how satisfied are you with the counseling center website?",
-            "type": "radio",
-            "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-            ],
-            "show_if_id": "usage15",
-            "show_if_value": "Yes",
-            "required": true
-        },
-        {
-            "id": "usage10",
-            "question": "On a scale from 1-10, ten being most completely satisfied, how would you rank your satisfaction with counseling provider(s) seen?",
-            "type": "radio",
-            "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-            ],
-            "show_if_id": "usage1",
-            "show_if_value": "Yes",
-            "required": true
-        },
-        {
-            "id": "usage11",
-            "question": "On a scale from 1-10, ten being most completely satisfied, how satisfied were you with the appointment availability?",
-            "type": "radio",
-            "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-            ],
-            "show_if_id": "usage1",
-            "show_if_value": "Yes",
-            "required": true
-        },
-        {
-            "id": "usage12",
-            "question": "On a scale from 1-10, ten being most completely satisfied, how satisfied were you with the time spent in the waiting room prior to your appointment?",
-            "type": "radio",
-            "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-            ],
-            "show_if_id": "usage1",
-            "show_if_value": "Yes",
-            "required": true
-        },
-        {
-            "id": "usage13",
-            "question": "On average, how soon were you seen after scheduling an appointment?",
-            "type": "select",
-            "options":[
-                "Same day",
-                "1 day",
-                "Within 1 week",
-                "Within 2 weeks",
-                "Longer than 2 weeks"
-            ],
-            "show_if_id": "usage1",
-            "show_if_value": "Yes",
-            "required": true
-        },
-        {
-            "id": "usage14",
-            "question": "How soon were you seen relative to the time of your appointment?",
-            "type": "select",
-            "options":[
-                "Admitted early",
-                "On time",
-                "0-5 min wait",
-                "5-10 min wait",
-                "10-20 min wait",
-                "20+ min wait"
-            ],
-            "show_if_id": "usage1",
-            "show_if_value": "Yes",
-            "required": true
-        },
-        {
-            "id": "usage17",
-            "question": "On a scale from 1-10, ten being most completely satisfied, how satisfied were you with how your concerns were addressed during your experience?",
-            "type": "radio",
-            "options": [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-            ],
-            "show_if_id": "usage1",
-            "show_if_value": "Yes",
-            "required": true
-        },
-        {
-            "id": "usage18",
-            "question": "Are there any services you would like to see at the counseling center?",
-            "type": "text",
-            "required": false
-        },
-        {
-            "id": "usage19",
-            "question": "What could the Counseling Center do to improve student accessibility?",
-            "type": "text",
-            "required": false
-        },
-        {
-            "id": "usage20",
-            "question": "Where would you like to see another drop in counselling area?",
-            "type": "checkbox",
-            "options":[
-                "Mueller Center",
-                "Library",
-                "Union",
-                "Commons",
-                "Ecav",
-                "Other (please specify below)"
-            ],
-            "required": true
-        },
-        {
-            "id": "usage21",
-            "question": "Please specify",
-            "type": "text",
-            "show_if_id": "usage20",
-            "show_if_value": "Other (please specify below)",
-            "required": true
-        }
+        "required": false
+      },
+      {
+        "id": "question7",
+        "question": "Are there any courses that you are currently taking that you believe should be 12 weeks instead of 6 weeks?",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "question8",
+        "question": "On a scale from 1-5, five being most satisfied, please rate your satisfaction towards Arch BEFORE it started",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question9",
+        "question": "On a scale from 1-5, five being most satisfied, please rate your satisfaction NOW that you've gone through part of Arch",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question10",
+        "question": "Are you paying for both off-campus housing and an on-campus dorm during the Arch semester?",
+        "type": "radio",
+        "options": [
+            "Yes", "No"
+        ],
+        "required": true
+      },
+      {
+        "id": "question11",
+        "question": "Are you living in your off-campus housing during Arch instead of your dorm?",
+        "type": "radio",
+        "options": [
+            "Yes", "No"
+        ],
+        "required": false,
+        "show_if_id": "question10",
+        "show_if_value": "Yes"
+      },
+      {
+        "id": "question12",
+        "question": "How many new people would you say you have met due to living on campus during Arch?",
+        "type": "radio",
+        "options": [
+            "0", "1-3", "3-5","6-10","11+"
+        ],
+        "required": true
+      },
+      {
+        "id": "question13",
+        "question": "Do you believe that living on-campus helps you make new connections with other students?",
+        "type": "radio",
+        "options": [
+            "Yes", "No", "Maybe"
+        ],
+        "required": true
+      },
+      {
+        "id": "question14",
+        "question": "Do you believe that more online courses would be helpful for students?",
+        "type": "radio",
+        "options": [
+            "Yes", "No", "Maybe"
+        ],
+        "required": true
+      },
+      {
+        "id": "question15",
+        "question": "Do you believe there are any courses you are currently taking that be better suited as an online course?",
+        "type": "radio",
+        "options": [
+            "Yes", "No", "Maybe"
+        ],
+        "required": true
+      },
+      {
+        "id": "question17",
+        "question": "Do you believe that members of Greek organizations should be able to live in their houses during Arch?",
+        "type": "radio",
+        "options": [
+            "Yes", "No", "Maybe"
+        ],
+        "required": true
+      },
+      {
+        "id": "question18",
+        "question": "Why?",
+        "type": "text",
+        "required": true,
+        "show_if_id": "question17",
+        "show_if_value": "Yes"
+      },
+      {
+        "id": "question19",
+        "question": "Do you believe that students should be able to live in off-campus apartments during Arch?",
+        "type": "radio",
+        "options": [
+            "Yes", "No", "Maybe"
+        ],
+        "required": true
+      },
+      {
+        "id": "question20",
+        "question": "Why?",
+        "type": "text",
+        "required": false,
+        "show_if_id": "question19",
+        "show_if_value": "Yes"
+      },
+      {
+        "id": "question21",
+        "question": "Would you participate in Arch if it was optional?",
+        "type": "radio",
+        "options": [
+            "Yes", "No", "Maybe"
+        ],
+        "required": true
+      },
+      {
+        "id": "question22",
+        "question": "Did you know about Arch before you enrolled at RPI?",
+        "type": "radio",
+        "options": [
+            "Yes", "No"
+        ],
+        "required": true
+      },
+      {
+        "id": "question23",
+        "question": "Would knowing this have influenced your decision to enroll at RPI?",
+        "type": "radio",
+        "options": [
+            "Yes", "No", "Maybe"
+        ],
+        "required": true,
+        "show_if_id": "question22",
+        "show_if_value": "No"
+      },
+      {
+        "id": "question24",
+        "question": "Have you experienced stress relating to finding a professional opportunity for your Arch away semester?",
+        "type": "radio",
+        "options": [
+            "Yes", "No", "Maybe"
+        ],
+        "required": true
+      },
+      {
+        "id": "question25",
+        "question": "Have you experienced stress due to your course load during Arch?",
+        "type": "radio",
+        "options": [
+            "Yes", "No", "Maybe"
+        ],
+        "required": true
+      },
+      {
+        "id": "question26",
+        "question": "Would you be interested in a grant opportunity to work on an independent research project during Arch? ",
+        "type": "radio",
+        "options": [
+            "Yes", "No", "Maybe"
+        ],
+        "required": true
+      },
+      {
+        "id": "question27",
+        "question": "Would you be interested in a grant opportunity to start a business during Arch?",
+        "type": "radio",
+        "options": [
+            "Yes", "No", "Maybe"
+        ],
+        "required": true
+      },
+      {
+        "id": "question28",
+        "question": "I believe that I was provided with ample resources from the university to find an opportunity for my Arch Away semester. (1 -  strongly disagree, 5 - strongly agree)",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question29",
+        "question": "I believe that the CCPD provides ample resources to help students prepare for finding professional opportunities for their Arch Away semester (1 - strongly disagree, 5 - strongly agree)",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question30",
+        "question": "I believe that the Arch will help contribute to my professional development (1 - strongly disagree, 5 - strongly agree)",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question31",
+        "question": "I am confident that I will secure a professional opportunity during my Arch Away Semester (1 - strongly disagree, 5 - strongly agree)",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question32",
+        "question": "The Institute is investing ample resources to make Arch a successful program (1 - strongly disagree, 5 - strongly agree)",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question33",
+        "question": "I believe that Arch has helped grow my cohort’s cohesion and networking (1 - strongly disagree, 5 - strongly agree)",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question34",
+        "question": "I believe that Arch has improved school spirit and pride. (1 - strongly disagree, 5 - strongly agree)",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question35",
+        "question": "I would want a summer career fair to help me find opportunities for my Arch Away semester. (1 - strongly disagree, 5 - strongly agree)",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question36",
+        "question": "I would be interested in participating in an Institute-affiliated exchange or study abroad program if I get RPI financial aid to study abroad. (1 - strongly disagree, 5 - strongly agree)",
+        "type": "radio",
+        "options": [
+            1, 2, 3, 4, 5
+        ],
+        "required": true
+      },
+      {
+        "id": "question37",
+        "question": "Do you have any unique issues with Arch? If so, please explain them.",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "question38",
+        "question": "If you have any recommendations on how to improve Arch, please list them below.",
+        "type": "text",
+        "required": false
+      }
     ]
 ]
