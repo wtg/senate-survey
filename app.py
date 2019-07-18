@@ -53,7 +53,7 @@ app.config['CAS_AFTER_LOGIN'] = 'form'
 SURVEY_VERSION = 2
 
 CC_SURVEY_ADMINS = set(os.getenv('SURVEY_ADMINS', '').split(','))
-CLOSED = bool(os.getenv('SURVEY_CLOSED', False))
+CLOSED = os.getenv('SURVEY_CLOSED') == 'True'
 CMS_API_KEY = os.getenv('CMS_API_KEY', '')
 
 
@@ -137,7 +137,7 @@ def form():
         if request.method == 'POST':
             return render_template('message.html', message="""This survey is only
                 available to students. Admins may only view.""", title='Survey not available')
-   
+
     with models.db.atomic():
         # Check if a submission from this user has already been received.
         # This and inserting new submissions should be done atomically to avoid
