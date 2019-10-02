@@ -50,7 +50,7 @@ app = Flask(__name__)
 cas = CAS(app)
 app.config['CAS_SERVER'] = 'https://cas-auth.rpi.edu/cas/'
 app.config['CAS_AFTER_LOGIN'] = 'form'
-SURVEY_VERSION = 2
+SURVEY_VERSION = 1
 
 CC_SURVEY_ADMINS = set(os.getenv('SURVEY_ADMINS', '').split(','))
 CLOSED = os.getenv('SURVEY_CLOSED') == 'True'
