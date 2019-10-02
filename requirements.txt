@@ -1,4 +1,4 @@
-flask==0.12.2
+flask==1.0
 git+https://github.com/cameronbwhite/Flask-CAS@10ee70466ac9e71cec3602c1cd46f0566618f67e#egg=Flask-CAS
 peewee==2.10.2
 gunicorn==19.7.1
