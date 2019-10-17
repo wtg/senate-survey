@@ -20,6 +20,7 @@ class Submission(BaseModel):
     submissions cannot be linked to user hashes."""
     id = peewee.UUIDField(default=uuid.uuid4, primary_key=True)
     form = peewee.TextField()
+    sample = peewee.IntegerField()
     time = peewee.DateTimeField(default=datetime.datetime.now)
     version = peewee.IntegerField()
 

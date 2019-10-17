@@ -53,6 +53,7 @@ app.config['CAS_AFTER_LOGIN'] = 'form'
 SURVEY_VERSION = 1
 
 CC_SURVEY_ADMINS = set(os.getenv('SURVEY_ADMINS', '').split(','))
+SAMPLE_POPULATION = set(os.getenv('SAMPLE_POPULATION', '').split(','))
 CLOSED = os.getenv('SURVEY_CLOSED') == 'True'
 CMS_API_KEY = os.getenv('CMS_API_KEY', '')
 
@@ -170,7 +171,10 @@ def form():
                     form[key] = val
             form_json = json.dumps(form)
 
-            models.Submission().create(form=form_json, version=SURVEY_VERSION)
+            if cas.username in SAMPLE_POPULATION:
+                models.Submission().create(form=form_json, version=SURVEY_VERSION, sample=1)
+            else:
+                models.Submission().create(form=form_json, version=SURVEY_VERSION, sample=0)
 
             return render_template('message.html', message="""Your submission has
                 been recorded anonymously. Thank you for your participation in the survey
@@ -209,7 +213,11 @@ def form_auth_key(auth_key):
 
             # Dump form to JSON
             form_json = json.dumps(request.form)
-            models.Submission().create(form=form_json, version=SURVEY_VERSION)
+
+            if cas.username in SAMPLE_POPULATION:
+                models.Submission().create(form=form_json, version=SURVEY_VERSION, sample=1)
+            else:
+                models.Submission().create(form=form_json, version=SURVEY_VERSION, sample=0)
 
             return render_template('message.html', message="""Your submission has
                 been recorded anonymously. Thank you for your participation in the survey
@@ -238,7 +246,7 @@ def export_csv():
         submissions = models.Submission.select().order_by(models.Submission.time.desc())
 
         # build header. have to loop through everything because CSV
-        header = ['id', 'time', 'version'] # CSV header containing all questions/keys
+        header = ['id', 'time', 'version', 'sample'] # CSV header containing all questions/keys
         for submission in submissions:
             # form is stored as JSON, so extract responses
             form_js = json.loads(submission.form)
@@ -262,6 +270,7 @@ def export_csv():
             sub['id'] = submission.id
             sub['time'] = submission.time
             sub['version'] = submission.version
+            sub['sample'] = submission.sample
 
             # form is stored as JSON, so extract responses
             form_js = json.loads(submission.form)
@@ -315,7 +324,7 @@ def export_xlsx():
     submissions = models.Submission.select().order_by(models.Submission.time.desc())
 
     # build header. have to loop through everything first
-    header = ['id', 'time', 'version'] # header containing all questions/keys
+    header = ['id', 'time', 'version', 'sample'] # header containing all questions/keys
     for submission in submissions:
         # form is stored as JSON, so extract responses
         form_js = json.loads(submission.form)
@@ -347,6 +356,7 @@ def export_xlsx():
         sub['id'] = submission.id
         sub['time'] = submission.time
         sub['version'] = submission.version
+        sub['sample'] = submission.sample
 
         # form is stored as JSON, so extract responses
         form_js = json.loads(submission.form)
@@ -398,6 +408,7 @@ def export_json():
         sub['id'] = submission.id
         sub['time'] = submission.time
         sub['version'] = submission.version
+        sub['sample'] = submission.sample
 
         # form is stored as JSON, so extract responses
         form_js = json.loads(submission.form)

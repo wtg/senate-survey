@@ -32,6 +32,7 @@ for people to retake the survey.
 - **SECRET_KEY** — Used to sign session cookies.
 - **SURVEY_CLOSED** – If set, disables the survey and returns the closed
 survey template.
+- **SAMPLE_POPULATION** – If set, marks users who are part of representative sample.
 
 ## Development
 
