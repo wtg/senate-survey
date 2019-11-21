@@ -54,7 +54,7 @@
 		"show_if_value": "On-campus residence hall or apartment"
 	}, {
 		"id": "reslife3",
-		"question": "How satisfied are you with the toilets in your residence halls?",
+		"question": "On a scale of 0% satisfied to 100% satisfied, how satisfied are you with the toilets in your residence halls?",
 		"type": "radio",
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
 		"show_if_id": "demographics5",
@@ -219,7 +219,7 @@
 		"show_if_value": "Greek housing"
 	}, {
 		"id": "greekHousing3",
-		"question": "How satisfied are you with the cost of living in your Greek house in comparison to other options?",
+		"question": "On a scale of 0% satisfied to 100% satisfied, how satisfied are you with the cost of living in your Greek house in comparison to other options?",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
@@ -281,7 +281,7 @@
 		"show_if_value": "Other (please specify below)"
 	}, {
 		"id": "offcampus2",
-		"question": "How satisfied are you with the overall quality of your off-campus housing and amenities?",
+		"question": "On a scale of 0% satisfied to 100% satisfied,, how satisfied are you with the overall quality of your off-campus housing and amenities?",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
@@ -307,11 +307,11 @@
 		"question": "Did you live on-campus before moving off campus?",
 		"type": "radio",
 		"required": false,
-		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+		"options": ["Yes","No"],
 		"show_if_id": "demographics5",
 		"show_if_value": "Off-campus"
 	}, {
-		"id": "offcampus5",
+		"id": "offcampus4b",
 		"question": "How many semesters did you live on-campus before moving off campus?",
 		"type": "radio",
 		"required": false,
@@ -320,7 +320,7 @@
 		"show_if_value": "Yes"
 	}, {
 		"id": "offcampus6",
-		"question": "Though living off-campus, how connected do you feel to the campus community?",
+		"question": "On a scale of 0% connected to 100% connected, through living off-campus, how connected do you feel to the campus community?",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
@@ -387,7 +387,7 @@
 		"options": ["Yes", "No"]
 	}, {
 		"id": "allhousing10",
-		"question": "How satisfied are you with the Safe Ride service?",
+		"question": "On a scale of 0% satisfied to 100% satisfied, how satisfied are you with the Safe Ride service?",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
@@ -732,7 +732,7 @@
 		"required": false
 	}, {
 		"id": "fsc4",
-		"question": "****Preamble to sustainability****: do you have additional suggestions?",
+		"question": "Current sustainability projects include removing printer cover sheets, implementing composting into dining halls, and planning to make a zero waste campus among other things. What other projects for sustainability would you like to see?",
 		"type": "text",
 		"required": false
 	}, {
@@ -743,12 +743,18 @@
 		"options": ["Yes", "No"]
 	}, {
 		"id": "fsc6",
-		"question": "What additional locations would you like bike share stations across campus and the surrounding areas of Troy?",
+		"question": "****NEED OPTIONS*** What additional locations would you like bike share stations across campus and the surrounding areas of Troy?",
+		"type": "text",
+		"required": false
+	},
+	{
+		"id": "fsc6other",
+		"question": "What other locations would you like to see bike share stations?",
 		"type": "text",
 		"required": false
 	}, {
 		"id": "fsc7",
-		"question": "How satisfied are you with the current shuttle system?",
+		"question": "On a scale of 0% satisfied to 100% satisfied, how satisfied are you with the current shuttle system?",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
@@ -768,7 +774,7 @@
 	}],
 	[{
 		"id": "aac1",
-		"question": "How satisfied are you with the services through the Advising and Learning Assistance Center (ALAC)? ",
+		"question": "On a scale of 0% satisfied to 100% satisfied, how satisfied are you with the services through the Advising and Learning Assistance Center (ALAC)? ",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
@@ -819,7 +825,7 @@
 		"options": ["Daily", "Multiple times per week", "Weekly", "Occasionally", "Never"]
 	}, {
 		"id": "wtg2",
-		"question": "Do you have any suggestions to improve the Shuttle Tracker?",
+		"question": "What suggestions do you have to improve the Shuttle Tracker?",
 		"type": "text",
 		"required": false
 	}, {
@@ -827,18 +833,18 @@
 		"question": "The Student Petitions website allows students to write petitions to support their causes. Other students can sign the petition in a secure way on the website. Once a petition reaches 250 signatures, the Student Senate must hold a presentation to discuss the petition at a general meeting. Have you used the Student Petitions website (https://petitions.union.rpi.edu/)?",
 		"type": "radio",
 		"required": false,
-		"options": ["Yes", 9]
+		"options": ["Yes", "No"]
 	}],
 	[{
 		"id": "sgcc1",
-		"question": "A new student government website was designed and released Spring of 2019, and is \ta resource for student government updates, descriptions, and meeting times. Have you visited the website yet? http://sg.rpi.edu",
+		"question": "A new student government website was designed and released Spring of 2019, and is a resource for student government updates, descriptions, and meeting times. Have you visited the website? http://sg.rpi.edu",
 		"type": "radio",
 		"options": ["Yes", "No"],
 		"show_if_id": "demographics1",
 		"show_if_value": "Undergraduate"
 	}, {
 		"id": "sgcc2",
-		"question": "How well informed are you about the Student Union and Student Government affairs?",
+		"question": "On a scale of 0% informed to 100% informed, how well informed are you about the Student Union and Student Government affairs?",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
@@ -850,7 +856,7 @@
 		"options": ["Weekly", "Biweekly", "Monthly", "Twice a semester", "Once a semester"]
 	}, {
 		"id": "sgcc4",
-		"question": "How involved are you in Student Government?",
+		"question": "On a scale of 0% involved to 100% involved, how involved are you in Student Government?",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
@@ -882,9 +888,8 @@
 	}, {
 		"id": "crc3",
 		"question": "What is your favorite thing to do in Troy?",
-		"type": "radio",
-		"required": false,
-		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+		"type": "text",
+		"required": false
 	}, {
 		"id": "crc4",
 		"question": "If you are in a club, does your club/organization interact with the Troy community?",
@@ -964,7 +969,7 @@
 		"options": ["Athletics", "Cultural", "Arts/Music", "Student Government", "Academic", "Other", "None"]
 	}, {
 		"id": "inv4",
-		"question": "How satisfied are you with your involvement?",
+		"question": "On a scale of 0% satisfied to 100% satisfied, how satisfied are you with your involvement?",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
