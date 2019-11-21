@@ -42,7 +42,7 @@
 		"id": "reslife1",
 		"question": "In which residence hall do you live?",
 		"type": "select",
-		"options": ["BARH", "Barton Hall", "Blitman Residence Commons", "Bray Hall", "Bryckwyck", "Cary Hall", "City Station West", "Colonie Apartments", "Crockett Hall", "Davison Hall", "E-Complex", "Hall Hall", "Nason Hall", "North Hall", "Nugent Hall", "Polytechnic Residence Commons", "Quadrangle", "RAHP A", "RAHP B", "Sharp Hall", "Stacwyck Apartments", "Warren Hall"],
+		"options": ["BARH", "Barton Hall", "Blitman Residence Commons", "Bray Hall", "Bryckwyck", "Cary Hall", "City Station West", "Colonie Apartments", "Crockett Hall", "Davison Hall", "E-Complex", "Hall Hall", "Nason Hall", "North Hall", "Nugent Hall", "Polytechnic Residence Commons", "Quadrangle", "RAHP A", "RAHP B", "Sharp Hall", "Stacwyck Apartments", "Warren Hall", "Tech Terrace"],
 		"show_if_id": "demographics5",
 		"show_if_value": "On-campus residence hall or apartment"
 	}, {
@@ -158,12 +158,6 @@
 		"show_if_id": "demographics5",
 		"show_if_value": "On-campus residence hall or apartment"
 	}, {
-		"id": "reslife18",
-		"question": "how important is the presence of food at a program to your willingness to attend? (0% = not important, 100% = very important)",
-		"type": "text",
-		"show_if_id": "demographics5",
-		"show_if_value": "On-campus residence hall or apartment"
-	}, {
 		"id": "reslife19",
 		"question": "If you chose 30% or less for any of the scaled questions about the state of your on-campus housing, please elaborate here.",
 		"type": "text",
@@ -185,19 +179,19 @@
 		"show_if_value": "On-campus residence hall or apartment"
 	}, {
 		"id": "reslife22",
-		"question": "Are you aware of, or familiar with, the Guest Policy?",
-		"type": "radio",
-		"options": ["Yes", "No"],
-		"show_if_id": "demographics5",
-		"show_if_value": "On-campus residence hall or apartment"
-	}, {
-		"id": "reslife23",
 		"question": "How often have you had to deal with pests (bugs, rodents, birds, NOT your roommates) in your residence hall?",
 		"type": "radio",
 		"options": ["rarely (0-1 a year)", "sometimes (2-3 per year", "often (once a month)", "very often (once every week or so)"],
 		"show_if_id": "demographics5",
 		"show_if_value": "On-campus residence hall or apartment"
 	}, {
+		"id": "reslife23",
+		"question": "How frequently do you interact with your RA?",
+		"type": "radio",
+		"options": ["Daily", "Several times per week", "Weekly","Monthly","Rarely"],
+		"show_if_id": "demographics5",
+		"show_if_value": "On-campus residence hall or apartment"
+	},{
 		"id": "reslife24",
 		"question": "If you have any other comments about the state of your on-campus housing, please share them here.",
 		"type": "text",
@@ -231,7 +225,7 @@
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-		"show_if_id": "Demographics5",
+		"show_if_id": "demographics5",
 		"show_if_value": "Greek housing"
 	}, {
 		"id": "greekHousing5",
@@ -331,7 +325,8 @@
 		"question": "If you have any other comments about your experiences with off-campus living, please share them here.",
 		"type": "text",
 		"required": false,
-		"show_if_id": "demographics5"
+		"show_if_id": "demographics5",
+		"show_if_value": "Off-campus"
 	}, {
 		"id": "allhousing1",
 		"question": "Have you ever felt unsafe near the entrance to your house/building (due to stalkers, loitering, etc)?",
@@ -698,10 +693,11 @@
 		"show_if_value": "Yes"
 	}, {
 		"id": "slc5",
-		"question": "Which of the following changes to the Student Handbook are you aware of?",
+		"question": "How well have you read the Student Handbook?",
 		"type": "radio",
 		"required": false,
-		"options": ["****ANSWERS TBD"]
+		"inline":false,
+		"options": ["Not at all","Skimmed it Freshman year","Skim it once a year","Read the entire Handbook once","Read the entire Handbook multiple times"]
 	}, {
 		"id": "slc6",
 		"question": "Do you have any comments, suggestions, concerns, or ideas on the Student Handbook? Please explain.",
@@ -855,18 +851,6 @@
 		"required": false,
 		"options": ["Weekly", "Biweekly", "Monthly", "Twice a semester", "Once a semester"]
 	}, {
-		"id": "sgcc4",
-		"question": "On a scale of 0% involved to 100% involved, how involved are you in Student Government?",
-		"type": "radio",
-		"required": false,
-		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-	}, {
-		"id": "sgcc5",
-		"question": "What prevents you from being more involved?",
-		"type": "radio",
-		"required": false,
-		"options": ["Not interested", "Not enough time", "Do not know how to get involved", "Other"]
-	}, {
 		"id": "sgcc6",
 		"question": "How satisfied are you with the job Student Government is doing?",
 		"type": "radio",
@@ -875,13 +859,20 @@
 	}],
 	[{
 		"id": "crc1",
-		"question": "How informed are you of events happening in Troy?",
-		"type": "radio",
+		"question": "How do you hear about events happening in Troy?",
+		"type": "checkbox",
 		"required": false,
-		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+		"options": ["Union Instagram","Posters","Social Media","Word of mouth","Other"]
 	}, {
+		"id": "crc1other",
+		"question": "How else do you hear about events?",
+		"type": "text",
+		"required": false,
+		"show_if_id": "crc1",
+		"show_if_value": "Other"
+	},{
 		"id": "crc2",
-		"question": "How connected are you to the general Troy community?",
+		"question": "On a scale of 0% connected to 100% connected, how connected are you to the general Troy community?",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
@@ -912,7 +903,7 @@
 		"required": false,
 		"options": ["Yes", "No"],
 		"show_if_id": "atf1",
-		"show_if_value": "1"
+		"show_if_value": "Yes"
 	}, {
 		"id": "atf3",
 		"question": "Would you like a summer career fair?",
@@ -950,6 +941,35 @@
 		"type": "radio",
 		"required": false,
 		"options": ["More expensive", "Less expensive", "About the same", "Not living off campus"]
+	},{
+		"id": "atf8",
+		"question": "Currently there are drop-in counseling hours at the Union, the Muller center, and ECAV. Where else would you like to see Drop-In Counseling during Arch?",
+		"type": "radio",
+		"options": ["Residence Hall Classrooms","Library","Off Campus Commons","Alumni House","Dining Halls","87 Gym","Other"],
+		"required": false
+	},{
+		"id": "atf8other",
+		"question": "What other locations would you like Drop-In Counseling?",
+		"type": "text",
+		"required": false
+	}],
+	[{
+		"id": "uar1",
+		"question": "Did you know the Union releases its own Annual Report each year following budgeting?",
+		"type": "radio",
+		"required": false,
+		"options": ["Yes", "No"]
+	},{
+		"id": "uar2",
+		"question": "Have you read a Union Annual Report before?",
+		"type": "radio",
+		"required": false,
+		"options": ["Yes", "No"]
+	},{
+		"id": "uar1",
+		"question": "What are some things you would like to see in/learn from the Union Annual Report?",
+		"type": "text",
+		"required": false
 	}],
 	[{
 		"id": "inv1",
@@ -961,18 +981,19 @@
 		"question": "How can RPI build more school spirit?",
 		"type": "text",
 		"required": false
-	}, {
-		"id": "inv3",
-		"question": "What clubs/organizations are you involved with on campus?",
-		"type": "radio",
-		"required": false,
-		"options": ["Athletics", "Cultural", "Arts/Music", "Student Government", "Academic", "Other", "None"]
-	}, {
+	}, 	{
 		"id": "inv4",
-		"question": "On a scale of 0% satisfied to 100% satisfied, how satisfied are you with your involvement?",
+		"question": "Are you happy with our school mascot being the Engineer?",
 		"type": "radio",
 		"required": false,
-		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+		"options": ["Yes","No"]
+	}, {
+		"id": "inv4no",
+		"question": "What would you like it to be?",
+		"type": "text",
+		"required": false,
+		"show_if_id": "inv4",
+		"show_if_value": "No"
 	}],
 	[{
 		"id": "general1",
@@ -986,16 +1007,12 @@
 		"type": "text",
 		"show_if_id": "demographics1",
 		"show_if_value": "Undergraduate"
-	}],
-	[{
-		"id": "other1",
+	},{
+		"id": "general3",
 		"question": "If you have any other feedback, please share it here.",
 		"type": "text"
-	}, {
-		"id": "other2",
-		"question": "Would you like to be added to a committee email list? If so, list them below?",
-		"type": "text"
-	}, {
+	}],
+	[{
 		"id": "raffle1",
 		"question": "If you would like to be entered into a raffle, please enter your email address. It will not be directly associated with your responses.",
 		"type": "text"
