@@ -80,14 +80,7 @@
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
 		"show_if_id": "demographics5",
 		"show_if_value": "On-campus residence hall or apartment"
-	}, {
-		"id": "reslife7",
-		"question": "How satisfied are you with the dispensers in your residence halls?",
-		"type": "radio",
-		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-		"show_if_id": "demographics5",
-		"show_if_value": "On-campus residence hall or apartment"
-	}, {
+	},{
 		"id": "reslife8",
 		"question": "How satisfied are you with your residence hall's printer(s)?",
 		"type": "radio",
@@ -117,7 +110,7 @@
 		"show_if_value": "On-campus residence hall or apartment"
 	}, {
 		"id": "reslife12",
-		"question": "How satisfied are you with you residence hall’s timeliness of FIXX responses (how long it takes for your issue to be resolved)?",
+		"question": "How satisfied are you with your residence hall’s timeliness of FIXX responses (how long it takes for your issue to be resolved)?",
 		"type": "radio",
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
 		"show_if_id": "demographics5",
@@ -199,16 +192,9 @@
 		"show_if_value": "On-campus residence hall or apartment"
 	}, {
 		"id": "greekHousing1",
-		"question": "As of the Fall 2018 semester, how long have you lived in Greek housing?",
+		"question": "As of the Fall 2019 semester, how long have you lived in Greek housing?",
 		"type": "radio",
 		"options": ["1-2 semesters", "3-4 semesters", "5 or more semesters"],
-		"show_if_id": "demographics5",
-		"show_if_value": "Greek housing"
-	}, {
-		"id": "greekHousing2",
-		"question": "How many semesters did you live on-campus before moving into your Greek house?",
-		"type": "radio",
-		"options": ["Did not live on-campus", "1-2 semesters", "3-4 semesters", "5 or more semesters"],
 		"show_if_id": "demographics5",
 		"show_if_value": "Greek housing"
 	}, {
@@ -360,12 +346,6 @@
 	}, {
 		"id": "allhousing6",
 		"question": "Do you have a Blue Light Station near your house/building?",
-		"type": "radio",
-		"required": false,
-		"options": ["Yes", "No"]
-	}, {
-		"id": "allhousing7",
-		"question": "Do you have a parking pass?",
 		"type": "radio",
 		"required": false,
 		"options": ["Yes", "No"]
@@ -749,24 +729,23 @@
 		"type": "text",
 		"required": false
 	}, {
-		"id": "fsc7",
-		"question": "On a scale of 0% satisfied to 100% satisfied, how satisfied are you with the current shuttle system?",
-		"type": "radio",
-		"required": false,
-		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-	}, {
-		"id": "fsc8",
-		"question": "Are the locations of shuttle stops convenient for your needs?",
-		"type": "radio",
-		"required": false,
-		"options": ["Yes", "No"]
-	}, {
 		"id": "fsc9",
 		"question": "Which aspect of the shuttle system is the most problematic? (frequency of shuttles, location, schedule of pick up times, etc.)",
 		"type": "text",
 		"required": false,
 		"show_if_id": "fsc8",
 		"show_if_value": "No"
+	},{
+		"id": "hsac1",
+		"question": "Are you aware of the new renovations to Commons, Sage dining hall, and the Library Cafe?",
+		"type": "radio",
+		"required": false,
+		"options": ["Yes", "No"]
+	}, {
+		"id": "hsac2",
+		"question": "Are there any products or offerings you would like to see at Father’s Marketplace?",
+		"type": "text",
+		"required": false
 	}],
 	[{
 		"id": "aac1",
@@ -803,18 +782,6 @@
 		"options": ["Yes", "No"]
 	}],
 	[{
-		"id": "hsac1",
-		"question": "Are you aware of the new renovations to Commons, Sage dining hall, and the Library Cafe?",
-		"type": "radio",
-		"required": false,
-		"options": ["Yes", "No"]
-	}, {
-		"id": "hsac2",
-		"question": "Are there any products or offerings you would like to see at Father’s Marketplace?",
-		"type": "text",
-		"required": false
-	}],
-	[{
 		"id": "wtg1",
 		"question": "How frequently do you use the Shuttle Tracker (https://shuttles.rpi.edu)?",
 		"type": "radio",
@@ -830,8 +797,7 @@
 		"type": "radio",
 		"required": false,
 		"options": ["Yes", "No"]
-	}],
-	[{
+	},{
 		"id": "sgcc1",
 		"question": "A new student government website was designed and released Spring of 2019, and is a resource for student government updates, descriptions, and meeting times. Have you visited the website? http://sg.rpi.edu",
 		"type": "radio",
@@ -881,12 +847,6 @@
 		"question": "What is your favorite thing to do in Troy?",
 		"type": "text",
 		"required": false
-	}, {
-		"id": "crc4",
-		"question": "If you are in a club, does your club/organization interact with the Troy community?",
-		"type": "radio",
-		"required": false,
-		"options": ["Yes", "No"]
 	}],
 	[{
 		"id": "atf1",
@@ -966,7 +926,7 @@
 		"required": false,
 		"options": ["Yes", "No"]
 	},{
-		"id": "uar1",
+		"id": "uar3",
 		"question": "What are some things you would like to see in/learn from the Union Annual Report?",
 		"type": "text",
 		"required": false
