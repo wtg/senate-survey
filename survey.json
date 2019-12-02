@@ -35,9 +35,7 @@
 		"question": "As of the Fall 2019 semester, where do you currently live?",
 		"type": "radio",
 		"required": true,
-		"options": ["On-campus residence hall or apartment", "Greek housing", "Off-campus"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Undergraduate"
+		"options": ["On-campus residence hall or apartment", "Greek housing", "Off-campus"]
 	}, {
 		"id": "reslife1",
 		"question": "In which residence hall do you live?",
