@@ -543,7 +543,7 @@
 	},{
 		"id": "gc16",
 		"question": "If you use the Mueller Center, what hours do you typically go?",
-		"type": "checkox",
+		"type": "checkbox",
 		"options": ["7am-9am","9am-12pm","12pm-3pm","3pm-6pm","6pm-9pm","9pm-midnight"],
 		"show_if_id": "demographics1",
 		"show_if_value": "Graduate"
@@ -563,7 +563,7 @@
 	},{
 		"id": "gc19",
 		"question": "What hours would you prefer the Mueller Center hold exercise classes?",
-		"type": "checkox",
+		"type": "checkbox",
 		"options": ["7am-9am","9am-12pm","12pm-3pm","3pm-6pm","6pm-9pm","9pm-midnight"],
 		"show_if_id": "demographics1",
 		"show_if_value": "Graduate"
