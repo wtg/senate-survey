@@ -398,150 +398,306 @@
 		"required": false,
 		"options": ["Less than 5 minutes", "5-10 minutes", "10-15 minutes", "15-20 minutes", "20+ minutes"]
 	}],
-	[{
-		"id": "gc1",
-		"question": "What type of graduate student are you?",
-		"type": "radio",
-		"options": ["PhD", "Masters", "Co-terminal"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc2",
-		"question": "What year is this of your graduate studies?",
-		"type": "radio",
-		"options": ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc4",
+ [{
+     "id":"gc1",
+     "question":"What graduate program do you belong to?",
+     "type":"radio",
+     "required":false,
+     "options":[
+        "Co-term","Master's","PhD"
+     ],
+     "show_if_id":"demographics1",
+     "show_if_value":"Graduate"
+  },{
+     "id":"gc2",
+     "question":"What year are you in?",
+     "type":"radio",
+     "required":false,
+     "options":[
+        "1st",
+        "2nd"
+     ],
+     "show_if_id":"gc1",
+     "show_if_value":"Co-term"
+  },{
+     "id":"gc3a",
+     "question":"What year are you in?",
+     "type":"radio",
+     "required":false,
+     "options":[
+        "1st","2nd","3rd"
+     ],
+     "show_if_id":"gc1",
+     "show_if_value":"Master's"
+  },{
+     "id":"gc3b",
+     "question":"What year are you in?",
+     "type":"radio",
+     "required":false,
+     "options":[
+        "1st","2nd","3rd","4th","5th","6th","7th"
+     ],
+     "show_if_id":"gc1",
+     "show_if_value":"PhD"
+  },{
+		"id": "gc4b",
 		"question": "What is your funding source?",
 		"type": "radio",
-		"options": ["Teaching Assistant", "Research Assistant", "Fellowship (Internal or External)", "Self-supported"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
+		"options": ["Research assistantship, RPI/PI supported","Teaching assistantship","Federal fellowship/training grant","None/self-funded","Other"],
+		"show_if_id": "gc1",
+		"show_if_value_not": "Co-term"
+	},{
+		"id": "gc4bother",
+		"question": "What is your funding source?",
+		"type": "text",
+		"show_if_id": "gc4b",
+		"show_if_value": "Other"
+	},{
 		"id": "gc5",
-		"question": "How many hours a week do you spend working for your TA assignment?",
-		"type": "text",
+		"question": "Do you feel you are on track to completing your degree?",
+		"type": "radio",
+		"options": ["Yes","No"],
 		"show_if_id": "demographics1",
 		"show_if_value": "Graduate"
-	}, {
+	},{
 		"id": "gc6",
-		"question": "How many hours a week do you spend working on your research?",
+		"question": "Please expand on how you feel your degree is progressing, whether yes or no, and speak to any barriers to your progress.",
 		"type": "text",
 		"show_if_id": "demographics1",
 		"show_if_value": "Graduate"
-	}, {
+	},{
 		"id": "gc7",
-		"question": "Do you participate in any Union clubs?",
-		"type": "radio",
-		"options": ["Yes", "No"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc8",
-		"question": "If not, please tell us why.",
-		"type": "text",
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc9",
-		"question": "What other Union resources do you use?",
-		"type": "checkbox",
-		"options": ["Mueller Center equipment", "Mueller Center classes", "Graduate Outdoor Recreation Program (GORP)", "Intramural sports", "Union Pub and related activities (dinner, painting, trivia, etc)", "Legal Services"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc10",
-		"question": "If there are any resources you use that weren't listed here, please let us know which:",
-		"type": "text",
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc11",
-		"question": "What events should the Graduate Council continue organizing?",
-		"type": "checkbox",
-		"options": ["Pub Night", "Troy Kitchen Takeover", "Professional Development", "Hockey Night", "Field Day"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc12",
-		"question": "What new events should the Graduate Council try to have?",
-		"type": "text",
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc13",
-		"question": "What new events should the Union or Mueller Center try to have?",
-		"type": "text",
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc14",
-		"question": "What do you believe should be the top priority of the Graduate Council?",
-		"type": "text",
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc15",
-		"question": "Are there any graduate-related issues that the Graduate Council should advocate for to the administration?",
-		"type": "text",
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc16",
-		"question": "Do you feel like you have a community of support at RPI?",
-		"type": "radio",
-		"options": ["Yes", "No"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc17",
-		"question": "Please feel free to elaborate:",
-		"type": "text",
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc18",
-		"question": "How is your relationship with your advisor?",
-		"type": "radio",
-		"options": ["Very Positive", "Positive", "Neutral", "Negative", "Very Negative", "Not Applicable"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc19",
-		"question": "Do you feel like you are on track for completing your degree?",
-		"type": "radio",
-		"options": ["Yes", "No"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc20",
-		"question": "What are barriers to your progress?",
-		"type": "text",
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc21",
-		"question": "How effective has the Center for Career and Professional Development (CCPD) been for you?",
-		"type": "radio",
-		"options": ["Very Effective", "Effective", "Neutral", "Ineffective", "Very Ineffective", "I've never used the CCPD"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Graduate"
-	}, {
-		"id": "gc22",
 		"question": "Which of these resources have helped you prepare for your career?",
 		"type": "checkbox",
 		"options": ["Your advisor", "Your department", "Center for Career and Professional Development (CCPD)", "A professional association in your field", "Alumni connections", "International Student and Support Services (ISSS)", "Family", "None"],
 		"show_if_id": "demographics1",
 		"show_if_value": "Graduate"
 	}, {
-		"id": "gc23",
-		"question": "Any additional thoughts you'd like to share? It can be about one of the topics above, or anything else. The Graduate Council really appreciates your input!",
+		"id": "gc8a",
+		"question": "Do you have a primary advisor?",
+		"type": "radio",
+		"options": ["Yes","No"],
+		"show_if_id": "gc1",
+		"show_if_value": "Co-term"
+	},{
+		"id": "gc8b",
+		"question": "Do you have a primary or secondary research advisor?",
+		"type": "radio",
+		"options": ["Primary","Primary and Secondary","Multiple"],
+		"show_if_id": "gc1",
+		"show_if_value": "Master's"
+	},{
+		"id": "gc8c",
+		"question": "Do you have a primary or multiple research advisors?",
+		"type": "radio",
+		"options": ["Primary","Primary and Secondary","Multiple"],
+		"show_if_id": "gc1",
+		"show_if_value": "PhD"
+	},{
+		"id": "gc9",
+		"question": "What is your relationship with your advisor?",
+		"type": "text",
+		"options": ["Yes","No"],
+		"show_if_id": "gc1",
+		"show_if_value": "Co-term"
+	},{
+		"id": "gc10",
+		"question": "Do you feel there is a community of support at RPI?",
+		"type": "radio",
+		"options": ["Yes","No"],
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	}, {
+		"id": "gc11",
+		"question": "Do you participate in any Union clubs?",
+		"type": "radio",
+		"options": ["Yes", "No"],
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	}, {
+		"id": "gc12",
+		"question": "If not, please tell us why.",
+		"type": "text",
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
+		"id": "gc13",
+		"question": "What other Union resources do you use?",
+		"type": "checkbox",
+		"options": ["Mueller Center equipment", "Mueller Center classes", "Graduate Outdoor Recreation Program (GORP)", "Intramural sports", "Union Pub and related activities (dinner, painting, trivia, etc)", "Legal Services"],
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	}, {
+		"id": "gc14",
+		"question": "If there are any resources you use that weren't listed here, please let us know which:",
 		"type": "text",
 		"show_if_id": "demographics1",
 		"show_if_value": "Graduate"
 	}, {
+		"id": "gc15",
+		"question": "On a scale of 0% effective to 100% effective, how effective has the Center for Career and Professional Development (CCPD) been for you?",
+		"type": "radio",
+		"options": [0,10,20,30,40,50,60,70,80,90,100],
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
+		"id": "gc16",
+		"question": "If you use the Mueller Center, what hours do you typically go?",
+		"type": "checkox",
+		"options": ["7am-9am","9am-12pm","12pm-3pm","3pm-6pm","6pm-9pm","9pm-midnight"],
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
+		"id": "gc17",
+		"question": "What new events should the Union or Mueller Center try to put on?",
+		"type": "text",
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
+		"id": "gc18",
+		"question": ".Do you attend exercise classes at the Mueller Center?",
+		"type": "radio",
+		"options":["Yes","No"],
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
+		"id": "gc19",
+		"question": "What hours would you prefer the Mueller Center hold exercise classes?",
+		"type": "checkox",
+		"options": ["7am-9am","9am-12pm","12pm-3pm","3pm-6pm","6pm-9pm","9pm-midnight"],
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
+		"id": "gc20",
+		"question": "Are you interested in doing research or TA opportunities?",
+		"type": "radio",
+		"options": ["yes to research","yes to TA","both"],
+		"show_if_id": "gc1",
+		"show_if_value": "Co-term"
+	},{
+		"id": "gc21",
+		"question": "Do you think funding/partial scholarships should be available to co-terminal students?",
+		"type": "radio",
+		"options": ["yes to funding","yes to partial scholarships","both"],
+		"show_if_id": "gc1",
+		"show_if_value": "Co-term"
+	},{
+		"id": "gc22",
+		"question": "Have you been an RA or TA?",
+		"type": "radio",
+		"options": ["yes RA","yes TA","both","none (i.e. not supported)"],
+		"show_if_id": "gc1",
+		"show_if_value_not": "Co-term"
+	},{
+		"id": "gc23",
+		"question": "How many hours a week (on avg) do you spend working on your RA assignment (this might not be your thesis research)?",
+		"type": "radio",
+		"options": ["Approx 20 hours","20-35 hours","35-50 hours","50-65 hours","65+ hours"],
+		"show_if_id": "gc1",
+		"show_if_value_not": "Co-term"
+	},{
+		"id": "gc24",
+		"question": "How many hours a week (on avg) do you spend working on research unrelated to your thesis work and/or unfunded?",
+		"type": "radio",
+		"options": ["5 hours or less","5-10 hours","10-15 hours","15-20 hours","20+ hours"],
+		"show_if_id": "gc1",
+		"show_if_value_not": "Co-term"
+	},{
+		"id": "gc25",
+		"question": "How many hours a week (on avg) do you spend on your TA assignment?",
+		"type": "radio",
+		"options": ["5 hours or less","5-10 hours","10-15 hours","15-20 hours","20+ hours"],
+		"show_if_id": "gc1",
+		"show_if_value_not": "Co-term"
+	},{
+		"id": "gc26",
+		"question": "When are you most busy during the semester on TA assignment?",
+		"type": "radio",
+		"options": [
+			"beginning (Aug to mid-Sept for fall or Jan to mid-Feb for spring)",
+			"middle (end of Sept-mid Nov for fall or end-Feb to end-March)",
+			"end (mid-Nov to Dec for fall or April to May for spring)",
+			"the entire semester is fairly even"
+		],
+		"show_if_id": "gc1",
+		"show_if_value_not": "Co-term"
+	},{
+		"id": "gc27",
+		"question": "Please put any information about your experience as a TA.",
+		"type": "text",
+		"show_if_id": "gc1",
+		"show_if_value_not": "Co-term"
+	},{
+		"id": "gc28",
+		"question": "What events put on by the Graduate Council have you attended?",
+		"type": "checkbox",
+		"options": [
+			"Troy Kitchen Takeover",
+			"Fall semester kick-off Meet + Greet",
+			"Pub Night (end of spring semester)",
+			"Graduate Halloween Party",
+			"General body meeting",
+			"Hockey night (beginning spring semester)",
+			"Grads-only $5 subsidized painting at the pub"
+		],
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
+		"id": "gc29",
+		"question": "What events put on by the Graduate Council should we continue to organize?",
+		"type": "checkbox",
+		"options": [
+			"Multiple select",
+			"Troy Kitchen Takeover",
+			"Fall semester kick-off Meet + Greet",
+			"Pub Night (end of spring semester)",
+			"Graduate Halloween Party",
+			"General body meeting",
+			"Hockey night (beginning spring semester)",
+			"Grads-only $5 subsidized painting at the pub"
+		],
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
+		"id": "gc30",
+		"question": "Were you aware if you pay the Graduate Activity fee you automatically can attend any Graduate Council events (exclusion is 21+ events if not 21)?",
+		"type": "radio",
+		"options": ["Yes","No"],
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
+		"id": "gc31",
+		"question": "What new events should the Graduate Council put on?",
+		"type": "text",
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
+		"id": "gc32",
+		"question": "What is the best way to be informed about Graduate Council events?",
+		"type": "radio",
+		"options": ["All-grads email","Morning mail","Graduate Council google calendar","Personal website","Facebook","Twitter","Paper flyers","Word of mouth","None","Other"],
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
+		"id": "gc32other",
+		"question": "What is the best way to be informed about Graduate Council events?",
+		"type": "text",
+		"show_if_id": "gc32",
+		"show_if_value": "Other"
+	},{
+		"id": "gc33",
+		"question": "What do you think is the Grad Council’s top priority?",
+		"type": "text",
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},
+	{
+		"id": "gc34",
+		"question": "What graduate student issues do you feel the administration should be aware of?",
+		"type": "text",
+		"show_if_id": "demographics1",
+		"show_if_value": "Graduate"
+	},{
 		"id": "uc1",
 		"question": "Which events have you attended in the past year?",
 		"type": "checkbox",
@@ -690,15 +846,13 @@
 	[{
 		"id": "fsc1",
 		"question": "Currently the 87 gym is used for rock climbing, ballroom dance, recreational sports, prayer space, etc. What should the '87 Gym be used for? ",
-		"type": "radio",
-		"required": false,
-		"options": ["**** ANSWERS TBD"]
+		"type": "text",
+		"required": false
 	}, {
 		"id": "fsc2",
-		"question": "The following areas of campus are underutilized, what would you like to see there?",
-		"type": "radio",
-		"required": false,
-		"options": ["****ANSWERS TBD"]
+		"question": "What areas of campus need more attention, and what does it need?",
+		"type": "text",
+		"required": false
 	}, {
 		"id": "fsc3",
 		"question": "What additional transportation options do you want available on campus?",
@@ -717,7 +871,7 @@
 		"options": ["Yes", "No"]
 	}, {
 		"id": "fsc6",
-		"question": "****NEED OPTIONS*** What additional locations would you like bike share stations across campus and the surrounding areas of Troy?",
+		"question": "What additional locations would you like for CDPHP bike share stations across campus and the surrounding areas of Troy?",
 		"type": "text",
 		"required": false
 	},
