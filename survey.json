@@ -873,19 +873,11 @@
 		"question": "What additional locations would you like for CDPHP bike share stations across campus and the surrounding areas of Troy?",
 		"type": "text",
 		"required": false
-	},
-	{
-		"id": "fsc6other",
-		"question": "What other locations would you like to see bike share stations?",
-		"type": "text",
-		"required": false
 	}, {
 		"id": "fsc9",
-		"question": "Which aspect of the shuttle system is the most problematic? (frequency of shuttles, location, schedule of pick up times, etc.)",
-		"type": "text",
-		"required": false,
-		"show_if_id": "fsc8",
-		"show_if_value": "No"
+		"question": "Note: If you use the shuttles, the shuttle routes will be changing next semester. See more information at http://shuttles.rpi.edu/changes",
+		"type": "none",
+		"required": false
 	},{
 		"id": "hsac1",
 		"question": "Are you aware of the new renovations to Commons, Sage dining hall, and the Library Cafe?",
