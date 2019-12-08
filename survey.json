@@ -27,9 +27,7 @@
 		"question": "Are you a member of a Greek-affiliated organization",
 		"type": "radio",
 		"required": true,
-		"options": ["Yes, Panhellenic Council", "Yes, Interfraternity Council", "No"],
-		"show_if_id": "demographics1",
-		"show_if_value": "Undergraduate"
+		"options": ["Yes, Fraternity", "Yes, Soroity", "Yes, culture based Fraternity", "Yes, culture based Soroity", "No"]
 	}, {
 		"id": "demographics5",
 		"question": "As of the Fall 2019 semester, where do you currently live?",
@@ -155,13 +153,6 @@
 		"show_if_id": "demographics5",
 		"show_if_value": "On-campus residence hall or apartment"
 	}, {
-		"id": "reslife20",
-		"question": "Currently there is only one entry/exit to every residence hall on campus. Would you support multiple card accessible entrances and exits in residence halls?",
-		"type": "radio",
-		"options": ["Yes", "No"],
-		"show_if_id": "demographics5",
-		"show_if_value": "On-campus residence hall or apartment"
-	}, {
 		"id": "reslife21",
 		"question": "Which of the following statements best match your beliefs with respect to access to other residence halls?",
 		"type": "select",
@@ -170,14 +161,14 @@
 		"show_if_value": "On-campus residence hall or apartment"
 	}, {
 		"id": "reslife22",
-		"question": "How often have you had to deal with pests (bugs, rodents, birds, NOT your roommates) in your residence hall?",
+		"question": "How often have you had to deal with pests (bugs, rodents, birds) in your residence hall?",
 		"type": "radio",
 		"options": ["rarely (0-1 a year)", "sometimes (2-3 per year", "often (once a month)", "very often (once every week or so)"],
 		"show_if_id": "demographics5",
 		"show_if_value": "On-campus residence hall or apartment"
 	}, {
 		"id": "reslife23",
-		"question": "How frequently do you interact with your RA?",
+		"question": "How frequently do you interact with your Resident Assistant?",
 		"type": "radio",
 		"options": ["Daily", "Several times per week", "Weekly","Monthly","Rarely"],
 		"show_if_id": "demographics5",
@@ -205,7 +196,7 @@
 		"show_if_value": "Greek housing"
 	}, {
 		"id": "greekHousing4",
-		"question": "How satisfied are you with the overall quality of your off-campus housing and amenities?",
+		"question": "How satisfied are you with the overall quality of your Greek housing and amenities?",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
@@ -298,7 +289,7 @@
 		"show_if_value": "Yes"
 	}, {
 		"id": "offcampus6",
-		"question": "On a scale of 0% connected to 100% connected, through living off-campus, how connected do you feel to the campus community?",
+		"question": "On a scale of 0% connected to 100% connected, being that you live off-campus, how connected do you feel to the on-campus RPI community?",
 		"type": "radio",
 		"required": false,
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
@@ -374,17 +365,16 @@
 		"options": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 	}, {
 		"id": "allhousing12",
-		"question": " In case of an incident, who would you be most comfortable calling?",
+		"question": "In case of an incident, are you comfortable calling the Department of Public Safety?",
 		"type": "radio",
 		"required": false,
-		"options": ["Department of Public Safety", "Troy Police Department", "Other (please specify below)"]
+		"options": ["Yes", "No"]
 	}, {
-		"id": "allhousing12other",
-		"question": "In case of an incident, who would you be most comfortable calling?",
-		"type": "text",
+		"id": "allhousing12part2",
+		"question": "In case of an incident, are you comfortable calling the Troy Police Department?",
+		"type": "radio",
 		"required": false,
-		"show_if_id": "allhousing12",
-		"show_if_value": "Other (please specify below)"
+		"options": ["Yes", "No"]
 	}, {
 		"id": "allhousing13",
 		"question": "How do you primarily commute to campus?",
@@ -454,14 +444,20 @@
 		"show_if_value": "Other"
 	},{
 		"id": "gc5",
-		"question": "Do you feel you are on track to completing your degree?",
+		"question": "Are you on track to completing your degree?",
 		"type": "radio",
 		"options": ["Yes","No"],
 		"show_if_id": "demographics1",
 		"show_if_value": "Graduate"
 	},{
+		"id": "gc5no",
+		"question": "What is preventing your progress?",
+		"type": "text",
+		"show_if_id": "gc5",
+		"show_if_value": "No"
+	},{
 		"id": "gc6",
-		"question": "Please expand on how you feel your degree is progressing, whether yes or no, and speak to any barriers to your progress.",
+		"question": "Please expand on how you feel your degree is progressing, whether yes or no.",
 		"type": "text",
 		"show_if_id": "demographics1",
 		"show_if_value": "Graduate"
@@ -495,11 +491,10 @@
 		"show_if_value": "PhD"
 	},{
 		"id": "gc9",
-		"question": "What is your relationship with your advisor?",
+		"question": "Describe your relationship with your advisor.",
 		"type": "text",
-		"options": ["Yes","No"],
-		"show_if_id": "gc1",
-		"show_if_value": "Co-term"
+		"show_if_id": "gc8a",
+		"show_if_value": "Yes"
 	},{
 		"id": "gc10",
 		"question": "Do you feel there is a community of support at RPI?",
@@ -569,9 +564,9 @@
 		"show_if_value": "Graduate"
 	},{
 		"id": "gc20",
-		"question": "Are you interested in doing research or TA opportunities?",
+		"question": "Are you interested in doing research or Teaching Assistant opportunities?",
 		"type": "radio",
-		"options": ["yes to research","yes to TA","both"],
+		"options": ["yes to research","yes to Teaching Assistant","both"],
 		"show_if_id": "gc1",
 		"show_if_value": "Co-term"
 	},{
@@ -583,14 +578,14 @@
 		"show_if_value": "Co-term"
 	},{
 		"id": "gc22",
-		"question": "Have you been an RA or TA?",
+		"question": "Have you been an Resident Assistant or Teaching Assistant?",
 		"type": "radio",
-		"options": ["yes RA","yes TA","both","none (i.e. not supported)"],
+		"options": ["yes Resident Assistant","yes Teaching Assistant","both","none (i.e. not supported)"],
 		"show_if_id": "gc1",
 		"show_if_value_not": "Co-term"
 	},{
 		"id": "gc23",
-		"question": "How many hours a week (on avg) do you spend working on your RA assignment (this might not be your thesis research)?",
+		"question": "How many hours a week (on avg) do you spend on your Research Assistant responsibilities? (thesis research included)?",
 		"type": "radio",
 		"options": ["Approx 20 hours","20-35 hours","35-50 hours","50-65 hours","65+ hours"],
 		"show_if_id": "gc1",
@@ -604,14 +599,14 @@
 		"show_if_value_not": "Co-term"
 	},{
 		"id": "gc25",
-		"question": "How many hours a week (on avg) do you spend on your TA assignment?",
+		"question": "How many hours a week (on avg) do you spend on your Teaching Assistant assignment?",
 		"type": "radio",
 		"options": ["5 hours or less","5-10 hours","10-15 hours","15-20 hours","20+ hours"],
 		"show_if_id": "gc1",
 		"show_if_value_not": "Co-term"
 	},{
 		"id": "gc26",
-		"question": "When are you most busy during the semester on TA assignment?",
+		"question": "When are you most busy during the semester on Teaching Assistant assignment?",
 		"type": "radio",
 		"options": [
 			"beginning (Aug to mid-Sept for fall or Jan to mid-Feb for spring)",
@@ -623,7 +618,7 @@
 		"show_if_value_not": "Co-term"
 	},{
 		"id": "gc27",
-		"question": "Please put any information about your experience as a TA.",
+		"question": "If you would like, please share any thoughts or information related to your Teaching Assistant experiences:",
 		"type": "text",
 		"show_if_id": "gc1",
 		"show_if_value_not": "Co-term"
@@ -838,7 +833,7 @@
 		"required": false
 	}, {
 		"id": "slc7",
-		"question": "Do you have any ideas to improve student life on campus? If so, explain.",
+		"question": "Do you have any ideas to contribute to improving the student experience? If so, please explain.",
 		"type": "text",
 		"required": false
 	}],
@@ -849,12 +844,12 @@
 		"required": false
 	}, {
 		"id": "fsc2",
-		"question": "What areas of campus need more attention, and what does it need?",
+		"question": "Are there areas of campus in need of attention? If so, what are your suggestions?",
 		"type": "text",
 		"required": false
 	}, {
 		"id": "fsc3",
-		"question": "What additional transportation options do you want available on campus?",
+		"question": "Are there additional needs for transportation on campus? If so, what are your suggestions?",
 		"type": "text",
 		"required": false
 	}, {
@@ -914,7 +909,7 @@
 		"options": ["Yes", "No"]
 	}, {
 		"id": "aac5",
-		"question": "Do you have any further suggestions to improve the academic experience for students?",
+		"question": "Do you have any suggestions to contribute to an excellent academic experience for students?",
 		"type": "text",
 		"required": false
 	}, {
@@ -1069,6 +1064,12 @@
 		"required": false,
 		"options": ["Yes", "No"]
 	},{
+		"id": "uar3no",
+		"question": "The 2020 UAR can be found at https://rpi.app.box.com/v/rpisg/file/542064916488",
+		"type": "none",
+		"show_if_id": "uar2",
+		"show_if_value": "No"
+	},{
 		"id": "uar3",
 		"question": "What are some things you would like to see in/learn from the Union Annual Report?",
 		"type": "text",
@@ -1081,7 +1082,7 @@
 		"required": false
 	}, {
 		"id": "inv2",
-		"question": "How can RPI build more school spirit?",
+		"question": "Do you have any ideas to contribute to building more school spirit? ",
 		"type": "text",
 		"required": false
 	}, 	{
@@ -1100,7 +1101,7 @@
 	}],
 	[{
 		"id": "general1",
-		"question": "In general, what would you like to see improved at RPI?",
+		"question": "In general, do you have any suggestions of changes you would like to see at RPI?",
 		"type": "text",
 		"show_if_id": "demographics1",
 		"show_if_value": "Undergraduate"
