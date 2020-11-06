@@ -43,7 +43,7 @@ pip install -r requirements.txt
 gunicorn app:app --reload
 ```
 
-It is a good idea to do this inside of a virtual environment.
+**It is recommended to do this inside of a virtual environment.**
 
 ## Deployment
 
