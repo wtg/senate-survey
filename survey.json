@@ -356,584 +356,624 @@
       }
    ],
    [
-   	{
-   		"id":"general2",
-   		"question":"Anything else you'd like to share with us?",
-   		"type":"text",
-   		"required":false
-   	}
-   ],
-   [
       {
-	    "id":"gc1",
-	    "question":"What type of graduate are you?",
-	    "type":"radio",
-	    "required":true,
-	    "options":[
-	    	"Co-term",
-	     	"Master's",
-	     	"PhD"
-	    ],
-	    "show_if_id":"demographics1",
-	    "show_if_value":"Graduate"
-      },
-      {
-      	"id":"gc2",
-      	"question":"What year are you?",
-      	"type":"radio",
-      	"required":true,
-      	"options":[
-      		"1st",
-      		"2nd"
-      	],
-      	"show_if_id":"gc1",
-      	"show_if_value_not":"PhD"
-      },
-      {
-      	"id":"gc3",
-      	"question":"What year are you?",
-      	"type":"radio",
-      	"required":true,
-      	"options":[
-      		"1st",
-      		"2nd",
-      		"3rd",
-      		"4th",
-      		"5th",
-      		"6th",
-      		"7th"
-      	],
-      	"show_if_id":"gc1",
-      	"show_if_value":"PhD"
-      },
-      {
-      	"id":"gc4",
-      	"question":"What dept are you in?",
-      	"type":"text",
-      	"required":true,
-      	"show_if_id":"demographics1",
-      	"show_if_value":"Graduate"
-      },
-      {
-      	"id":"gc5",
-      	"question":"What is your funding source?",
-      	"type":"radio",
-      	"required":true,
-      	"options":[
-      		"Research Assistant",
-      		"Teaching Assistant",
-      		"Other - please explain"
-      	],
-      	"show_if_id":"gc1",
-      	"show_if_value_not":"Co-term"
-      },
-      {
-      	"id":"gc6",
-      	"question":"Please explain your funding source",
-      	"type":"text",
-      	"required":true,
-      	"show_if_id":"gc5",
-      	"show_if_value":"Other - please explain"
-      },
-      {
-      	"id":"gc7",
-      	"question":"Do you feel you are on track to completing your degree?",
-      	"type":"radio",
-      	"required":true,
-      	"options":[
-      		"Yes",
-      		"No"
-      	],
-      	"show_if_id":"demographics1",
-      	"show_if_value":"Graduate"
-      },
-      {
-      	"id":"gc8",
-      	"question":"Please expand on how you feel your degree is progressing, whether yes or no, and speak to any barriers to your progress.",
-      	"type":"text",
-      	"required":true,
-      	"show_if_id":"demographics1",
-      	"show_if_value":"Graduate"
-      },
-      {
-      	"id":"gc9",
-      	"question":"Which of these resources had helped you prepare for your career?",
-      	"type":"radio",
-      	"required":true,
-      	"options":[
-      		"Advisor",
-      		"GRS",
-      		"CCPD",
-      		"Workshop/Conference",
-      		"Other events"
-      	],
-      	"show_if_id":"demographics1",
-      	"show_if_value":"Graduate"
-      },
-      {
-      	"id":"gc10",
-      	"question":"Do you have a primary advisor?",
-      	"type":"radio",
-      	"required":true,
-      	"options":[
-      		"Yes",
-      		"No"
-      	],
-      	"show_if_id":"gc1",
-      	"show_if_value":"Co-term"
-      },
-      {
-      	"id":"gc11",
-      	"question":"Do you have a primary or secondary research advisor?",
-      	"type":"radio",
-      	"required":true,
-      	"options":[
-      		"Primary",
-      		"Primary and Secondary",
-      		"Multiple"
-      	],
-      	"show_if_id":"gc1",
-      	"show_if_value_not":"Co-term"
-      },
-      {
-      	"id":"gc12",
-      	"question":"How is your relationship with your advisor? Enter N/A if you do not have an advisor",
-      	"type":"text",
-      	"required":true,
-      	"show_if_id":"demographics1",
-      	"show_if_value":"Graduate"
-      },
-      {
-      	"id":"gc13",
-      	"question":"Do you think the co-terminal program provides opportunities and preparationfor entering the workforce?",
-      	"type":"text",
-      	"required":true,
-      	"show_if_id":"gc1",
-      	"show_if_value":"Co-term"
-      },
-      {
-      	"id":"gc14",
-      	"question": "I am part of a lab which focuses on...",
-      	"type":"radio",
-      	"required":true,
-      	"options":[
-      		"Wet Research",
-      		"Field Research",
-      		"Computational Research",
-      		"Other - please specify"
-      	],
-      	"show_if_id":"demographics1",
-      	"show_if_value":"Graduate"
-      },
-      {
-      	"id":"gc15",
-      	"question": "Please specify what your lab focuses on",
-      	"type":"text",
-      	"required":true,
-      	"show_if_id":"gc14",
-      	"show_if_value":"Other - please specify"
-      },
-      {
-      	"id":"gc16",
-      	"question": "How has the remote/hybrid nature of classes affected your experience with coursework?",
-      	"type":"text",
-      	"required":true,
-      	"show_if_id":"demographics1",
-      	"show_if_value":"Graduate"
+         "id":"general2",
+         "question":"Anything else you'd like to share with us?",
+         "type":"text",
+         "required":false
       }
    ],
    [
-	  {
-	  	"id":"gc17",
-	  	"question": "Do you feel there is a community of support at RPI?",
-	  	"type":"radio",
-	  	"required":true,
-	  	"options":[
-	  		"Yes",
-	  		"No"
-	  	],
-	  	"show_if_id":"demographics1",
-	  	"show_if_value":"Graduate"
-	  },
-	  {
-	  	"id":"gc18",
-	  	"question": "Please expand upon your previous answer.",
-	  	"type":"text",
-	  	"required":true,
-	  	"show_if_id":"demographics1",
-	  	"show_if_value":"Graduate"
-	  },
-	  {
-	  	"id":"gc19",
-	  	"question":"Do you participate in any Union clubs?",
-	  	"type":"radio",
-	  	"required":true,
-	  	"options":[
-	  		"Yes",
-	  		"No"
-	  	],
-	  	"show_if_id":"demographics1",
-	  	"show_if_value":"Graduate"
-	  },
-	  {
-	  	"id":"gc20",
-	  	"question":"If not, please tell us why",
-	  	"type":"text",
-	  	"required":true,
-	  	"show_if_id":"gc19",
-	  	"show_if_value":"No"
-	  },
-	  {
-	  	"id":"gc21",
-	  	"question":"What other Union resources do you use?",
-	  	"type":"checkbox",
-	  	"required":true,
-	  	"options":[
-	  		"CCPD",
-	  		"Mueller Center",
-	  		"Wellness Center",
-	  		"Counseling Center",
-	  		"None"
-	  	],
-	  	"show_if_id":"demographics1",
-	  	"show_if_value":"Graduate"
-	  },
-	  {
-	  	"id":"gc22",
-	  	"question":"If there are any resources you use that weren't listed here, please let us know which:",
-	  	"type":"text",
-	  	"required":false,
-	  	"show_if_id":"demographics1",
-	  	"show_if_value":"Graduate"
-	  },
-	  {
-	  	"id":"gc23",
-	  	"question":"How effective has the CCPD been for you?",
-	  	"type":"radio",
-	  	"required":true,
-	  	"options":[
-	  		1,
-	  		2,
-	  		3,
-	  		4,
-	  		5
-	  	],
-	  	"show_if_id":"demographics1",
-	  	"show_if_value":"Graduate"
-	  },
-	  {
-	  	"id":"gc24",
-	  	"question":"Do you attend the free online classes offered by the Mueller Center?",
-	  	"type":"radio",
-	  	"required":true,
-	  	"options":[
-	  		"Yes",
-	  		"No"
-	  	],
-	  	"show_if_id":"demographics1",
-	  	"show_if_value":"Graduate"
-	  },
-	  {
-	  	"id":"gc25",
-	  	"question":"What new online events should the Mueller Center try to put on?",
-	  	"type":"text",
-	  	"required":true,
-	  	"show_if_id":"demographics1",
-	  	"show_if_value":"Graduate"
-	  },
-	  {
-	  	"id":"gc26",
-	  	"question": "On a scale of 1-5, how would you rate the service of the health and counseling center? (1-not at all helpful, 5-very helpful)",
-	  	"type":"radio",
-	  	"required":true,
-	  	"options":[
-	  		1,
-	  		2,
-	  		3,
-	  		4,
-	  		5
-	  	],
-	  	"show_if_id":"demographics1",
-	  	"show_if_value":"Graduate"
-	  },
-	  {
-	  	"id":"gc27",
-	  	"question":"Which aspects of the health or counseling center would you like to see improved/changed/stay the same?",
-	  	"type":"text",
-	  	"required":true,
-	  	"show_if_id":"demographics1",
-	  	"show_if_value":"Graduate"
-	  }
+      {
+         "id":"placeholder1",
+         "question":"There are no questions for you to answer on this page, please move to the next page",
+         "type":"radio",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Undergraduate"
+      },
+      {
+       "id":"gc1",
+       "question":"What type of graduate are you?",
+       "type":"radio",
+       "required":true,
+       "options":[
+         "Co-term",
+         "Master's",
+         "PhD"
+       ],
+       "show_if_id":"demographics1",
+       "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc2",
+         "question":"What year are you?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "1st",
+            "2nd"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value_not":"PhD"
+      },
+      {
+         "id":"gc3",
+         "question":"What year are you?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "1st",
+            "2nd",
+            "3rd",
+            "4th",
+            "5th",
+            "6th",
+            "7th"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value":"PhD"
+      },
+      {
+         "id":"gc4",
+         "question":"What dept are you in?",
+         "type":"text",
+         "required":true,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc5",
+         "question":"What is your funding source?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Research Assistant",
+            "Teaching Assistant",
+            "Other - please explain"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value_not":"Co-term"
+      },
+      {
+         "id":"gc6",
+         "question":"Please explain your funding source",
+         "type":"text",
+         "required":true,
+         "show_if_id":"gc5",
+         "show_if_value":"Other - please explain"
+      },
+      {
+         "id":"gc7",
+         "question":"Do you feel you are on track to completing your degree?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Yes",
+            "No"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc8",
+         "question":"Please expand on how you feel your degree is progressing, whether yes or no, and speak to any barriers to your progress.",
+         "type":"text",
+         "required":true,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc9",
+         "question":"Which of these resources had helped you prepare for your career?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Advisor",
+            "GRS",
+            "CCPD",
+            "Workshop/Conference",
+            "Other events"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc10",
+         "question":"Do you have a primary advisor?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Yes",
+            "No"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value":"Co-term"
+      },
+      {
+         "id":"gc11",
+         "question":"Do you have a primary or secondary research advisor?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Primary",
+            "Primary and Secondary",
+            "Multiple"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value_not":"Co-term"
+      },
+      {
+         "id":"gc12",
+         "question":"How is your relationship with your advisor? Enter N/A if you do not have an advisor",
+         "type":"text",
+         "required":true,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc13",
+         "question":"Do you think the co-terminal program provides opportunities and preparationfor entering the workforce?",
+         "type":"text",
+         "required":true,
+         "show_if_id":"gc1",
+         "show_if_value":"Co-term"
+      },
+      {
+         "id":"gc14",
+         "question": "I am part of a lab which focuses on...",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Wet Research",
+            "Field Research",
+            "Computational Research",
+            "Other - please specify"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc15",
+         "question": "Please specify what your lab focuses on",
+         "type":"text",
+         "required":true,
+         "show_if_id":"gc14",
+         "show_if_value":"Other - please specify"
+      },
+      {
+         "id":"gc16",
+         "question": "How has the remote/hybrid nature of classes affected your experience with coursework?",
+         "type":"text",
+         "required":true,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      }
    ],
    [
-   	{
-   		"id":"gc28",
-   		"question":"Are you interested in doing research or Teaching Assistant opportunities?",
-   		"type":"radio",
-   		"required":true,
-   		"options":[
-   			"Yes to research",
-   			"Yes to Teaching Assitant",
-   			"Yes to both",
-   			"No"
-   		],
-   		"show_if_id":"gc1",
-   		"show_if_value":"Co-term"
-   	},
-   	{
-   		"id":"gc29",
-   		"question":"Do you think funding/partial scholarships should be available to co-terminal students?",
-   		"type":"radio",
-   		"required":true,
-   		"options":[
-   			"Yes to funding",
-   			"Yes to scholarships",
-   			"No"
-   		],
-   		"show_if_id":"gc1",
-   		"show_if_value":"Co-term"
-   	},
-   	{
-   		"id":"gc30",
-   		"question":"Have you been an Research Assistant or Teaching Assistant?",
-   		"type":"radio",
-   		"required":true,
-   		"options":[
-   			"Yes - Research Assistant",
-   			"Yes - Teaching Assistant",
-   			"Yes - Both",
-   			"None - not supported"
-   		],
-   		"show_if_id":"gc1",
-   		"show_if_value_not":"Co-term"
-   	},
-   	{
-   		"id":"gc31",
-   		"question":"How many hours (on avg) aweek do you spend working on your assignment (this might not be your thesis research) as a Research Assistant?",
-   		"type":"radio",
-   		"required":true,
-   		"options":[
-   			"0-5",
-   			"5-10",
-   			"10-15",
-   			"15-20",
-   			"20-25",
-   			"25-30",
-   			"30-35",
-   			"35-40",
-   			"40-45",
-   			"45-50",
-   			"50-55",
-   			"55-60",
-   			"60+"
-   		],
-   		"show_if_id":"gc1",
-   		"show_if_value_not":"Co-term"
-   	},
-   	{
-   		"id":"gc32",
-   		"question":"How many hours (on avg) aweek do you spend working on non-thesis related research work?",
-   		"type":"radio",
-   		"required":true,
-   		"options":[
-   			"0-5",
-   			"5-10",
-   			"10-15",
-   			"15-20",
-   			"20-25",
-   			"25-30",
-   			"30-35",
-   			"35-40",
-   			"40-45",
-   			"45-50",
-   			"50-55",
-   			"55-60",
-   			"60+"
-   		],
-   		"show_if_id":"gc1",
-   		"show_if_value_not":"Co-term"
-   	},
-   	{
-   		"id":"gc33",
-   		"question":"How many hours (on avg) aweek do you spend on your assignment as a Teaching Assistant?",
-   		"type":"radio",
-   		"required":true,
-   		"options":[
-   			"0-5",
-   			"5-10",
-   			"10-15",
-   			"15-20",
-   			"20-25",
-   			"25-30",
-   			"30-35",
-   			"35-40",
-   			"40-45",
-   			"45-50",
-   			"50-55",
-   			"55-60",
-   			"60+"
-   		],
-   		"show_if_id":"gc1",
-   		"show_if_value_not":"Co-term"
-   	},
-   	{
-   		"id":"gc34",
-   		"question":"When are you most busy during the semester on Teaching Assistant assignment?",
-   		"type":"radio",
-   		"required":true,
-   		"options":[
-   			"Beginning - Aug to mid-Sept",
-   			"Middle - end of Sept to mid Nov",
-   			"End - mid-Nov to Dec",
-   			"The entire semester is fairly even"
-   		],
-   		"show_if_id":"gc1",
-   		"show_if_value_not":"Co-term"
-   	},
-   	{
-   		"id":"gc35",
-   		"question":"Please tell us about your experience as a Teaching 6.Please tell us about your experience as a Teaching Assistant this year.",
-   		"type":"text",
-   		"required":true,
-   		"show_if_id":"gc1",
-   		"show_if_value_not":"Co-term"
-   	},
-   	{
-   		"id":"gc36",
-   		"question":"Has your research been affected by having limited access to the campus resources like labs etc?",
-   		"type":"text",
-   		"required":true,
-   		"show_if_id":"gc1",
-   		"show_if_value_not":"Co-term"
-   	},
-   	{
-   		"id":"gc37",
-   		"question":"On a scale of 1-5 supportive was your Academic/RA/TA advisor during this transition? (1 - Not supportive, 5 - Very supportive)",
-   		"type":"radio",
-   		"required":true,
-   		"options":[
-   			1,
-   			2,
-   			3,
-   			4,
-   			5
-   		],
-   		"show_if_id":"gc1",
-   		"show_if_value_not":"Co-term"
-   	}
+      {
+         "id":"placeholder2",
+         "question":"Nothing to see here, keep going...",
+         "type":"radio",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Undergraduate"
+      },
+     {
+      "id":"gc17",
+      "question": "Do you feel there is a community of support at RPI?",
+      "type":"radio",
+      "required":true,
+      "options":[
+         "Yes",
+         "No"
+      ],
+      "show_if_id":"demographics1",
+      "show_if_value":"Graduate"
+     },
+     {
+      "id":"gc18",
+      "question": "Please expand upon your previous answer.",
+      "type":"text",
+      "required":true,
+      "show_if_id":"demographics1",
+      "show_if_value":"Graduate"
+     },
+     {
+      "id":"gc19",
+      "question":"Do you participate in any Union clubs?",
+      "type":"radio",
+      "required":true,
+      "options":[
+         "Yes",
+         "No"
+      ],
+      "show_if_id":"demographics1",
+      "show_if_value":"Graduate"
+     },
+     {
+      "id":"gc20",
+      "question":"If not, please tell us why",
+      "type":"text",
+      "required":true,
+      "show_if_id":"gc19",
+      "show_if_value":"No"
+     },
+     {
+      "id":"gc21",
+      "question":"What other Union resources do you use?",
+      "type":"checkbox",
+      "required":true,
+      "options":[
+         "CCPD",
+         "Mueller Center",
+         "Wellness Center",
+         "Counseling Center",
+         "None"
+      ],
+      "show_if_id":"demographics1",
+      "show_if_value":"Graduate"
+     },
+     {
+      "id":"gc22",
+      "question":"If there are any resources you use that weren't listed here, please let us know which:",
+      "type":"text",
+      "required":false,
+      "show_if_id":"demographics1",
+      "show_if_value":"Graduate"
+     },
+     {
+      "id":"gc23",
+      "question":"How effective has the CCPD been for you?",
+      "type":"radio",
+      "required":true,
+      "options":[
+         1,
+         2,
+         3,
+         4,
+         5
+      ],
+      "show_if_id":"demographics1",
+      "show_if_value":"Graduate"
+     },
+     {
+      "id":"gc24",
+      "question":"Do you attend the free online classes offered by the Mueller Center?",
+      "type":"radio",
+      "required":true,
+      "options":[
+         "Yes",
+         "No"
+      ],
+      "show_if_id":"demographics1",
+      "show_if_value":"Graduate"
+     },
+     {
+      "id":"gc25",
+      "question":"What new online events should the Mueller Center try to put on?",
+      "type":"text",
+      "required":true,
+      "show_if_id":"demographics1",
+      "show_if_value":"Graduate"
+     },
+     {
+      "id":"gc26",
+      "question": "On a scale of 1-5, how would you rate the service of the health and counseling center? (1-not at all helpful, 5-very helpful",
+      "type":"radio",
+      "required":true,
+      "options":[
+         1,
+         2,
+         3,
+         4,
+         5
+      ],
+      "show_if_id":"demographics1",
+      "show_if_value":"Graduate"
+     },
+     {
+      "id":"gc27",
+      "question":"Which aspects of the health or counseling center would you like to see improved/changed/stay the same?",
+      "type":"text",
+      "required":true,
+      "show_if_id":"demographics1",
+      "show_if_value":"Graduate"
+     }
    ],
    [
-   	{
-   		"id":"gc38",
-   		"question":"What were your major resources for staying up-to-date with Institute’s Covid-19 policies",
-   		"type":"checkbox",
-   		"required":true,
-   		"options":[
-   			"Institute E-mails",
-   			"E-mails",
-   			"Covid-19 Website",
-   			"RPI Graduate Experience Discord",
-   			"Town Halls",
-   			"Word of Mouth",
-   			"Others"
-   		],
-   		"show_if_id":"demographics1",
-   		"show_if_value":"Graduate"
-   	},
-   	{
-   		"id":"gc39",
-   		"question":"If you are an International student, what support did youlook for from the institute during this pandemic period and did you get adequate support?",
-   		"type":"text",
-   		"required":true,
-   		"show_if_id":"demographics1",
-   		"show_if_value":"Graduate"
-   	},
-   	{
-   		"id":"gc40",
-   		"question":"What changes/additions do you think can help you continue your research while complying to the institutes protocols (for example: having building navigation maps at the entrance)?",
-   		"type":"text",
-   		"required":true,
-   		"show_if_id":"demographics1",
-   		"show_if_value":"Graduate"
-   	}
+      {
+         "id":"placeholder3",
+         "question":"Only a couple more blank pages to go, keep moving",
+         "type":"radio",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Undergraduate"
+      },
+      {
+         "id":"gc28",
+         "question":"Are you interested in doing research or Teaching Assistant opportunities?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Yes to research",
+            "Yes to Teaching Assitant",
+            "Yes to both",
+            "No"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value":"Co-term"
+      },
+      {
+         "id":"gc29",
+         "question":"Do you think funding/partial scholarships should be available to co-terminal students?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Yes to funding",
+            "Yes to scholarships",
+            "No"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value":"Co-term"
+      },
+      {
+         "id":"gc30",
+         "question":"Have you been an Research Assistant or Teaching Assistant?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Yes - Research Assistant",
+            "Yes - Teaching Assistant",
+            "Yes - Both",
+            "None - not supported"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value_not":"Co-term"
+      },
+      {
+         "id":"gc31",
+         "question":"How many hours (on avg) aweek do you spend working on your assignment (this might not be your thesis research) as a Research Assistant?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "0-5",
+            "5-10",
+            "10-15",
+            "15-20",
+            "20-25",
+            "25-30",
+            "30-35",
+            "35-40",
+            "40-45",
+            "45-50",
+            "50-55",
+            "55-60",
+            "60+"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value_not":"Co-term"
+      },
+      {
+         "id":"gc32",
+         "question":"How many hours (on avg) aweek do you spend working on non-thesis related research work?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "0-5",
+            "5-10",
+            "10-15",
+            "15-20",
+            "20-25",
+            "25-30",
+            "30-35",
+            "35-40",
+            "40-45",
+            "45-50",
+            "50-55",
+            "55-60",
+            "60+"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value_not":"Co-term"
+      },
+      {
+         "id":"gc33",
+         "question":"How many hours (on avg) aweek do you spend on your assignment as a Teaching Assistant?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "0-5",
+            "5-10",
+            "10-15",
+            "15-20",
+            "20-25",
+            "25-30",
+            "30-35",
+            "35-40",
+            "40-45",
+            "45-50",
+            "50-55",
+            "55-60",
+            "60+"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value_not":"Co-term"
+      },
+      {
+         "id":"gc34",
+         "question":"When are you most busy during the semester on Teaching Assistant assignment?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Beginning - Aug to mid-Sept",
+            "Middle - end of Sept to mid Nov",
+            "End - mid-Nov to Dec",
+            "The entire semester is fairly even"
+         ],
+         "show_if_id":"gc1",
+         "show_if_value_not":"Co-term"
+      },
+      {
+         "id":"gc35",
+         "question":"Please tell us about your experience as a Teaching 6.Please tell us about your experience as a Teaching Assistant this year.",
+         "type":"text",
+         "required":true,
+         "show_if_id":"gc1",
+         "show_if_value_not":"Co-term"
+      },
+      {
+         "id":"gc36",
+         "question":"Has your research been affected by having limited access to the campus resources like labs etc?",
+         "type":"text",
+         "required":true,
+         "show_if_id":"gc1",
+         "show_if_value_not":"Co-term"
+      },
+      {
+         "id":"gc37",
+         "question":"In a scale of 1-5 supportive was your Academic/RA/TA advisor during this transition? (1 - Not supportive, 5 - Very supportive)",
+         "type":"radio",
+         "required":true,
+         "options":[
+            1,
+            2,
+            3,
+            4,
+            5
+         ],
+         "show_if_id":"gc1",
+         "show_if_value_not":"Co-term"
+      }
    ],
    [
-   	{
-   		"id":"gc41",
-   		"question":"What events put on by the Graduate Council have you attended?",
-   		"type":"checkbox",
-   		"required":true,
-   		"options":[
-   			"Grad Hour - Academic",
-   			"Grad Hour - Wellness",
-   			"Grad Hour - Social events",
-   			"Grad Hour - Discussion on Grad Specific Concerns",
-   			"Grad Hour - Graduate Councilors Office Hours",
-   			"Graduate Research Symposium",
-   			"TKT",
-   			"Hockey Night",
-   			"None of these"
-   		],
-   		"show_if_id":"demographics1",
-   		"show_if_value":"Graduate"
-   	},
-   	{
-   		"id":"gc42",
-   		"question":"What type of events would you like to see more?",
-   		"type":"checkbox",
-   		"required":true,
-   		"options":[
-   			"Academic events",
-   			"Wellness events",
-   			"Social Events",
-   			"Discussion on Grad Specific Concerns events",
-   			"Councilors Office Hours",
-   			"Others"
-   		],
-   		"show_if_id":"demographics1",
-   		"show_if_value":"Graduate"
-   	},
-   	{
-   		"id":"gc43",
-   		"question":"What new events should the Graduate Council put on?",
-   		"type":"text",
-   		"required":true,
-   		"show_if_id":"demographics1",
-   		"show_if_value":"Graduate"
-   	},
-   	{
-   		"id":"gc44",
-   		"question":"What is the best way to be informed about Graduate Council events?",
-   		"type":"radio",
-   		"required":true,
-   		"options":[
-   			"All-grads email",
-   			"GC Google Calendar",
-   			"RPI Grad Experience Discord",
-   			"Social Media",
-   			"Morning Mail",
-   			"Email by your department's GPA",
-   			"Word of Mouth",
-   			"None of the above"
-   		],
-   		"show_if_id":"demographics1",
-   		"show_if_value":"Graduate"
-   	},
-   	{
-   		"id":"gc45",
-   		"question":"What graduate student issues do you feel the administration should be aware of?",
-   		"type":"text",
-   		"required":true,
-   		"show_if_id":"demographics1",
-   		"show_if_value":"Graduate"
-   	},
-   	{
-   		"id":"gc46",
-   		"question":"Any additional thoughts you'd like to share? The Graduate Council really appreciates your input!",
-   		"type":"text",
-   		"required":false,
-   		"show_if_id":"demographics1",
-   		"show_if_value":"Graduate"
-   	}
+      {
+         "id":"placeholder4",
+         "question":"Almost there, keep going...",
+         "type":"radio",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Undergraduate"
+      },
+      {
+         "id":"gc38",
+         "question":"What were your major resources for staying up-to-date with Institute’s Covid-19 policies",
+         "type":"checkbox",
+         "required":true,
+         "options":[
+            "Institute E-mails",
+            "E-mails",
+            "Covid-19 Website",
+            "RPI Graduate Experience Discord",
+            "Town Halls",
+            "Word of Mouth",
+            "Others"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc39",
+         "question":"If you are an International student, what support did youlook for from the institute during this pandemic period and did you get adequate support?",
+         "type":"text",
+         "required":true,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc40",
+         "question":"What changes/additions do you think can help you continue your research while complying to the institutes protocols (for example: having building navigation maps at the entrance)?",
+         "type":"text",
+         "required":true,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      }
+   ],
+   [
+      {
+         "id":"placeholder5",
+         "question":"",
+         "type":"radio",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Undergraduate"
+      },
+      {
+         "id":"gc41",
+         "question":"What events put on by the Graduate Council have you attended?",
+         "type":"checkbox",
+         "required":true,
+         "options":[
+            "Grad Hour - Academic",
+            "Grad Hour - Wellness",
+            "Grad Hour - Social events",
+            "Grad Hour - Discussion on Grad Specific Concerns",
+            "Grad Hour - Graduate Councilors Office Hours",
+            "Graduate Research Symposium",
+            "TKT",
+            "Hockey Night",
+            "None of these"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc42",
+         "question":"What type of events would you like to see more?",
+         "type":"checkbox",
+         "required":true,
+         "options":[
+            "Academic events",
+            "Wellness events",
+            "Social Events",
+            "Discussion on Grad Specific Concerns events",
+            "Councilors Office Hours",
+            "Others"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc43",
+         "question":"What new events should the Graduate Council put on?",
+         "type":"text",
+         "required":true,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc44",
+         "question":"What is the best way to be informed about Graduate Council events?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "All-grads email",
+            "GC Google Calendar",
+            "RPI Grad Experience Discord",
+            "Social Media",
+            "Morning Mail",
+            "Email by your department's GPA",
+            "Word of Mouth",
+            "None of the above"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc45",
+         "question":"What graduate student issues do you feel the administration should be aware of?",
+         "type":"text",
+         "required":true,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc46",
+         "question":"Any additional thoughts you'd like to share? The Graduate Council really appreciates your input!",
+         "type":"text",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      }
    ]
 ]
