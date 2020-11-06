@@ -891,8 +891,8 @@
    ],
    [
       {
-         "id":"placeholder5",
-         "question":"",
+         "id":"raffle1",
+         "question":"Here is a link to enter a raffle for $25 bookstore giftcards, this will not be ascociated with your response in any way: https://forms.gle/x33sygJDtaqPLEYd9",
          "type":"radio",
          "required":false,
          "show_if_id":"demographics1",
