@@ -697,7 +697,7 @@
          "required":true,
          "options":[
             "Yes to research",
-            "Yes to Teaching Assitant",
+            "Yes to Teaching Assistant",
             "Yes to both",
             "No"
          ],
@@ -816,7 +816,7 @@
       },
       {
          "id":"gc35",
-         "question":"Please tell us about your experience as a Teaching 6.Please tell us about your experience as a Teaching Assistant this year.",
+         "question":"Please tell us about your experience as a Teaching Assistant this year.",
          "type":"text",
          "required":true,
          "show_if_id":"gc1",
