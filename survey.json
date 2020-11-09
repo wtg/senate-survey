@@ -891,12 +891,6 @@
    ],
    [
       {
-         "id":"raffle1",
-         "question":"Here is a link to enter a raffle for $25 bookstore giftcards, this will not be ascociated with your response in any way: https://forms.gle/x33sygJDtaqPLEYd9",
-         "type":"radio",
-         "required":false
-      },
-      {
          "id":"gc41",
          "question":"What events put on by the Graduate Council have you attended?",
          "type":"checkbox",
@@ -972,6 +966,12 @@
          "required":false,
          "show_if_id":"demographics1",
          "show_if_value":"Graduate"
+      },
+      {
+         "id":"raffle1",
+         "question":"Here is a link to enter a raffle for $25 bookstore giftcards, this will not be ascociated with your response in any way: https://forms.gle/x33sygJDtaqPLEYd9",
+         "type":"radio",
+         "required":false
       }
    ]
 ]
