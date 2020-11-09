@@ -160,7 +160,7 @@
    [
       {
          "id":"specialProjects1",
-         "question":"Do you feel as though you recieve training on bias and discrimination past year First Year Experience?",
+         "question":"Do you feel as though you recieve training on bias and discrimination past your First Year Experience?",
          "type":"text",
          "required":true
       },
