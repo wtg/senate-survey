@@ -137,7 +137,7 @@ angular.module('questionaire', [])
             <div id="form-page" ng-show="$index + 1 === page" ng-repeat="question_page in survey">
                 <div class="form-group" ng-repeat="q in question_page" ng-show="should_show_question(q)">
                     <h3 class="page-header" ng-if="headers[q.id] !== undefined" ng-bind="headers[q.id]"></h3>
-                    <label for="{{q.id}}">{{ q.question }} <span ng-if="q.required" class="text-danger">*</span></label>
+                    <label for="{{q.id}}"><span ng-if="q.id != 'raffle1'">{{ q.question }}</span> <b ng-if="q.id === 'raffle1'"> {{ q.question }} </b> <span ng-if="q.required" class="text-danger">*</span></label>
 
                     <select class="form-control" name="{{q.id}}" ng-model="q.value" ng-if="q.type === 'select'">
                         <option value=""></option>
