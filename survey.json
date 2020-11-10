@@ -479,6 +479,14 @@
          "show_if_value":"Graduate"
       },
       {
+         "id":"other1",
+         "question":"If you selected other, please specify which resources have helped",
+         "type":"text",
+         "required":true,
+         "show_if_id":"gc9",
+         "show_if_value":"Other events"
+      },
+      {
          "id":"gc10",
          "question":"Do you have a primary advisor?",
          "type":"radio",
@@ -873,6 +881,14 @@
          "show_if_value":"Graduate"
       },
       {
+         "id":"other2",
+         "question":"If you selected 'Other' for the previous question, please specify what resources you used",
+         "type":"text",
+         "required":true,
+         "show_if_id":"gc38",
+         "show_if_value":"Others"
+      },
+      {
          "id":"gc39",
          "question":"If you are an International student, what support did youlook for from the institute during this pandemic period and did you get adequate support?",
          "type":"text",
@@ -924,6 +940,14 @@
          ],
          "show_if_id":"demographics1",
          "show_if_value":"Graduate"
+      },
+      {
+         "id":"other3",
+         "question":"If you selected 'Other' for the previous question, please elaborate",
+         "type":"text",
+         "required":true,
+         "show_if_id":"gc42",
+         "show_if_value":"Others"
       },
       {
          "id":"gc43",
