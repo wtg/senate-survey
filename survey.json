@@ -466,7 +466,7 @@
       {
          "id":"gc9",
          "question":"Which of these resources had helped you prepare for your career?",
-         "type":"radio",
+         "type":"checkbox",
          "required":true,
          "options":[
             "Advisor",
@@ -890,7 +890,7 @@
       },
       {
          "id":"gc39",
-         "question":"If you are an International student, what support did youlook for from the institute during this pandemic period and did you get adequate support?",
+         "question":"If you are an International student, what support did you look for from the institute during this pandemic period and did you get adequate support?",
          "type":"text",
          "required":true,
          "show_if_id":"demographics1",
@@ -960,7 +960,7 @@
       {
          "id":"gc44",
          "question":"What is the best way to be informed about Graduate Council events?",
-         "type":"radio",
+         "type":"checkbox",
          "required":true,
          "options":[
             "All-grads email",
