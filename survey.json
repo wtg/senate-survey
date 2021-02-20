@@ -1,1001 +1,222 @@
 [
-   [
-      {
-         "id":"demographics1",
-         "question":"Are you an undergraduate or graduate student?",
+    [
+        { "id": "demographics1", "question": "Which class are you a part of?", "type": "radio", "required": true, "options": ["Freshman", "Sophomore", "Junior", "Senior", "Graduate"] },
+        { "id": "cc1", "question": "Have you ever gone to the Counseling Center?", "type": "radio", "required": true, "options": ["Yes", "No"] },
+        {
+            "id": "cc2",
+            "question": "What encouraged you to seek out these services?",
+            "type": "radio",
+            "required": true,
+            "options": ["A friend recommended it", "DIAL App encouraged it", "Outreach from health/counseling center", "I have used counseling before", "I felt the need"],
+            "show_if_value": "Yes",
+            "show_if_id": "cc1"
+        },
+        {
+            "id": "cc3",
+            "question": "How many semesters have you actively used the Counseling center resources (If you had a semester where you did not use the Counseling center do not include it)?",
+            "type": "select",
+            "required": true,
+            "options": ["1", "2", "3", "4", "5", "6", "7", "8+"],
+            "show_if_value": "Yes",
+            "show_if_id": "cc1"
+        },
+        {
+            "id": "cc4",
+            "question": "If applicable, how many times in the previous semester did you use the Counseling Center?",
+            "type": "select",
+            "required": true,
+            "options": ["I did not go to the Counseling Center this past semester", "1 time", "2-5 times", "6-10 times", "Over 10 times"],
+            "show_if_value": "Yes",
+            "show_if_id": "cc1"
+        },
+        {
+            "id": "cc4b",
+            "question": "Did you attend any of these meetings by the suggestion of the bi-weekly health check in the DIAL app?",
+            "type": "radio",
+            "required": true,
+            "options": ["Yes", "No"],
+            "show_if_value_not": "I did not go to the Counseling Center this past semester",
+            "show_if_id": "cc4"
+        },
+        {
+            "id": "cc5",
+            "question": " If you no longer use the Counseling Center, why did you stop scheduling appointments?",
+            "type": "checkbox",
+            "required": true,
+            "options": [
+                "Not Applicable: I currently use the Counseling Center",
+                "Use a counselor at home and/or off-campus",
+                "I no longer feel the need to utilize the Counseling Center's services",
+                "My condition improved; I will return for services in the future if needed",
+                "Unsatisfactory experience at the Counseling Center or heard about another's unsatisfactory experience",
+                "Had difficulty scheduling an appointment",
+                "Other (please specify below)"
+            ],
+            "show_if_value": "Yes",
+            "show_if_id": "cc1"
+        },
+        { "id": "cc5b", "question": "If you answered above with \"Other\", please explain", "type": "text", "required": true, "show_if_value": "Other (please specify below)", "show_if_id": "cc5" },
+        {
+            "id": "cc5c",
+            "question": "Which of the following categories does your unsatisfactory experience primarily fall under?",
+            "type": "checkbox",
+            "required": true,
+            "options": ["Diagnoses", "Privacy / Confidentiality", "Interactions with staff", "Interactions with counselors", "Quality of care from staff", "Quality of care from counselors", "Other (please specify below)"],
+            "show_if_value": "Unsatisfactory experience at the Counseling Center or heard about another's unsatisfactory experience",
+            "show_if_id": "cc5"
+        },
+        { "id": "cc5cb", "question": "If you answered the above question with \"Other\", please explain", "type": "text", "required": true, "show_if_value": "Other (please specify below)", "show_if_id": "cc5c" },
+        { "id": "cc6", "question": "Would you schedule follow-up appointments online?", "type": "radio", "required": true, "options": ["Yes", "No"], "show_if_value": "Yes", "show_if_id": "cc1" },
+        { "id": "cc7", "question": "Are there any services you would like to see at the counseling center?", "type": "text", "required": true, "show_if_value": "Yes", "show_if_id": "cc1" },
+        { "id": "cc8", "question": "What could the Counseling Center do to improve student accessibility?", "type": "text", "required": true, "show_if_value": "Yes", "show_if_id": "cc1" },
+        {
+         "id": "msc1",
+         "question": "For the following questions, the scale is as follows:\n 1 - Completely Unsatisfied \n 3 - Unsatisfied \n 5 - Met needs \n 7 - Satisfied \n 10 - Completely Satisfied",
          "type":"radio",
-         "required":true,
-         "options":[
-            "Undergraduate",
-            "Graduate"
-         ]
-      },
-      {
-         "id":"demographics2",
-         "question":"Which class are you a part of?",
+         "required": false,
+         "show_if_value": "Yes",
+         "show_if_id": "cc1"
+        },
+        {
+            "id": "cc9",
+            "question": "On a scale from 1-10, how would you rank your satisfaction with the counseling provider(s) you saw?",
+            "type": "radio",
+            "required": true,
+            "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "show_if_value": "Yes",
+            "show_if_id": "cc1"
+        },
+        {
+            "id": "cc10",
+            "question": "On a scale of 1-10, how satisfied were you with the appointment availability in the previous semester?",
+            "type": "radio",
+            "required": true,
+            "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "show_if_value": "Yes",
+            "show_if_id": "cc1"
+        },
+        {
+            "id": "cc11",
+            "question": "On a scale from 1-10, how satisfied were you with how your concerns were addressed during your experience?",
+            "type": "radio",
+            "required": true,
+            "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "show_if_value": "Yes",
+            "show_if_id": "cc1"
+        },
+        {
+            "id": "cc12",
+            "question": "Please select the main reason from the choices below to describe why you have never used this service.",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Have never needed psychological counseling services",
+                "Have a counselor at home and/or off-campus",
+                "Didn't know about it/that it existed",
+                "Heard about another's unsatisfactory experience",
+                "Had difficulty scheduling an appointment",
+                "Other (please specify below)"
+            ],
+            "show_if_value": "No",
+            "show_if_id": "cc1"
+        },
+        { "id": "cc12a", "question": "If you selected \"Other\", please explain", "type": "text", "required": true, "show_if_value": "Other (please specify below)", "show_if_id": "cc12" }
+    ],
+    [
+        { "id": "hc1", "question": "Have you ever gone to the Health Center?", "type": "radio", "required": true, "options": ["Yes", "No"] },
+        {
+            "id": "hc2",
+            "question": "If applicable, how many times in the previous semester did you use the Health Center?",
+            "type": "select",
+            "required": true,
+            "options": ["I did not go to the Health Center this previous semester", "1 time", "2-5 times", "6-10 times", "Over 10 times"],
+            "show_if_value": "Yes",
+            "show_if_id": "hc1"
+        },
+        {
+         "id": "msc2",
+         "question": "For the following questions, the scale is as follows:\n 1 - Completely Unsatisfied \n 3 - Unsatisfied \n 5 - Met needs \n 7 - Satisfied \n 10 - Completely Satisfied",
          "type":"radio",
-         "required":true,
-         "options":[
-            "Freshman",
-            "Sophomore",
-            "Junior",
-            "Senior",
-            "Fifth Year"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Undergraduate"
-      },
-      {
-         "id":"demographics3",
-         "question":"Which school are you a part of? (Select the school you identify most with)",
+         "required": false,
+         "show_if_value": "Yes",
+         "show_if_id": "hc1"
+        },
+        {
+            "id": "hc3",
+            "question": "On a scale of 1-10, how satisfied were you with the appointment availability in the previous semester?",
+            "type": "radio",
+            "required": true,
+            "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "show_if_value": "Yes",
+            "show_if_id": "hc1"
+        },
+        {
+            "id": "hc4",
+            "question": "On a scale from 1-10, how satisfied were you with how your concerns were addressed during your experience?",
+            "type": "radio",
+            "required": true,
+            "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "show_if_value": "Yes",
+            "show_if_id": "hc1"
+        },
+        { "id": "hc4a", "question": "What did you not like about your experience?", "type": "text", "required": true, "show_if_value": "1", "show_if_id": "hc4" },
+        { "id": "hc4b", "question": "What did you not like about your experience?", "type": "text", "required": true, "show_if_value": "2", "show_if_id": "hc4" },
+        { "id": "hc4c", "question": "What did you not like about your experience?", "type": "text", "required": true, "show_if_value": "3", "show_if_id": "hc4" },
+        { "id": "hc4d", "question": "What did you not like about your experience?", "type": "text", "required": true, "show_if_value": "4", "show_if_id": "hc4" },
+        { "id": "hc4e", "question": "What did you not like about your experience?", "type": "text", "required": true, "show_if_value": "5", "show_if_id": "hc4" },
+        {
+            "id": "hc5",
+            "question": "On a scale from 1-10, how would you rank your satisfaction with the health care provider(s) you saw?",
+            "type": "radio",
+            "required": true,
+            "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "show_if_value": "Yes",
+            "show_if_id": "hc1"
+        },
+        {
+            "id": "hc6",
+            "question": "Please select the main reason from the choices below to describe why you have never used this service.",
+            "type": "select",
+            "required": true,
+            "options": [
+                "Have never needed Health Center services",
+                "Have a Healthcare provider at home and/or off-campus",
+                "Didn't know about it/that it existed",
+                "Heard about another's unsatisfactory experience",
+                "Had difficulty scheduling an appointment",
+                "Other (please specify below)"
+            ],
+            "show_if_value": "No",
+            "show_if_id": "hc1"
+        },
+        { "id": "hc6b", "question": "If you selected \"Other\" above, please explain.", "type": "text", "required": true, "show_if_value": "Other (please specify below)", "show_if_id": "hc6" }
+    ],
+    [
+        { "id": "gq1", "question": "Have you used the Student Health Services website? ", "type": "radio", "required": false, "options": ["Yes", "No"] },
+        {
+         "id": "msc3",
+         "question": "For the following questions, the scale is as follows:\n 1 - Completely Unsatisfied \n 3 - Unsatisfied \n 5 - Met needs \n 7 - Satisfied \n 10 - Completely Satisfied",
          "type":"radio",
-         "required":true,
-         "options":[
-            "Information Technology and Web Science",
-            "Lally School of Management",
-            "School of Architecture",
-            "School of Engineering",
-            "School of Humanities, Arts, and Social Sciences",
-            "School of Science"
-         ]
-      },
-      {
-         "id":"demographics4",
-         "question":"Are you a member of a Greek-affiliated organization?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes, Fraternity",
-            "Yes, Sorority",
-            "Yes, culture based Fraternity",
-            "Yes, culture based Sorority",
-            "No"
-         ]
-      },
-      {
-         "id":"demographics5",
-         "question":"As of the Fall 2020 semester, where do you currently live?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "On-campus residence hall",
-            "Greek housing",
-            "Off-campus"
-         ]
-      },
-      {
-         "id":"demographics6",
-         "question":"If you live off-campus, are you a remote student or have you been accessing campus?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "I am a remote student",
-            "I currently have access to campus"
-         ],
-         "show_if_id":"demographics5",
-         "show_if_value":"Off-campus"
-      },
-      {
-         "id":"general1",
-         "question":"How do you feel about the institute's response to Covid-19?",
-         "type":"text",
-         "required":false
-      }
-   ],
-   [
-      {
-         "id":"aac1",
-         "question":"Do you have any suggestions to improve the services at ALAC? If none, put \"N/A\"",
-         "type":"text",
-         "required":true
-      },
-      {
-         "id":"aac2",
-         "question":"What obstacles/roadblocks are you experiencing related to academics? If none, put \"N/A\"",
-         "type":"text",
-         "required":true
-      },
-      {
-         "id":"aac3",
-         "question":"How accessible have academic resources been for remote courses? (1 - Do not know if they exist, 10 - I used them)",
-         "type":"radio",
-         "required":false,
-         "options":[
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10
-         ]
-      },
-      {
-         "id":"aac4",
-         "question":"What suggestions do you have to improve the academic support offered over the Summer Arch semester?",
-         "type":"text",
-         "required":false
-      }
-   ],
-   [
-      {
-         "id":"fsc1",
-         "question":"Have you experienced any barriers to accessing necessary campus buildings (including accessing specific floors or rooms)? If not, put “N/A”.",
-         "type":"text",
-         "required":true
-      },
-      {
-         "id":"fsc2",
-         "question":"Are there any areas on or around campus where you have felt unsafe? If none, put “N/A”.",
-         "type":"text",
-         "required":true
-      },
-      {
-         "id":"fsc3",
-         "question":"Which safety resources do you feel comfortable using? ",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Public Safety Emergency Line",
-            "Public Safety Non-Emergency Line",
-            "Public Safety Anonymous Tip Line",
-            "Troy Police Non-Emergency Line",
-            "Everbridge App (RPI Alert Mobile App)",
-            "RPI Title IX Reporting",
-            "Safe Ride",
-            "24 Hour Public Safety Escort Service",
-            "Blue Light Emergency Phones"
-         ]
-      },
-      {
-         "id":"fsc4",
-         "question":"What suggestions do you have to improve the RPI Alert system?",
-         "type":"text",
-         "required":false
-      }
-   ],
-   [
-      {
-         "id":"specialProjects1",
-         "question":"Do you feel as though you recieve training on bias and discrimination past your First Year Experience?",
-         "type":"text",
-         "required":true
-      },
-      {
-         "id":"specialProjects2",
-         "question":"On a scale of 1(Poor)-10(Excellent), rate RPIs promotion and use of the Bias Incident Reporting Form",
-         "type":"radio",
-         "required":true,
-         "options":[
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10
-         ]
-      }
-   ],
-   [
-      {
-         "id":"slc1",
-         "question":"If you are interested in extracurricular activities, on a scale from 1-10 how satisfied have you been with access to extracurricular activities this semester? (1-I have been unable to access any extracurriculars, 5-I have been able to access some of the extracurriculars I am interested in, 10-I have been able to access everything I am interested in)",
-         "type":"radio",
-         "required":false,
-         "options":[
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10
-         ]
-      },
-      {
-         "id":"slc2",
-         "question":"Which of the following would you like to see more information about?",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "I would like more frequent information about Covid-19 testing",
-            "I would like clarification on what disciplinary action will be taken with regards to the Covid-19 guidelines",
-            "I would like to see more frequent updates on the effectiveness of RPI’s Covid-19 response",
-            "I would like to see more information on what virtual resources are available",
-            "Other",
-            "I am satisfied with the amount of information I have"
-         ]
-      },
-      {
-         "id":"slc3",
-         "question":"If you selected \"Other\" in the previous question, please specify what information you would like see",
-         "type":"text",
-         "required":false,
-         "show_if_id":"slc2",
-         "show_if_value":"Other"
-      },
-      {
-         "id":"slc4",
-         "question":"On a scale of 1-10, how connected do you feel to the RPI Community? (1- I feel isolated, 5-I feel fine, 10- I feel strongly connected)",
-         "type":"radio",
-         "required":true,
-         "options":[
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            10
-         ]
-      }
-   ],
-   [
-      {
-         "id":"wtg1",
-         "question":"How frequently do you use the Shuttle Tracker (https://shuttles.rpi.edu)? ",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Daily",
-            "Multiple times per week",
-            "Weekly",
-            "Occasionally",
-            "Never"
-         ]
-      },
-      {
-         "id":"wtg2",
-         "question":"Has your use of the Shuttle Tracker decreased this semester? If so, why?",
-         "type":"radio",
-         "required":false,
-         "options":[
-            "No, it has not decreased",
-            "Yes, I now live off-campus",
-            "Yes, I am taking class remote",
-            "Yes, I am unsatisfied with the Shuttle Tracker"
-         ]
-      },
-      {
-         "id":"wtg3",
-         "question":"What suggestions do you have to improve the Shuttle Tracker, shuttle routes, or shuttle safety precautions?",
-         "type":"text",
-         "required":false
-      },
-      {
-         "id":"wtg4",
-         "question":"How many the following Student Senate Projects have you accessed in the past?",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Shuttle Tracker (shuttles.rpi.edu)",
-            "RPI Petitions (petitions.union.rpi.edu)",
-            "Student Senate Survey (this survey)",
-            "Student Government Website (https://sg.rpi.edu)"
-         ]
-      }
-   ],
-   [
-      {
-         "id":"greekLife1",
-         "question":"Did you ever consider joining a fraternity or sorority?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes",
-            "No"
-         ]
-      },
-      {
-         "id":"greekLife2",
-         "question":"Which of the following activities with Fraternity and Sorority Life have you experienced?",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Participated in an on-campus fundraiser",
-            "Attended a registered social event at a Fraternity or Sorority house",
-            "On campus event (e.g., Greekfest)",
-            "Rush event",
-            "I have not participated in any Fraternity or Sorority events"
-         ]
-      },
-      {
-         "id":"greekLife3",
-         "question":"With which of the following chapters have you had experience? Check all that apply.",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Acacia",
-            "Alpha Chi Rho",
-            "Alpha Epsilon Pi",
-            "Alpha Phi Alpha",
-            "Alpha Sigma Phi",
-            "Chi Phi",
-            "Delta Kappa Epsilon",
-            "Delta Phi",
-            "Delta Tau Delta",
-            "Lambda Chi Alpha",
-            "Phi Gamma Delta (FIJI)",
-            "Phi Iota Alpha",
-            "Phi Kappa Theta",
-            "Phi Mu Delta",
-            "Phi Sigma Kappa",
-            "Pi Delta Psi",
-            "Pi Kappa Phi",
-            "Pi Lambda Phi",
-            "Psi Upsilon",
-            "RSE",
-            "Sigma Alpha Epsilon",
-            "Sigma Chi",
-            "Sigma Phi Epsilon",
-            "Tau Epsilon Phi",
-            "Tau Kappa Epsilon",
-            "Theta Xi",
-            "Theta Chi",
-            "Zeta Psi",
-            "Alpha Gamma Delta",
-            "Alpha Omega Epsilon",
-            "Alpha Phi",
-            "Pi Beta Phi",
-            "Sigma Delta",
-            "I do not have experience with any of these chapters"
-         ]
-      }
-   ],
-   [
-      {
-         "id":"general2",
-         "question":"Anything else you'd like to share with us?",
-         "type":"text",
-         "required":false
-      }
-   ],
-   [
-      {
-         "id":"placeholder1",
-         "question":"There are no questions for you to answer on this page, please move to the next page",
-         "type":"radio",
-         "required":false,
-         "show_if_id":"demographics1",
-         "show_if_value":"Undergraduate"
-      },
-      {
-       "id":"gc1",
-       "question":"What type of graduate are you?",
-       "type":"radio",
-       "required":true,
-       "options":[
-         "Co-term",
-         "Master's",
-         "PhD"
-       ],
-       "show_if_id":"demographics1",
-       "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc2",
-         "question":"What year are you?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "1st",
-            "2nd"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value_not":"PhD"
-      },
-      {
-         "id":"gc3",
-         "question":"What year are you?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "1st",
-            "2nd",
-            "3rd",
-            "4th",
-            "5th",
-            "6th",
-            "7th"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value":"PhD"
-      },
-      {
-         "id":"gc4",
-         "question":"What dept are you in?",
-         "type":"text",
-         "required":true,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc5",
-         "question":"What is your funding source?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Research Assistant",
-            "Teaching Assistant",
-            "Other - please explain"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value_not":"Co-term"
-      },
-      {
-         "id":"gc6",
-         "question":"Please explain your funding source",
-         "type":"text",
-         "required":true,
-         "show_if_id":"gc5",
-         "show_if_value":"Other - please explain"
-      },
-      {
-         "id":"gc7",
-         "question":"Do you feel you are on track to completing your degree?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes",
-            "No"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc8",
-         "question":"Please expand on how you feel your degree is progressing, whether yes or no, and speak to any barriers to your progress.",
-         "type":"text",
-         "required":true,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc9",
-         "question":"Which of these resources had helped you prepare for your career?",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Advisor",
-            "GRS",
-            "CCPD",
-            "Workshop/Conference",
-            "Other events"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"other1",
-         "question":"If you selected other, please specify which resources have helped",
-         "type":"text",
-         "required":true,
-         "show_if_id":"gc9",
-         "show_if_value":"Other events"
-      },
-      {
-         "id":"gc10",
-         "question":"Do you have a primary advisor?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes",
-            "No"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value":"Co-term"
-      },
-      {
-         "id":"gc11",
-         "question":"Do you have a primary or secondary research advisor?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Primary",
-            "Primary and Secondary",
-            "Multiple"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value_not":"Co-term"
-      },
-      {
-         "id":"gc12",
-         "question":"How is your relationship with your advisor? Enter N/A if you do not have an advisor",
-         "type":"text",
-         "required":true,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc13",
-         "question":"Do you think the co-terminal program provides opportunities and preparationfor entering the workforce?",
-         "type":"text",
-         "required":true,
-         "show_if_id":"gc1",
-         "show_if_value":"Co-term"
-      },
-      {
-         "id":"gc14",
-         "question": "I am part of a lab which focuses on...",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Wet Research",
-            "Field Research",
-            "Computational Research",
-            "Other - please specify"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc15",
-         "question": "Please specify what your lab focuses on",
-         "type":"text",
-         "required":true,
-         "show_if_id":"gc14",
-         "show_if_value":"Other - please specify"
-      },
-      {
-         "id":"gc16",
-         "question": "How has the remote/hybrid nature of classes affected your experience with coursework?",
-         "type":"text",
-         "required":true,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      }
-   ],
-   [
-      {
-         "id":"placeholder2",
-         "question":"Nothing to see here, keep going...",
-         "type":"radio",
-         "required":false,
-         "show_if_id":"demographics1",
-         "show_if_value":"Undergraduate"
-      },
-     {
-      "id":"gc17",
-      "question": "Do you feel there is a community of support at RPI?",
-      "type":"radio",
-      "required":true,
-      "options":[
-         "Yes",
-         "No"
-      ],
-      "show_if_id":"demographics1",
-      "show_if_value":"Graduate"
-     },
-     {
-      "id":"gc18",
-      "question": "Please expand upon your previous answer.",
-      "type":"text",
-      "required":true,
-      "show_if_id":"demographics1",
-      "show_if_value":"Graduate"
-     },
-     {
-      "id":"gc19",
-      "question":"Do you participate in any Union clubs?",
-      "type":"radio",
-      "required":true,
-      "options":[
-         "Yes",
-         "No"
-      ],
-      "show_if_id":"demographics1",
-      "show_if_value":"Graduate"
-     },
-     {
-      "id":"gc20",
-      "question":"If not, please tell us why",
-      "type":"text",
-      "required":true,
-      "show_if_id":"gc19",
-      "show_if_value":"No"
-     },
-     {
-      "id":"gc21",
-      "question":"What other Union resources do you use?",
-      "type":"checkbox",
-      "required":true,
-      "options":[
-         "CCPD",
-         "Mueller Center",
-         "Wellness Center",
-         "Counseling Center",
-         "None"
-      ],
-      "show_if_id":"demographics1",
-      "show_if_value":"Graduate"
-     },
-     {
-      "id":"gc22",
-      "question":"If there are any resources you use that weren't listed here, please let us know which:",
-      "type":"text",
-      "required":false,
-      "show_if_id":"demographics1",
-      "show_if_value":"Graduate"
-     },
-     {
-      "id":"gc23",
-      "question":"How effective has the CCPD been for you?",
-      "type":"radio",
-      "required":true,
-      "options":[
-         1,
-         2,
-         3,
-         4,
-         5
-      ],
-      "show_if_id":"demographics1",
-      "show_if_value":"Graduate"
-     },
-     {
-      "id":"gc24",
-      "question":"Do you attend the free online classes offered by the Mueller Center?",
-      "type":"radio",
-      "required":true,
-      "options":[
-         "Yes",
-         "No"
-      ],
-      "show_if_id":"demographics1",
-      "show_if_value":"Graduate"
-     },
-     {
-      "id":"gc25",
-      "question":"What new online events should the Mueller Center try to put on?",
-      "type":"text",
-      "required":true,
-      "show_if_id":"demographics1",
-      "show_if_value":"Graduate"
-     },
-     {
-      "id":"gc26",
-      "question": "On a scale of 1-5, how would you rate the service of the health and counseling center? (1-not at all helpful, 5-very helpful",
-      "type":"radio",
-      "required":true,
-      "options":[
-         1,
-         2,
-         3,
-         4,
-         5
-      ],
-      "show_if_id":"demographics1",
-      "show_if_value":"Graduate"
-     },
-     {
-      "id":"gc27",
-      "question":"Which aspects of the health or counseling center would you like to see improved/changed/stay the same?",
-      "type":"text",
-      "required":true,
-      "show_if_id":"demographics1",
-      "show_if_value":"Graduate"
-     }
-   ],
-   [
-      {
-         "id":"placeholder3",
-         "question":"Only a couple more blank pages to go, keep moving",
-         "type":"radio",
-         "required":false,
-         "show_if_id":"demographics1",
-         "show_if_value":"Undergraduate"
-      },
-      {
-         "id":"gc28",
-         "question":"Are you interested in doing research or Teaching Assistant opportunities?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes to research",
-            "Yes to Teaching Assistant",
-            "Yes to both",
-            "No"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value":"Co-term"
-      },
-      {
-         "id":"gc29",
-         "question":"Do you think funding/partial scholarships should be available to co-terminal students?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes to funding",
-            "Yes to scholarships",
-            "No"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value":"Co-term"
-      },
-      {
-         "id":"gc30",
-         "question":"Have you been an Research Assistant or Teaching Assistant?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes - Research Assistant",
-            "Yes - Teaching Assistant",
-            "Yes - Both",
-            "None - not supported"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value_not":"Co-term"
-      },
-      {
-         "id":"gc31",
-         "question":"How many hours (on avg) aweek do you spend working on your assignment (this might not be your thesis research) as a Research Assistant?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "0-5",
-            "5-10",
-            "10-15",
-            "15-20",
-            "20-25",
-            "25-30",
-            "30-35",
-            "35-40",
-            "40-45",
-            "45-50",
-            "50-55",
-            "55-60",
-            "60+"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value_not":"Co-term"
-      },
-      {
-         "id":"gc32",
-         "question":"How many hours (on avg) aweek do you spend working on non-thesis related research work?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "0-5",
-            "5-10",
-            "10-15",
-            "15-20",
-            "20-25",
-            "25-30",
-            "30-35",
-            "35-40",
-            "40-45",
-            "45-50",
-            "50-55",
-            "55-60",
-            "60+"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value_not":"Co-term"
-      },
-      {
-         "id":"gc33",
-         "question":"How many hours (on avg) aweek do you spend on your assignment as a Teaching Assistant?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "0-5",
-            "5-10",
-            "10-15",
-            "15-20",
-            "20-25",
-            "25-30",
-            "30-35",
-            "35-40",
-            "40-45",
-            "45-50",
-            "50-55",
-            "55-60",
-            "60+"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value_not":"Co-term"
-      },
-      {
-         "id":"gc34",
-         "question":"When are you most busy during the semester on Teaching Assistant assignment?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Beginning - Aug to mid-Sept",
-            "Middle - end of Sept to mid Nov",
-            "End - mid-Nov to Dec",
-            "The entire semester is fairly even"
-         ],
-         "show_if_id":"gc1",
-         "show_if_value_not":"Co-term"
-      },
-      {
-         "id":"gc35",
-         "question":"Please tell us about your experience as a Teaching Assistant this year.",
-         "type":"text",
-         "required":true,
-         "show_if_id":"gc1",
-         "show_if_value_not":"Co-term"
-      },
-      {
-         "id":"gc36",
-         "question":"Has your research been affected by having limited access to the campus resources like labs etc?",
-         "type":"text",
-         "required":true,
-         "show_if_id":"gc1",
-         "show_if_value_not":"Co-term"
-      },
-      {
-         "id":"gc37",
-         "question":"In a scale of 1-5 supportive was your Academic/RA/TA advisor during this transition? (1 - Not supportive, 5 - Very supportive)",
-         "type":"radio",
-         "required":true,
-         "options":[
-            1,
-            2,
-            3,
-            4,
-            5
-         ],
-         "show_if_id":"gc1",
-         "show_if_value_not":"Co-term"
-      }
-   ],
-   [
-      {
-         "id":"placeholder4",
-         "question":"Almost there, keep going...",
-         "type":"radio",
-         "required":false,
-         "show_if_id":"demographics1",
-         "show_if_value":"Undergraduate"
-      },
-      {
-         "id":"gc38",
-         "question":"What were your major resources for staying up-to-date with Institute’s Covid-19 policies",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Institute E-mails",
-            "E-mails",
-            "Covid-19 Website",
-            "RPI Graduate Experience Discord",
-            "Town Halls",
-            "Word of Mouth",
-            "Others"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"other2",
-         "question":"If you selected 'Other' for the previous question, please specify what resources you used",
-         "type":"text",
-         "required":true,
-         "show_if_id":"gc38",
-         "show_if_value":"Others"
-      },
-      {
-         "id":"gc39",
-         "question":"If you are an International student, what support did you look for from the institute during this pandemic period and did you get adequate support?",
-         "type":"text",
-         "required":true,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc40",
-         "question":"What changes/additions do you think can help you continue your research while complying to the institutes protocols (for example: having building navigation maps at the entrance)?",
-         "type":"text",
-         "required":true,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      }
-   ],
-   [
-      {
-         "id":"gc41",
-         "question":"What events put on by the Graduate Council have you attended?",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Grad Hour - Academic",
-            "Grad Hour - Wellness",
-            "Grad Hour - Social events",
-            "Grad Hour - Discussion on Grad Specific Concerns",
-            "Grad Hour - Graduate Councilors Office Hours",
-            "Graduate Research Symposium",
-            "TKT",
-            "Hockey Night",
-            "None of these"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc42",
-         "question":"What type of events would you like to see more?",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Academic events",
-            "Wellness events",
-            "Social Events",
-            "Discussion on Grad Specific Concerns events",
-            "Councilors Office Hours",
-            "Others"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"other3",
-         "question":"If you selected 'Other' for the previous question, please elaborate",
-         "type":"text",
-         "required":true,
-         "show_if_id":"gc42",
-         "show_if_value":"Others"
-      },
-      {
-         "id":"gc43",
-         "question":"What new events should the Graduate Council put on?",
-         "type":"text",
-         "required":true,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc44",
-         "question":"What is the best way to be informed about Graduate Council events?",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "All-grads email",
-            "GC Google Calendar",
-            "RPI Grad Experience Discord",
-            "Social Media",
-            "Morning Mail",
-            "Email by your department's GPA",
-            "Word of Mouth",
-            "None of the above"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc45",
-         "question":"What graduate student issues do you feel the administration should be aware of?",
-         "type":"text",
-         "required":true,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc46",
-         "question":"Any additional thoughts you'd like to share? The Graduate Council really appreciates your input!",
-         "type":"text",
-         "required":false,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"raffle1",
-         "question":"Here is a link to enter a raffle for $25 bookstore giftcards, this will not be ascociated with your response in any way: https://forms.gle/x33sygJDtaqPLEYd9",
-         "type":"radio",
-         "required":false
-      }
-   ]
+         "required": false
+        },
+        {
+            "id": "gq1b",
+            "question": "On a scale from 1-10, how satisfied are you with the Student Health Services website?",
+            "type": "radio",
+            "required": true,
+            "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "show_if_value": "Yes",
+            "show_if_id": "gq1"
+        },
+        { "id": "gq2", "question": "On a scale from 1-10, how accommodating to your mental health needs have professors been this previous semester?", "type": "radio", "required": true, "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+        { "id": "gq3", "question": "What content or information would you like to see on the health center’s facebook and instagram (@rpi.studenthealth) pages?", "type": "text", "required": true },
+        {
+            "id": "gq4",
+            "question": "Which of these platforms have been effective at communicating updates on health center activities/programs/promotions?",
+            "type": "checkbox",
+            "required": true,
+            "options": ["Morning Mail", "Email (other than Morning Mail)", "Instagram", "Facebook", "Flyers", "Campus related club or organization", "Word-of-mouth", "Student Residential Staff", "Other"]
+        },
+        { "id": "gq5", "question": "If you selected \"Other\" above, please specify", "type": "text", "required": true, "show_if_value": "Other", "show_if_id": "gq4" }
+    ]
 ]
