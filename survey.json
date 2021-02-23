@@ -14,7 +14,7 @@
         {
             "id": "cc3",
             "question": "How many semesters have you actively used the Counseling center resources (If you had a semester where you did not use the Counseling center do not include it)?",
-            "type": "select",
+            "type": "radio",
             "required": true,
             "options": ["1", "2", "3", "4", "5", "6", "7", "8+"],
             "show_if_value": "Yes",
@@ -23,7 +23,7 @@
         {
             "id": "cc4",
             "question": "If applicable, how many times in the previous semester did you use the Counseling Center?",
-            "type": "select",
+            "type": "radio",
             "required": true,
             "options": ["I did not go to the Counseling Center this past semester", "1 time", "2-5 times", "6-10 times", "Over 10 times"],
             "show_if_value": "Yes",
@@ -107,7 +107,7 @@
         {
             "id": "cc12",
             "question": "Please select the main reason from the choices below to describe why you have never used this service.",
-            "type": "select",
+            "type": "radio",
             "required": true,
             "options": [
                 "Have never needed psychological counseling services",
@@ -127,7 +127,7 @@
         {
             "id": "hc2",
             "question": "If applicable, how many times in the previous semester did you use the Health Center?",
-            "type": "select",
+            "type": "radio",
             "required": true,
             "options": ["I did not go to the Health Center this previous semester", "1 time", "2-5 times", "6-10 times", "Over 10 times"],
             "show_if_value": "Yes",
@@ -176,7 +176,7 @@
         {
             "id": "hc6",
             "question": "Please select the main reason from the choices below to describe why you have never used this service.",
-            "type": "select",
+            "type": "radio",
             "required": true,
             "options": [
                 "Have never needed Health Center services",
