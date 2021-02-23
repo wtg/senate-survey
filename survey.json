@@ -1,6 +1,6 @@
 [
     [
-        { "id": "demographics1", "question": "Which class are you a part of?", "type": "radio", "required": true, "options": ["Freshman", "Sophomore", "Junior", "Senior", "Graduate"] },
+        { "id": "demographics1", "question": "Which class are you a part of?", "type": "radio", "required": true, "options": ["Freshman", "Sophomore", "Junior", "Senior", "Fifth Year", "Graduate"] },
         { "id": "cc1", "question": "Have you ever gone to the Counseling Center?", "type": "radio", "required": true, "options": ["Yes", "No"] },
         {
             "id": "cc2",
@@ -55,7 +55,7 @@
             "show_if_value": "Yes",
             "show_if_id": "cc1"
         },
-        { "id": "cc5b", "question": "If you answered above with \"Other\", please explain", "type": "text", "required": true, "show_if_value": "Other (please specify below)", "show_if_id": "cc5" },
+        { "id": "cc5b", "question": "If you answered above with \"Other\", please explain", "type": "text", "required": false, "show_if_value": "Other (please specify below)", "show_if_id": "cc5" },
         {
             "id": "cc5c",
             "question": "Which of the following categories does your unsatisfactory experience primarily fall under?",
@@ -65,10 +65,10 @@
             "show_if_value": "Unsatisfactory experience at the Counseling Center or heard about another's unsatisfactory experience",
             "show_if_id": "cc5"
         },
-        { "id": "cc5cb", "question": "If you answered the above question with \"Other\", please explain", "type": "text", "required": true, "show_if_value": "Other (please specify below)", "show_if_id": "cc5c" },
+        { "id": "cc5cb", "question": "If you answered the above question with \"Other\", please explain", "type": "text", "required": false, "show_if_value": "Other (please specify below)", "show_if_id": "cc5c" },
         { "id": "cc6", "question": "Would you schedule follow-up appointments online?", "type": "radio", "required": true, "options": ["Yes", "No"], "show_if_value": "Yes", "show_if_id": "cc1" },
-        { "id": "cc7", "question": "Are there any services you would like to see at the counseling center?", "type": "text", "required": true, "show_if_value": "Yes", "show_if_id": "cc1" },
-        { "id": "cc8", "question": "What could the Counseling Center do to improve student accessibility?", "type": "text", "required": true, "show_if_value": "Yes", "show_if_id": "cc1" },
+        { "id": "cc7", "question": "Are there any services you would like to see at the counseling center?", "type": "text", "required": false, "show_if_value": "Yes", "show_if_id": "cc1" },
+        { "id": "cc8", "question": "What could the Counseling Center do to improve student accessibility?", "type": "text", "required": false, "show_if_value": "Yes", "show_if_id": "cc1" },
         {
          "id": "msc1",
          "question": "For the following questions, the scale is as follows:\n 1 - Completely Unsatisfied \n 3 - Unsatisfied \n 5 - Met needs \n 7 - Satisfied \n 10 - Completely Satisfied",
@@ -120,7 +120,7 @@
             "show_if_value": "No",
             "show_if_id": "cc1"
         },
-        { "id": "cc12a", "question": "If you selected \"Other\", please explain", "type": "text", "required": true, "show_if_value": "Other (please specify below)", "show_if_id": "cc12" }
+        { "id": "cc12a", "question": "If you selected \"Other\", please explain", "type": "text", "required": false, "show_if_value": "Other (please specify below)", "show_if_id": "cc12" }
     ],
     [
         { "id": "hc1", "question": "Have you ever gone to the Health Center?", "type": "radio", "required": true, "options": ["Yes", "No"] },
@@ -159,11 +159,11 @@
             "show_if_value": "Yes",
             "show_if_id": "hc1"
         },
-        { "id": "hc4a", "question": "What did you not like about your experience?", "type": "text", "required": true, "show_if_value": "1", "show_if_id": "hc4" },
-        { "id": "hc4b", "question": "What did you not like about your experience?", "type": "text", "required": true, "show_if_value": "2", "show_if_id": "hc4" },
-        { "id": "hc4c", "question": "What did you not like about your experience?", "type": "text", "required": true, "show_if_value": "3", "show_if_id": "hc4" },
-        { "id": "hc4d", "question": "What did you not like about your experience?", "type": "text", "required": true, "show_if_value": "4", "show_if_id": "hc4" },
-        { "id": "hc4e", "question": "What did you not like about your experience?", "type": "text", "required": true, "show_if_value": "5", "show_if_id": "hc4" },
+        { "id": "hc4a", "question": "What did you not like about your experience?", "type": "text", "required": false, "show_if_value": "1", "show_if_id": "hc4" },
+        { "id": "hc4b", "question": "What did you not like about your experience?", "type": "text", "required": false, "show_if_value": "2", "show_if_id": "hc4" },
+        { "id": "hc4c", "question": "What did you not like about your experience?", "type": "text", "required": false, "show_if_value": "3", "show_if_id": "hc4" },
+        { "id": "hc4d", "question": "What did you not like about your experience?", "type": "text", "required": false, "show_if_value": "4", "show_if_id": "hc4" },
+        { "id": "hc4e", "question": "What did you not like about your experience?", "type": "text", "required": false, "show_if_value": "5", "show_if_id": "hc4" },
         {
             "id": "hc5",
             "question": "On a scale from 1-10, how would you rank your satisfaction with the health care provider(s) you saw?",
@@ -189,7 +189,7 @@
             "show_if_value": "No",
             "show_if_id": "hc1"
         },
-        { "id": "hc6b", "question": "If you selected \"Other\" above, please explain.", "type": "text", "required": true, "show_if_value": "Other (please specify below)", "show_if_id": "hc6" }
+        { "id": "hc6b", "question": "If you selected \"Other\" above, please explain.", "type": "text", "required": false, "show_if_value": "Other (please specify below)", "show_if_id": "hc6" }
     ],
     [
         { "id": "gq1", "question": "Have you used the Student Health Services website? ", "type": "radio", "required": false, "options": ["Yes", "No"] },
@@ -209,7 +209,7 @@
             "show_if_id": "gq1"
         },
         { "id": "gq2", "question": "On a scale from 1-10, how accommodating to your mental health needs have professors been this previous semester?", "type": "radio", "required": true, "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
-        { "id": "gq3", "question": "What content or information would you like to see on the health center’s facebook and instagram (@rpi.studenthealth) pages?", "type": "text", "required": true },
+        { "id": "gq3", "question": "What content or information would you like to see on the health center’s facebook and instagram (@rpi.studenthealth) pages?", "type": "text", "required": false },
         {
             "id": "gq4",
             "question": "Which of these platforms have been effective at communicating updates on health center activities/programs/promotions?",
