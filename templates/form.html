@@ -117,6 +117,14 @@ angular.module('questionaire', [])
 <div class="form" ng-app="questionaire">
     <div ng-controller="QuestionController">
         <form action="" method="post" id="form">
+            <nav ng-if="survey.length > 1">
+                <ul class="pager">
+                    <li ng-class="{'disabled': page === 1}" ng-click="previous_page()"><a href="#">Previous</a></li>
+                    <li ng-class="{'disabled': page === last_page || !canProceed()}" ng-click="next_page()"><a
+                            href="#">Next</a></li>
+                </ul>
+            </nav>
+
             <div id="form-page" ng-show="$index + 1 === page" ng-repeat="question_page in survey">
                 <div class="form-group" ng-repeat="q in question_page" ng-show="should_show_question(q)">
                     <h3 class="page-header" ng-if="headers[q.id] !== undefined" ng-bind="headers[q.id]"></h3>
@@ -134,7 +142,7 @@ angular.module('questionaire', [])
 
                     <div class="controls" ng-if="q.type === 'radio'">
                         <span ng-repeat-start="option in q.options"
-                            ng-if="$index > 0 && (q.inline === undefined || q.inline)">&#160;</span>
+                            ng-if="$index > 0 && (q.inline === undefined || q.inline)"><br></span>
                         <label class="radio-inline" ng-class="{'radio-line': q.inline !== undefined && !q.inline}">
                             <input type="radio" name="{{q.id}}" value="{{option}}" ng-model="q.value"> {{option}}
                         </label>
