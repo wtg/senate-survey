@@ -4,8 +4,8 @@
         { "id": "cc1", "question": "Have you ever gone to the Counseling Center?", "type": "radio", "required": true, "options": ["Yes", "No"] },
         {
             "id": "cc2",
-            "question": "What encouraged you to seek out these services?",
-            "type": "radio",
+            "question": "What encouraged you to seek out these services? (Select all that apply)",
+            "type": "checkbox",
             "required": true,
             "options": ["A friend recommended it", "DIAL App encouraged it", "Outreach from Health/Counseling Center", "I have used counseling before", "I felt the need"],
             "show_if_value": "Yes",
@@ -139,7 +139,7 @@
          "type":"radio",
          "required": false,
          "show_if_value": "Yes",
-         "show_if_id": "hc1"
+         "show_if_id": "hc2"
         },
         {
             "id": "hc3",
@@ -147,8 +147,8 @@
             "type": "radio",
             "required": true,
             "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            "show_if_value": "Yes",
-            "show_if_id": "hc1"
+            "show_if_value_not": "I did not go to the Health Center this previous semester",
+            "show_if_id": "hc2"
         },
         {
             "id": "hc4",
@@ -156,8 +156,8 @@
             "type": "radio",
             "required": true,
             "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            "show_if_value": "Yes",
-            "show_if_id": "hc1"
+            "show_if_value_not": "I did not go to the Health Center this previous semester",
+            "show_if_id": "hc2"
         },
         { "id": "hc4a", "question": "What did you not like about your experience?", "type": "text", "required": false, "show_if_value": "1", "show_if_id": "hc4" },
         { "id": "hc4b", "question": "What did you not like about your experience?", "type": "text", "required": false, "show_if_value": "2", "show_if_id": "hc4" },
@@ -170,8 +170,8 @@
             "type": "radio",
             "required": true,
             "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            "show_if_value": "Yes",
-            "show_if_id": "hc1"
+            "show_if_value_not": "I did not go to the Health Center this previous semester",
+            "show_if_id": "hc2"
         },
         {
             "id": "hc6",
@@ -215,8 +215,14 @@
             "question": "Which of these platforms have been effective at communicating updates on Health Center activities/programs/promotions? (Select all that apply)",
             "type": "checkbox",
             "required": true,
-            "options": ["Morning Mail", "Email (other than Morning Mail)", "Instagram", "Facebook", "Flyers", "Campus related club or organization", "Word-of-mouth", "Student Residential Staff", "Other"]
+            "options": ["Morning Mail", "Email (other than Morning Mail)", "Instagram", "Facebook", "Flyers", "Campus related club or organization", "Word-of-mouth", "Student Residential Staff", "None of the above", "Other"]
         },
         { "id": "gq5", "question": "If you selected \"Other\" above, please specify", "type": "text", "required": true, "show_if_value": "Other", "show_if_id": "gq4" }
+        {
+            "id": "gq6",
+            "question": "Do you have any comments not covered by the rest of the survey?",
+            "type": "text",
+            "required": false
+        }
     ]
 ]
