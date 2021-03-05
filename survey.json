@@ -209,7 +209,7 @@
             "show_if_id": "gq1"
         },
         { "id": "gq2", "question": "On a scale from 1-10, how accommodating to your mental health needs have professors been this previous semester?", "type": "radio", "required": true, "options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
-        { "id": "gq3", "question": "What content or information would you like to see on the Health Center’s Facebook and Instagram (@rpi.studenthealth) pages?", "type": "text", "required": false },
+        { "id": "gq3", "question": "What content or information would you like to see on the Health Center’s Facebook (@RPIhealth) and Instagram (@rpi.studenthealth) pages?", "type": "text", "required": false },
         {
             "id": "gq4",
             "question": "Which of these platforms have been effective at communicating updates on Health Center activities/programs/promotions? (Select all that apply)",
