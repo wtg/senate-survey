@@ -10,10 +10,7 @@ angular.module('export', [])
 
     // These need to match the prefixes of question IDs
     $scope.export_items = [
-        {name: 'All', question_prefix: null},
-        {name: 'Counseling Center', question_prefix: 'cc'},
-        {name: 'Health Center', question_prefix: 'hc'},
-        {name: 'General Questions', question_prefix: 'gq'}
+        {name: 'All', question_prefix: null}
     ];
 
     $scope.export_url = function(file_type, question_prefix) {
