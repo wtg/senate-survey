@@ -1,46 +1,40 @@
 [
     [
-        { "id": "demographics1", "question": "Name", "type": "text", "required": true },
-        { "id": "demographics2", "question": "Email", "type": "text", "required": true },
         {
-            "id":"demographics3",
+            "id":"demographics1",
+            "question":"How would you describe your international status?",
+            "type":"text",
+            "required":false
+        },
+        {
+            "id":"demographics2",
             "question":"Which cohort are you in? (By entry year, not credits)",
             "type":"radio",
-            "required":false,
+            "required":true,
             "options":[
                "Freshman",
                "Sophomore",
                "Junior",
-               "Senior"
+               "Senior",
+               "5th Year",
+               "Graduate"
             ]
         },
         {
+            "id":"demographics3",
+            "question":"How would you describe your gender identity?",
+            "type":"text",
+            "required":false
+        },
+        {
             "id":"demographics4",
-            "question":"Which is your gender?",
+            "question":"How would you describe your ethnicity?",
             "type":"text",
             "required":false
         },
         {
             "id":"demographics5",
-            "question":"Which is your ethnicity?",
-            "type":"text",
-            "required":false
-        },
-        {
-            "id":"demographics6",
-            "question":"Which is your international status?",
-            "type":"text",
-            "required":false
-        },
-        {
-            "id":"demographics7",
-            "question":"Which is your sexual orientation?",
-            "type":"text",
-            "required":false
-        },
-        {
-            "id":"demographics8",
-            "question":"Which is your gender identity?",
+            "question":"How would you describe your sexual orientation?",
             "type":"text",
             "required":false
         },
