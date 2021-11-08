@@ -252,7 +252,7 @@
             "question":"I feel my TAs have been integral to my learning experience in a hybrid setting.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -261,7 +261,7 @@
             "question":"TA’s have been less helpful in a hybrid setting.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -270,7 +270,7 @@
             "question":"Recitation presentations are clear and organized.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -279,7 +279,7 @@
             "question":"Online lectures are sufficient to learn material effectively.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -288,7 +288,7 @@
             "question":"TA’s have been more approachable in an online setting.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -306,7 +306,7 @@
             "question":"Grading has been consistent and fair in a hybrid learning setting.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -315,7 +315,7 @@
             "question":"Online proctoring protocols during exams and other assessments are fair.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -324,7 +324,7 @@
             "question":"Moving online has not had a significant impact on my learning or performance.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -333,7 +333,7 @@
             "question":"I feel safe attending in-person lectures/office hours.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -342,7 +342,7 @@
             "question":"I would prefer more one-on-one office hours with my TA’s.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -351,7 +351,7 @@
             "question":"Outside of class, scheduling one-on-one time with TA’s has been difficult.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -360,7 +360,7 @@
             "question":"TA’s have been responsive and answer in a timely fashion.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
@@ -369,7 +369,7 @@
             "question":"In-person classes post-COVID are less effective.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
