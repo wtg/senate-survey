@@ -1,13 +1,24 @@
 [
     [
         {
+            "question":"This survey is anonymous and will take under 5 minutes to complete.",
+            "type":"radio",
+            "required":false
+        },
+        {
             "id":"demographics1",
+            "question":"The following questions regarding demographics are optional and should be filled out at your comfort level. This survey is anonymous but this information may allow us to monitor any patterns in student experience.",
+            "type":"radio",
+            "required":false
+        },
+        {
+            "id":"demographics2",
             "question":"How would you describe your international status?",
             "type":"text",
             "required":false
         },
         {
-            "id":"demographics2",
+            "id":"demographics3",
             "question":"Which cohort are you in? (By entry year, not credits)",
             "type":"radio",
             "required":true,
@@ -21,19 +32,29 @@
             ]
         },
         {
-            "id":"demographics3",
+            "id":"demographics4",
+            "question":"What is your student status?",
+            "type":"radio",
+            "required":true,
+            "options":[
+               "Full-Time",
+               "Part-Time"
+            ]
+        },
+        {
+            "id":"demographics5",
             "question":"How would you describe your gender identity?",
             "type":"text",
             "required":false
         },
         {
-            "id":"demographics4",
+            "id":"demographics6",
             "question":"How would you describe your ethnicity?",
             "type":"text",
             "required":false
         },
         {
-            "id":"demographics5",
+            "id":"demographics7",
             "question":"How would you describe your sexual orientation?",
             "type":"text",
             "required":false
@@ -47,7 +68,7 @@
         },
         {
             "id":"ta1",
-            "question":"What class/es are you currently involved in as a TA?",
+            "question":"What is the class code and professor you are TA-ing for? If you have multiple, indicate the class you will be answering the following questions based on. We would recommend answering based on the class you feel most strongly about. If you are uncomfortable putting the class code, you may provide just the department.",
             "type":"text",
             "required":true,
             "show_if_value": "TA",
@@ -55,7 +76,7 @@
         },
         {
             "id":"ta2",
-            "question":"Rate the following statements. The scale is:\n 1 - Strongly disagree\n 2 - disagree\n 3 - neutral\n 4 - agree\n 5-strongly agree",
+            "question":"Rate the following statements based on your experience with the above listed course. (1- Strongly disagree, 2- Disagree, 3- Neutral, 4- Agree, 5- Strongly agree, N/A- Not assessed/applicable)",
             "type":"radio",
             "required":false,
             "show_if_value": "TA",
@@ -63,105 +84,114 @@
         },
         {
             "id":"ta3",
-            "question":"I am spending more time on my TA duties",
+            "question":"I am spending more time on my TA duties than I did before COVID.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
             "id":"ta4",
-            "question":"I am responsible for more aspects of the classes I TA than before COVID",
+            "question":"I have relatively more TA responsibilities for this class.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
             "id":"ta5",
-            "question":"Grading has been more difficult online",
+            "question":"Grading has been more difficult in a hybrid setting.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
             "id":"ta6",
-            "question":"Lectures have been more difficult to deliver",
+            "question":"Lecture/recitation classes have been more difficult to deliver.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
             "id":"ta7",
-            "question":"Proctoring exams/quizzes online is effective",
+            "question":"Proctoring exams/quizzes in a hybrid setting has been effective.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
             "id":"ta8",
-            "question":"Communicating with Instructors has been more difficult",
+            "question":"Communicating with instructors has been more difficult.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
             "id":"ta9",
-            "question":"Instructors have been more helpful",
+            "question":"Instructors have been more helpful.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
             "id":"ta10",
-            "question":"The current number of TA’s is insufficient",
+            "question":"The current number of TA’s is insufficient.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
             "id":"ta11",
-            "question":"Students are more engaged with office hours",
+            "question":"Students are more engaged with office hours.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
             "id":"ta12",
-            "question":"I feel safe administering in-person classes/office hours",
+            "question":"I feel safe administering in-person classes/office hours.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
             "id":"ta13",
-            "question":"I feel I am being properly compensated (credit/pay/financial aid) for the work I am doing as a TA",
+            "question":"I feel I am being properly compensated (credit/pay/financial aid) for the work I am doing as a TA.",
             "type":"radio",
             "required":true,
-            "options":[1,2,3,4,5],
+            "options":[1,2,3,4,5,"N/A"],
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
             "id":"ta14",
+            "question":"Outside of class, scheduling one-on-one time with students has been difficult.",
+            "type":"radio",
+            "required":true,
+            "options":[1,2,3,4,5,"N/A"],
+            "show_if_value": "TA",
+            "show_if_id": "gen1"
+        },
+        {
+            "id":"ta15",
             "question":"How do you think your TA-ing experience and effectiveness can be improved? Please select all that apply.",
             "type":"checkbox",
             "required":true,
@@ -170,34 +200,56 @@
             "show_if_id": "gen1"
         },
         {
-            "id":"ta15",
-            "question":"Do you have any comments you would like to share regarding your experience as a TA during COVID?",
+            "id":"ta16",
+            "question":"Please list other suggestions.",
+            "type":"text",
+            "required":false,
+            "show_if_value": "Other",
+            "show_if_id": "ta15"
+        },
+        {
+            "id":"ta17",
+            "question":"Why did you provide some of the strongly agree/disagree responses in the previous question? Please be as specific as possible.",
+            "type":"text",
+            "required":false,
+            "show_if_value": "TA",
+            "show_if_id": "gen1"
+        },
+        {
+            "id":"ta18",
+            "question":"What other resources do you offer students for academic or professional support?",
+            "type":"text",
+            "required":false,
+            "show_if_value": "TA",
+            "show_if_id": "gen1"
+        },
+        {
+            "id":"ta19",
+            "question":"Do you have any further comments you would like to share regarding your experience as a TA during COVID?",
             "type":"text",
             "required":true,
             "show_if_value": "TA",
             "show_if_id": "gen1"
         },
         {
-            "id":"s1",
-            "question":"I feel my TA has been integral to my learning experience",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5],
+            "id": "s1",
+            "question":"What is the class code and professor you are answering these questions on behalf of? If you have multiple, indicate the class you will be answering the following questions based on. We would recommend answering based on the class you feel most strongly about.",
+            "type":"text",
+            "required":false,
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
         {
-            "id":"s2",
-            "question":"TA’s have been less helpful in an online setting",
+            "id": "s2",
+            "question":"Rate the following statements based on your experience with the above listed course. (1- Strongly disagree, 2- Disagree, 3- Neutral, 4- Agree, 5- Strongly agree, N/A- Not assessed/applicable).",
             "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5],
+            "required":false,
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
         {
             "id":"s3",
-            "question":"Presentations were clear and organized",
+            "question":"I feel my TAs have been integral to my learning experience in a hybrid setting.",
             "type":"radio",
             "required":true,
             "options":[1,2,3,4,5],
@@ -206,7 +258,7 @@
         },
         {
             "id":"s4",
-            "question":"Online lectures are sufficient to learn material effectively",
+            "question":"TA’s have been less helpful in a hybrid setting.",
             "type":"radio",
             "required":true,
             "options":[1,2,3,4,5],
@@ -215,7 +267,7 @@
         },
         {
             "id":"s5",
-            "question":"TA’s have been more approachable in an online setting",
+            "question":"Recitation presentations are clear and organized.",
             "type":"radio",
             "required":true,
             "options":[1,2,3,4,5],
@@ -224,7 +276,7 @@
         },
         {
             "id":"s6",
-            "question":"I would like more office hours/more TA’s for my classes",
+            "question":"Online lectures are sufficient to learn material effectively.",
             "type":"radio",
             "required":true,
             "options":[1,2,3,4,5],
@@ -233,7 +285,7 @@
         },
         {
             "id":"s7",
-            "question":"Grading has been consistent even in an online setting",
+            "question":"TA’s have been more approachable in an online setting.",
             "type":"radio",
             "required":true,
             "options":[1,2,3,4,5],
@@ -242,7 +294,7 @@
         },
         {
             "id":"s8",
-            "question":"Online proctoring protocols during exams and other assessments are fair",
+            "question":"I would like more office hours/more TA’s for my classes.",
             "type":"radio",
             "required":true,
             "options":[1,2,3,4,5],
@@ -251,7 +303,7 @@
         },
         {
             "id":"s9",
-            "question":"Moving online has not had a significant impact on my learning or performance",
+            "question":"Grading has been consistent and fair in a hybrid learning setting.",
             "type":"radio",
             "required":true,
             "options":[1,2,3,4,5],
@@ -260,7 +312,7 @@
         },
         {
             "id":"s10",
-            "question":"I feel safe attending in-person lectures/office hours",
+            "question":"Online proctoring protocols during exams and other assessments are fair.",
             "type":"radio",
             "required":true,
             "options":[1,2,3,4,5],
@@ -269,7 +321,7 @@
         },
         {
             "id":"s11",
-            "question":"I would prefer more one-on-one office hours with my TA’s",
+            "question":"Moving online has not had a significant impact on my learning or performance.",
             "type":"radio",
             "required":true,
             "options":[1,2,3,4,5],
@@ -278,14 +330,59 @@
         },
         {
             "id":"s12",
-            "question":"Why did you provide some of the strongly agree/disagree responses in the previous question?",
-            "type": "text", 
-            "required": true,
+            "question":"I feel safe attending in-person lectures/office hours.",
+            "type":"radio",
+            "required":true,
+            "options":[1,2,3,4,5],
             "show_if_value": "Student",
             "show_if_id": "gen1"
         },
         {
             "id":"s13",
+            "question":"I would prefer more one-on-one office hours with my TA’s.",
+            "type":"radio",
+            "required":true,
+            "options":[1,2,3,4,5],
+            "show_if_value": "Student",
+            "show_if_id": "gen1"
+        },
+        {
+            "id":"s14",
+            "question":"Outside of class, scheduling one-on-one time with TA’s has been difficult.",
+            "type":"radio",
+            "required":true,
+            "options":[1,2,3,4,5],
+            "show_if_value": "Student",
+            "show_if_id": "gen1"
+        },
+        {
+            "id":"s15",
+            "question":"TA’s have been responsive and answer in a timely fashion.",
+            "type":"radio",
+            "required":true,
+            "options":[1,2,3,4,5],
+            "show_if_value": "Student",
+            "show_if_id": "gen1"
+        },
+        {
+            "id":"s16",
+            "question":"In-person classes post-COVID are less effective.",
+            "type":"radio",
+            "required":true,
+            "options":[1,2,3,4,5],
+            "show_if_value": "Student",
+            "show_if_id": "gen1"
+        },
+        {
+            "id":"s17",
+            "question":"Why did you provide some of the strongly agree/disagree responses in the previous question? Please be as specific as possible.",
+            "type": "text", 
+            "required": false,
+            "show_if_value": "Student",
+            "show_if_id": "gen1"
+        },
+        {
+            "id":"s18",
             "question":"How do you think your TA’s could more effectively help you in your classes during the pandemic? Please select all that apply.",
             "type":"checkbox",
             "options": [ "Longer office hours", "In-person office hours", "Remote office hours", "Hybrid office hours", "Remote practice sessions", "Better text/email communications", "More detailed feedback", "Other (please specify)" ],
@@ -294,12 +391,25 @@
             "show_if_id": "gen1"
         },
         {
-            "id": "s14",
+            "id":"s19",
+            "question":"How do you think your TA’s could more effectively help you in your classes during the pandemic? Please select all that apply.",
+            "type":"text",
+            "required":true,
+            "show_if_value": "Other (please specify)",
+            "show_if_id": "s13"
+        },
+        {
+            "id": "s20",
             "question": "Do you have anything else you would like to share regarding your experience as a student seeking TA support during COVID?",
             "type": "text",
             "required": true,
             "show_if_value": "Student",
             "show_if_id": "gen1"
+        },
+        {
+            "question": "The Academic Affairs Committee greatly appreciates your responses and sincerely hopes to improve your academic experience.",
+            "type": "radio",
+            "required": false
         }
     ]
 ]
