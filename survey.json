@@ -1,415 +1,274 @@
 [
-    [
-        {
-            "question":"This survey is anonymous and will take under 5 minutes to complete.",
-            "type":"radio",
-            "required":false
-        },
-        {
-            "id":"demographics1",
-            "question":"The following questions regarding demographics are optional and should be filled out at your comfort level. This survey is anonymous but this information may allow us to monitor any patterns in student experience.",
-            "type":"radio",
-            "required":false
-        },
-        {
-            "id":"demographics2",
-            "question":"How would you describe your international status?",
-            "type":"text",
-            "required":false
-        },
-        {
-            "id":"demographics3",
-            "question":"Which cohort are you in? (By entry year, not credits)",
-            "type":"radio",
-            "required":true,
-            "options":[
-               "Freshman",
-               "Sophomore",
-               "Junior",
-               "Senior",
-               "5th Year",
-               "Graduate"
-            ]
-        },
-        {
-            "id":"demographics4",
-            "question":"What is your student status?",
-            "type":"radio",
-            "required":true,
-            "options":[
-               "Full-Time",
-               "Part-Time"
-            ]
-        },
-        {
-            "id":"demographics5",
-            "question":"How would you describe your gender identity?",
-            "type":"text",
-            "required":false
-        },
-        {
-            "id":"demographics6",
-            "question":"How would you describe your ethnicity?",
-            "type":"text",
-            "required":false
-        },
-        {
-            "id":"demographics7",
-            "question":"How would you describe your sexual orientation?",
-            "type":"text",
-            "required":false
-        },
-        {
-            "id":"gen1",
-            "question":"Are you a TA or student?",
-            "type":"radio",
-            "required":true,
-            "options":["TA", "Student"]
-        },
-        {
-            "id":"ta1",
-            "question":"What is the class code and professor you are TA-ing for? If you have multiple, indicate the class you will be answering the following questions based on. We would recommend answering based on the class you feel most strongly about. If you are uncomfortable putting the class code, you may provide just the department.",
-            "type":"text",
-            "required":true,
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta2",
-            "question":"Rate the following statements based on your experience with the above listed course. (1- Strongly disagree, 2- Disagree, 3- Neutral, 4- Agree, 5- Strongly agree, N/A- Not assessed/applicable)",
-            "type":"radio",
-            "required":false,
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta3",
-            "question":"I am spending more time on my TA duties than I did before COVID.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta4",
-            "question":"I have relatively more TA responsibilities for this class.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta5",
-            "question":"Grading has been more difficult in a hybrid setting.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta6",
-            "question":"Lecture/recitation classes have been more difficult to deliver.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta7",
-            "question":"Proctoring exams/quizzes in a hybrid setting has been effective.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta8",
-            "question":"Communicating with instructors has been more difficult.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta9",
-            "question":"Instructors have been more helpful.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta10",
-            "question":"The current number of TA’s is insufficient.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta11",
-            "question":"Students are more engaged with office hours.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta12",
-            "question":"I feel safe administering in-person classes/office hours.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta13",
-            "question":"I feel I am being properly compensated (credit/pay/financial aid) for the work I am doing as a TA.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta14",
-            "question":"Outside of class, scheduling one-on-one time with students has been difficult.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta15",
-            "question":"How do you think your TA-ing experience and effectiveness can be improved? Please select all that apply.",
-            "type":"checkbox",
-            "required":true,
-            "options":["Reduced grading load", "In-person office hours", "Hybrid office hours", "Changes in homework/exam format to facilitate grading", "Changes in exam/testing format to facilitate better proctoring", "Other" ],
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta16",
-            "question":"Please list other suggestions.",
-            "type":"text",
-            "required":false,
-            "show_if_value": "Other",
-            "show_if_id": "ta15"
-        },
-        {
-            "id":"ta17",
-            "question":"Why did you provide some of the strongly agree/disagree responses in the previous question? Please be as specific as possible.",
-            "type":"text",
-            "required":false,
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta18",
-            "question":"What other resources do you offer students for academic or professional support?",
-            "type":"text",
-            "required":false,
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"ta19",
-            "question":"Do you have any further comments you would like to share regarding your experience as a TA during COVID?",
-            "type":"text",
-            "required":true,
-            "show_if_value": "TA",
-            "show_if_id": "gen1"
-        },
-        {
-            "id": "s1",
-            "question":"What is the class code and professor you are answering these questions on behalf of? If you have multiple, indicate the class you will be answering the following questions based on. We would recommend answering based on the class you feel most strongly about.",
-            "type":"text",
-            "required":false,
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id": "s2",
-            "question":"Rate the following statements based on your experience with the above listed course. (1- Strongly disagree, 2- Disagree, 3- Neutral, 4- Agree, 5- Strongly agree, N/A- Not assessed/applicable).",
-            "type":"radio",
-            "required":false,
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s3",
-            "question":"I feel my TAs have been integral to my learning experience in a hybrid setting.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s4",
-            "question":"TA’s have been less helpful in a hybrid setting.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s5",
-            "question":"Recitation presentations are clear and organized.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s6",
-            "question":"Online lectures are sufficient to learn material effectively.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s7",
-            "question":"TA’s have been more approachable in an online setting.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s8",
-            "question":"I would like more office hours/more TA’s for my classes.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s9",
-            "question":"Grading has been consistent and fair in a hybrid learning setting.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s10",
-            "question":"Online proctoring protocols during exams and other assessments are fair.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s11",
-            "question":"Moving online has not had a significant impact on my learning or performance.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s12",
-            "question":"I feel safe attending in-person lectures/office hours.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s13",
-            "question":"I would prefer more one-on-one office hours with my TA’s.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s14",
-            "question":"Outside of class, scheduling one-on-one time with TA’s has been difficult.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s15",
-            "question":"TA’s have been responsive and answer in a timely fashion.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s16",
-            "question":"In-person classes post-COVID are less effective.",
-            "type":"radio",
-            "required":true,
-            "options":[1,2,3,4,5,"N/A"],
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s17",
-            "question":"Why did you provide some of the strongly agree/disagree responses in the previous question? Please be as specific as possible.",
-            "type": "text", 
-            "required": false,
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s18",
-            "question":"How do you think your TA’s could more effectively help you in your classes during the pandemic? Please select all that apply.",
-            "type":"checkbox",
-            "options": [ "Longer office hours", "In-person office hours", "Remote office hours", "Hybrid office hours", "Remote practice sessions", "Better text/email communications", "More detailed feedback", "Other (please specify)" ],
-            "required":true,
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "id":"s19",
-            "question":"How do you think your TA’s could more effectively help you in your classes during the pandemic? Please select all that apply.",
-            "type":"text",
-            "required":true,
-            "show_if_value": "Other (please specify)",
-            "show_if_id": "s13"
-        },
-        {
-            "id": "s20",
-            "question": "Do you have anything else you would like to share regarding your experience as a student seeking TA support during COVID?",
-            "type": "text",
-            "required": true,
-            "show_if_value": "Student",
-            "show_if_id": "gen1"
-        },
-        {
-            "question": "The Academic Affairs Committee greatly appreciates your responses and sincerely hopes to improve your academic experience.",
-            "type": "radio",
-            "required": false
-        }
-    ]
+   [
+      {
+         "id":"demographics1",
+         "question":"Are you an undergraduate or graduate student?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Undergraduate",
+            "Graduate"
+         ]
+      },
+      {
+         "id":"demographics2",
+         "question":"Which class are you a part of?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Freshman",
+            "Sophomore",
+            "Junior",
+            "Senior",
+            "Fifth Year"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Undergraduate"
+      },
+      {
+         "id":"demographics3",
+         "question":"Which school are you a part of? (Select the school you identify most with)",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Information Technology and Web Science",
+            "Lally School of Management",
+            "School of Architecture",
+            "School of Engineering",
+            "School of Humanities, Arts, and Social Sciences",
+            "School of Science"
+         ]
+      },
+      {
+         "id":"demographics4",
+         "question":"Are you a member of a Greek-affiliated organization?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Yes, Fraternity",
+            "Yes, Sorority",
+            "Yes, culture based Fraternity",
+            "Yes, culture based Sorority",
+            "No"
+         ]
+      },
+      {
+         "id":"demographics5",
+         "question":"As of the Fall 2020 semester, where do you currently live?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "On-campus residence hall",
+            "Greek housing",
+            "Off-campus"
+         ]
+      }
+   ],
+   [
+      {
+         "id":"ssr1",
+         "question":"Which RPI resources have you used or plan to use for academic and/or personal support? Check all that apply.",
+         "type":"checkbox",
+         "required":true,
+         "options":[
+            "ALAC", "Arch Office", "Archer Center", "Center for Career and Professional Development", 
+            "Counseling Center", "Class Deans", "Comm+D", "Disability Services for Students", 
+            "International Services for Students and Scholars", "First Year Experience", "Peer-to-Peer Counseling", 
+            "Strive”, “Not applicable", "Other"
+         ]
+      },
+      {
+         "id":"ssr2",
+         "question":"What obstacles do you experience when seeking academic and/or personal support? Check all that apply.",
+         "type":"checkbox",
+         "required":true,
+         "options":[
+            "Social stigma", "Trouble finding time", "Unsure of available resources", 
+            "Fear of repercussions such as forced leave, forced treatment, or escalation", 
+            "Trouble making an appointment", "Unclear expectations", "Confidentiality concerns", 
+            "Don't think treatment will help”, “Not applicable", "Other"
+         ]
+      },
+      {
+         "id":"ssr3",
+         "question":"How do you get information about campus resources and student life? Check all that apply.",
+         "type":"checkbox",
+         "required":true,
+         "options":[
+            "RPI Email", "Posters", "the Poly", "WebEx", "Discord", "Instagram", "Facebook", "Reddit", "Snapchat", 
+            "Group Chats (including Groupme, WeChat, WhatsApp)", "Slack", "Word of Mouth", "Other"
+         ]
+      },
+      {
+         "id":"ssr4",
+         "question":"Are there any resources for academic and/or personal support you would like to see implemented by the Institute?",
+         "type":"text",
+         "required":false
+      },
+      {
+         "id":"ssr5",
+         "question":"Are there any experiences you have had while seeking academic and/or personal support that you would like to share?",
+         "type":"text",
+         "required":false
+      }
+   ],
+   [
+      {
+         "id":"shw1",
+         "question":"How would does your mental health impact your day to day? 1 is \"Mental health struggles regularly affect my day\", 3 is \"Mental health struggles sometimes affect my day\" and 5 is \"Mental health struggles rarely affect my day\".",
+         "type":"radio",
+         "required":true,
+         "options":[
+            1,
+            2,
+            3,
+            4,
+            5
+         ]
+      },
+      {
+         "id":"shw2",
+         "question":"How much time do you spend on academic work each day on average?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "<3hr", "3-5hr", "5-7hr", "8-10hr", "10-12hr", ">10hr"
+         ]
+      },
+      {
+         "id":"shw3",
+         "question":"Would you take advantage of any of the following mental health resources if they were available? Check all that apply.",
+         "type":"checkbox",
+         "required":true,
+         "options":[
+            "Peer-to-peer group counseling", "Mental health town hall", "Mental health crisis training", 
+            "Mental health apps", "I need mental health resources but would not use any of these", 
+            "I am not in need of mental health resources"
+         ]
+      },
+      {
+         "id":"shw4",
+         "question":"Would you take advantage of virtual therapy if the counseling center was overbooked?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Yes", "Maybe", "No, virtual therapy is not a good fit for me", "No, I do not use the counseling center"
+         ]
+      },
+      {
+         "id":"shw5",
+         "question":"Have you experienced food insecurity for any of the following reasons? Food insecurity is defined by the United Nations as the lack of physical, social, or economic access to sufficient, safe, and nutritious food that meets food preferences and dietary needs for an active and healthy lifestyle. Check all that apply.",
+         "type":"checkbox",
+         "required":true,
+         "options":[
+            "Cost", "Time (including missing meals between classes)", 
+            "Lack of accomodations for a health condition (including an eating disorder, an allergy or intolerance)",
+            "Lack of accomodations for a religious/personal dietary restriction (vegetarian, vegan, halal, kosher, etc.)",
+            "Other", "I have not experienced food insecurity"
+         ]
+      },
+      {
+         "id":"shw6",
+         "question":"Are there any experiences you have had relating to student mental health and wellbeing that you would like to share?",
+         "type":"text",
+         "required":false
+      }
+   ],
+   [
+      {
+         "id":"fsc1",
+         "question":"How often do you use Union dining (Panera, Rathskellar, Father’s, Ben & Jerry’s)",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "always", "often", "sometimes", "rarely", "never"
+         ]
+      },
+      {
+         "id":"fsc2",
+         "question":"How often do you use the dining halls (Commons, Russell Sage, Blitman, BARH)",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "always", "often", "sometimes", "rarely", "never"
+         ]
+      },
+      {
+         "id":"fsc3",
+         "question":"How often do you use the other campus cafes (DCC, Library Cafe, Russell Sage Cafe)",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "always", "often", "sometimes", "rarely", "never"
+         ]
+      },
+      {
+         "id":"fsc4",
+         "question":"What changes would you like to see to the offerings at dining halls or Union facilities?",
+         "type":"text",
+         "required":false
+      },
+      {
+         "id":"fsc5",
+         "question":"Which buildings are top priority for renovation or modernization?",
+         "type":"text",
+         "required":false
+      },
+      {
+         "id":"fsc6",
+         "question":"Are there any experiences you have had with Public Safety that you would like to share?",
+         "type":"text",
+         "required":false
+      }
+   ],
+   [
+      {
+         "id":"grk1",
+         "question":"Are you currently considering or have you ever considered joining a fraternity or sorority?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Yes", "No", "Maybe" 
+         ]
+      },
+      {
+         "id":"grk2",
+         "question":"Which of the following activities with Fraternity and Sorority Life have you experienced?",
+         "type":"checkbox",
+         "required":true,
+         "options":[
+            "Participated in an on-campus fundraiser",
+            "Attended a registered social event at a Fraternity or Sorority house",
+            "On campus event (e.g., Greekfest)",
+            "Rush event",
+            "I have not participated in any Fraternity or Sorority events"
+         ]
+      },
+      {
+         "id":"grk3",
+         "question":"What is your overall perception of Fraternity and Sorority Life on the RPI campus?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Fraternity and Sorority Life contributes positively to campus life at RPI" ,
+            "Fraternity and Sorority Life contributes negatively to campus life at RPI", 
+            "Fraternity and Sorority Life makes no contribution to campus life at RPI", 
+            "I have no opinion on the contribution Fraternity and Sorority Life makes to campus life at RPI."
+         ]
+      }
+   ],
+   [
+      {
+         "id":"general1",
+         "question":"How do you feel about the institute's response to Covid-19?",
+         "type":"text",
+         "required":false
+      },
+      {
+         "id":"general2",
+         "question":"Anything else you'd like to share with us?",
+         "type":"text",
+         "required":false
+      }
+   ]
 ]
