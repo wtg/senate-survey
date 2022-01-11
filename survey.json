@@ -54,7 +54,7 @@
       },
       {
          "id":"demographics5",
-         "question":"As of the Fall 2020 semester, where do you currently live?",
+         "question":"As of the Fall 2021 semester, where do you currently live?",
          "type":"radio",
          "required":true,
          "options":[
@@ -74,7 +74,7 @@
             "ALAC", "Arch Office", "Archer Center", "Center for Career and Professional Development", 
             "Counseling Center", "Class Deans", "Comm+D", "Disability Services for Students", 
             "International Services for Students and Scholars", "First Year Experience", "Peer-to-Peer Counseling", 
-            "Strive”, “Not applicable", "Other"
+            "Strive", "Not applicable", "Other"
          ]
       },
       {
@@ -86,7 +86,7 @@
             "Social stigma", "Trouble finding time", "Unsure of available resources", 
             "Fear of repercussions such as forced leave, forced treatment, or escalation", 
             "Trouble making an appointment", "Unclear expectations", "Confidentiality concerns", 
-            "Don't think treatment will help”, “Not applicable", "Other"
+            "Don't think treatment will help", "Not applicable", "Other"
          ]
       },
       {
@@ -115,7 +115,7 @@
    [
       {
          "id":"shw1",
-         "question":"How would does your mental health impact your day to day? 1 is \"Mental health struggles regularly affect my day\", 3 is \"Mental health struggles sometimes affect my day\" and 5 is \"Mental health struggles rarely affect my day\".",
+         "question":"How does your mental health impact your day to day? 1 is \"Mental health struggles regularly affect my day\", 3 is \"Mental health struggles sometimes affect my day\" and 5 is \"Mental health struggles rarely affect my day\".",
          "type":"radio",
          "required":true,
          "options":[
@@ -169,7 +169,7 @@
       },
       {
          "id":"shw6",
-         "question":"Are there any experiences you have had relating to student mental health and wellbeing that you would like to share?",
+         "question":"Are there any experiences you have had relating to student mental health and well-being that you would like to share?",
          "type":"text",
          "required":false
       }
