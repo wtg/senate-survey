@@ -66,6 +66,426 @@
    ],
    [
       {
+         "id":"placeholder1",
+         "question":"There are no questions for you to answer on this page, please move to the next page.",
+         "type":"radio",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Undergraduate"
+      },
+      {
+         "id":"gc1",
+         "question":"What graduate program are you in?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Coterm",
+            "Masters",
+            "PhD"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc2",
+         "question":"What year are you in?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "1st",
+            "2nd",
+            "3rd",
+            "4th",
+            "5th",
+            "6th+"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc3",
+         "question":"Do you think you are on track to complete your degree?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Yes",
+            "No",
+            "Not sure"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc4",
+         "question":"Please expand on how you feel your degree is progressing.",
+         "type":"text",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc5",
+         "question":"Are you a domestic or international student?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Domestic",
+            "International"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc6",
+         "question":"Do you have a primary academic advisor?",
+            "type":"radio",
+           "required":true,
+           "options":[
+              "Yes",
+              "No",
+              "I don't know"
+           ],
+           "show_if_id":"gc1",
+           "show_if_value_not":"PhD"
+      },
+      {
+         "id":"gc7",
+         "question":"How is your relationship with your advisor?",
+         "type":"text",
+         "required":false,
+         "show_if_id":"gc6",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc8",
+         "question":"What barriers have prevented you from getting an advisor?",
+         "type":"text",
+         "required":false,
+         "show_if_id":"gc6",
+         "show_if_value":"No"
+      },
+      {
+         "id":"gc9",
+         "question":"Do you have a primary research advisor?",
+            "type":"radio",
+           "required":true,
+           "options":[
+              "Yes",
+              "No"
+           ],
+           "show_if_id":"gc1",
+           "show_if_value":"PhD"
+      },
+      {
+         "id":"gc10",
+         "question":"Please indicate how much you agree with the following statements regarding your primary research advisor?\n(1 - Strongly agree, 2 - Agree, 3 - Neutral, 4 - Disagree, 5 - Strongly disagree, N/A - No response)",
+         "required":false,
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc11",
+         "question":"My advisor supports my individual goals and priorities.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc12",
+         "question":"My advisor provides adequate resources for pursuing my goals and ambitions.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc13",
+         "question":"My advisor communicates his/her expectations clearly.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc14",
+         "question":"My advisor has feasible expectations of me.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc15",
+         "question":"Overall, my advisor treats his/her PhD students fairly.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc16",
+         "question":"My advisor adequately acknowledges me for the work I am doing.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc17",
+         "question":"My advisor actively supports the discussion of long-term professional goals.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc18",
+         "question":"My advisor actively supports my academic networking.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc19",
+         "question":"My advisor cares for my health and wellbeing.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc20",
+         "question":"My advisor actively supports me in completing my PhD requirements.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc21",
+         "question":"I feel comfortable addressing any question or concern with my advisor.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc22",
+         "question":"I would welcome a dedicated place at RPI where I can discuss / talk about my advisor relationship confidentially.",
+         "required":true,
+         "options":[1,2,3,4,5,"N/A"],
+         "show_if_id":"gc7",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc23",
+         "question":"What barriers have prevented you from getting an advisor?",
+         "type":"text",
+         "required":false,
+         "show_if_id":"gc7",
+         "show_if_value":"No"
+      },
+      {
+         "id":"gc24",
+         "question":"Do you participate in any union clubs?",
+         "type":"radio",
+         "required":true,
+         "options":[
+           "Yes",
+           "No, I don't know of any clubs that match my interest",
+           "No, I don't have time",
+           "No, for another reason"
+          ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc25",
+         "question":"Please explain.",
+         "type":"text",
+         "required":true,
+         "show_if_id":"gc22",
+         "show_if_value":"No, for another reason"
+      },
+      {
+         "id":"gc26",
+         "question":"Which events would you like to see the Graduate Council host?",
+         "type":"checkbox",
+         "required":true,
+         "options":[
+           "Social Events (Game nights, Movie nights, Parties, etc.)",
+           "Professional Events (Networking, CV and Resume Critiques, etc.)",
+           "Other"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc27",
+         "question":"Please explain.",
+         "type":"text",
+         "required":true,
+         "show_if_id":"gc24",
+         "show_if_value":"Other"
+      },
+      {
+         "id":"gc28",
+         "question":"On a scale of 1-5, how helpful would you say your department has been to you? (1 least supportive, 5 most supportive)",
+         "type":"radio",
+         "required":true,
+         "options":[
+            1,2,3,4,5
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc29",
+         "question":"Additional thoughts?",
+         "type":"text",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc30",
+         "question":"How often do you communicate with non-student members of your department, outside of your lab or classes?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "About once per semester",
+            "About once per month",
+            "About once per week",
+            "More than once per week"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc31",
+         "question":"Additional thoughts?",
+         "type":"text",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc32",
+         "question":"On a scale of 1-5, how supportive would you say RPI administration outside of your department has been to you? (1 least supportive, 5 most supportive)",
+         "type":"radio",
+         "required":true,
+         "options":[
+            1,2,3,4,5
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc33",
+         "question":"Additional thoughts?",
+         "type":"text",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc34",
+         "question":"On a scale of 1-5, how highly do you feel the admin prioritizes student needs? (1 very low, 5 very high)",
+         "type":"radio",
+         "required":true,
+         "options":[1,2,3,4,5],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc35",
+         "question":"Are there any further details about how your department and RPI administration have supported you that you want to share?",
+         "type":"text",
+         "required":false,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc36",
+         "question":"Have you been a Research Assistant or Teaching Assistant?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "Yes",
+            "No"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc37",
+         "question":"How many hours (on avg) a week do you spend working on your assignment (this might not be your thesis research) as a Research Assistant?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "less than 10 hours", "10 - 15 hours",
+            "15 - 20 hours", "20 - 30 hours", "more than 30 hours"
+         ],
+         "show_if_id":"gc36",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc38",
+         "question":"How many hours (on avg) a week do you spend on your assignment as a Teaching Assistant?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "less than 10 hours", "10 - 15 hours",
+            "15 - 20 hours", "20 - 30 hours", "more than 30 hours"
+         ],
+         "show_if_id":"gc36",
+         "show_if_value":"Yes"
+      },
+      {
+         "id":"gc39",
+         "question":"How many hours (on avg) a week do you spend on academic work?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "not taking classes", "less than 10 hours", "10 - 15",
+            "15 - 20 hours", "20 - 30", "more than 30 hours"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc40",
+         "question":"How many hours (on avg) a week do you spend on your hobbies/socializing with friends?",
+         "type":"radio",
+         "required":true,
+         "options":[
+            "not taking classes", "less than 10 hours", "10 - 15",
+            "15 - 20 hours", "20 - 30", "more than 30 hours"
+         ],
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc41",
+         "question":"What issues do you think the administration should be more focused on?",
+         "type":"text",
+         "required":true,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      },
+      {
+         "id":"gc42",
+         "question":"Please use this space to write about anything else that you would like the Graduate Council to know.",
+         "type":"text",
+         "required":true,
+         "show_if_id":"demographics1",
+         "show_if_value":"Graduate"
+      }
+   ],
+   [
+      {
          "id":"ssr1",
          "question":"Which RPI resources have you used or plan to use for academic and/or personal support? Check all that apply.",
          "type":"checkbox",
