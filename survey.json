@@ -305,8 +305,8 @@
          "id":"gc25",
          "question":"Please explain.",
          "type":"text",
-         "required":true,
-         "show_if_id":"gc22",
+         "required":false,
+         "show_if_id":"gc24",
          "show_if_value":"No, for another reason"
       },
       {
@@ -351,7 +351,7 @@
       },
       {
          "id":"gc30",
-         "question":"How often do you communicate with non-student members of your department, outside of your lab or classes?",
+         "question":"How often do you communicate with non-student members of your department, outside of your lab group or classes?",
          "type":"radio",
          "required":true,
          "options":[
@@ -414,7 +414,8 @@
          "required":true,
          "options":[
             "Yes",
-            "No"
+            "No",
+            "N/A"
          ],
          "show_if_id":"demographics1",
          "show_if_value":"Graduate"
