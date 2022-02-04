@@ -54,7 +54,7 @@
       },
       {
          "id":"demographics5",
-         "question":"As of the Fall 2021 semester, where do you currently live?",
+         "question":"As of the Spring 2022 semester, where do you currently live?",
          "type":"radio",
          "required":true,
          "options":[
@@ -462,8 +462,8 @@
          "type":"radio",
          "required":true,
          "options":[
-            "not taking classes", "less than 10 hours", "10 - 15",
-            "15 - 20 hours", "20 - 30", "more than 30 hours"
+            "less than 10 hours", "10 - 15 hours",
+            "15 - 20 hours", "20 - 30 hours", "more than 30 hours"
          ],
          "show_if_id":"demographics1",
          "show_if_value":"Graduate"
@@ -517,7 +517,7 @@
          "required":true,
          "options":[
             "RPI Email", "Posters", "the Poly", "WebEx", "Discord", "Instagram", "Facebook", "Reddit", "Snapchat", 
-            "Group Chats (including Groupme, WeChat, WhatsApp)", "Slack", "Word of Mouth", "Other"
+            "Group Chats (including Groupme, WeChat, WhatsApp)", "Slack", "Student Residential Staff", "Word of Mouth", "Other"
          ]
       },
       {
@@ -553,7 +553,7 @@
          "type":"radio",
          "required":true,
          "options":[
-            "<3hr", "3-5hr", "5-7hr", "8-10hr", "10-12hr", ">10hr"
+            "<3hr", "3-5hr", "5-7hr", "8-10hr", "10-12hr", ">12hr"
          ]
       },
       {
@@ -590,6 +590,13 @@
       },
       {
          "id":"shw6",
+         "question":"How connected do you feel to the Troy community? (1 is I am completely unattached and 5 is I regularly engage with the Troy community)",
+         "type":"radio",
+         "required":true,
+         "options":[1,2,3,4,5]
+      },
+      {
+         "id":"shw7",
          "question":"Are there any experiences you have had relating to student mental health and well-being that you would like to share?",
          "type":"text",
          "required":false
