@@ -7,13 +7,13 @@ import playhouse.db_url
 
 db = playhouse.db_url.connect(os.environ.get('DATABASE_URL') or 'sqlite:///cc-survey.db')
 
-class BaseModel(peewee.Model):
+class ModelBase(peewee.Model):
 
     class Meta:
         database = db
 
 
-class Submission(BaseModel):
+class Submission(ModelBase):
     """Survey submission model.
 
     Uses a UUID for the ID instead of an integer sequence so that survey
@@ -25,12 +25,12 @@ class Submission(BaseModel):
     version = peewee.IntegerField()
 
 
-class UserHash(BaseModel):
+class UserHash(ModelBase):
     """User hash model."""
     hash = peewee.TextField(primary_key=True)
 
 
-class AuthorizationKey(BaseModel):
+class AuthorizationKey(ModelBase):
     """Can be created to allow users without RCS IDs to take the survey."""
     key = peewee.TextField(primary_key=True)
 
