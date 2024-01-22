@@ -230,13 +230,11 @@ def form_auth_key(auth_key):
 
 
 @app.route('/export')
-# UNCOMMENT
-# @login_required
+@login_required
 def export():
     # see if this user is in CC_SURVEY_ADMINS
-    # UNCOMMENT
-    # if cas.username not in CC_SURVEY_ADMINS:
-    #     abort(403)
+    if cas.username not in CC_SURVEY_ADMINS:
+        abort(403)
     return render_template('export.html')
 
 
@@ -310,12 +308,11 @@ def export_csv():
 
 
 @app.route('/export.xlsx')
-# @login_required
+@login_required
 def export_xlsx():
     # see if this user is in CC_SURVEY_ADMINS
-    # uncomment
-    # if cas.username not in CC_SURVEY_ADMINS:
-    #     abort(403)
+    if cas.username not in CC_SURVEY_ADMINS:
+        abort(403)
 
     question_prefix = request.args.get('question_prefix')
     # attachment filename
