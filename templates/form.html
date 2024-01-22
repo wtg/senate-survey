@@ -17,9 +17,11 @@ angular.module('questionaire', [])
     // These need to match IDs in survey.json to show a header before a question.
     $scope.headers = {
         "demographics1": "Demographics",
-        "ta1":"TA Questions",
-        "s1":"Student Questions",
-        "gen1":"General Questions"
+        "ssr1":"Student Support Services",
+        "shw1":"Student Health and Wellbeing",
+        "fsc1":"Facilities and Dining",
+        "general1":"General",
+        "grk1":"Greek Life"
     };
 
     $scope.survey = survey;
@@ -142,7 +144,7 @@ angular.module('questionaire', [])
 
                     <div class="controls" ng-if="q.type === 'radio'">
                         <span ng-repeat-start="option in q.options"
-                            ng-if="$index > 0 && (q.inline === undefined || q.inline)"><br></span>
+                            ng-if="$index > 0 && (q.inline === undefined || q.inline)" style="padding-right: 10px"></span>
                         <label class="radio-inline" ng-class="{'radio-line': q.inline !== undefined && !q.inline}">
                             <input type="radio" name="{{q.id}}" value="{{option}}" ng-model="q.value"> {{option}}
                         </label>
