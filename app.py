@@ -46,8 +46,16 @@ def json_serializer(obj):
     raise TypeError('{} is not JSON serializable'.format(type(obj)))
 
 
+class TestCAS:
+
+    def __init__(self):
+        self.username = "jacobg3"
+
 app = Flask(__name__)
-cas = CAS(app)
+if os.environ['SURVEY_DEBUG'] == "yes":
+    cas = TestCAS()
+else:
+    cas = CAS(app)
 app.config['CAS_SERVER'] = 'https://cas.auth.rpi.edu'
 app.config['CAS_AFTER_LOGIN'] = 'form'
 app.config['CAS_LOGIN_ROUTE'] = "/cas/login"
