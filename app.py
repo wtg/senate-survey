@@ -48,8 +48,9 @@ def json_serializer(obj):
 
 app = Flask(__name__)
 cas = CAS(app)
-app.config['CAS_SERVER'] = 'https://cas.auth.rpi.edu/cas/login'
+app.config['CAS_SERVER'] = 'https://cas.auth.rpi.edu'
 app.config['CAS_AFTER_LOGIN'] = 'form'
+app.config['CAS_LOGIN_ROUTE'] = "/cas/login"
 SURVEY_VERSION = 1
 
 CC_SURVEY_ADMINS = set(os.getenv('SURVEY_ADMINS', '').split(','))
