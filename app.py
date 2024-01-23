@@ -9,7 +9,9 @@ from flask import (
     send_file,
     session,
 )
-from flask_cas import CAS, login_required
+
+from flask_cas import CAS
+
 import requests
 import xlsxwriter
 
@@ -46,16 +48,24 @@ def json_serializer(obj):
     raise TypeError('{} is not JSON serializable'.format(type(obj)))
 
 
-class TestCAS:
+def login_required_stub(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        print("Skipping login requirements in debug mode…")
+        return f(*args, **kwargs)
+    return decorated_function
 
-    def __init__(self):
-        self.username = "jacobg3"
+
+is_debug = "DEBUG_USERNAME" in os.environ
+if is_debug:
+    username = os.environ['DEBUG_USERNAME']
+    print(f"Debug mode is active with username “{username}”")
+    login_required = login_required_stub
+else:
+    from flask_cas import login_required
 
 app = Flask(__name__)
-if os.environ['SURVEY_DEBUG'] == "yes":
-    cas = TestCAS()
-else:
-    cas = CAS(app)
+cas = CAS(app)
 app.config['CAS_SERVER'] = 'https://cas.auth.rpi.edu'
 app.config['CAS_AFTER_LOGIN'] = 'form'
 app.config['CAS_LOGIN_ROUTE'] = "/cas/login"
@@ -78,7 +88,7 @@ def hash_request(f):
 def check_pepper(f):
     @wraps(f)
     def func(*args, **kwargs):
-        if get_pepper() is None:
+        if get_pepper() is None and not is_debug:
             return not_configured()
         return f(*args, **kwargs)
     return func
@@ -95,7 +105,11 @@ def hash():
     pepper = get_pepper()
     if pepper is None:
         return not_configured()
-    to_hash = cas.username + pepper + str(SURVEY_VERSION)
+    if is_debug:
+        username = os.environ["DEBUG_USERNAME"]
+    else:
+        username = cas.username
+    to_hash = username + pepper + str(SURVEY_VERSION)
     return hashlib.md5(to_hash.encode()).hexdigest()
 
 
@@ -124,9 +138,17 @@ def get_question_for_key(key):
 @login_required
 @hash_request
 def form():
+    if is_debug:
+        username = os.environ["DEBUG_USERNAME"]
+        survey = get_survey()
+        return render_template('form.html',
+                               title='Take survey',
+                               survey=survey)
+    else:
+        username = cas.username
     if CLOSED:
         # see if this user is in CC_SURVEY_ADMINS
-        if request.method == 'GET' and cas.username in CC_SURVEY_ADMINS:
+        if request.method == 'GET' and username in CC_SURVEY_ADMINS:
             # allow admins to see the form, but not submit
             pass
         else:
@@ -135,13 +157,13 @@ def form():
 
 
     # Check if this user is a student according to CMS
-    rcs_id = cas.username.lower()
+    rcs_id = username.lower()
     headers = {'Authorization': f'Token {CMS_API_KEY}'}
     r = requests.get(f'https://cms.union.rpi.edu/api/users/view_rcs/{rcs_id}/',
                      headers=headers)
     user_type = r.json()['user_type']
-    if user_type != 'Student':
-        if not cas.username in CC_SURVEY_ADMINS and request.method == 'GET':
+    if user_type != 'Student' or is_debug:
+        if not username in CC_SURVEY_ADMINS and request.method == 'GET':
             return render_template('message.html', message="""This survey is only
                 available to students.""", title='Survey not available')
         if request.method == 'POST':
@@ -180,7 +202,7 @@ def form():
                     form[key] = val
             form_json = json.dumps(form)
 
-            if cas.username in SAMPLE_POPULATION:
+            if username in SAMPLE_POPULATION:
                 models.Submission().create(form=form_json, version=SURVEY_VERSION, sample=1)
             else:
                 models.Submission().create(form=form_json, version=SURVEY_VERSION, sample=0)
@@ -241,8 +263,13 @@ def form_auth_key(auth_key):
 @app.route('/export')
 @login_required
 def export():
+    if is_debug:
+        username = os.environ["DEBUG_USERNAME"]
+    else:
+        username = cas.username
+
     # see if this user is in CC_SURVEY_ADMINS
-    if cas.username not in CC_SURVEY_ADMINS:
+    if username not in CC_SURVEY_ADMINS:
         abort(403)
     return render_template('export.html')
 
@@ -252,7 +279,7 @@ def export():
 def export_csv():
     def generate():
         # loop through all submissions
-        submissions = models.Submission.select()
+        submissions = [submission for submission in models.Submission.select()]
         submissions.sort(key=lambda submission: submission.time.desc())
 
         # build header. have to loop through everything because CSV
@@ -299,9 +326,13 @@ def export_csv():
             line.seek(0)
             line.truncate(0)
 
+    if is_debug:
+        username = os.environ["DEBUG_USERNAME"]
+    else:
+        username = cas.username
 
     # see if this user is in CC_SURVEY_ADMINS
-    if cas.username not in CC_SURVEY_ADMINS:
+    if username not in CC_SURVEY_ADMINS:
         abort(403)
 
     question_prefix = request.args.get('question_prefix')
@@ -319,8 +350,13 @@ def export_csv():
 @app.route('/export.xlsx')
 @login_required
 def export_xlsx():
+    if is_debug:
+        username = os.environ["DEBUG_USERNAME"]
+    else:
+        username = cas.username
+
     # see if this user is in CC_SURVEY_ADMINS
-    if cas.username not in CC_SURVEY_ADMINS:
+    if username not in CC_SURVEY_ADMINS:
         abort(403)
 
     question_prefix = request.args.get('question_prefix')
@@ -331,7 +367,7 @@ def export_xlsx():
         filename = 'senate-survey-{}.xlsx'.format(question_prefix)
 
     # loop through all submissions
-    submissions = models.Submission.select()
+    submissions = [submission for submission in models.Submission.select()]
     submissions.sort(key=lambda submission: submission.time.desc())
 
     # build header. have to loop through everything first
@@ -406,8 +442,13 @@ def export_xlsx():
 @app.route('/export.json')
 @login_required
 def export_json():
+    if is_debug:
+        username = os.environ["DEBUG_USERNAME"]
+    else:
+        username = cas.username
+
     # see if this user is in CC_SURVEY_ADMINS
-    if cas.username not in CC_SURVEY_ADMINS:
+    if username not in CC_SURVEY_ADMINS:
         abort(403)
 
     # loop through all submissions and make a dict for each, then append to list
