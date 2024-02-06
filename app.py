@@ -56,10 +56,11 @@ def login_required_stub(f):
     return decorated_function
 
 
-is_debug = "DEBUG_USERNAME" in os.environ
-if is_debug:
-    username = os.environ['DEBUG_USERNAME']
-    print(f"Debug mode is active with username “{username}”")
+DEBUG_USERNAME = os.getenv('DEBUG_USERNAME')
+if DEBUG_USERNAME:
+    if input("Change username for testing?: ").strip().lower() == "y":
+        DEBUG_USERNAME = input("New username: ")
+    print(f"Debug mode is active with username “{DEBUG_USERNAME}”")
     login_required = login_required_stub
 else:
     from flask_cas import login_required
@@ -88,7 +89,7 @@ def hash_request(f):
 def check_pepper(f):
     @wraps(f)
     def func(*args, **kwargs):
-        if get_pepper() is None and not is_debug:
+        if get_pepper() is None and not DEBUG_USERNAME:
             return not_configured()
         return f(*args, **kwargs)
     return func
@@ -105,10 +106,7 @@ def hash():
     pepper = get_pepper()
     if pepper is None:
         return not_configured()
-    if is_debug:
-        username = os.environ["DEBUG_USERNAME"]
-    else:
-        username = cas.username
+    username = cas.username if cas.username else DEBUG_USERNAME
     to_hash = username + pepper + str(SURVEY_VERSION)
     return hashlib.md5(to_hash.encode()).hexdigest()
 
@@ -138,14 +136,8 @@ def get_question_for_key(key):
 @login_required
 @hash_request
 def form():
-    if is_debug:
-        username = os.environ["DEBUG_USERNAME"]
-        survey = get_survey()
-        return render_template('form.html',
-                               title='Take survey',
-                               survey=survey)
-    else:
-        username = cas.username
+    username = cas.username if cas.username else DEBUG_USERNAME
+    print(username)
     if CLOSED:
         # see if this user is in CC_SURVEY_ADMINS
         if request.method == 'GET' and username in CC_SURVEY_ADMINS:
@@ -158,17 +150,18 @@ def form():
 
     # Check if this user is a student according to CMS
     rcs_id = username.lower()
-    headers = {'Authorization': f'Token {CMS_API_KEY}'}
-    r = requests.get(f'https://cms.union.rpi.edu/api/users/view_rcs/{rcs_id}/',
-                     headers=headers)
-    user_type = r.json()['user_type']
-    if user_type != 'Student' or is_debug:
-        if not username in CC_SURVEY_ADMINS and request.method == 'GET':
-            return render_template('message.html', message="""This survey is only
-                available to students.""", title='Survey not available')
-        if request.method == 'POST':
-            return render_template('message.html', message="""This survey is only
-                available to students. Admins may only view.""", title='Survey not available')
+    if not DEBUG_USERNAME:
+        headers = {'Authorization': f'Token {CMS_API_KEY}'}
+        r = requests.get(f'https://cms.union.rpi.edu/api/users/view_rcs/{rcs_id}/',
+                        headers=headers)
+        user_type = r.json()['user_type']
+        if user_type != 'Student' or DEBUG_USERNAME:
+            if not username in CC_SURVEY_ADMINS and request.method == 'GET':
+                return render_template('message.html', message="""This survey is only
+                    available to students.""", title='Survey not available')
+            if request.method == 'POST':
+                return render_template('message.html', message="""This survey is only
+                    available to students. Admins may only view.""", title='Survey not available')
 
     with models.db.atomic():
         # Check if a submission from this user has already been received.
@@ -263,11 +256,7 @@ def form_auth_key(auth_key):
 @app.route('/export')
 @login_required
 def export():
-    if is_debug:
-        username = os.environ["DEBUG_USERNAME"]
-    else:
-        username = cas.username
-
+    username = cas.username if cas.username else DEBUG_USERNAME
     # see if this user is in CC_SURVEY_ADMINS
     if username not in CC_SURVEY_ADMINS:
         abort(403)
@@ -326,10 +315,7 @@ def export_csv():
             line.seek(0)
             line.truncate(0)
 
-    if is_debug:
-        username = os.environ["DEBUG_USERNAME"]
-    else:
-        username = cas.username
+    username = cas.username if cas.username else DEBUG_USERNAME
 
     # see if this user is in CC_SURVEY_ADMINS
     if username not in CC_SURVEY_ADMINS:
@@ -350,11 +336,7 @@ def export_csv():
 @app.route('/export.xlsx')
 @login_required
 def export_xlsx():
-    if is_debug:
-        username = os.environ["DEBUG_USERNAME"]
-    else:
-        username = cas.username
-
+    username = cas.username if cas.username else DEBUG_USERNAME
     # see if this user is in CC_SURVEY_ADMINS
     if username not in CC_SURVEY_ADMINS:
         abort(403)
@@ -442,10 +424,7 @@ def export_xlsx():
 @app.route('/export.json')
 @login_required
 def export_json():
-    if is_debug:
-        username = os.environ["DEBUG_USERNAME"]
-    else:
-        username = cas.username
+    username = cas.username if cas.username else DEBUG_USERNAME
 
     # see if this user is in CC_SURVEY_ADMINS
     if username not in CC_SURVEY_ADMINS:
