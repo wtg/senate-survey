@@ -78,6 +78,7 @@ CLOSED = os.getenv('SURVEY_CLOSED') == 'True'
 CMS_API_KEY = os.getenv('CMS_API_KEY', '')
 
 
+
 def hash_request(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -105,6 +106,7 @@ def hash():
     """
     pepper = get_pepper()
     if pepper is None:
+        print("hi")
         return not_configured()
     username = cas.username if cas.username else DEBUG_USERNAME
     to_hash = username + pepper + str(SURVEY_VERSION)
@@ -249,8 +251,7 @@ def form_auth_key(auth_key):
                 Rensselaer.""", title='Submission recorded')
 
         else:
-            return render_template('form.html',
-                                   title='Take survey')
+            return render_template('form.html', title='Take survey')
 
 
 @app.route('/export')
@@ -258,7 +259,7 @@ def form_auth_key(auth_key):
 def export():
     username = cas.username if cas.username else DEBUG_USERNAME
     # see if this user is in CC_SURVEY_ADMINS
-    if username not in CC_SURVEY_ADMINS:
+    if username not in CC_SURVEY_ADMINS and not DEBUG_USERNAME:
         abort(403)
     return render_template('export.html')
 
@@ -269,7 +270,7 @@ def export_csv():
     def generate():
         # loop through all submissions
         submissions = [submission for submission in models.Submission.select()]
-        submissions.sort(key=lambda submission: submission.time.desc())
+        submissions.sort(key=lambda submission: submission.time)
 
         # build header. have to loop through everything because CSV
         header = ['id', 'time', 'version', 'sample'] # CSV header containing all questions/keys
@@ -318,7 +319,7 @@ def export_csv():
     username = cas.username if cas.username else DEBUG_USERNAME
 
     # see if this user is in CC_SURVEY_ADMINS
-    if username not in CC_SURVEY_ADMINS:
+    if username not in CC_SURVEY_ADMINS and not DEBUG_USERNAME:
         abort(403)
 
     question_prefix = request.args.get('question_prefix')
@@ -338,7 +339,7 @@ def export_csv():
 def export_xlsx():
     username = cas.username if cas.username else DEBUG_USERNAME
     # see if this user is in CC_SURVEY_ADMINS
-    if username not in CC_SURVEY_ADMINS:
+    if username not in CC_SURVEY_ADMINS and not DEBUG_USERNAME:
         abort(403)
 
     question_prefix = request.args.get('question_prefix')
@@ -350,7 +351,7 @@ def export_xlsx():
 
     # loop through all submissions
     submissions = [submission for submission in models.Submission.select()]
-    submissions.sort(key=lambda submission: submission.time.desc())
+    submissions.sort(key=lambda submission: submission.time)
 
     # build header. have to loop through everything first
     header = ['id', 'time', 'version', 'sample'] # header containing all questions/keys
@@ -427,12 +428,12 @@ def export_json():
     username = cas.username if cas.username else DEBUG_USERNAME
 
     # see if this user is in CC_SURVEY_ADMINS
-    if username not in CC_SURVEY_ADMINS:
+    if username not in CC_SURVEY_ADMINS and not DEBUG_USERNAME:
         abort(403)
 
     # loop through all submissions and make a dict for each, then append to list
     submissions = models.Submission.select()
-    submissions.sort(key=lambda submission: submission.time.desc())
+    submissions.sort(key=lambda submission: submission.time)
 
     exp = []
     for submission in submissions:
