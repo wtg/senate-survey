@@ -106,7 +106,6 @@ def hash():
     """
     pepper = get_pepper()
     if pepper is None:
-        print("hi")
         return not_configured()
     username = cas.username if cas.username else DEBUG_USERNAME
     to_hash = username + pepper + str(SURVEY_VERSION)
@@ -139,7 +138,6 @@ def get_question_for_key(key):
 @hash_request
 def form():
     username = cas.username if cas.username else DEBUG_USERNAME
-    print(username)
     if CLOSED:
         # see if this user is in CC_SURVEY_ADMINS
         if request.method == 'GET' and username in CC_SURVEY_ADMINS:

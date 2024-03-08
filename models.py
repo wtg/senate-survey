@@ -1,14 +1,13 @@
-import datetime
-import uuid
-import os
+from datetime import datetime
+from uuid import uuid4
+from os import getenv
 
-import peewee
+from peewee import Model, UUIDField, TextField, IntegerField, DateTimeField
 import playhouse.db_url
 
-db = playhouse.db_url.connect(os.environ.get('DATABASE_URL') or 'sqlite:///cc-survey.db')
+db = playhouse.db_url.connect(getenv('DATABASE_URL', 'sqlite:///cc-survey.db'))
 
-class ModelBase(peewee.Model):
-
+class ModelBase(Model):
     class Meta:
         database = db
 
@@ -18,21 +17,21 @@ class Submission(ModelBase):
 
     Uses a UUID for the ID instead of an integer sequence so that survey
     submissions cannot be linked to user hashes."""
-    id = peewee.UUIDField(default=uuid.uuid4, primary_key=True)
-    form = peewee.TextField()
-    sample = peewee.IntegerField()
-    time = peewee.DateTimeField(default=datetime.datetime.now)
-    version = peewee.IntegerField()
+    id = UUIDField(default=uuid4, primary_key=True)
+    form = TextField()
+    sample = IntegerField()
+    time = DateTimeField(default=datetime.now)
+    version = IntegerField()
 
 
 class UserHash(ModelBase):
     """User hash model."""
-    hash = peewee.TextField(primary_key=True)
+    hash = TextField(primary_key=True)
 
 
 class AuthorizationKey(ModelBase):
     """Can be created to allow users without RCS IDs to take the survey."""
-    key = peewee.TextField(primary_key=True)
+    key = TextField(primary_key=True)
 
 
 db.create_tables([Submission, UserHash, AuthorizationKey], safe=True)
