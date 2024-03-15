@@ -93,3 +93,6 @@ cc-survey.db
 
 # IntelliJ settings
 .idea
+
+# Macs
+**/.DS_STORE
