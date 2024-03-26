@@ -65,7 +65,6 @@ def hash():
 @login_required
 @hash_request
 def form_index():
-    hi = ''
     username = cas.username if cas.username else DEBUG_USERNAME
     if CLOSED:
         # see if this user is in CC_SURVEY_ADMINS

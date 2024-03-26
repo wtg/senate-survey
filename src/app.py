@@ -7,8 +7,6 @@ import functools
 import json
 import os
 
-import models
-
 @functools.lru_cache(maxsize=1)
 def get_survey():
     with open('survey.json', 'r') as f:
@@ -34,7 +32,7 @@ else:
 app = Flask(__name__)
 cas = CAS(app)
 app.config['CAS_SERVER'] = 'https://cas.auth.rpi.edu'
-app.config['CAS_AFTER_LOGIN'] = 'form'
+app.config['CAS_AFTER_LOGIN'] = '/'
 app.config['CAS_LOGIN_ROUTE'] = "/cas/login"
 SURVEY_VERSION = 1
 
@@ -59,5 +57,8 @@ app.secret_key = os.environ['SECRET_KEY']
 # import blueprints and register blueprints
 from export import export
 from form import form
+from home import home
+
 app.register_blueprint(export)
 app.register_blueprint(form)
+app.register_blueprint(home)
