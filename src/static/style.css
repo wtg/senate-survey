@@ -20,6 +20,7 @@ body {
 .jumbotron {
     text-align: center;
     background-color: transparent;
+    padding: 0px;
 }
 
 .jumbotron p {
@@ -56,4 +57,27 @@ body {
     padding-bottom: 40px;
     margin-top: 40px;
     border-top: 1px solid #eee;
+}
+
+.header {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+}
+
+.header .btn {
+    margin-right: 10px;
+}
+
+.union {
+    width: 50px;
+    justify-self: left;
+}
+
+.main {
+    margin-top: 20px;
+    border-top: 1px solid #999;
 }
