@@ -12,16 +12,18 @@
     <body>
         <div class="container">
             <header class="header" class="row" class="border-primary">
-                <a class="col-lg-2" href="/"><img src="/static/union-logo.png" class="union"></a>
-                <a class="btn btn-lg btn-danger col-lg-2" href="/home">Home</a>
-                <a class="btn btn-lg btn-danger col-lg-2" href="/form">Surveys</a>
+                <ul class="nav nav-pills">
+                    <li role="presentation"><a href="/">Home</a></li>
+                    <li role="presentation"><a href="/form">Profile</a></li>
+                    <li role="presentation"><a href="/surveys">Messages</a></li>
+                  </ul>
             </header>
             <div class="main">
                 {% block content %}{% endblock %}
             </div>
             <footer class="footer">
-                <p>A joint project of the <a href="http://sg.rpi.edu/senate/">RPI Student Senate</a> and the <a href="https://webtech.union.rpi.edu">Web Technologies Group</a>.</p>
-                <a href="http://sg.rpi.edu/senate/"><img src="/static/primary_student_senate.svg" class="logo-img"></a>
+                <p>A joint project of the <a href="https://sites.google.com/view/rpistugov/student-senate/">RPI Student Senate</a> and the <a href="https://webtech.union.rpi.edu">Web Technologies Group</a>.</p>
+                <a href="https://sites.google.com/view/rpistugov/student-senate/"><img src="/static/primary_student_senate.svg" class="logo-img"></a>
                 <a href="https://webtech.union.rpi.edu"><img src="/static/wtg_logo.svg" class="logo-img"></a>
             </footer>
         </div>

@@ -58,7 +58,9 @@ app.secret_key = os.environ['SECRET_KEY']
 from export import export
 from form import form
 from home import home
+from surveys import surveys
 
 app.register_blueprint(export)
 app.register_blueprint(form)
 app.register_blueprint(home)
+app.register_blueprint(surveys)

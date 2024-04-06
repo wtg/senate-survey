@@ -70,7 +70,7 @@ def form_index():
         # see if this user is in CC_SURVEY_ADMINS
         if request.method == 'GET' and username in CC_SURVEY_ADMINS:
             # allow admins to see the form, but not submit
-            pass
+            return redirect('/export')
         else:
             # Redirect all /form paths to / if survey is closed
             return redirect('/')
