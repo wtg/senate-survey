@@ -2,7 +2,7 @@
 <html>
     <head>
         {% block head %}
-        <title>{% if self.title() %}{% block title %}{% endblock %} &mdash; {% endif %}RPI Student Senate</title>
+        <title>{% if self.title() %}{% block title %}{% endblock %}{% else %}Senate Survey{% endif %}</title>
         <link rel="stylesheet" href="/static/bootstrap.min.css">
         <link rel="stylesheet" href="/static/style.css">
         <link rel="shortcut icon" href="/static/favicon.ico">
@@ -15,9 +15,9 @@
                 {% block content %}{% endblock %}
             </div>
             <footer class="footer">
-                <p>A joint project of the <a href="http://sg.rpi.edu/senate/">RPI Student Senate</a> and the <a href="https://webtech.union.rpi.edu">Web Technologies Group</a>.</p>
-                <a href="http://sg.rpi.edu/senate/"><img src="/static/primary_student_senate.svg" class="logo-img"></a>
-                <a href="https://webtech.union.rpi.edu"><img src="/static/wtg_logo.svg" class="logo-img"></a>
+                <p>A project of the <b>Web Technologies Group</b>, a Student Senate committee.</p>
+                <img src="/static/primary_student_senate.svg" class="logo-img">
+                <img src="/static/wtg_logo.svg" class="logo-img">
             </footer>
         </div>
     </body>
