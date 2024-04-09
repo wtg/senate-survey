@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.9
+
 from functools import wraps
 from flask import (
     abort,
