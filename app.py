@@ -280,7 +280,7 @@ def export_csv():
     def generate():
         # loop through all submissions
         submissions = [submission for submission in models.Submission.select()]
-        submissions.sort(key=lambda submission: submission.time.desc())
+        submissions.sort(key=lambda submission: submission.time)
 
         # build header. have to loop through everything because CSV
         header = ['id', 'time', 'version', 'sample'] # CSV header containing all questions/keys
@@ -368,7 +368,7 @@ def export_xlsx():
 
     # loop through all submissions
     submissions = [submission for submission in models.Submission.select()]
-    submissions.sort(key=lambda submission: submission.time.desc())
+    submissions.sort(key=lambda submission: submission.time)
 
     # build header. have to loop through everything first
     header = ['id', 'time', 'version', 'sample'] # header containing all questions/keys
@@ -453,7 +453,7 @@ def export_json():
 
     # loop through all submissions and make a dict for each, then append to list
     submissions = models.Submission.select()
-    submissions.sort(key=lambda submission: submission.time.desc())
+    submissions.sort(key=lambda submission: submission.time)
 
     exp = []
     for submission in submissions:
