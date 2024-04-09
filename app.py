@@ -455,7 +455,6 @@ def export_json():
 
     # loop through all submissions and make a dict for each, then append to list
     submissions = models.Submission.select()
-    submissions.sort(key=lambda submission: submission.time)
 
     exp = []
     for submission in submissions:
