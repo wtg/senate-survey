@@ -192,25 +192,25 @@
             "required": true
         },
         {
-            "id": "food3",
+            "id": "food2",
             "question": "How much do you pay at restaurants (including takeout and food delivery) each month? Please provide a monthly average over the last 12 months.",
             "type": "text",
             "required": true
         },
         {
-            "id": "food4",
+            "id": "food3",
             "question": "How much do you pay for food-related service subscriptions each month? Please provide a monthly average over the last 12 months. Examples include: Panera Sip Club, InstaCart, Uber One, Doordash+, Walmart+, meal-prep delivery services, etc.",
             "type": "text",
             "required": true
         },
         {
-            "id": "food5",
+            "id": "food4",
             "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month",
             "type": "text",
             "required": false
         },
         {
-            "id": "food6",
+            "id": "food5",
             "question": "Please provide any additional comments in this section you feel are necessary.",
             "type": "text",
             "required": false
@@ -366,7 +366,7 @@
             "show_if_value": "Yes"
         },
         {
-            "id": "loans5",
+            "id": "loans4",
             "question": "How much debt do you have in federal subsidized loans?",
             "type": "text",
             "required": false,
