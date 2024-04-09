@@ -39,7 +39,7 @@
         {
             "id": "demographics4",
             "question": "Which academic year did you start graduate school at RPI?",
-            "Type": "radio",
+            "type": "radio",
             "required": true,
             "options": [
                 "2023-24",
