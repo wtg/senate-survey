@@ -1,702 +1,605 @@
 [
-   [
-      {
-         "id":"demographics1",
-         "question":"Are you an undergraduate or graduate student?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Undergraduate",
-            "Graduate"
-         ]
-      },
-      {
-         "id":"demographics2",
-         "question":"Which class are you a part of?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Freshman",
-            "Sophomore",
-            "Junior",
-            "Senior",
-            "Fifth Year"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Undergraduate"
-      },
-      {
-         "id":"demographics3",
-         "question":"Which school are you a part of? (Select the school you identify most with)",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Information Technology and Web Science",
-            "Lally School of Management",
-            "School of Architecture",
-            "School of Engineering",
-            "School of Humanities, Arts, and Social Sciences",
-            "School of Science"
-         ]
-      },
-      {
-         "id":"demographics4",
-         "question":"Are you a member of a Greek-affiliated organization?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes, Fraternity",
-            "Yes, Sorority",
-            "Yes, culture based Fraternity",
-            "Yes, culture based Sorority",
-            "No"
-         ]
-      },
-      {
-         "id":"demographics5",
-         "question":"As of the Spring 2022 semester, where do you currently live?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "On-campus residence hall",
-            "Greek housing",
-            "Off-campus"
-         ]
-      }
-   ],
-   [
-      {
-         "id":"placeholder1",
-         "question":"There are no questions for you to answer on this page, please move to the next page.",
-         "type":"radio",
-         "required":false,
-         "show_if_id":"demographics1",
-         "show_if_value":"Undergraduate"
-      },
-      {
-         "id":"gc1",
-         "question":"What graduate program are you in?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Coterm",
-            "Masters",
-            "PhD"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc2",
-         "question":"What year are you in?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "1st",
-            "2nd",
-            "3rd",
-            "4th",
-            "5th",
-            "6th+"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc3",
-         "question":"Do you think you are on track to complete your degree?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes",
-            "No",
-            "Not sure"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc4",
-         "question":"Please expand on how you feel your degree is progressing.",
-         "type":"text",
-         "required":false,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc5",
-         "question":"Are you a domestic or international student?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Domestic",
-            "International"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc6",
-         "question":"Do you have a primary academic advisor?",
-            "type":"radio",
-           "required":true,
-           "options":[
-              "Yes",
-              "No",
-              "I don't know"
-           ],
-           "show_if_id":"gc1",
-           "show_if_value_not":"PhD"
-      },
-      {
-         "id":"gc7",
-         "question":"How is your relationship with your advisor?",
-         "type":"text",
-         "required":false,
-         "show_if_id":"gc6",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc8",
-         "question":"What barriers have prevented you from getting an advisor?",
-         "type":"text",
-         "required":false,
-         "show_if_id":"gc6",
-         "show_if_value":"No"
-      },
-      {
-         "id":"gc9",
-         "question":"Do you have a primary research advisor?",
-            "type":"radio",
-           "required":true,
-           "options":[
-              "Yes",
-              "No"
-           ],
-           "show_if_id":"gc1",
-           "show_if_value":"PhD"
-      },
-      {
-         "id":"gc10",
-         "question":"Please indicate how much you agree with the following statements regarding your primary research advisor?\n(1 - Strongly agree, 2 - Agree, 3 - Neutral, 4 - Disagree, 5 - Strongly disagree, N/A - No response)",
-         "required":false,
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc11",
-         "question":"My advisor supports my individual goals and priorities.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc12",
-         "question":"My advisor provides adequate resources for pursuing my goals and ambitions.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc13",
-         "question":"My advisor communicates his/her expectations clearly.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc14",
-         "question":"My advisor has feasible expectations of me.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc15",
-         "question":"Overall, my advisor treats his/her PhD students fairly.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc16",
-         "question":"My advisor adequately acknowledges me for the work I am doing.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc17",
-         "question":"My advisor actively supports the discussion of long-term professional goals.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc18",
-         "question":"My advisor actively supports my academic networking.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc19",
-         "question":"My advisor cares for my health and wellbeing.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc20",
-         "question":"My advisor actively supports me in completing my PhD requirements.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc21",
-         "question":"I feel comfortable addressing any question or concern with my advisor.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc22",
-         "question":"I would welcome a dedicated place at RPI where I can discuss / talk about my advisor relationship confidentially.",
-         "required":true,
-         "options":[1,2,3,4,5,"N/A"],
-         "show_if_id":"gc7",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc23",
-         "question":"What barriers have prevented you from getting an advisor?",
-         "type":"text",
-         "required":false,
-         "show_if_id":"gc7",
-         "show_if_value":"No"
-      },
-      {
-         "id":"gc24",
-         "question":"Do you participate in any union clubs?",
-         "type":"radio",
-         "required":true,
-         "options":[
-           "Yes",
-           "No, I don't know of any clubs that match my interest",
-           "No, I don't have time",
-           "No, for another reason"
-          ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc25",
-         "question":"Please explain.",
-         "type":"text",
-         "required":false,
-         "show_if_id":"gc24",
-         "show_if_value":"No, for another reason"
-      },
-      {
-         "id":"gc26",
-         "question":"Which events would you like to see the Graduate Council host?",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-           "Social Events (Game nights, Movie nights, Parties, etc.)",
-           "Professional Events (Networking, CV and Resume Critiques, etc.)",
-           "Other"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc27",
-         "question":"Please explain.",
-         "type":"text",
-         "required":true,
-         "show_if_id":"gc24",
-         "show_if_value":"Other"
-      },
-      {
-         "id":"gc28",
-         "question":"On a scale of 1-5, how helpful would you say your department has been to you? (1 least supportive, 5 most supportive)",
-         "type":"radio",
-         "required":true,
-         "options":[
-            1,2,3,4,5
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc29",
-         "question":"Additional thoughts?",
-         "type":"text",
-         "required":false,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc30",
-         "question":"How often do you communicate with non-student members of your department, outside of your lab group or classes?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "About once per semester",
-            "About once per month",
-            "About once per week",
-            "More than once per week"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc31",
-         "question":"Additional thoughts?",
-         "type":"text",
-         "required":false,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc32",
-         "question":"On a scale of 1-5, how supportive would you say RPI administration outside of your department has been to you? (1 least supportive, 5 most supportive)",
-         "type":"radio",
-         "required":true,
-         "options":[
-            1,2,3,4,5
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc33",
-         "question":"Additional thoughts?",
-         "type":"text",
-         "required":false,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc34",
-         "question":"On a scale of 1-5, how highly do you feel the admin prioritizes student needs? (1 very low, 5 very high)",
-         "type":"radio",
-         "required":true,
-         "options":[1,2,3,4,5],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc35",
-         "question":"Are there any further details about how your department and RPI administration have supported you that you want to share?",
-         "type":"text",
-         "required":false,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc36",
-         "question":"Have you been a Research Assistant or Teaching Assistant?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes",
-            "No",
-            "N/A"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc37",
-         "question":"How many hours (on avg) a week do you spend working on your assignment (this might not be your thesis research) as a Research Assistant?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "less than 10 hours", "10 - 15 hours",
-            "15 - 20 hours", "20 - 30 hours", "more than 30 hours"
-         ],
-         "show_if_id":"gc36",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc38",
-         "question":"How many hours (on avg) a week do you spend on your assignment as a Teaching Assistant?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "less than 10 hours", "10 - 15 hours",
-            "15 - 20 hours", "20 - 30 hours", "more than 30 hours"
-         ],
-         "show_if_id":"gc36",
-         "show_if_value":"Yes"
-      },
-      {
-         "id":"gc39",
-         "question":"How many hours (on avg) a week do you spend on academic work?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "not taking classes", "less than 10 hours", "10 - 15",
-            "15 - 20 hours", "20 - 30", "more than 30 hours"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc40",
-         "question":"How many hours (on avg) a week do you spend on your hobbies/socializing with friends?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "less than 10 hours", "10 - 15 hours",
-            "15 - 20 hours", "20 - 30 hours", "more than 30 hours"
-         ],
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc41",
-         "question":"What issues do you think the administration should be more focused on?",
-         "type":"text",
-         "required":true,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      },
-      {
-         "id":"gc42",
-         "question":"Please use this space to write about anything else that you would like the Graduate Council to know.",
-         "type":"text",
-         "required":true,
-         "show_if_id":"demographics1",
-         "show_if_value":"Graduate"
-      }
-   ],
-   [
-      {
-         "id":"ssr1",
-         "question":"Which RPI resources have you used or plan to use for academic and/or personal support? Check all that apply.",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "ALAC", "Arch Office", "Archer Center", "Center for Career and Professional Development", 
-            "Counseling Center", "Class Deans", "Comm+D", "Disability Services for Students", 
-            "International Services for Students and Scholars", "First Year Experience", "Peer-to-Peer Counseling", 
-            "Strive", "Not applicable", "Other"
-         ]
-      },
-      {
-         "id":"ssr2",
-         "question":"What obstacles do you experience when seeking academic and/or personal support? Check all that apply.",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Social stigma", "Trouble finding time", "Unsure of available resources", 
-            "Fear of repercussions such as forced leave, forced treatment, or escalation", 
-            "Trouble making an appointment", "Unclear expectations", "Confidentiality concerns", 
-            "Don't think treatment will help", "Not applicable", "Other"
-         ]
-      },
-      {
-         "id":"ssr3",
-         "question":"How do you get information about campus resources and student life? Check all that apply.",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "RPI Email", "Posters", "the Poly", "WebEx", "Discord", "Instagram", "Facebook", "Reddit", "Snapchat", 
-            "Group Chats (including Groupme, WeChat, WhatsApp)", "Slack", "Student Residential Staff", "Word of Mouth", "Other"
-         ]
-      },
-      {
-         "id":"ssr4",
-         "question":"Are there any resources for academic and/or personal support you would like to see implemented by the Institute?",
-         "type":"text",
-         "required":false
-      },
-      {
-         "id":"ssr5",
-         "question":"Are there any experiences you have had while seeking academic and/or personal support that you would like to share?",
-         "type":"text",
-         "required":false
-      }
-   ],
-   [
-      {
-         "id":"shw1",
-         "question":"How does your mental health impact your day to day? 1 is \"Mental health struggles regularly affect my day\", 3 is \"Mental health struggles sometimes affect my day\" and 5 is \"Mental health struggles rarely affect my day\".",
-         "type":"radio",
-         "required":true,
-         "options":[
-            1,
-            2,
-            3,
-            4,
-            5
-         ]
-      },
-      {
-         "id":"shw2",
-         "question":"How much time do you spend on academic work each day on average?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "<3hr", "3-5hr", "5-7hr", "8-10hr", "10-12hr", ">12hr"
-         ]
-      },
-      {
-         "id":"shw3",
-         "question":"Would you take advantage of any of the following mental health resources if they were available? Check all that apply.",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Peer-to-peer group counseling", "Mental health town hall", "Mental health crisis training", 
-            "Mental health apps", "I need mental health resources but would not use any of these", 
-            "I am not in need of mental health resources"
-         ]
-      },
-      {
-         "id":"shw4",
-         "question":"Would you take advantage of virtual therapy if the counseling center was overbooked?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes", "Maybe", "No, virtual therapy is not a good fit for me", "No, I do not use the counseling center"
-         ]
-      },
-      {
-         "id":"shw5",
-         "question":"Have you experienced food insecurity for any of the following reasons? Food insecurity is defined by the United Nations as the lack of physical, social, or economic access to sufficient, safe, and nutritious food that meets food preferences and dietary needs for an active and healthy lifestyle. Check all that apply.",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Cost", "Time (including missing meals between classes)", 
-            "Lack of accomodations for a health condition (including an eating disorder, an allergy or intolerance)",
-            "Lack of accomodations for a religious/personal dietary restriction (vegetarian, vegan, halal, kosher, etc.)",
-            "Other", "I have not experienced food insecurity"
-         ]
-      },
-      {
-         "id":"shw6",
-         "question":"How connected do you feel to the Troy community? (1 is I am completely unattached and 5 is I regularly engage with the Troy community)",
-         "type":"radio",
-         "required":true,
-         "options":[1,2,3,4,5]
-      },
-      {
-         "id":"shw7",
-         "question":"Are there any experiences you have had relating to student mental health and well-being that you would like to share?",
-         "type":"text",
-         "required":false
-      }
-   ],
-   [
-      {
-         "id":"fsc1",
-         "question":"How often do you use Union dining (Panera, Rathskellar, Father’s, Ben & Jerry’s)",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "always", "often", "sometimes", "rarely", "never"
-         ]
-      },
-      {
-         "id":"fsc2",
-         "question":"How often do you use the dining halls (Commons, Russell Sage, Blitman, BARH)",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "always", "often", "sometimes", "rarely", "never"
-         ]
-      },
-      {
-         "id":"fsc3",
-         "question":"How often do you use the other campus cafes (DCC, Library Cafe, Russell Sage Cafe)",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "always", "often", "sometimes", "rarely", "never"
-         ]
-      },
-      {
-         "id":"fsc4",
-         "question":"What changes would you like to see to the offerings at dining halls or Union facilities?",
-         "type":"text",
-         "required":false
-      },
-      {
-         "id":"fsc5",
-         "question":"Which buildings are top priority for renovation or modernization?",
-         "type":"text",
-         "required":false
-      },
-      {
-         "id":"fsc6",
-         "question":"Are there any experiences you have had with Public Safety that you would like to share?",
-         "type":"text",
-         "required":false
-      }
-   ],
-   [
-      {
-         "id":"grk1",
-         "question":"Are you currently considering or have you ever considered joining a fraternity or sorority?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Yes", "No", "Maybe" 
-         ]
-      },
-      {
-         "id":"grk2",
-         "question":"Which of the following activities with Fraternity and Sorority Life have you experienced?",
-         "type":"checkbox",
-         "required":true,
-         "options":[
-            "Participated in an on-campus fundraiser",
-            "Attended a registered social event at a Fraternity or Sorority house",
-            "On campus event (e.g., Greekfest)",
-            "Rush event",
-            "I have not participated in any Fraternity or Sorority events"
-         ]
-      },
-      {
-         "id":"grk3",
-         "question":"What is your overall perception of Fraternity and Sorority Life on the RPI campus?",
-         "type":"radio",
-         "required":true,
-         "options":[
-            "Fraternity and Sorority Life contributes positively to campus life at RPI" ,
-            "Fraternity and Sorority Life contributes negatively to campus life at RPI", 
-            "Fraternity and Sorority Life makes no contribution to campus life at RPI", 
-            "I have no opinion on the contribution Fraternity and Sorority Life makes to campus life at RPI."
-         ]
-      }
-   ],
-   [
-      {
-         "id":"general1",
-         "question":"How do you feel about the institute's response to Covid-19?",
-         "type":"text",
-         "required":false
-      },
-      {
-         "id":"general2",
-         "question":"Anything else you'd like to share with us?",
-         "type":"text",
-         "required":false
-      }
-   ]
+    [
+        {
+            "id": "intro0",
+            "question": "The purpose of this survey is to collect widespread information about the living costs of RPI Graduate Students. This survey platform is run by RPI Student Gov’t. All responses are anonymous; there is no way to link your responses to your identity after you have submitted this form. The data will be analyzed and reported to the RPI Graduate Community and RPI Administration to better inform the 'basket of goods' model.",
+            "required": false
+        },
+        {
+            "id": "intro1",
+            "question": "This survey is divided into 10 sections: 1. Intro and Demographics 2. Rent and Utilities 3. Food and Groceries 4. Transportation 5. Healthcare 6. Student Loans 7. Technology and Entertainment 8. Personal Care 9. Childcare 10. Conclusion and Final Comments.",
+            "required": false
+        },
+        {
+            "id": "intro2",
+            "question": "While completing this survey, there will be some questions where we ask for a monthly average payment. Ideally, this value would be calculated by summing the amount over the last year and dividing by 12, but we understand there will be some necessary approximations in this calculation. Other questions will ask for a total value over the last 12 months. Please be sure to answer each type of question appropriately with a numeric value rounded to the nearest whole-dollar amount. Furthermore, be sure that you are only counting expenses once. For example, you may feel that one type of expense could be included under either section 7. Technology and Entertainment or 8. Personal Care (e.g. a hobby-related expense like a digital camera). In these scenarios, only include this cost once. It does not matter which category you list the cost under, only that it is not included more than once.",
+            "required": false
+        },
+        {
+            "id": "demographics1",
+            "question": "What is your RCSID (examples: 'bhowmd', 'chatts4', etc)? Again, know that this answer is stored separately from your other answers and cannot be used to link you to your other responses in any way. We use your RCSID to improve the integrity of the data we collect in the remainder of this survey.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "demographics2",
+            "question": "Are you a domestic or international student?",
+            "type": "radio",
+            "required": false,
+            "options": ["Domestic", "International"]
+        },
+        {
+            "id": "demographics3",
+            "question": "Which country did you come from?",
+            "type": "text",
+            "required": false,
+            "show_if_id": "demographics2",
+            "show_if_value": "International"
+        },
+        {
+            "id": "demographics4",
+            "question": "Which academic year did you start graduate school at RPI?",
+            "Type": "radio",
+            "required": true,
+            "options": [
+                "2023-24",
+                "2022-23",
+                "2021-22",
+                "2020-21",
+                "2019-20",
+                "2018-19",
+                "Earlier"
+            ]
+        },
+        {
+            "id": "demographics5",
+            "question": "Do you have any dependents (spouse and/or children)?",
+            "type": "radio",
+            "required": true,
+            "options": ["Yes", "No"]
+        }
+    ],
+    [
+        {
+            "id": "utilities0",
+            "question": "This section covers costs associated with Rent and Utilities.",
+            "required": false
+        },
+        {
+            "id": "utilities1",
+            "question": "What description best matches your current living situation?",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "I own my home",
+                "Single unit apartment",
+                "Shared apartment",
+                "Living with family/parents (I am their dependent)",
+                "Living with family whom I help support financially"
+            ]
+        },
+        {
+            "id": "utilities21",
+            "question": "How much is your personal contribution for rent each month?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "utilities1",
+            "show_if_value": "Living with family whom I help support financially"
+        },
+        {
+            "id": "utilities22",
+            "question": "How much is your personal contribution for rent each month?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "utilities1",
+            "show_if_value": "Living with family/parents (I am their dependent)"
+        },
+        {
+            "id": "utilities23",
+            "question": "How much is your personal contribution for rent each month?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "utilities1",
+            "show_if_value": "Shared apartment"
+        },
+        {
+            "id": "utilities24",
+            "question": "How much do you pay for rent each month?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "utilities1",
+            "show_if_value": "Single unit apartment"
+        },
+        {
+            "id": "utilities25",
+            "question": "How much is your personal contribution for your mortgage payment each month?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "utilities1",
+            "show_if_value": "I own my home"
+        },
+        {
+            "id": "utilities3",
+            "question": "Which of these items is NOT included in your monthly rent?",
+            "type": "checkbox",
+            "required": true,
+            "options": ["WiFi", "Gas/Electricity", "Water", "Laundry"]
+        },
+        {
+            "id": "utilities4",
+            "question": "How much do you currently pay for WiFi each month?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "utilities3",
+            "show_if_value": "WiFi"
+        },
+        {
+            "id": "utilities5",
+            "question": "How much do you currently pay for Gas/Electricity each month?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "utilities3",
+            "show_if_value": "Gas/Electricity"
+        },
+        {
+            "id": "utilities6",
+            "question": "How much do you currently pay for Water each month?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "utilities3",
+            "show_if_value": "Water"
+        },
+        {
+            "id": "utilities7",
+            "question": "How much do you currently pay for Laundry each month?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "utilities3",
+            "show_if_value": "Laundry"
+        },
+        {
+            "id": "utilities8",
+            "question": "Would you consider doing your laundry at an RPI facility if it costs less than it does now to do your laundry?",
+            "type": "radio",
+            "required": true,
+            "options": ["Yes", "No"],
+            "show_if_id": "utilities3",
+            "show_if_value": "Laundry"
+        },
+        {
+            "id": "utilities9",
+            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month",
+            "type": "text",
+            "required": false
+        },
+        {
+            "id": "utilities10",
+            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "type": "text",
+            "required": false
+        }
+    ],
+    [
+        {
+            "id": "food0",
+            "question": "This section covers costs associated with Food and Groceries.",
+            "required": false
+        },
+        {
+            "id": "food1",
+            "question": "How much do you pay for groceries each month (this does NOT include take-out or food delivery)? Please provide a monthly average over the last 12 months.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "food3",
+            "question": "How much do you pay at restaurants (including takeout and food delivery) each month? Please provide a monthly average over the last 12 months.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "food4",
+            "question": "How much do you pay for food-related service subscriptions each month? Please provide a monthly average over the last 12 months. Examples include: Panera Sip Club, InstaCart, Uber One, Doordash+, Walmart+, meal-prep delivery services, etc.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "food5",
+            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month",
+            "type": "text",
+            "required": false
+        },
+        {
+            "id": "food6",
+            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "type": "text",
+            "required": false
+        }
+    ],
+    [
+        {
+            "id": "car0",
+            "question": "This section covers costs associated with Transportation.",
+            "required": false
+        },
+        {
+            "id": "car1",
+            "question": "Do you own/lease a car?",
+            "type": "radio",
+            "required": true,
+            "options": ["Yes", "No"]
+        },
+        {
+            "id": "car2",
+            "question": "How much do you pay for gas each month? Please provide a monthly average over the last 12 months.",
+            "type": "text",
+            "required": true,
+            "show_if_id": "car1",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "car3",
+            "question": "How much do you pay for automobile insurance each month? Please provide a monthly average over the last 12 months.",
+            "type": "text",
+            "required": true,
+            "show_if_id": "car1",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "car4",
+            "question": "How much do you pay for your car loan each month? Please provide a monthly average over the last 12 months.",
+            "type": "text",
+            "required": true,
+            "show_if_id": "car1",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "car5",
+            "question": "How much, in total, did you pay for parking over the last 12 months?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "car1",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "car6",
+            "question": "How much, in total, did you pay for other car-related expenses over the last 12 months?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "car1",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "car7",
+            "question": "How much do you pay for alternative transport services per month? This includes CDTA, Uber, Lyft, Amtrak, Greyhound, etc. Please provide a monthly average over the last 12 months.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "car8",
+            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month",
+            "type": "text",
+            "required": false
+        },
+        {
+            "id": "car9",
+            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "type": "text",
+            "required": false
+        }
+    ],
+    [
+        {
+            "id": "health0",
+            "question": "This section covers costs associated with Healthcare.",
+            "required": false
+        },
+        {
+            "id": "health1",
+            "question": "Do you get health insurance directly from RPI? The current provider is ‘MVP Health’.",
+            "type": "radio",
+            "required": true,
+            "options": ["Yes", "No"]
+        },
+        {
+            "id": "health2",
+            "question": "How much, in total, did you pay for health insurance premium over the last 12 months?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "health1",
+            "show_if_value": "No"
+        },
+        {
+            "id": "health3",
+            "question": "How much, in total, did you pay for health insurance co-pay over the last 12 months?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "health1",
+            "show_if_value": "No"
+        },
+        {
+            "id": "health4",
+            "question": "How much, in total, did you pay for vitamins/dietary supplements/over-the-counter-medication over the last 12 months?",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "health5",
+            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month",
+            "type": "text",
+            "required": false
+        },
+        {
+            "id": "health6",
+            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "type": "text",
+            "required": false
+        }
+    ],
+    [
+        {
+            "id": "loans0",
+            "question": "This section covers costs associated with Student and Personal Loans.",
+            "required": false
+        },
+        {
+            "id": "loans1",
+            "question": "Do you have a student loan?",
+            "type": "radio",
+            "required": true,
+            "options": ["Yes", "No"]
+        },
+        {
+            "id": "loans2",
+            "question": "How much total student loan debt do you have left to pay?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "loans1",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "loans3",
+            "question": "How much debt do you have in private student loans?",
+            "type": "text",
+            "required": false,
+            "show_if_id": "loans1",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "loans5",
+            "question": "How much debt do you have in federal subsidized loans?",
+            "type": "text",
+            "required": false,
+            "show_if_id": "loans1",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "loans5",
+            "question": "How much debt do you have in federal unsubsidized loans?",
+            "type": "text",
+            "required": false,
+            "show_if_id": "loans1",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "loans6",
+            "question": "How much do you pay across all of your student loans each month? Please provide a monthly average over the last 12 months.",
+            "type": "text",
+            "required": true,
+            "show_if_id": "loans1",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "loans7",
+            "question": "Do you pay more than the minimum amount required per month for any of your student loans?",
+            "type": "radio",
+            "required": true,
+            "options": ["Yes", "No"],
+            "show_if_id": "loans1",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "loans8",
+            "question": "Do you have a personal loan?",
+            "type": "radio",
+            "required": true,
+            "options": ["Yes", "No"]
+        },
+        {
+            "id": "loans9",
+            "question": "How much do you pay across all of your personal loan(s) each month? Please provide a monthly average over the last 12 months.",
+            "type": "text",
+            "required": true,
+            "show_if_id": "loans8",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "loans10",
+            "question": "Do you pay more than the minimum amount required per month for any of your personal loans?",
+            "type": "radio",
+            "required": true,
+            "options": ["Yes", "No"],
+            "show_if_id": "loans9",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "loans11",
+            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month",
+            "type": "text",
+            "required": false
+        },
+        {
+            "id": "loans12",
+            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "type": "text",
+            "required": false
+        }
+    ],
+    [
+        {
+            "id": "tech0",
+            "question": "This section covers costs associated with Technology and Entertainment.",
+            "required": false
+        },
+        {
+            "id": "tech1",
+            "question": "How much do you pay for Subscriptions each month? Please provide a monthly average over the last 12 months. Examples include: Streaming Services, AI Apps, Cloud Services, Other Software, Game Pass, etc.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "tech2",
+            "question": "How much do you pay for phone-related expenses each month? Please provide a monthly average over the last 12 months. Includes Installment Plans and service/Data Plans.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "tech3",
+            "question": "How much, in total, have you spent on large electronics purchases over the last 12 months? Includes Laptops, Monitors, Phones, Other Accessories, etc.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "tech4",
+            "question": "How much, in total, have you spent on large household appliances over the last 12 months? Includes Kitchen Appliances, Furniture, ACs, Vacuums, Luggage, etc.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "tech5",
+            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month",
+            "type": "text",
+            "required": false
+        },
+        {
+            "id": "tech6",
+            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "type": "text",
+            "required": false
+        }
+    ],
+    [
+        {
+            "id": "personal0",
+            "question": "This section covers costs associated with Personal Care.",
+            "required": false
+        },
+        {
+            "id": "personal1",
+            "question": "How much, in total, have you spent on Clothing over the last 12 months?",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "personal2",
+            "question": "How much, in total, have you spent on Beauty, Health & Personal Care over the last 12 months? Includes Haircuts, Hair Styling, Skincare, Beauty Products, etc.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "personal3",
+            "question": "How much, in total, have you spent on hobby related expenses over the last 12 months? Includes Materials, Equipment, Passes related to Hobbies like Hiking, Skiing, Photography, Reading, Crocheting, etc.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "personal4",
+            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month",
+            "type": "text",
+            "required": false
+        },
+        {
+            "id": "personal5",
+            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "type": "text",
+            "required": false
+        }
+    ],
+    [
+        {
+            "id": "family0",
+            "question": "This section covers costs associated with family finances and/or childcare.",
+            "required": false,
+            "show_if_id": "demographics5",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "family1",
+            "question": "How many dependents do you have?",
+            "type": "text",
+            "required": true,
+            "show_if_id": "demographics5",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "family2",
+            "question": "Do you have a spouse/partner helping to cover monthly costs?",
+            "type": "radio",
+            "required": true,
+            "options": ["Yes", "No"]
+        },
+        {
+            "id": "family3",
+            "question": "My spouse/partner earns...",
+            "type": "radio",
+            "required": true,
+            "options": [
+                "Much more than me",
+                "Marginally more than me",
+                "About the same as me",
+                "Marginally less than me",
+                "Much less than me",
+                "Nothing"
+            ],
+            "show_if_id": "family2",
+            "show_if_value": "Yes"
+        },
+        {
+            "id": "family4",
+            "question": "How much money do you send home to your family each month? Please provide a monthly average over the last 12 months.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "family5",
+            "question": "Please tell us about any other childcare/family expenses you think are relevant but are not covered in the other sections of this survey.",
+            "type": "text",
+            "required": false
+        },
+        {
+            "id": "family6",
+            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "type": "text",
+            "required": false
+        }
+    ],
+    [
+        {
+            "id": "final0",
+            "question": "This is the final section.",
+            "required": false
+        },
+        {
+            "id": "final1",
+            "question": "Which of the following most closely describes your methodology for completing this survey?",
+            "type": "checkbox",
+            "required": true,
+            "options": [
+                "I rigorously back-calculated all of my expenses for the last year",
+                "I gave rough estimates of my monthly expenses",
+                "I guessed at what I spend each month for some categories"
+            ]
+        },
+        {
+            "id": "final2",
+            "question": "Please feel free to provide any feedback on this survey.",
+            "type": "text",
+            "required": true
+        },
+        {
+            "id": "final3",
+            "question": "Thank you for completing this survey! Please share it with your friends. We want as many graduate students to complete it as possible.",
+            "required": false
+        }
+    ]
 ]
