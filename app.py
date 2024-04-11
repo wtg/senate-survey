@@ -142,10 +142,6 @@ def get_question_for_key(key):
 def form():
     if is_debug:
         username = os.environ["DEBUG_USERNAME"]
-        survey = get_survey()
-        return render_template('form.html',
-                               title='Take survey',
-                               survey=survey)
     else:
         username = cas.username
     if CLOSED:
@@ -160,11 +156,14 @@ def form():
 
     # Check if this user is a student according to CMS
     rcs_id = username.lower()
-    headers = {'Authorization': f'Token {CMS_API_KEY}'}
-    r = requests.get(f'https://cms.union.rpi.edu/api/users/view_rcs/{rcs_id}/',
-                     headers=headers)
-    user_type = r.json()['user_type']
-    if user_type != 'Student' or is_debug:
+    if is_debug:
+        user_type = "Student"
+    else:
+        headers = {'Authorization': f'Token {CMS_API_KEY}'}
+        r = requests.get(f'https://cms.union.rpi.edu/api/users/view_rcs/{rcs_id}/',
+                         headers=headers)
+        user_type = r.json()['user_type']
+    if user_type != 'Student':
         if not username in CC_SURVEY_ADMINS and request.method == 'GET':
             return render_template('message.html', message="""This survey is only
                 available to students.""", title='Survey not available')
@@ -197,6 +196,9 @@ def form():
                 if key.endswith('[]'):
                     form[key] = lst
                 else:
+                    if len(lst) != 1:
+                        print("\nUnexpectedly found multiple entries for the same key!")
+                        print("Debug information:", key, lst)
                     assert(len(lst) == 1)
                     val = lst[0]
                     if val == '':
