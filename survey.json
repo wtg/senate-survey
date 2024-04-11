@@ -16,20 +16,14 @@
             "required": false
         },
         {
-            "id": "demographics1",
-            "question": "What is your RCSID (examples: 'bhowmd', 'chatts4', etc)? Again, know that this answer is stored separately from your other answers and cannot be used to link you to your other responses in any way. We use your RCSID to improve the integrity of the data we collect in the remainder of this survey.",
-            "type": "text",
-            "required": true
-        },
-        {
-            "id": "demographics2",
+            "id": "demographics0",
             "question": "Are you a domestic or international student?",
             "type": "radio",
             "required": false,
             "options": ["Domestic", "International"]
         },
         {
-            "id": "demographics3",
+            "id": "demographics1",
             "question": "Which country did you come from?",
             "type": "text",
             "required": false,
@@ -37,7 +31,7 @@
             "show_if_value": "International"
         },
         {
-            "id": "demographics4",
+            "id": "demographics2",
             "question": "Which academic year did you start graduate school at RPI?",
             "type": "radio",
             "required": true,
@@ -52,7 +46,7 @@
             ]
         },
         {
-            "id": "demographics5",
+            "id": "demographics3",
             "question": "Do you have any dependents (spouse and/or children)?",
             "type": "radio",
             "required": true,
