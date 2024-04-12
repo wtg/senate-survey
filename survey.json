@@ -14,22 +14,22 @@
             "id": "intro2",
             "question": "This survey is divided into 10 sections: 1. Intro and Demographics 2. Rent and Utilities 3. Food and Groceries 4. Transportation 5. Healthcare 6. Student Loans 7. Technology and Entertainment 8. Personal Care 9. Childcare 10. Conclusion and Final Comments.",
             "required": false
-        }, 
+        },
         {
             "id": "intro3",
             "question": "    - Average: Some questions will ask for a monthly average payment. Ideally, this would be calculated by summing the amount over the last year and dividing by 12, but we understand there will be some necessary approximations in this calculation. ",
             "required": false
-        }, 
+        },
         {
             "id": "intro4",
             "question": "    - Total: Other questions will ask for a total value over the last 12 months. Please be sure to answer each type of question appropriately with a numeric value rounded to the nearest whole-dollar amount.",
             "required": false
-        }, 
+        },
         {
             "id": "intro5",
             "question": "    - Count expenses once: For example, you may feel that an expense such as 'digital camera' could be included under either section 7. Technology and Entertainment or 8. Personal Care. It does not matter which category you list the cost under, only that it is not included more than once.",
             "required": false
-        }, 
+        },
         {
             "id": "demographics0",
             "question": "Are you a domestic or international student?",
@@ -527,13 +527,13 @@
             "show_if_value": "Yes"
         },
         {
-            "id": "personal4",
+            "id": "personal6",
             "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
             "type": "text",
             "required": false
         },
         {
-            "id": "personal5",
+            "id": "personal7",
             "question": "Please provide any additional comments in this section you feel are necessary.",
             "type": "text",
             "required": false
