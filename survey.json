@@ -32,14 +32,14 @@
         },
         {
             "id": "demographics0",
-            "question": "Are you a domestic or international student?",
+            "question": "OPTIONAL: Are you a domestic or international student?",
             "type": "radio",
             "required": false,
             "options": ["Domestic", "International"]
         },
         {
             "id": "demographics1",
-            "question": "Which country did you come from?",
+            "question": "OPTIONAL: Which country/region did you come from?",
             "type": "text",
             "required": false,
             "show_if_id": "demographics0",
@@ -177,13 +177,13 @@
         },
         {
             "id": "utilities9",
-            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
+            "question": "OPTIONAL: Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
             "type": "text",
             "required": false
         },
         {
             "id": "utilities10",
-            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "question": "OPTIONAL: Please provide any additional comments in this section you feel are necessary.",
             "type": "text",
             "required": false
         }
@@ -214,13 +214,13 @@
         },
         {
             "id": "food4",
-            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
+            "question": "OPTIONAL: Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
             "type": "text",
             "required": false
         },
         {
             "id": "food5",
-            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "question": "OPTIONAL: Please provide any additional comments in this section you feel are necessary.",
             "type": "text",
             "required": false
         }
@@ -286,13 +286,13 @@
         },
         {
             "id": "car8",
-            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
+            "question": "OPTIONAL: re there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
             "type": "text",
             "required": false
         },
         {
             "id": "car9",
-            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "question": "OPTIONAL: Please provide any additional comments in this section you feel are necessary.",
             "type": "text",
             "required": false
         }
@@ -334,13 +334,13 @@
         },
         {
             "id": "health5",
-            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
+            "question": "OPTIONAL: Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
             "type": "text",
             "required": false
         },
         {
             "id": "health6",
-            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "question": "OPTIONAL: Please provide any additional comments in this section you feel are necessary.",
             "type": "text",
             "required": false
         }
@@ -368,7 +368,7 @@
         },
         {
             "id": "loans3",
-            "question": "How much debt do you have in private student loans?",
+            "question": "OPTIONAL: How much debt do you have in private student loans?",
             "type": "text",
             "required": false,
             "show_if_id": "loans1",
@@ -376,7 +376,7 @@
         },
         {
             "id": "loans4",
-            "question": "How much debt do you have in federal subsidized loans?",
+            "question": "OPTIONAL: How much debt do you have in federal subsidized loans?",
             "type": "text",
             "required": false,
             "show_if_id": "loans1",
@@ -384,7 +384,7 @@
         },
         {
             "id": "loans5",
-            "question": "How much debt do you have in federal unsubsidized loans?",
+            "question": "OPTIONAL: How much debt do you have in federal unsubsidized loans?",
             "type": "text",
             "required": false,
             "show_if_id": "loans1",
@@ -416,30 +416,30 @@
         },
         {
             "id": "loans9",
-            "question": "How much do you pay across all of your personal loan(s) each month? Please provide a monthly average over the last 12 months.",
+            "question": "OPTIONAL: How much do you pay across all of your personal loan(s) each month? Please provide a monthly average over the last 12 months.",
             "type": "text",
-            "required": true,
+            "required": false,
             "show_if_id": "loans8",
             "show_if_value": "Yes"
         },
         {
             "id": "loans10",
-            "question": "Do you pay more than the minimum amount required per month for any of your personal loans?",
+            "question": "OPTIONAL: Do you pay more than the minimum amount required per month for any of your personal loans?",
             "type": "radio",
-            "required": true,
+            "required": false,
             "options": ["Yes", "No"],
             "show_if_id": "loans9",
             "show_if_value": "Yes"
         },
         {
             "id": "loans11",
-            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
+            "question": "OPTIONAL: Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
             "type": "text",
             "required": false
         },
         {
             "id": "loans12",
-            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "question": "OPTIONAL: Please provide any additional comments in this section you feel are necessary.",
             "type": "text",
             "required": false
         }
@@ -476,13 +476,13 @@
         },
         {
             "id": "tech5",
-            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
+            "question": "OPTIONAL: Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
             "type": "text",
             "required": false
         },
         {
             "id": "tech6",
-            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "question": "OPTIONAL: Please provide any additional comments in this section you feel are necessary.",
             "type": "text",
             "required": false
         }
@@ -528,13 +528,13 @@
         },
         {
             "id": "personal6",
-            "question": "Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
+            "question": "OPTIONAL: Are there any other expenses which fall into this category? Please list type of cost and average amount paid per month.",
             "type": "text",
             "required": false
         },
         {
             "id": "personal7",
-            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "question": "OPTIONAL: Please provide any additional comments in this section you feel are necessary.",
             "type": "text",
             "required": false
         }
@@ -587,13 +587,13 @@
         },
         {
             "id": "family5",
-            "question": "Please tell us about any other Childcare/Family expenses you think are relevant but are not covered in the other sections of this survey.",
+            "question": "OPTIONAL: Please tell us about any other Childcare/Family expenses you think are relevant but are not covered in the other sections of this survey.",
             "type": "text",
             "required": false
         },
         {
             "id": "family6",
-            "question": "Please provide any additional comments in this section you feel are necessary.",
+            "question": "OPTIONAL: lease provide any additional comments in this section you feel are necessary.",
             "type": "text",
             "required": false
         }
@@ -617,12 +617,18 @@
         },
         {
             "id": "final2",
-            "question": "Please feel free to provide any feedback on this survey.",
+            "question": "What is the approximate amount of time, in minutes, it took you to complete this survey?",
             "type": "text",
             "required": true
         },
         {
             "id": "final3",
+            "question": "OPTIONAL: Please feel free to provide any feedback on this survey.",
+            "type": "text",
+            "required": false
+        },
+        {
+            "id": "final4",
             "question": "Thank you for completing this survey! Please share it with your friends. We want as many graduate students to complete it as possible.",
             "required": false
         }
