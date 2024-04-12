@@ -202,7 +202,7 @@
         },
         {
             "id": "food2",
-            "question": "How much do you pay at restaurantfs (including takeout and food delivery) each month? Please provide a monthly average over the last 12 months.",
+            "question": "How much do you pay at restaurants (including takeout and food delivery) each month? Please provide a monthly average over the last 12 months.",
             "type": "text",
             "required": true
         },
