@@ -64,8 +64,7 @@ body {
     color: black;
     text-align: center;
     padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 50px;
+    border-bottom: 1px solid #666;
 }
 
 .header .btn {
@@ -79,5 +78,9 @@ body {
 
 .main {
     margin-top: 20px;
-    border-top: 1px solid #999;
+}
+
+.nav {
+    margin-bottom: 10px;
+    border-bottom: 0px;
 }
