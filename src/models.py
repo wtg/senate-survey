@@ -28,10 +28,4 @@ class UserHash(ModelBase):
     """User hash model."""
     hash = TextField(primary_key=True)
 
-
-class AuthorizationKey(ModelBase):
-    """Can be created to allow users without RCS IDs to take the survey."""
-    key = TextField(primary_key=True)
-
-
-db.create_tables([Submission, UserHash, AuthorizationKey], safe=True)
+db.create_tables([Submission, UserHash], safe=True)

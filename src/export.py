@@ -14,13 +14,13 @@ from flask import (
     Response, 
 )
 
-import models
 from app import (
     get_survey, 
     login_required,
     cas,
     CC_SURVEY_ADMINS, 
     DEBUG_USERNAME,
+    models
 )
 
 export = Blueprint('export', __name__, url_prefix='/export')

@@ -6,7 +6,6 @@ from os import getenv
 from flask import Blueprint, redirect, render_template, request, session
 
 
-import models as models
 from app import (
     login_required,
     get_survey,
@@ -16,7 +15,8 @@ from app import (
     DEBUG_USERNAME,
     CMS_API_KEY,
     SAMPLE_POPULATION,
-    SURVEY_VERSION
+    SURVEY_VERSION,
+    models
 )
 
 

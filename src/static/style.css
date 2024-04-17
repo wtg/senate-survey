@@ -77,10 +77,18 @@ body {
 }
 
 .main {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .nav {
     margin-bottom: 10px;
     border-bottom: 0px;
+}
+
+.pager {
+    padding: 0px;
+    margin: 0px;
+}
+.page-header {
+    margin-top: 0px;
 }
