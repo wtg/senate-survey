@@ -40,9 +40,6 @@ def get_question_for_key(key):
     for question in [item for sublist in survey for item in sublist]:
         if question['id'] == key:
             return question['question'] + ' ({})'.format(orig_key)
-            if other:
-                q += ' (other)'
-            return q
     return key
 
 def json_serializer(obj):
@@ -83,7 +80,7 @@ def export_xlsx():
         filename = 'senate-survey-{}.xlsx'.format(question_prefix)
 
     # loop through all submissions
-    submissions = [submission for submission in models.Submission.select()]
+    submissions = models.Submission.select()
     submissions.sort(key=lambda submission: submission.time)
 
     # build header. have to loop through everything first
@@ -94,8 +91,8 @@ def export_xlsx():
 
         # if we only want responses to some questions, include only those
         for key, value in form_js.items():
-            if (question_prefix is None and not key.startswith('raffle')) \
-                    or (question_prefix is not None and key.startswith(question_prefix)):
+            print(key, value)
+            if question_prefix is None or key.startswith(question_prefix):
                 question = get_question_for_key(key)
                 if question not in header:
                     header.append(question)
