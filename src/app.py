@@ -51,10 +51,28 @@ def index():
         return render_template('closed.html')
     return render_template('index.html')
 
+@app.route('/test')
+def test():
+    if DEBUG_USERNAME:
+        message = "Submissions<br>"
+        submissions = [submission for submission in models.Submission.select()]
+        submissions.sort(key=lambda submission: submission.time)
+        for submission in submissions:
+            message += str(submission.id) + str(submission.form) \
+            + str(submission.time) + "-" + str(submission.survey) + '<br>'
 
-# Set the secret key for cookies. keep this really secret, as the integrity of
-# the survey relies on its being unknown to clients.
-app.secret_key = os.environ['SECRET_KEY']
+        message += "<br>hashes<br>"
+        hashs = [hashes for hashes in models.UserHash.select()]
+        for hash in hashs:
+            message += str(hash.hash) + '<br>'
+        
+        message += "<br>surveys<br>"
+        surveys = [surveys for surveys in models.Surveys.select()]
+        for survey in surveys:
+            message += str(survey.number) + '-' + str(survey.user) + '<br>'
+
+        return render_template('message.html', title="Dump DB", message=message)
+
 
 # import blueprints and register blueprints
 from export import export
@@ -66,3 +84,7 @@ app.register_blueprint(export)
 app.register_blueprint(form)
 app.register_blueprint(home)
 app.register_blueprint(surveys)
+
+# Set the secret key for cookies. keep this really secret, as the integrity of
+# the survey relies on its being unknown to clients.
+app.secret_key = os.environ['SECRET_KEY']

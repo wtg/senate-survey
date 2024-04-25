@@ -6,4 +6,4 @@ home = Blueprint('home', __name__, url_prefix='/home')
 @home.route('/')
 @login_required
 def home_index():
-    return render_template('message.html', title="Home Page", message='hi')
+    return render_template('home.html')

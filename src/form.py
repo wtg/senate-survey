@@ -83,7 +83,7 @@ def form_index():
         r = requests.get(f'https://cms.union.rpi.edu/api/users/view_rcs/{rcs_id}/',
                         headers=headers)
         user_type = r.json()['user_type']
-        if user_type != 'Student' or DEBUG_USERNAME:
+        if user_type != 'Student':
             if not username in CC_SURVEY_ADMINS and request.method == 'GET':
                 return render_template('message.html', message="""This survey is only
                     available to students.""", title='Survey not available')
@@ -124,9 +124,9 @@ def form_index():
             form_json = json.dumps(form)
 
             if username in SAMPLE_POPULATION:
-                models.Submission().create(form=form_json, version=SURVEY_VERSION, sample=1)
+                models.Submission().create(form=form_json, version=SURVEY_VERSION, sample=1, survey=1)
             else:
-                models.Submission().create(form=form_json, version=SURVEY_VERSION, sample=0)
+                models.Submission().create(form=form_json, version=SURVEY_VERSION, sample=0, survey=1)
 
             return render_template('message.html', message="""Your submission has
                 been recorded anonymously. Thank you for sharing your voice

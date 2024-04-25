@@ -80,7 +80,7 @@ def export_xlsx():
         filename = 'senate-survey-{}.xlsx'.format(question_prefix)
 
     # loop through all submissions
-    submissions = models.Submission.select()
+    submissions = [submission for submission in models.Submission.select()]
     submissions.sort(key=lambda submission: submission.time)
 
     # build header. have to loop through everything first
@@ -91,7 +91,6 @@ def export_xlsx():
 
         # if we only want responses to some questions, include only those
         for key, value in form_js.items():
-            print(key, value)
             if question_prefix is None or key.startswith(question_prefix):
                 question = get_question_for_key(key)
                 if question not in header:
