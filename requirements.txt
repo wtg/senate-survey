@@ -7,5 +7,5 @@ psycopg2==2.9.5
 XlsxWriter==1.0.2
 requests==2.21.0
 Cython==3.0.0a10
-Werkzeug<3.0.0
+Werkzeug==3.0.3
 certifi
